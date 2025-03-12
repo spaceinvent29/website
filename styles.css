@@ -862,7 +862,7 @@ footer {
 
 /* Contact Section */
 .contact {
-    background-color: rgba(17, 34, 64, 0.7);
+    background-color: transparent;
     backdrop-filter: blur(10px);
     padding: 6rem 0;
     position: relative;
@@ -877,7 +877,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at top, rgba(94, 114, 228, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
+    background: radial-gradient(ellipse at top, rgba(94, 114, 228, 0.2) 0%, rgba(10, 25, 47, 0.7) 70%);
     z-index: 0;
 }
 
@@ -897,8 +897,8 @@ footer {
 }
 
 .contact-card {
-    background-color: rgba(17, 34, 64, 0.7);
-    backdrop-filter: blur(5px);
+    background-color: rgba(17, 34, 64, 0.5);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
@@ -911,7 +911,7 @@ footer {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
     border-color: var(--secondary-color);
-    background-color: rgba(17, 34, 64, 0.9);
+    background-color: rgba(17, 34, 64, 0.7);
 }
 
 .contact-item {
@@ -948,8 +948,8 @@ footer {
 }
 
 .contact-form-container {
-    background-color: rgba(17, 34, 64, 0.7);
-    backdrop-filter: blur(5px);
+    background-color: rgba(17, 34, 64, 0.5);
+    backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: var(--shadow-md);
@@ -979,37 +979,35 @@ footer {
     width: 100%;
     padding: 0.875rem 1rem;
     border-radius: 8px;
-    border: 1px solid rgba(100, 255, 218, 0.2);
-    background-color: rgba(10, 25, 47, 0.5);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    background-color: rgba(10, 25, 47, 0.4);
     color: var(--text-color);
     font-family: 'Montserrat', sans-serif;
     transition: var(--transition);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px rgba(10, 25, 47, 0.2);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
-    background-color: rgba(10, 25, 47, 0.7);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+    background-color: rgba(10, 25, 47, 0.6);
 }
 
 .contact-form .cta-button {
     width: 100%;
     justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, rgba(94, 114, 228, 0.9), rgba(100, 255, 218, 0.9));
+    border: none;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
 }
 
-.contact-form .cta-button i {
-    transition: var(--transition);
-}
-
-.contact-form .cta-button:hover i {
-    transform: translateX(3px);
+.contact-form .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(100, 255, 218, 0.5);
+    background: linear-gradient(135deg, rgba(94, 114, 228, 1), rgba(100, 255, 218, 1));
 }
 
 .form-fallback {
@@ -1160,4 +1158,31 @@ footer {
         transform: translateX(calc(100vw + 200px)) rotate(15deg);
         opacity: 0;
     }
+}
+
+.contact .section-header h2 {
+    position: relative;
+    display: inline-block;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+}
+
+.contact .section-subtitle {
+    margin-top: 1.5rem;
+    color: var(--text-color);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 } 
