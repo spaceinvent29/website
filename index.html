@@ -100,19 +100,19 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="POST" target="_blank">
                         <h3>Send a Message</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                            <input type="text" id="name" name="entry.1740724123" placeholder="Your Full Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <input type="email" id="email" name="entry.1732875791" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea id="message" name="entry.1099130722" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="cta-button primary">
                             <span>Send Message</span>
@@ -209,31 +209,28 @@
                     const originalBtnText = submitBtn.innerHTML;
                     
                     // Show loading state
-                    submitBtn.innerHTML = '<span>Preparing Email...</span> <i class="fas fa-spinner fa-spin"></i>';
+                    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
                     submitBtn.disabled = true;
                     
                     // Get form data
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
+                    const formData = new FormData(contactForm);
                     
-                    // Create mailto link
-                    const subject = encodeURIComponent('Message from SpaceInvent Website');
-                    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-                    const mailtoLink = `mailto:space.reinvent@gmail.com?subject=${subject}&body=${body}`;
-                    
-                    // Create a success message
-                    const createSuccessMessage = () => {
+                    // Submit the form using fetch
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors' // This is important for Google Forms
+                    })
+                    .then(() => {
+                        // Create a success message
                         const successMessage = document.createElement('div');
                         successMessage.className = 'success-message';
                         successMessage.innerHTML = `
                             <div class="success-icon">
                                 <i class="fas fa-check-circle"></i>
                             </div>
-                            <h3>Email Client Opened</h3>
-                            <p>Your message has been prepared and your email client should have opened.</p>
-                            <p>If your email client didn't open automatically, please <a href="${mailtoLink}" style="color: var(--secondary-color); font-weight: 600;">click here</a> to open it manually.</p>
-                            <p>Send the email to complete your message to <span style="color: var(--secondary-color); font-weight: 600;">space.reinvent@gmail.com</span>.</p>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for your message. I'll get back to you as soon as possible.</p>
                         `;
                         successMessage.style.textAlign = 'center';
                         successMessage.style.padding = '2rem 0';
@@ -241,17 +238,13 @@
                         // Replace form with success message
                         contactForm.style.display = 'none';
                         contactForm.parentNode.appendChild(successMessage);
-                    };
-                    
-                    // Open email client after a short delay to show the loading state
-                    setTimeout(() => {
-                        window.location.href = mailtoLink;
-                        
-                        // Show success message
-                        setTimeout(() => {
-                            createSuccessMessage();
-                        }, 500);
-                    }, 1000);
+                    })
+                    .catch(error => {
+                        // If there's an error, show error message and reset button
+                        alert('There was an error sending your message. Please try again or use the email link below the form.');
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    });
                 });
             }
         });
