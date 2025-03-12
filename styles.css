@@ -252,27 +252,42 @@ p {
     transition: var(--transition);
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background-color: var(--dark-bg);
-    padding-top: 80px;
-}
-
-.stars {
+/* Space Background */
+.space-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.stars {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><circle cx="500" cy="500" r="1" fill="%2364ffda" opacity="0.8"/></svg>') repeat;
     background-size: 1000px 1000px;
     animation: stars 100s linear infinite;
-    z-index: 1;
+}
+
+.stars2 {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><circle cx="500" cy="500" r="2" fill="%235e72e4" opacity="0.5"/></svg>') repeat;
+    background-size: 2000px 2000px;
+    animation: stars2 150s linear infinite;
+}
+
+.stars3 {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><circle cx="500" cy="500" r="3" fill="white" opacity="0.3"/></svg>') repeat;
+    background-size: 3000px 3000px;
+    animation: stars3 200s linear infinite;
 }
 
 @keyframes stars {
@@ -284,15 +299,78 @@ p {
     }
 }
 
+@keyframes stars2 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 2000px 2000px;
+    }
+}
+
+@keyframes stars3 {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3000px 3000px;
+    }
+}
+
+.nebula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(94, 114, 228, 0.2) 0%, rgba(10, 25, 47, 0) 70%),
+                radial-gradient(ellipse at 80% 40%, rgba(100, 255, 218, 0.15) 0%, rgba(10, 25, 47, 0) 60%);
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.cosmic-rays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, rgba(94, 114, 228, 0.1) 0%, rgba(10, 25, 47, 0) 40%),
+                linear-gradient(235deg, rgba(100, 255, 218, 0.1) 0%, rgba(10, 25, 47, 0) 40%);
+    z-index: 1;
+    animation: cosmic-pulse 15s ease infinite;
+}
+
+@keyframes cosmic-pulse {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+    padding-top: 80px;
+}
+
 .hero-content {
+    position: relative;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-}
-
-.hero-text {
-    flex: 1;
 }
 
 .hero .tagline {
@@ -932,4 +1010,101 @@ footer {
 /* Adjust footer for simpler layout */
 .footer-links {
     grid-template-columns: repeat(2, 1fr);
+}
+
+.cosmic-planet {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+    box-shadow: inset 5px -5px 25px rgba(100, 255, 218, 0.2),
+                inset -5px 5px 25px rgba(94, 114, 228, 0.2),
+                0 0 50px rgba(100, 255, 218, 0.1);
+    z-index: 2;
+    top: 20%;
+    right: 10%;
+    animation: float 20s ease-in-out infinite;
+}
+
+.cosmic-planet::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(100, 255, 218, 0) 0%, rgba(100, 255, 218, 0.3) 50%, rgba(100, 255, 218, 0) 100%);
+    transform: rotate(30deg);
+    top: 65px;
+    left: -5px;
+    filter: blur(5px);
+}
+
+.cosmic-planet::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(100, 255, 218, 0) 0%, rgba(100, 255, 218, 1) 50%, rgba(100, 255, 218, 0) 100%);
+    animation: shooting-star 6s linear infinite;
+    z-index: 2;
+}
+
+.shooting-star:nth-child(1) {
+    width: 100px;
+    top: 15%;
+    left: -100px;
+    animation-delay: 0s;
+    transform: rotate(15deg);
+}
+
+.shooting-star:nth-child(2) {
+    width: 150px;
+    top: 35%;
+    left: -150px;
+    animation-delay: 3s;
+    transform: rotate(20deg);
+}
+
+.shooting-star:nth-child(3) {
+    width: 80px;
+    top: 60%;
+    left: -80px;
+    animation-delay: 5s;
+    transform: rotate(10deg);
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(0) rotate(15deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 200px)) rotate(15deg);
+        opacity: 0;
+    }
 } 
