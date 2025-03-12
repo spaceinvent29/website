@@ -3,54 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpaceInvent - Innovation at the Final Frontier</title>
+    <title>SpaceInvent - Redefining Space Technology</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">SpaceInvent</a>
+            <a href="#" class="logo">Space<span>Invent</span></a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#solutions" class="nav-link">Solutions</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="#get-started" class="cta-button-small">Get Started</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="home" class="hero">
+    <section id="home" class="hero">
+        <div class="stars"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Space Innovation at the Final Frontier</h1>
-                <p class="tagline">Pioneering the future of space technology with cutting-edge solutions</p>
-                <div class="cta-group">
-                    <a href="#about" class="cta-button primary">Explore Our Solutions</a>
-                    <a href="#contact" class="cta-button secondary">Contact Us</a>
+                <div class="hero-text">
+                    <h1>Pioneering the <span class="highlight">Future</span> of Space</h1>
+                    <p class="tagline">Innovative solutions for the next generation of space exploration and technology</p>
+                    <div class="cta-group">
+                        <a href="#solutions" class="cta-button primary">Discover Solutions</a>
+                        <a href="#contact" class="cta-button secondary">Connect With Us</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="orbit-container">
+                        <div class="planet"></div>
+                        <div class="orbit">
+                            <div class="satellite"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
     <section id="solutions" class="solutions">
         <div class="container">
-            <h2>Our Solutions</h2>
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2>Our <span class="highlight">Solutions</span></h2>
+                <p class="section-subtitle">Cutting-edge space technologies designed for the future</p>
+            </div>
             <div class="solution-grid">
                 <div class="solution-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Space Technology</h3>
-                    <p>Advanced propulsion systems and spacecraft design</p>
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Propulsion Systems</h3>
+                    <p>Next-generation propulsion technologies for efficient space travel</p>
+                    <a href="#" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="solution-card">
-                    <i class="fas fa-satellite"></i>
-                    <h3>Satellite Systems</h3>
-                    <p>Next-generation satellite communication and imaging</p>
+                    <div class="card-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3>Satellite Networks</h3>
+                    <p>Advanced communication and observation satellite systems</p>
+                    <a href="#" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="solution-card">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Research & Development</h3>
-                    <p>Pushing the boundaries of space exploration</p>
+                    <div class="card-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Space Research</h3>
+                    <p>Pioneering research initiatives to expand our understanding of space</p>
+                    <a href="#" class="card-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Team Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Global Partners</span>
                 </div>
             </div>
         </div>
@@ -59,13 +119,32 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-content">
-                    <h2>About SpaceInvent</h2>
-                    <p>We are a space technology company dedicated to advancing humanity's reach into the cosmos. Our team combines expertise in aerospace engineering, physics, and innovation to create reliable, groundbreaking space solutions.</p>
-                    <a href="#contact" class="text-link">Learn more about our mission <i class="fas fa-arrow-right"></i></a>
-                </div>
                 <div class="about-image">
-                    <div class="image-placeholder"></div>
+                    <div class="image-container">
+                        <div class="image-placeholder"></div>
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">Who We Are</span>
+                    <h2>About <span class="highlight">SpaceInvent</span></h2>
+                    <p>We are a pioneering space technology company dedicated to advancing humanity's reach into the cosmos. Our team combines expertise in aerospace engineering, physics, and innovation to create reliable, groundbreaking space solutions.</p>
+                    <p>Founded with a vision to make space more accessible, we're committed to developing technologies that will shape the future of space exploration and utilization.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Cutting-edge Research</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sustainable Space Solutions</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Engineering Team</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="cta-button primary">Get in Touch</a>
                 </div>
             </div>
         </div>
@@ -73,36 +152,55 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
-            <p class="section-subtitle">Ready to explore the possibilities? Connect with us through any of these channels.</p>
+            <div class="section-header light">
+                <span class="section-tag">Connect With Us</span>
+                <h2>Get in <span class="highlight">Touch</span></h2>
+                <p class="section-subtitle">Ready to explore the possibilities? Reach out to our team.</p>
+            </div>
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p>space.reinvent@gmail.com</p>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>space.reinvent@gmail.com</p>
+                        </div>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-x-twitter"></i>
-                        <p><a href="https://twitter.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                        <div>
+                            <h4>Follow on X</h4>
+                            <p><a href="https://twitter.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                        </div>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-instagram"></i>
-                        <p><a href="https://instagram.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p><a href="https://instagram.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                        </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-location-dot"></i>
-                        <p>San Francisco, CA</p>
+                        <div>
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
                     </div>
                 </div>
-                <div class="social-links">
-                    <a href="#" class="social-button">
-                        <i class="fab fa-linkedin"></i>
-                        <span>Follow us on LinkedIn</span>
-                    </a>
-                    <a href="#" class="social-button">
-                        <i class="fab fa-github"></i>
-                        <span>Check our GitHub</span>
-                    </a>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button primary">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -110,35 +208,89 @@
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="#">Space Technology</a></li>
-                        <li><a href="#">Satellite Systems</a></li>
-                        <li><a href="#">Research</a></li>
-                    </ul>
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <a href="#" class="logo">Space<span>Invent</span></a>
+                    <p>Pioneering the future of space technology</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Solutions</h3>
+                        <ul>
+                            <li><a href="#">Propulsion Systems</a></li>
+                            <li><a href="#">Satellite Networks</a></li>
+                            <li><a href="#">Space Research</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 SpaceInvent. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu toggle for mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Custom cursor
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                setTimeout(function() {
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                }, 100);
+            });
+            
+            // Add active class to links and buttons on hover
+            const links = document.querySelectorAll('a, button');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.classList.add('cursor-active');
+                    cursorFollower.classList.add('cursor-active');
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('cursor-active');
+                    cursorFollower.classList.remove('cursor-active');
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
