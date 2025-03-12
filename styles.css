@@ -1190,7 +1190,9 @@ footer {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.8), 0 0 30px rgba(94, 114, 228, 0.5);
+    font-size: 3rem;
+    letter-spacing: 1px;
 }
 
 .contact .section-header h2::after {
@@ -1199,14 +1201,26 @@ footer {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 100px;
+    height: 4px;
     background: var(--gradient-primary);
     border-radius: 3px;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.8);
+}
+
+.contact .section-header .highlight {
+    position: relative;
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.8);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
 .contact .section-subtitle {
     margin-top: 1.5rem;
     color: var(--text-color);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 1.25rem;
 } 
