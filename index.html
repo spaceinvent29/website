@@ -57,46 +57,67 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header light">
-                <span class="section-tag"></span>
-                <h2>Say <span class="highlight">Hello</span></h2>
-                <p class="section-subtitle">Have questions?</p>
+                <span class="section-tag">Get in Touch</span>
+                <h2>Have <span class="highlight">questions?</span></h2>
+                <p class="section-subtitle">I'd love to hear from you</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Me</h4>
-                            <p>space.reinvent@gmail.com</p>
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Me</h4>
+                                <p><a href="mailto:space.reinvent@gmail.com">space.reinvent@gmail.com</a></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-x-twitter"></i>
-                        <div>
-                            <h4>X</h4>
-                            <p><a href="https://x.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                    
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-x-twitter"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>X</h4>
+                                <p><a href="https://x.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-instagram"></i>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p><a href="https://instagram.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                    
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Instagram</h4>
+                                <p><a href="https://instagram.com/spaceinvent" target="_blank">@spaceinvent</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form-container">
                     <form class="contact-form">
+                        <h3>Send a Message</h3>
                         <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="cta-button primary">Send Message</button>
+                        <button type="submit" class="cta-button primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
