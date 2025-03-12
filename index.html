@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="POST" target="_blank">
+                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="POST" target="hidden_iframe">
                         <h3>Send a Message</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -120,6 +120,7 @@
                         </button>
                         <p class="form-fallback">Having trouble with the form? <a href="mailto:space.reinvent@gmail.com?subject=Message from SpaceInvent Website">Email me directly</a>.</p>
                     </form>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                 </div>
             </div>
         </div>
@@ -201,27 +202,13 @@
             
             // Handle contact form submission
             const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalBtnText = submitBtn.innerHTML;
-                    
-                    // Show loading state
-                    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
-                    submitBtn.disabled = true;
-                    
-                    // Get form data
-                    const formData = new FormData(contactForm);
-                    
-                    // Submit the form using fetch
-                    fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        mode: 'no-cors' // This is important for Google Forms
-                    })
-                    .then(() => {
+            const hiddenIframe = document.getElementById('hidden_iframe');
+            let formSubmitted = false;
+            
+            if (contactForm && hiddenIframe) {
+                // Listen for iframe load event (form submission complete)
+                hiddenIframe.addEventListener('load', function() {
+                    if (formSubmitted) {
                         // Create a success message
                         const successMessage = document.createElement('div');
                         successMessage.className = 'success-message';
@@ -238,13 +225,18 @@
                         // Replace form with success message
                         contactForm.style.display = 'none';
                         contactForm.parentNode.appendChild(successMessage);
-                    })
-                    .catch(error => {
-                        // If there's an error, show error message and reset button
-                        alert('There was an error sending your message. Please try again or use the email link below the form.');
-                        submitBtn.innerHTML = originalBtnText;
-                        submitBtn.disabled = false;
-                    });
+                    }
+                });
+                
+                contactForm.addEventListener('submit', function() {
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    
+                    // Show loading state
+                    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+                    submitBtn.disabled = true;
+                    
+                    // Mark form as submitted
+                    formSubmitted = true;
                 });
             }
         });
