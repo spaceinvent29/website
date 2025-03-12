@@ -100,11 +100,10 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form class="contact-form" action="https://formsubmit.co/space.reinvent@gmail.com" method="POST">
+                    <form class="contact-form" action="https://formspree.io/f/space.reinvent@gmail.com" method="POST">
                         <h3>Send a Message</h3>
                         <input type="hidden" name="_subject" value="New message from SpaceInvent website">
                         <input type="hidden" name="_next" value="thank-you.html">
-                        <input type="hidden" name="_captcha" value="false">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your Full Name" required>
@@ -121,6 +120,7 @@
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
+                        <p class="form-fallback">Having trouble with the form? <a href="mailto:space.reinvent@gmail.com?subject=Message from SpaceInvent Website">Email me directly</a>.</p>
                     </form>
                 </div>
             </div>
@@ -200,6 +200,28 @@
                     cursorFollower.classList.remove('cursor-active');
                 });
             });
+            
+            // Handle contact form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    
+                    // Show loading state
+                    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
+                    submitBtn.disabled = true;
+                    
+                    // If form submission takes too long (more than 10 seconds), show a message
+                    const timeoutId = setTimeout(() => {
+                        // Redirect manually to thank you page if it's taking too long
+                        window.location.href = 'thank-you.html';
+                    }, 10000);
+                    
+                    // We don't prevent default because we want the form to submit normally
+                    // This is just to provide feedback to the user
+                });
+            }
         });
     </script>
 </body>
