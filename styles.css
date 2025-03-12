@@ -544,7 +544,7 @@ footer {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -728,4 +728,19 @@ footer {
         width: 100%;
         text-align: center;
     }
+}
+
+/* Hide Blog and About sections */
+.blog, .about {
+    display: none;
+}
+
+/* Adjust Contact section to be closer to hero */
+.contact {
+    padding-top: 6rem;
+}
+
+/* Adjust footer for simpler layout */
+.footer-links {
+    grid-template-columns: repeat(2, 1fr);
 } 
