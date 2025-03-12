@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="POST" target="hidden_iframe">
                         <h3>Send a Message</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -201,11 +201,9 @@
             });
             
             // Handle contact form submission
-            let submitted = false;
             const contactForm = document.getElementById('contact-form');
-            const hiddenIframe = document.getElementById('hidden_iframe');
             
-            if (contactForm && hiddenIframe) {
+            if (contactForm) {
                 // Function to show success message
                 const showSuccessMessage = () => {
                     // Create a success message
@@ -224,32 +222,31 @@
                     // Replace form with success message
                     contactForm.style.display = 'none';
                     contactForm.parentNode.appendChild(successMessage);
-                    
-                    // Reset the form
-                    contactForm.reset();
                 };
                 
-                // Listen for iframe load event (form submission complete)
-                hiddenIframe.addEventListener('load', function() {
-                    if (submitted) {
-                        showSuccessMessage();
-                    }
-                });
-                
-                contactForm.addEventListener('submit', function() {
+                contactForm.addEventListener('submit', function(e) {
                     const submitBtn = contactForm.querySelector('button[type="submit"]');
                     
                     // Show loading state
                     submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
                     submitBtn.disabled = true;
                     
-                    // Set a timeout to show success message even if iframe load event doesn't fire
-                    // This ensures the UI doesn't get stuck in loading state
-                    setTimeout(() => {
-                        if (submitted) {
-                            showSuccessMessage();
-                        }
-                    }, 2000); // 2 seconds timeout
+                    // Get form data for submission
+                    const formData = new FormData(contactForm);
+                    
+                    // Submit form data using fetch API
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    })
+                    .finally(() => {
+                        // Show success message after a short delay
+                        setTimeout(showSuccessMessage, 1000);
+                    });
+                    
+                    // Prevent default form submission to handle it manually
+                    e.preventDefault();
                 });
             }
         });
