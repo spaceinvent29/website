@@ -100,19 +100,19 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfYZC-RRK5RsWWdftj7M4Qw5e_VSAYBQiRqLHBPmYdOT-qk_A/formResponse" method="POST" target="_blank">
                         <h3>Send a Message</h3>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                            <input type="text" id="name" name="entry.2005620554" placeholder="Your Full Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <input type="email" id="email" name="entry.1045781291" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea id="message" name="entry.839337160" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="cta-button primary">
                             <span>Send Message</span>
@@ -203,7 +203,7 @@
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
+                    // Don't prevent default - let the form submit to Google Forms
                     
                     const submitBtn = contactForm.querySelector('button[type="submit"]');
                     const originalBtnText = submitBtn.innerHTML;
@@ -212,26 +212,31 @@
                     submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
                     submitBtn.disabled = true;
                     
-                    // Get form data
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
-                    
-                    // Create mailto link
-                    const subject = encodeURIComponent('Message from SpaceInvent Website');
-                    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-                    const mailtoLink = `mailto:space.reinvent@gmail.com?subject=${subject}&body=${body}`;
-                    
-                    // Open email client after a short delay to show the loading state
-                    setTimeout(() => {
-                        window.location.href = mailtoLink;
+                    // Create a success message
+                    const createSuccessMessage = () => {
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.innerHTML = `
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Message Sent!</h3>
+                            <p>Your message has been sent successfully to <span style="color: var(--secondary-color); font-weight: 600;">space.reinvent@gmail.com</span>.</p>
+                            <p>I'll get back to you as soon as possible.</p>
+                        `;
+                        successMessage.style.textAlign = 'center';
+                        successMessage.style.padding = '2rem 0';
                         
-                        // Reset button after a delay
-                        setTimeout(() => {
-                            submitBtn.innerHTML = originalBtnText;
-                            submitBtn.disabled = false;
-                        }, 1000);
-                    }, 1000);
+                        // Replace form with success message
+                        contactForm.style.display = 'none';
+                        contactForm.parentNode.appendChild(successMessage);
+                    };
+                    
+                    // Set a timeout to show success message
+                    // This is needed because the form submits to a new tab
+                    setTimeout(() => {
+                        createSuccessMessage();
+                    }, 2000);
                 });
             }
         });
