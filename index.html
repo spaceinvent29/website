@@ -206,28 +206,33 @@
             const hiddenIframe = document.getElementById('hidden_iframe');
             
             if (contactForm && hiddenIframe) {
+                // Function to show success message
+                const showSuccessMessage = () => {
+                    // Create a success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message';
+                    successMessage.innerHTML = `
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for your message. I'll get back to you as soon as possible.</p>
+                    `;
+                    successMessage.style.textAlign = 'center';
+                    successMessage.style.padding = '2rem 0';
+                    
+                    // Replace form with success message
+                    contactForm.style.display = 'none';
+                    contactForm.parentNode.appendChild(successMessage);
+                    
+                    // Reset the form
+                    contactForm.reset();
+                };
+                
                 // Listen for iframe load event (form submission complete)
                 hiddenIframe.addEventListener('load', function() {
                     if (submitted) {
-                        // Create a success message
-                        const successMessage = document.createElement('div');
-                        successMessage.className = 'success-message';
-                        successMessage.innerHTML = `
-                            <div class="success-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <h3>Message Sent!</h3>
-                            <p>Thank you for your message. I'll get back to you as soon as possible.</p>
-                        `;
-                        successMessage.style.textAlign = 'center';
-                        successMessage.style.padding = '2rem 0';
-                        
-                        // Replace form with success message
-                        contactForm.style.display = 'none';
-                        contactForm.parentNode.appendChild(successMessage);
-                        
-                        // Reset the form
-                        contactForm.reset();
+                        showSuccessMessage();
                     }
                 });
                 
@@ -237,6 +242,14 @@
                     // Show loading state
                     submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
                     submitBtn.disabled = true;
+                    
+                    // Set a timeout to show success message even if iframe load event doesn't fire
+                    // This ensures the UI doesn't get stuck in loading state
+                    setTimeout(() => {
+                        if (submitted) {
+                            showSuccessMessage();
+                        }
+                    }, 2000); // 2 seconds timeout
                 });
             }
         });
