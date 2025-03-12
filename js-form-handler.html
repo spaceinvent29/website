@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - SpaceInvent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .form-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-content {
+            max-width: 600px;
+            width: 100%;
+            z-index: 2;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 3rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-success {
+            display: none;
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .email-highlight {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 576px) {
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div class="form-container">
+        <div class="stars"></div>
+        <div class="form-content">
+            <div class="form-header">
+                <h1>Contact <span class="highlight">Me</span></h1>
+                <p>Fill out the form below to send me a message.</p>
+            </div>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button primary">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+            
+            <div id="form-success" class="form-success">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Message Prepared!</h2>
+                <p>Your message is ready to be sent to <span class="email-highlight">space.reinvent@gmail.com</span>.</p>
+                <p>Click the button below to open your email client with your message.</p>
+                
+                <div class="button-group">
+                    <a href="#" id="email-link" class="cta-button primary">
+                        <span>Open Email Client</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    
+                    <a href="index.html" class="cta-button secondary">
+                        <span>Back to Home</span>
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Custom cursor
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                setTimeout(function() {
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                }, 100);
+            });
+            
+            // Add active class to links and buttons on hover
+            const links = document.querySelectorAll('a, button');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.classList.add('cursor-active');
+                    cursorFollower.classList.add('cursor-active');
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('cursor-active');
+                    cursorFollower.classList.remove('cursor-active');
+                });
+            });
+            
+            // Handle form submission
+            const contactForm = document.getElementById('contact-form');
+            const formSuccess = document.getElementById('form-success');
+            const emailLink = document.getElementById('email-link');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // Create mailto link
+                const subject = encodeURIComponent('Message from SpaceInvent Website');
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                emailLink.href = `mailto:space.reinvent@gmail.com?subject=${subject}&body=${body}`;
+                
+                // Hide form and show success message
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html> 
