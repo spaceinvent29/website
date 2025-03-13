@@ -333,6 +333,7 @@ p {
     overflow: hidden;
     z-index: 0;
     background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
 }
 
 .space-background::before {
@@ -347,6 +348,7 @@ p {
     height: 100%;
     z-index: 2;
     opacity: 0.7;
+    pointer-events: none;
 }
 
 .stars {
@@ -394,17 +396,21 @@ p {
     }
 }
 
-.nebula {
-    position: absolute;
+/* Fix for cosmic elements */
+.nebula, .cosmic-rays {
+    pointer-events: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
+}
+
+.nebula {
     background: 
         radial-gradient(ellipse at top right, rgba(0, 113, 227, 0.15), transparent 70%),
         radial-gradient(ellipse at bottom left, rgba(41, 151, 255, 0.1), transparent 70%);
-    z-index: 3;
-    pointer-events: none;
     animation: nebula-pulse 15s ease-in-out infinite alternate;
 }
 
@@ -424,18 +430,11 @@ p {
 }
 
 .cosmic-rays {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: 
         linear-gradient(217deg, rgba(0, 113, 227, 0.1), transparent 70%),
         linear-gradient(127deg, rgba(41, 151, 255, 0.1), transparent 70%),
         linear-gradient(336deg, rgba(90, 200, 250, 0.1), transparent 70%);
-    z-index: 3;
     animation: cosmic-pulse 10s ease infinite alternate;
-    pointer-events: none;
 }
 
 @keyframes cosmic-pulse {
@@ -453,102 +452,236 @@ p {
     }
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 800px;
-    gap: 2rem;
+/* Big Bang Animation */
+.big-bang {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.7),
+                0 0 30px 8px rgba(0, 113, 227, 0.5);
     z-index: 2;
+    animation: big-bang 20s ease-out infinite;
+    pointer-events: none;
+    opacity: 0.7;
 }
 
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+@keyframes big-bang {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0.7;
+        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.7),
+                    0 0 30px 8px rgba(0, 113, 227, 0.5);
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0.5;
+        box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.4),
+                    0 0 100px 20px rgba(0, 113, 227, 0.3);
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(40);
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0),
+                    0 0 0 0 rgba(0, 113, 227, 0);
+    }
 }
 
-.hero h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    letter-spacing: -1px;
+/* Enhanced Asteroids */
+.asteroid {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 4;
+    pointer-events: none;
+    /* Distribute asteroids across the screen instead of centering them */
+    top: calc(10% + (80% * var(--random-y, 0.5)));
+    left: calc(10% + (80% * var(--random-x, 0.5)));
+    opacity: 1;
 }
 
-.hero .tagline {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-weight: 300;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-/* Cards */
-.card {
-    background-color: rgba(29, 29, 31, 0.7);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: var(--transition);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(66, 66, 69, 0.3);
-    box-shadow: var(--shadow-sm);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(66, 66, 69, 0.5);
-}
-
-.card-img {
+.asteroid::before {
+    content: '';
+    position: absolute;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.7);
 }
 
-.card-content {
-    padding: 1.5rem;
+/* More asteroids with varied sizes and speeds */
+.asteroid:nth-child(1) {
+    --random-x: 0.2;
+    --random-y: 0.7;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 1.5s linear infinite;
 }
 
-.card-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
+.asteroid:nth-child(2) {
+    --random-x: 0.8;
+    --random-y: 0.3;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 1.8s linear infinite;
+    animation-delay: 0.5s;
 }
 
-.card-text {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+.asteroid:nth-child(3) {
+    --random-x: 0.5;
+    --random-y: 0.2;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 1.2s linear infinite;
+    animation-delay: 0.3s;
 }
 
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(66, 66, 69, 0.3);
+.asteroid:nth-child(4) {
+    --random-x: 0.3;
+    --random-y: 0.9;
+    width: 1.5px;
+    height: 1.5px;
+    animation: asteroid-random 1.7s linear infinite;
+    animation-delay: 0.7s;
 }
+
+.asteroid:nth-child(5) {
+    --random-x: 0.7;
+    --random-y: 0.6;
+    width: 0.8px;
+    height: 0.8px;
+    animation: asteroid-random 1.3s linear infinite;
+    animation-delay: 0.2s;
+}
+
+.asteroid:nth-child(6) {
+    --random-x: 0.1;
+    --random-y: 0.4;
+    width: 2.2px;
+    height: 2.2px;
+    animation: asteroid-random 2s linear infinite;
+    animation-delay: 0.1s;
+}
+
+.asteroid:nth-child(7) {
+    --random-x: 0.9;
+    --random-y: 0.1;
+    width: 0.7px;
+    height: 0.7px;
+    animation: asteroid-random 1.4s linear infinite;
+    animation-delay: 0.4s;
+}
+
+.asteroid:nth-child(8) {
+    --random-x: 0.4;
+    --random-y: 0.8;
+    width: 1.8px;
+    height: 1.8px;
+    animation: asteroid-random 1.9s linear infinite;
+    animation-delay: 0.6s;
+}
+
+.asteroid:nth-child(9) {
+    --random-x: 0.6;
+    --random-y: 0.5;
+    width: 0.9px;
+    height: 0.9px;
+    animation: asteroid-random 1.1s linear infinite;
+    animation-delay: 0.2s;
+}
+
+.asteroid:nth-child(10) {
+    --random-x: 0.2;
+    --random-y: 0.3;
+    width: 1.6px;
+    height: 1.6px;
+    animation: asteroid-random 1.6s linear infinite;
+    animation-delay: 0.8s;
+}
+
+/* Define random movement keyframes */
+@keyframes asteroid-random {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        /* Random movement in all directions */
+        transform: translate(var(--random-move-x, 100px), var(--random-move-y, 100px)) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* Additional asteroid styles for more variety */
+.asteroid:nth-child(11) { --random-x: 0.25; --random-y: 0.75; width: 0.6px; height: 0.6px; animation: asteroid-random 1.0s linear infinite; animation-delay: 0.1s; }
+.asteroid:nth-child(12) { --random-x: 0.85; --random-y: 0.35; width: 1.7px; height: 1.7px; animation: asteroid-random 1.9s linear infinite; animation-delay: 0.5s; }
+.asteroid:nth-child(13) { --random-x: 0.55; --random-y: 0.25; width: 0.5px; height: 0.5px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.3s; }
+.asteroid:nth-child(14) { --random-x: 0.35; --random-y: 0.95; width: 2.1px; height: 2.1px; animation: asteroid-random 1.8s linear infinite; animation-delay: 0.7s; }
+.asteroid:nth-child(15) { --random-x: 0.75; --random-y: 0.65; width: 0.7px; height: 0.7px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.2s; }
+.asteroid:nth-child(16) { --random-x: 0.15; --random-y: 0.45; width: 1.3px; height: 1.3px; animation: asteroid-random 1.5s linear infinite; animation-delay: 0.4s; }
+.asteroid:nth-child(17) { --random-x: 0.95; --random-y: 0.15; width: 0.8px; height: 0.8px; animation: asteroid-random 1.1s linear infinite; animation-delay: 0.6s; }
+.asteroid:nth-child(18) { --random-x: 0.45; --random-y: 0.85; width: 1.9px; height: 1.9px; animation: asteroid-random 1.7s linear infinite; animation-delay: 0.3s; }
+.asteroid:nth-child(19) { --random-x: 0.65; --random-y: 0.55; width: 0.6px; height: 0.6px; animation: asteroid-random 1.4s linear infinite; animation-delay: 0.5s; }
+.asteroid:nth-child(20) { --random-x: 0.25; --random-y: 0.35; width: 2.3px; height: 2.3px; animation: asteroid-random 1.6s linear infinite; animation-delay: 0.2s; }
+.asteroid:nth-child(21) { --random-x: 0.33; --random-y: 0.67; width: 0.9px; height: 0.9px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.4s; }
+.asteroid:nth-child(22) { --random-x: 0.78; --random-y: 0.22; width: 1.4px; height: 1.4px; animation: asteroid-random 1.7s linear infinite; animation-delay: 0.1s; }
+.asteroid:nth-child(23) { --random-x: 0.44; --random-y: 0.56; width: 0.7px; height: 0.7px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.6s; }
+.asteroid:nth-child(24) { --random-x: 0.89; --random-y: 0.11; width: 1.2px; height: 1.2px; animation: asteroid-random 1.5s linear infinite; animation-delay: 0.3s; }
+.asteroid:nth-child(25) { --random-x: 0.12; --random-y: 0.88; width: 0.5px; height: 0.5px; animation: asteroid-random 1.1s linear infinite; animation-delay: 0.7s; }
+.asteroid:nth-child(26) { --random-x: 0.67; --random-y: 0.33; width: 1.8px; height: 1.8px; animation: asteroid-random 1.9s linear infinite; animation-delay: 0.2s; }
+.asteroid:nth-child(27) { --random-x: 0.23; --random-y: 0.77; width: 0.6px; height: 0.6px; animation: asteroid-random 1.4s linear infinite; animation-delay: 0.5s; }
+.asteroid:nth-child(28) { --random-x: 0.71; --random-y: 0.29; width: 1.1px; height: 1.1px; animation: asteroid-random 1.6s linear infinite; animation-delay: 0.3s; }
+.asteroid:nth-child(29) { --random-x: 0.39; --random-y: 0.61; width: 0.8px; height: 0.8px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.8s; }
+.asteroid:nth-child(30) { --random-x: 0.83; --random-y: 0.17; width: 1.5px; height: 1.5px; animation: asteroid-random 1.8s linear infinite; animation-delay: 0.4s; }
+
+/* Apply random movement variables to asteroids with increased distances */
+.asteroid:nth-child(1) { --random-move-x: 150px; --random-move-y: -120px; }
+.asteroid:nth-child(2) { --random-move-x: -180px; --random-move-y: 100px; }
+.asteroid:nth-child(3) { --random-move-x: 130px; --random-move-y: 160px; }
+.asteroid:nth-child(4) { --random-move-x: -140px; --random-move-y: -150px; }
+.asteroid:nth-child(5) { --random-move-x: 170px; --random-move-y: 90px; }
+.asteroid:nth-child(6) { --random-move-x: -120px; --random-move-y: -130px; }
+.asteroid:nth-child(7) { --random-move-x: 140px; --random-move-y: -170px; }
+.asteroid:nth-child(8) { --random-move-x: -160px; --random-move-y: 140px; }
+.asteroid:nth-child(9) { --random-move-x: 110px; --random-move-y: 120px; }
+.asteroid:nth-child(10) { --random-move-x: -150px; --random-move-y: -110px; }
+.asteroid:nth-child(11) { --random-move-x: 160px; --random-move-y: 130px; }
+.asteroid:nth-child(12) { --random-move-x: -130px; --random-move-y: -180px; }
+.asteroid:nth-child(13) { --random-move-x: 120px; --random-move-y: 150px; }
+.asteroid:nth-child(14) { --random-move-x: -170px; --random-move-y: -100px; }
+.asteroid:nth-child(15) { --random-move-x: 150px; --random-move-y: 110px; }
+.asteroid:nth-child(16) { --random-move-x: -120px; --random-move-y: -140px; }
+.asteroid:nth-child(17) { --random-move-x: 140px; --random-move-y: 160px; }
+.asteroid:nth-child(18) { --random-move-x: -180px; --random-move-y: -120px; }
+.asteroid:nth-child(19) { --random-move-x: 130px; --random-move-y: 140px; }
+.asteroid:nth-child(20) { --random-move-x: -140px; --random-move-y: -150px; }
+.asteroid:nth-child(21) { --random-move-x: 160px; --random-move-y: 110px; }
+.asteroid:nth-child(22) { --random-move-x: -120px; --random-move-y: -170px; }
+.asteroid:nth-child(23) { --random-move-x: 130px; --random-move-y: 140px; }
+.asteroid:nth-child(24) { --random-move-x: -150px; --random-move-y: -120px; }
+.asteroid:nth-child(25) { --random-move-x: 170px; --random-move-y: 130px; }
+.asteroid:nth-child(26) { --random-move-x: -110px; --random-move-y: -140px; }
+.asteroid:nth-child(27) { --random-move-x: 140px; --random-move-y: 150px; }
+.asteroid:nth-child(28) { --random-move-x: -160px; --random-move-y: -130px; }
+.asteroid:nth-child(29) { --random-move-x: 120px; --random-move-y: 160px; }
+.asteroid:nth-child(30) { --random-move-x: -170px; --random-move-y: -110px; }
 
 /* Features Section */
 .features {
@@ -1106,6 +1239,12 @@ footer {
     flex-shrink: 0;
 }
 
+.contact-icon i {
+    font-size: 1.25rem;
+    line-height: 1;
+    display: inline-flex;
+}
+
 .contact-details {
     flex-grow: 1;
 }
@@ -1382,233 +1521,99 @@ textarea.form-control {
     }
 }
 
-/* Big Bang Animation - Reduced effect */
-.big-bang {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 3px;
-    height: 3px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.7),
-                0 0 30px 8px rgba(0, 113, 227, 0.5);
-    z-index: 3;
-    animation: big-bang 20s ease-out infinite;
-    pointer-events: none;
-    opacity: 0.7;
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes big-bang {
-    0% {
-        transform: translate(-50%, -50%) scale(0.1);
-        opacity: 0.7;
-        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.7),
-                    0 0 30px 8px rgba(0, 113, 227, 0.5);
-    }
-    20% {
-        transform: translate(-50%, -50%) scale(10);
-        opacity: 0.5;
-        box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.4),
-                    0 0 100px 20px rgba(0, 113, 227, 0.3);
-    }
-    40% {
-        transform: translate(-50%, -50%) scale(20);
-        opacity: 0.3;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(40);
-        opacity: 0;
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0),
-                    0 0 0 0 rgba(0, 113, 227, 0);
-    }
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    gap: 2rem;
+    z-index: 2;
 }
 
-/* Enhanced Asteroids */
-.asteroid {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    z-index: 4;
-    pointer-events: none;
-    /* Distribute asteroids across the screen instead of centering them */
-    top: calc(10% + (80% * var(--random-y, 0.5)));
-    left: calc(10% + (80% * var(--random-x, 0.5)));
-    opacity: 1;
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.asteroid::before {
-    content: '';
-    position: absolute;
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+.hero .tagline {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Cards */
+.card {
+    background-color: rgba(29, 29, 31, 0.7);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(66, 66, 69, 0.3);
+    box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(66, 66, 69, 0.5);
+}
+
+.card-img {
     width: 100%;
-    height: 100%;
-    background-color: inherit;
-    border-radius: inherit;
-    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.7);
+    height: 200px;
+    object-fit: cover;
 }
 
-/* More asteroids with varied sizes and speeds */
-.asteroid:nth-child(1) {
-    --random-x: 0.2;
-    --random-y: 0.7;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 1.5s linear infinite;
+.card-content {
+    padding: 1.5rem;
 }
 
-.asteroid:nth-child(2) {
-    --random-x: 0.8;
-    --random-y: 0.3;
-    width: 2px;
-    height: 2px;
-    animation: asteroid-random 1.8s linear infinite;
-    animation-delay: 0.5s;
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
-.asteroid:nth-child(3) {
-    --random-x: 0.5;
-    --random-y: 0.2;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 1.2s linear infinite;
-    animation-delay: 0.3s;
+.card-text {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
-.asteroid:nth-child(4) {
-    --random-x: 0.3;
-    --random-y: 0.9;
-    width: 1.5px;
-    height: 1.5px;
-    animation: asteroid-random 1.7s linear infinite;
-    animation-delay: 0.7s;
-}
-
-.asteroid:nth-child(5) {
-    --random-x: 0.7;
-    --random-y: 0.6;
-    width: 0.8px;
-    height: 0.8px;
-    animation: asteroid-random 1.3s linear infinite;
-    animation-delay: 0.2s;
-}
-
-.asteroid:nth-child(6) {
-    --random-x: 0.1;
-    --random-y: 0.4;
-    width: 2.2px;
-    height: 2.2px;
-    animation: asteroid-random 2s linear infinite;
-    animation-delay: 0.1s;
-}
-
-.asteroid:nth-child(7) {
-    --random-x: 0.9;
-    --random-y: 0.1;
-    width: 0.7px;
-    height: 0.7px;
-    animation: asteroid-random 1.4s linear infinite;
-    animation-delay: 0.4s;
-}
-
-.asteroid:nth-child(8) {
-    --random-x: 0.4;
-    --random-y: 0.8;
-    width: 1.8px;
-    height: 1.8px;
-    animation: asteroid-random 1.9s linear infinite;
-    animation-delay: 0.6s;
-}
-
-.asteroid:nth-child(9) {
-    --random-x: 0.6;
-    --random-y: 0.5;
-    width: 0.9px;
-    height: 0.9px;
-    animation: asteroid-random 1.1s linear infinite;
-    animation-delay: 0.2s;
-}
-
-.asteroid:nth-child(10) {
-    --random-x: 0.2;
-    --random-y: 0.3;
-    width: 1.6px;
-    height: 1.6px;
-    animation: asteroid-random 1.6s linear infinite;
-    animation-delay: 0.8s;
-}
-
-/* Define random movement keyframes */
-@keyframes asteroid-random {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0.5;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        /* Random movement in all directions */
-        transform: translate(var(--random-move-x, 100px), var(--random-move-y, 100px)) rotate(360deg);
-        opacity: 0.5;
-    }
-}
-
-/* Additional asteroid styles for more variety */
-.asteroid:nth-child(11) { --random-x: 0.25; --random-y: 0.75; width: 0.6px; height: 0.6px; animation: asteroid-random 1.0s linear infinite; animation-delay: 0.1s; }
-.asteroid:nth-child(12) { --random-x: 0.85; --random-y: 0.35; width: 1.7px; height: 1.7px; animation: asteroid-random 1.9s linear infinite; animation-delay: 0.5s; }
-.asteroid:nth-child(13) { --random-x: 0.55; --random-y: 0.25; width: 0.5px; height: 0.5px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.3s; }
-.asteroid:nth-child(14) { --random-x: 0.35; --random-y: 0.95; width: 2.1px; height: 2.1px; animation: asteroid-random 1.8s linear infinite; animation-delay: 0.7s; }
-.asteroid:nth-child(15) { --random-x: 0.75; --random-y: 0.65; width: 0.7px; height: 0.7px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.2s; }
-.asteroid:nth-child(16) { --random-x: 0.15; --random-y: 0.45; width: 1.3px; height: 1.3px; animation: asteroid-random 1.5s linear infinite; animation-delay: 0.4s; }
-.asteroid:nth-child(17) { --random-x: 0.95; --random-y: 0.15; width: 0.8px; height: 0.8px; animation: asteroid-random 1.1s linear infinite; animation-delay: 0.6s; }
-.asteroid:nth-child(18) { --random-x: 0.45; --random-y: 0.85; width: 1.9px; height: 1.9px; animation: asteroid-random 1.7s linear infinite; animation-delay: 0.3s; }
-.asteroid:nth-child(19) { --random-x: 0.65; --random-y: 0.55; width: 0.6px; height: 0.6px; animation: asteroid-random 1.4s linear infinite; animation-delay: 0.5s; }
-.asteroid:nth-child(20) { --random-x: 0.25; --random-y: 0.35; width: 2.3px; height: 2.3px; animation: asteroid-random 1.6s linear infinite; animation-delay: 0.2s; }
-.asteroid:nth-child(21) { --random-x: 0.33; --random-y: 0.67; width: 0.9px; height: 0.9px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.4s; }
-.asteroid:nth-child(22) { --random-x: 0.78; --random-y: 0.22; width: 1.4px; height: 1.4px; animation: asteroid-random 1.7s linear infinite; animation-delay: 0.1s; }
-.asteroid:nth-child(23) { --random-x: 0.44; --random-y: 0.56; width: 0.7px; height: 0.7px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.6s; }
-.asteroid:nth-child(24) { --random-x: 0.89; --random-y: 0.11; width: 1.2px; height: 1.2px; animation: asteroid-random 1.5s linear infinite; animation-delay: 0.3s; }
-.asteroid:nth-child(25) { --random-x: 0.12; --random-y: 0.88; width: 0.5px; height: 0.5px; animation: asteroid-random 1.1s linear infinite; animation-delay: 0.7s; }
-.asteroid:nth-child(26) { --random-x: 0.67; --random-y: 0.33; width: 1.8px; height: 1.8px; animation: asteroid-random 1.9s linear infinite; animation-delay: 0.2s; }
-.asteroid:nth-child(27) { --random-x: 0.23; --random-y: 0.77; width: 0.6px; height: 0.6px; animation: asteroid-random 1.4s linear infinite; animation-delay: 0.5s; }
-.asteroid:nth-child(28) { --random-x: 0.71; --random-y: 0.29; width: 1.1px; height: 1.1px; animation: asteroid-random 1.6s linear infinite; animation-delay: 0.3s; }
-.asteroid:nth-child(29) { --random-x: 0.39; --random-y: 0.61; width: 0.8px; height: 0.8px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.8s; }
-.asteroid:nth-child(30) { --random-x: 0.83; --random-y: 0.17; width: 1.5px; height: 1.5px; animation: asteroid-random 1.8s linear infinite; animation-delay: 0.4s; }
-
-/* Apply random movement variables to asteroids with increased distances */
-.asteroid:nth-child(1) { --random-move-x: 150px; --random-move-y: -120px; }
-.asteroid:nth-child(2) { --random-move-x: -180px; --random-move-y: 100px; }
-.asteroid:nth-child(3) { --random-move-x: 130px; --random-move-y: 160px; }
-.asteroid:nth-child(4) { --random-move-x: -140px; --random-move-y: -150px; }
-.asteroid:nth-child(5) { --random-move-x: 170px; --random-move-y: 90px; }
-.asteroid:nth-child(6) { --random-move-x: -120px; --random-move-y: -130px; }
-.asteroid:nth-child(7) { --random-move-x: 140px; --random-move-y: -170px; }
-.asteroid:nth-child(8) { --random-move-x: -160px; --random-move-y: 140px; }
-.asteroid:nth-child(9) { --random-move-x: 110px; --random-move-y: 120px; }
-.asteroid:nth-child(10) { --random-move-x: -150px; --random-move-y: -110px; }
-.asteroid:nth-child(11) { --random-move-x: 160px; --random-move-y: 130px; }
-.asteroid:nth-child(12) { --random-move-x: -130px; --random-move-y: -180px; }
-.asteroid:nth-child(13) { --random-move-x: 120px; --random-move-y: 150px; }
-.asteroid:nth-child(14) { --random-move-x: -170px; --random-move-y: -100px; }
-.asteroid:nth-child(15) { --random-move-x: 150px; --random-move-y: 110px; }
-.asteroid:nth-child(16) { --random-move-x: -120px; --random-move-y: -140px; }
-.asteroid:nth-child(17) { --random-move-x: 140px; --random-move-y: 160px; }
-.asteroid:nth-child(18) { --random-move-x: -180px; --random-move-y: -120px; }
-.asteroid:nth-child(19) { --random-move-x: 130px; --random-move-y: 140px; }
-.asteroid:nth-child(20) { --random-move-x: -140px; --random-move-y: -150px; }
-.asteroid:nth-child(21) { --random-move-x: 160px; --random-move-y: 110px; }
-.asteroid:nth-child(22) { --random-move-x: -120px; --random-move-y: -170px; }
-.asteroid:nth-child(23) { --random-move-x: 130px; --random-move-y: 140px; }
-.asteroid:nth-child(24) { --random-move-x: -150px; --random-move-y: -120px; }
-.asteroid:nth-child(25) { --random-move-x: 170px; --random-move-y: 130px; }
-.asteroid:nth-child(26) { --random-move-x: -110px; --random-move-y: -140px; }
-.asteroid:nth-child(27) { --random-move-x: 140px; --random-move-y: 150px; }
-.asteroid:nth-child(28) { --random-move-x: -160px; --random-move-y: -130px; }
-.asteroid:nth-child(29) { --random-move-x: 120px; --random-move-y: 160px; }
-.asteroid:nth-child(30) { --random-move-x: -170px; --random-move-y: -110px; } 
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(66, 66, 69, 0.3);
+} 
