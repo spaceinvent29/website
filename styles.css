@@ -1064,6 +1064,16 @@ footer {
     height: 48px;
 }
 
+/* Fix Instagram icon in contact section */
+.contact-icon.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Fix X icon in contact section */
+.contact-icon.x-icon {
+    background: #000000;
+}
+
 .instagram-icon i {
     color: #ffffff;
     font-size: 1.5rem;
