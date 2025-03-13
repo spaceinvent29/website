@@ -1262,6 +1262,7 @@ footer {
     color: var(--secondary-color);
 }
 
+/* Removed cosmic planet
 .cosmic-planet {
     position: absolute;
     bottom: -150px;
@@ -1293,6 +1294,7 @@ footer {
             inset 0 0 80px rgba(41, 151, 255, 1);
     }
 }
+*/
 
 .shooting-star {
     position: absolute;
