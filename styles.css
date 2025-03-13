@@ -1006,6 +1006,55 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
 }
 
+/* Brand-specific icon colors */
+.contact-icon .fa-google {
+    background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+.contact-icon .fa-x-twitter {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.contact-icon .fa-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+/* Brand-specific background colors for contact cards */
+.contact-card:nth-child(1) .contact-icon {
+    background: #ffffff;
+}
+
+.contact-card:nth-child(2) .contact-icon {
+    background: #000000;
+}
+
+.contact-card:nth-child(3) .contact-icon {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* Footer social icons with brand colors */
+.social-icons a:nth-child(1) {
+    background-color: #000000;
+}
+
+.social-icons a:nth-child(2) {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .contact-details {
     display: flex;
     flex-direction: column;
