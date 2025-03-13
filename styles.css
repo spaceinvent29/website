@@ -955,6 +955,25 @@ footer {
     font-weight: 300;
 }
 
+/* Contact Details */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.contact-details p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Contact Section - Fixed Formatting */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -1004,22 +1023,38 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     border-radius: 12px;
-    background-color: white;
     overflow: hidden;
 }
 
-.contact-icon img {
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.contact-details p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Gmail icon in contact section */
+.contact-icon.gmail-icon {
+    background: white;
+}
+
+.contact-icon.gmail-icon img {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
 
-/* Gmail icon in contact section - simplified for image */
-.contact-icon.gmail-icon {
-    background: white;
-}
-
-/* X icon in contact section - updated for SVG */
+/* X icon in contact section */
 .contact-icon.x-icon {
     background: #000000;
     display: flex;
@@ -1027,9 +1062,60 @@ footer {
     justify-content: center;
 }
 
-/* Instagram icon in contact section - simplified for image */
+.contact-icon.x-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Instagram icon in contact section */
 .contact-icon.instagram-icon {
     background: white;
+}
+
+.contact-icon.instagram-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Footer social icons */
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    transition: var(--transition);
+    text-decoration: none;
+    border: 1px solid rgba(129, 140, 248, 0.1);
+    overflow: hidden;
+}
+
+/* X icon in footer */
+.social-icons a.x-icon {
+    background-color: #000000;
+}
+
+.social-icons a.x-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Instagram icon in footer */
+.social-icons a.instagram-icon {
+    background-color: white;
+}
+
+.social-icons a.instagram-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer */
@@ -1312,12 +1398,4 @@ footer {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 1.25rem;
     font-weight: 300;
-}
-
-/* X icon in footer - updated for SVG */
-.social-icons a.x-icon {
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 } 
