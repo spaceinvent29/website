@@ -1735,14 +1735,15 @@ textarea.form-control {
 /* Enhanced Asteroids */
 .asteroid {
     position: absolute;
-    width: 3px;
-    height: 3px;
+    width: 2px;
+    height: 2px;
     background-color: #e0e0e0;
     border-radius: 50%;
-    top: 50%;
-    left: 50%;
     z-index: 4;
     pointer-events: none;
+    /* Distribute asteroids across the screen instead of centering them */
+    top: calc(10% + (80% * var(--random-y, 0.5)));
+    left: calc(10% + (80% * var(--random-x, 0.5)));
 }
 
 .asteroid::before {
@@ -1752,1102 +1753,259 @@ textarea.form-control {
     height: 100%;
     background-color: inherit;
     border-radius: inherit;
-    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
 /* More asteroids with varied sizes and speeds */
 .asteroid:nth-child(1) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-1 8s linear infinite;
+    --random-x: 0.2;
+    --random-y: 0.7;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 5s linear infinite;
 }
 
 .asteroid:nth-child(2) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-2 12s linear infinite;
-    animation-delay: 2s;
+    --random-x: 0.8;
+    --random-y: 0.3;
+    width: 3px;
+    height: 3px;
+    animation: asteroid-random 7s linear infinite;
+    animation-delay: 0.5s;
 }
 
 .asteroid:nth-child(3) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-3 10s linear infinite;
+    --random-x: 0.5;
+    --random-y: 0.2;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 4s linear infinite;
     animation-delay: 1s;
 }
 
 .asteroid:nth-child(4) {
-    width: 6px;
-    height: 6px;
-    animation: asteroid-4 15s linear infinite;
-    animation-delay: 3s;
+    --random-x: 0.3;
+    --random-y: 0.9;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 6s linear infinite;
+    animation-delay: 1.5s;
 }
 
 .asteroid:nth-child(5) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-5 9s linear infinite;
-    animation-delay: 0.5s;
+    --random-x: 0.7;
+    --random-y: 0.6;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 5.5s linear infinite;
+    animation-delay: 2s;
 }
 
 .asteroid:nth-child(6) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-6 11s linear infinite;
-    animation-delay: 4s;
+    --random-x: 0.1;
+    --random-y: 0.4;
+    width: 3px;
+    height: 3px;
+    animation: asteroid-random 6.5s linear infinite;
+    animation-delay: 0.2s;
 }
 
 /* Additional asteroid animations */
 .asteroid:nth-child(7) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-7 7s linear infinite;
-    animation-delay: 1.5s;
-}
-
-.asteroid:nth-child(8) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-8 13s linear infinite;
-    animation-delay: 2.5s;
-}
-
-.asteroid:nth-child(9) {
-    width: 2px;
-    height: 2px;
-    animation: asteroid-9 6s linear infinite;
-    animation-delay: 0.2s;
-}
-
-.asteroid:nth-child(10) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-10 14s linear infinite;
-    animation-delay: 3.5s;
-}
-
-.asteroid:nth-child(11) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-11 9.5s linear infinite;
-    animation-delay: 1.8s;
-}
-
-.asteroid:nth-child(12) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-12 10.5s linear infinite;
-    animation-delay: 4.2s;
-}
-
-/* Additional asteroids (13-50) with varied animations */
-.asteroid:nth-child(13) {
-    width: 2px;
-    height: 2px;
-    animation: asteroid-13 7.2s linear infinite;
-    animation-delay: 0.3s;
-}
-
-.asteroid:nth-child(14) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-14 9.8s linear infinite;
-    animation-delay: 1.2s;
-}
-
-.asteroid:nth-child(15) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-15 11.5s linear infinite;
-    animation-delay: 2.7s;
-}
-
-.asteroid:nth-child(16) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-16 8.3s linear infinite;
-    animation-delay: 3.1s;
-}
-
-.asteroid:nth-child(17) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-17 13.2s linear infinite;
+    --random-x: 0.9;
+    --random-y: 0.1;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 4.5s linear infinite;
     animation-delay: 0.7s;
 }
 
-.asteroid:nth-child(18) {
+.asteroid:nth-child(8) {
+    --random-x: 0.4;
+    --random-y: 0.8;
     width: 2px;
     height: 2px;
-    animation: asteroid-18 6.5s linear infinite;
-    animation-delay: 1.9s;
+    animation: asteroid-random 7.5s linear infinite;
+    animation-delay: 1.2s;
 }
 
-.asteroid:nth-child(19) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-19 10.2s linear infinite;
-    animation-delay: 2.3s;
+.asteroid:nth-child(9) {
+    --random-x: 0.6;
+    --random-y: 0.5;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 3.5s linear infinite;
+    animation-delay: 0.3s;
 }
 
-.asteroid:nth-child(20) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-20 7.8s linear infinite;
-    animation-delay: 3.7s;
-}
-
-.asteroid:nth-child(21) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-21 12.7s linear infinite;
-    animation-delay: 0.9s;
-}
-
-.asteroid:nth-child(22) {
+.asteroid:nth-child(10) {
+    --random-x: 0.2;
+    --random-y: 0.3;
     width: 2px;
     height: 2px;
-    animation: asteroid-22 6.9s linear infinite;
-    animation-delay: 2.1s;
-}
-
-.asteroid:nth-child(23) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-23 9.3s linear infinite;
-    animation-delay: 3.3s;
-}
-
-.asteroid:nth-child(24) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-24 8.7s linear infinite;
-    animation-delay: 1.4s;
-}
-
-.asteroid:nth-child(25) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-25 11.9s linear infinite;
-    animation-delay: 2.8s;
-}
-
-.asteroid:nth-child(26) {
-    width: 2px;
-    height: 2px;
-    animation: asteroid-26 7.4s linear infinite;
-    animation-delay: 0.5s;
-}
-
-.asteroid:nth-child(27) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-27 10.7s linear infinite;
+    animation: asteroid-random 6.2s linear infinite;
     animation-delay: 1.7s;
 }
 
-.asteroid:nth-child(28) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-28 9.1s linear infinite;
-    animation-delay: 3.2s;
+/* Define random movement keyframes */
+@keyframes asteroid-random {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.2;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        /* Random movement in all directions */
+        transform: translate(var(--random-move-x, 100px), var(--random-move-y, 100px)) rotate(360deg);
+        opacity: 0.2;
+    }
 }
 
-.asteroid:nth-child(29) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-29 8.1s linear infinite;
-    animation-delay: 0.8s;
-}
+/* Apply random movement variables to asteroids */
+.asteroid:nth-child(1) { --random-move-x: 120px; --random-move-y: -80px; }
+.asteroid:nth-child(2) { --random-move-x: -150px; --random-move-y: 70px; }
+.asteroid:nth-child(3) { --random-move-x: 80px; --random-move-y: 130px; }
+.asteroid:nth-child(4) { --random-move-x: -100px; --random-move-y: -120px; }
+.asteroid:nth-child(5) { --random-move-x: 140px; --random-move-y: 60px; }
+.asteroid:nth-child(6) { --random-move-x: -70px; --random-move-y: -90px; }
+.asteroid:nth-child(7) { --random-move-x: 90px; --random-move-y: -110px; }
+.asteroid:nth-child(8) { --random-move-x: -130px; --random-move-y: 100px; }
+.asteroid:nth-child(9) { --random-move-x: 60px; --random-move-y: 80px; }
+.asteroid:nth-child(10) { --random-move-x: -110px; --random-move-y: -70px; }
+.asteroid:nth-child(11) { --random-move-x: 130px; --random-move-y: 90px; }
+.asteroid:nth-child(12) { --random-move-x: -90px; --random-move-y: -130px; }
+.asteroid:nth-child(13) { --random-move-x: 70px; --random-move-y: 110px; }
+.asteroid:nth-child(14) { --random-move-x: -120px; --random-move-y: -60px; }
+.asteroid:nth-child(15) { --random-move-x: 110px; --random-move-y: 70px; }
+.asteroid:nth-child(16) { --random-move-x: -80px; --random-move-y: -100px; }
+.asteroid:nth-child(17) { --random-move-x: 100px; --random-move-y: 120px; }
+.asteroid:nth-child(18) { --random-move-x: -140px; --random-move-y: -80px; }
+.asteroid:nth-child(19) { --random-move-x: 80px; --random-move-y: 90px; }
+.asteroid:nth-child(20) { --random-move-x: -100px; --random-move-y: -110px; }
+.asteroid:nth-child(21) { --random-move-x: 120px; --random-move-y: 60px; }
+.asteroid:nth-child(22) { --random-move-x: -70px; --random-move-y: -130px; }
+.asteroid:nth-child(23) { --random-move-x: 90px; --random-move-y: 100px; }
+.asteroid:nth-child(24) { --random-move-x: -110px; --random-move-y: -70px; }
+.asteroid:nth-child(25) { --random-move-x: 130px; --random-move-y: 80px; }
+.asteroid:nth-child(26) { --random-move-x: -60px; --random-move-y: -90px; }
+.asteroid:nth-child(27) { --random-move-x: 100px; --random-move-y: 110px; }
+.asteroid:nth-child(28) { --random-move-x: -120px; --random-move-y: -100px; }
+.asteroid:nth-child(29) { --random-move-x: 70px; --random-move-y: 120px; }
+.asteroid:nth-child(30) { --random-move-x: -130px; --random-move-y: -60px; }
+.asteroid:nth-child(31) { --random-move-x: 110px; --random-move-y: 70px; }
+.asteroid:nth-child(32) { --random-move-x: -80px; --random-move-y: -120px; }
+.asteroid:nth-child(33) { --random-move-x: 140px; --random-move-y: 90px; }
+.asteroid:nth-child(34) { --random-move-x: -90px; --random-move-y: -80px; }
+.asteroid:nth-child(35) { --random-move-x: 60px; --random-move-y: 130px; }
+.asteroid:nth-child(36) { --random-move-x: -100px; --random-move-y: -70px; }
+.asteroid:nth-child(37) { --random-move-x: 120px; --random-move-y: 100px; }
+.asteroid:nth-child(38) { --random-move-x: -70px; --random-move-y: -110px; }
+.asteroid:nth-child(39) { --random-move-x: 90px; --random-move-y: 60px; }
+.asteroid:nth-child(40) { --random-move-x: -130px; --random-move-y: -90px; }
+.asteroid:nth-child(41) { --random-move-x: 80px; --random-move-y: 120px; }
+.asteroid:nth-child(42) { --random-move-x: -110px; --random-move-y: -80px; }
+.asteroid:nth-child(43) { --random-move-x: 70px; --random-move-y: 90px; }
+.asteroid:nth-child(44) { --random-move-x: -120px; --random-move-y: -100px; }
+.asteroid:nth-child(45) { --random-move-x: 130px; --random-move-y: 70px; }
+.asteroid:nth-child(46) { --random-move-x: -60px; --random-move-y: -110px; }
+.asteroid:nth-child(47) { --random-move-x: 100px; --random-move-y: 80px; }
+.asteroid:nth-child(48) { --random-move-x: -90px; --random-move-y: -120px; }
+.asteroid:nth-child(49) { --random-move-x: 110px; --random-move-y: 60px; }
+.asteroid:nth-child(50) { --random-move-x: -80px; --random-move-y: -90px; }
 
-.asteroid:nth-child(30) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-30 12.3s linear infinite;
-    animation-delay: 2.4s;
-}
-
-.asteroid:nth-child(31) {
+/* Additional asteroids with varied positions */
+.asteroid:nth-child(11) {
+    --random-x: 0.3;
+    --random-y: 0.5;
     width: 2px;
     height: 2px;
-    animation: asteroid-31 6.7s linear infinite;
-    animation-delay: 3.6s;
+    animation: asteroid-random 5.2s linear infinite;
+    animation-delay: 0.9s;
 }
 
-.asteroid:nth-child(32) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-32 10.9s linear infinite;
-    animation-delay: 1.1s;
-}
-
-.asteroid:nth-child(33) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-33 8.5s linear infinite;
-    animation-delay: 2.6s;
-}
-
-.asteroid:nth-child(34) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-34 13.5s linear infinite;
-    animation-delay: 0.4s;
-}
-
-.asteroid:nth-child(35) {
-    width: 2px;
-    height: 2px;
-    animation: asteroid-35 7.1s linear infinite;
-    animation-delay: 1.6s;
-}
-
-.asteroid:nth-child(36) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-36 9.7s linear infinite;
-    animation-delay: 2.9s;
-}
-
-.asteroid:nth-child(37) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-37 8.9s linear infinite;
-    animation-delay: 3.8s;
-}
-
-.asteroid:nth-child(38) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-38 11.3s linear infinite;
-    animation-delay: 0.6s;
-}
-
-.asteroid:nth-child(39) {
-    width: 2px;
-    height: 2px;
-    animation: asteroid-39 6.3s linear infinite;
+.asteroid:nth-child(12) {
+    --random-x: 0.8;
+    --random-y: 0.2;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 4.8s linear infinite;
     animation-delay: 1.3s;
 }
 
-.asteroid:nth-child(40) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-40 10.1s linear infinite;
-    animation-delay: 2.2s;
-}
-
-.asteroid:nth-child(41) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-41 7.6s linear infinite;
-    animation-delay: 3.4s;
-}
-
-.asteroid:nth-child(42) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-42 12.9s linear infinite;
-    animation-delay: 0.2s;
-}
-
-.asteroid:nth-child(43) {
-    width: 2px;
-    height: 2px;
-    animation: asteroid-43 6.1s linear infinite;
-    animation-delay: 1.8s;
-}
-
-.asteroid:nth-child(44) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-44 9.9s linear infinite;
-    animation-delay: 2.5s;
-}
-
-.asteroid:nth-child(45) {
-    width: 3px;
-    height: 3px;
-    animation: asteroid-45 8.2s linear infinite;
-    animation-delay: 3.9s;
-}
-
-.asteroid:nth-child(46) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-46 11.7s linear infinite;
+/* Continue with similar patterns for asteroids 13-50 */
+.asteroid:nth-child(13) {
+    --random-x: 0.6;
+    --random-y: 0.7;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 3.8s linear infinite;
     animation-delay: 0.1s;
 }
 
-.asteroid:nth-child(47) {
+.asteroid:nth-child(14) {
+    --random-x: 0.2;
+    --random-y: 0.4;
     width: 2px;
     height: 2px;
-    animation: asteroid-47 7.3s linear infinite;
-    animation-delay: 1.5s;
+    animation: asteroid-random 5.7s linear infinite;
+    animation-delay: 0.6s;
 }
 
-.asteroid:nth-child(48) {
-    width: 4px;
-    height: 4px;
-    animation: asteroid-48 10.4s linear infinite;
-    animation-delay: 2.7s;
+.asteroid:nth-child(15) {
+    --random-x: 0.9;
+    --random-y: 0.6;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 6.3s linear infinite;
+    animation-delay: 1.1s;
 }
 
-.asteroid:nth-child(49) {
+.asteroid:nth-child(16) {
+    --random-x: 0.4;
+    --random-y: 0.1;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 4.2s linear infinite;
+    animation-delay: 1.6s;
+}
+
+.asteroid:nth-child(17) {
+    --random-x: 0.7;
+    --random-y: 0.8;
     width: 3px;
     height: 3px;
-    animation: asteroid-49 8.6s linear infinite;
-    animation-delay: 3.3s;
+    animation: asteroid-random 7.2s linear infinite;
+    animation-delay: 0.4s;
 }
 
-.asteroid:nth-child(50) {
-    width: 5px;
-    height: 5px;
-    animation: asteroid-50 12.1s linear infinite;
+.asteroid:nth-child(18) {
+    --random-x: 0.1;
+    --random-y: 0.3;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 3.7s linear infinite;
     animation-delay: 0.8s;
 }
 
-@keyframes asteroid-1 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(300px, -200px) rotate(720deg);
-        opacity: 0;
-    }
+.asteroid:nth-child(19) {
+    --random-x: 0.5;
+    --random-y: 0.9;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 5.9s linear infinite;
+    animation-delay: 1.4s;
 }
 
-@keyframes asteroid-2 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    50% {
-        transform: translate(-150px, -150px) rotate(180deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-250px, -300px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-3 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    40% {
-        transform: translate(100px, 150px) rotate(180deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(200px, 300px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-4 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    60% {
-        transform: translate(-150px, 100px) rotate(240deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(-300px, 200px) rotate(480deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-5 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    45% {
-        transform: translate(175px, 25px) rotate(180deg);
-        opacity: 0.9;
-    }
-    100% {
-        transform: translate(350px, 50px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-6 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    55% {
-        transform: translate(-75px, -175px) rotate(200deg);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translate(-150px, -350px) rotate(400deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-7 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    35% {
-        transform: translate(120px, -80px) rotate(180deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(240px, -160px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-8 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    40% {
-        transform: translate(-180px, 50px) rotate(180deg);
-        opacity: 0.9;
-    }
-    100% {
-        transform: translate(-360px, 100px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-9 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    30% {
-        transform: translate(50px, 100px) rotate(90deg);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translate(100px, 200px) rotate(270deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-10 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    50% {
-        transform: translate(100px, -150px) rotate(180deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(200px, -300px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-11 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    45% {
-        transform: translate(-90px, -90px) rotate(225deg);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translate(-180px, -180px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-12 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    55% {
-        transform: translate(150px, 75px) rotate(270deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(300px, 150px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-/* Additional asteroid keyframes (13-50) */
-@keyframes asteroid-13 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-280px, -220px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-14 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(250px, 270px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-15 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-320px, 180px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-16 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(290px, -240px) rotate(630deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-17 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-270px, -260px) rotate(405deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-18 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(310px, 190px) rotate(315deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-19 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-230px, 290px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-20 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(260px, -280px) rotate(405deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-21 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-290px, -210px) rotate(630deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-22 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(240px, 300px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-23 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-310px, 170px) rotate(495deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-24 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(280px, -230px) rotate(585deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-25 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-260px, -270px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-26 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(320px, 180px) rotate(315deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-27 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-220px, 300px) rotate(675deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-28 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(270px, -250px) rotate(405deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-29 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-300px, -200px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-30 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(230px, 290px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-31 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-280px, 240px) rotate(495deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-32 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(310px, -190px) rotate(585deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-33 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-250px, -280px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-34 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(290px, 210px) rotate(315deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-35 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-320px, 160px) rotate(675deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-36 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(240px, -310px) rotate(405deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-37 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-270px, -240px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-38 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(300px, 200px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-39 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-230px, 280px) rotate(495deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-40 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(280px, -220px) rotate(585deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-41 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-310px, -180px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-42 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(250px, 270px) rotate(315deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-43 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-290px, 210px) rotate(675deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-44 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(320px, -160px) rotate(405deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-45 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-240px, -300px) rotate(540deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-46 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(270px, 250px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-47 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-300px, 190px) rotate(495deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-48 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(230px, -290px) rotate(585deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-49 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-280px, -230px) rotate(450deg);
-        opacity: 0;
-    }
-}
-
-@keyframes asteroid-50 {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    100% {
-        transform: translate(310px, 170px) rotate(315deg);
-        opacity: 0;
-    }
+.asteroid:nth-child(20) {
+    --random-x: 0.3;
+    --random-y: 0.2;
+    width: 1px;
+    height: 1px;
+    animation: asteroid-random 4.4s linear infinite;
+    animation-delay: 1.9s;
 } 
