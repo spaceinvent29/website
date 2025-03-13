@@ -1611,4 +1611,194 @@ textarea.form-control {
 .success-message p {
     color: var(--text-light);
     font-size: 1rem;
+}
+
+/* Big Bang Animation */
+.big-bang {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.8),
+                0 0 40px 10px rgba(0, 113, 227, 0.6);
+    z-index: 3;
+    animation: big-bang 15s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes big-bang {
+    0% {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 1;
+        box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.8),
+                    0 0 40px 10px rgba(0, 113, 227, 0.6);
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0.8;
+        box-shadow: 0 0 100px 20px rgba(255, 255, 255, 0.5),
+                    0 0 200px 40px rgba(0, 113, 227, 0.4);
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(40);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(100);
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0),
+                    0 0 0 0 rgba(0, 113, 227, 0);
+    }
+}
+
+/* Asteroids */
+.asteroid {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.asteroid::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.3);
+}
+
+.asteroid:nth-child(1) {
+    width: 4px;
+    height: 4px;
+    animation: asteroid-1 8s linear infinite;
+}
+
+.asteroid:nth-child(2) {
+    width: 5px;
+    height: 5px;
+    animation: asteroid-2 12s linear infinite;
+    animation-delay: 2s;
+}
+
+.asteroid:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    animation: asteroid-3 10s linear infinite;
+    animation-delay: 1s;
+}
+
+.asteroid:nth-child(4) {
+    width: 6px;
+    height: 6px;
+    animation: asteroid-4 15s linear infinite;
+    animation-delay: 3s;
+}
+
+.asteroid:nth-child(5) {
+    width: 4px;
+    height: 4px;
+    animation: asteroid-5 9s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.asteroid:nth-child(6) {
+    width: 5px;
+    height: 5px;
+    animation: asteroid-6 11s linear infinite;
+    animation-delay: 4s;
+}
+
+@keyframes asteroid-1 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(300px, -200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes asteroid-2 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-250px, -300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes asteroid-3 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(200px, 300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes asteroid-4 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-300px, 200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes asteroid-5 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(350px, 50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes asteroid-6 {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-150px, -350px) rotate(360deg);
+        opacity: 0;
+    }
 } 
