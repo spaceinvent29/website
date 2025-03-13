@@ -1055,6 +1055,11 @@ footer {
     border-radius: 50%;
 }
 
+/* Ensure contact section Instagram icon matches footer exactly */
+.contact-icon.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
 .instagram-icon i {
     color: #ffffff;
     font-size: 1.5rem;
