@@ -1011,6 +1011,7 @@ footer {
 .gmail-icon {
     background: #ffffff;
     border: 1px solid #f2f2f2;
+    border-radius: 12px;
 }
 
 .gmail-icon i {
@@ -1057,21 +1058,43 @@ footer {
 
 /* Ensure contact section icons match footer exactly */
 .contact-icon.x-icon,
-.contact-icon.instagram-icon {
-    background: inherit;
-    border-radius: 50%;
+.contact-icon.instagram-icon,
+.contact-icon.gmail-icon {
     width: 48px;
     height: 48px;
 }
 
-/* Fix Instagram icon in contact section */
-.contact-icon.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+/* Fix Gmail icon in contact section to match official app icon */
+.contact-icon.gmail-icon {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid #f2f2f2 !important;
+    overflow: hidden;
 }
 
-/* Fix X icon in contact section */
+/* Fix X icon in contact section to match official app icon */
 .contact-icon.x-icon {
     background: #000000 !important;
+    border-radius: 20% !important;
+    overflow: hidden;
+}
+
+/* Fix Instagram icon in contact section to match official app icon */
+.contact-icon.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    border-radius: 30% !important;
+    overflow: hidden;
+}
+
+/* Update footer social icons to match official app icons */
+.social-icons a.x-icon {
+    background-color: #000000;
+    border-radius: 20%;
+}
+
+.social-icons a.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 30%;
 }
 
 .instagram-icon i {
