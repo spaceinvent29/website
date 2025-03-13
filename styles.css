@@ -1447,7 +1447,7 @@ textarea.form-control {
     --random-y: 0.7;
     width: 3px;
     height: 3px;
-    animation: asteroid-random 3s linear infinite;
+    animation: asteroid-random 1.8s linear infinite;
 }
 
 .asteroid:nth-child(2) {
@@ -1455,7 +1455,7 @@ textarea.form-control {
     --random-y: 0.3;
     width: 4px;
     height: 4px;
-    animation: asteroid-random 4s linear infinite;
+    animation: asteroid-random 2.2s linear infinite;
     animation-delay: 0.5s;
 }
 
@@ -1464,8 +1464,71 @@ textarea.form-control {
     --random-y: 0.2;
     width: 2px;
     height: 2px;
-    animation: asteroid-random 2.5s linear infinite;
-    animation-delay: 1s;
+    animation: asteroid-random 1.5s linear infinite;
+    animation-delay: 0.3s;
+}
+
+.asteroid:nth-child(4) {
+    --random-x: 0.3;
+    --random-y: 0.9;
+    width: 3px;
+    height: 3px;
+    animation: asteroid-random 2s linear infinite;
+    animation-delay: 0.7s;
+}
+
+.asteroid:nth-child(5) {
+    --random-x: 0.7;
+    --random-y: 0.6;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 1.7s linear infinite;
+    animation-delay: 0.2s;
+}
+
+.asteroid:nth-child(6) {
+    --random-x: 0.1;
+    --random-y: 0.4;
+    width: 4px;
+    height: 4px;
+    animation: asteroid-random 2.4s linear infinite;
+    animation-delay: 0.1s;
+}
+
+.asteroid:nth-child(7) {
+    --random-x: 0.9;
+    --random-y: 0.1;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 1.6s linear infinite;
+    animation-delay: 0.4s;
+}
+
+.asteroid:nth-child(8) {
+    --random-x: 0.4;
+    --random-y: 0.8;
+    width: 3px;
+    height: 3px;
+    animation: asteroid-random 2.1s linear infinite;
+    animation-delay: 0.6s;
+}
+
+.asteroid:nth-child(9) {
+    --random-x: 0.6;
+    --random-y: 0.5;
+    width: 2px;
+    height: 2px;
+    animation: asteroid-random 1.4s linear infinite;
+    animation-delay: 0.2s;
+}
+
+.asteroid:nth-child(10) {
+    --random-x: 0.2;
+    --random-y: 0.3;
+    width: 3px;
+    height: 3px;
+    animation: asteroid-random 1.9s linear infinite;
+    animation-delay: 0.8s;
 }
 
 /* Define random movement keyframes */
@@ -1487,64 +1550,46 @@ textarea.form-control {
     }
 }
 
+/* Additional asteroid styles for more variety */
+.asteroid:nth-child(11) { --random-x: 0.25; --random-y: 0.75; width: 2px; height: 2px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.1s; }
+.asteroid:nth-child(12) { --random-x: 0.85; --random-y: 0.35; width: 3px; height: 3px; animation: asteroid-random 2.3s linear infinite; animation-delay: 0.5s; }
+.asteroid:nth-child(13) { --random-x: 0.55; --random-y: 0.25; width: 2px; height: 2px; animation: asteroid-random 1.7s linear infinite; animation-delay: 0.3s; }
+.asteroid:nth-child(14) { --random-x: 0.35; --random-y: 0.95; width: 4px; height: 4px; animation: asteroid-random 2.1s linear infinite; animation-delay: 0.7s; }
+.asteroid:nth-child(15) { --random-x: 0.75; --random-y: 0.65; width: 2px; height: 2px; animation: asteroid-random 1.5s linear infinite; animation-delay: 0.2s; }
+.asteroid:nth-child(16) { --random-x: 0.15; --random-y: 0.45; width: 3px; height: 3px; animation: asteroid-random 1.9s linear infinite; animation-delay: 0.4s; }
+.asteroid:nth-child(17) { --random-x: 0.95; --random-y: 0.15; width: 2px; height: 2px; animation: asteroid-random 1.4s linear infinite; animation-delay: 0.6s; }
+.asteroid:nth-child(18) { --random-x: 0.45; --random-y: 0.85; width: 3px; height: 3px; animation: asteroid-random 2.2s linear infinite; animation-delay: 0.3s; }
+.asteroid:nth-child(19) { --random-x: 0.65; --random-y: 0.55; width: 2px; height: 2px; animation: asteroid-random 1.6s linear infinite; animation-delay: 0.5s; }
+.asteroid:nth-child(20) { --random-x: 0.25; --random-y: 0.35; width: 4px; height: 4px; animation: asteroid-random 2.0s linear infinite; animation-delay: 0.2s; }
+
 /* Apply random movement variables to asteroids with increased distances */
-.asteroid:nth-child(1) { --random-move-x: 180px; --random-move-y: -120px; }
-.asteroid:nth-child(2) { --random-move-x: -200px; --random-move-y: 100px; }
-.asteroid:nth-child(3) { --random-move-x: 120px; --random-move-y: 180px; }
-.asteroid:nth-child(4) { --random-move-x: -150px; --random-move-y: -160px; }
-.asteroid:nth-child(5) { --random-move-x: 190px; --random-move-y: 90px; }
-.asteroid:nth-child(6) { --random-move-x: -110px; --random-move-y: -130px; }
-.asteroid:nth-child(7) { --random-move-x: 140px; --random-move-y: -170px; }
-.asteroid:nth-child(8) { --random-move-x: -180px; --random-move-y: 140px; }
-.asteroid:nth-child(9) { --random-move-x: 100px; --random-move-y: 120px; }
-.asteroid:nth-child(10) { --random-move-x: -160px; --random-move-y: -110px; }
-.asteroid:nth-child(11) { --random-move-x: 170px; --random-move-y: 130px; }
-.asteroid:nth-child(12) { --random-move-x: -130px; --random-move-y: -180px; }
-.asteroid:nth-child(13) { --random-move-x: 110px; --random-move-y: 150px; }
-.asteroid:nth-child(14) { --random-move-x: -170px; --random-move-y: -90px; }
-.asteroid:nth-child(15) { --random-move-x: 150px; --random-move-y: 110px; }
-.asteroid:nth-child(16) { --random-move-x: -120px; --random-move-y: -140px; }
-.asteroid:nth-child(17) { --random-move-x: 140px; --random-move-y: 160px; }
-.asteroid:nth-child(18) { --random-move-x: -190px; --random-move-y: -120px; }
-.asteroid:nth-child(19) { --random-move-x: 120px; --random-move-y: 130px; }
-.asteroid:nth-child(20) { --random-move-x: -140px; --random-move-y: -150px; }
-.asteroid:nth-child(21) { --random-move-x: 160px; --random-move-y: 100px; }
-.asteroid:nth-child(22) { --random-move-x: -110px; --random-move-y: -170px; }
-.asteroid:nth-child(23) { --random-move-x: 130px; --random-move-y: 140px; }
-.asteroid:nth-child(24) { --random-move-x: -150px; --random-move-y: -110px; }
-.asteroid:nth-child(25) { --random-move-x: 170px; --random-move-y: 120px; }
-.asteroid:nth-child(26) { --random-move-x: -100px; --random-move-y: -130px; }
-.asteroid:nth-child(27) { --random-move-x: 140px; --random-move-y: 150px; }
-.asteroid:nth-child(28) { --random-move-x: -160px; --random-move-y: -140px; }
-.asteroid:nth-child(29) { --random-move-x: 110px; --random-move-y: 160px; }
-.asteroid:nth-child(30) { --random-move-x: -170px; --random-move-y: -100px; }
-.asteroid:nth-child(31) { --random-move-x: 150px; --random-move-y: 110px; }
-.asteroid:nth-child(32) { --random-move-x: -120px; --random-move-y: -160px; }
-.asteroid:nth-child(33) { --random-move-x: 180px; --random-move-y: 130px; }
-.asteroid:nth-child(34) { --random-move-x: -130px; --random-move-y: -120px; }
-.asteroid:nth-child(35) { --random-move-x: 100px; --random-move-y: 170px; }
-.asteroid:nth-child(36) { --random-move-x: -140px; --random-move-y: -110px; }
-.asteroid:nth-child(37) { --random-move-x: 160px; --random-move-y: 140px; }
-.asteroid:nth-child(38) { --random-move-x: -110px; --random-move-y: -150px; }
-.asteroid:nth-child(39) { --random-move-x: 130px; --random-move-y: 100px; }
-.asteroid:nth-child(40) { --random-move-x: -170px; --random-move-y: -130px; }
-.asteroid:nth-child(41) { --random-move-x: 120px; --random-move-y: 160px; }
-.asteroid:nth-child(42) { --random-move-x: -150px; --random-move-y: -120px; }
-.asteroid:nth-child(43) { --random-move-x: 110px; --random-move-y: 130px; }
-.asteroid:nth-child(44) { --random-move-x: -160px; --random-move-y: -140px; }
-.asteroid:nth-child(45) { --random-move-x: 170px; --random-move-y: 110px; }
-.asteroid:nth-child(46) { --random-move-x: -100px; --random-move-y: -150px; }
-.asteroid:nth-child(47) { --random-move-x: 140px; --random-move-y: 120px; }
-.asteroid:nth-child(48) { --random-move-x: -130px; --random-move-y: -160px; }
-.asteroid:nth-child(49) { --random-move-x: 150px; --random-move-y: 100px; }
-.asteroid:nth-child(50) { --random-move-x: -120px; --random-move-y: -130px; }
-.asteroid:nth-child(51) { --random-move-x: 160px; --random-move-y: 140px; }
-.asteroid:nth-child(52) { --random-move-x: -110px; --random-move-y: -120px; }
-.asteroid:nth-child(53) { --random-move-x: 130px; --random-move-y: 150px; }
-.asteroid:nth-child(54) { --random-move-x: -140px; --random-move-y: -110px; }
-.asteroid:nth-child(55) { --random-move-x: 120px; --random-move-y: 130px; }
-.asteroid:nth-child(56) { --random-move-x: -150px; --random-move-y: -140px; }
-.asteroid:nth-child(57) { --random-move-x: 110px; --random-move-y: 120px; }
-.asteroid:nth-child(58) { --random-move-x: -130px; --random-move-y: -150px; }
-.asteroid:nth-child(59) { --random-move-x: 140px; --random-move-y: 110px; }
-.asteroid:nth-child(60) { --random-move-x: -120px; --random-move-y: -130px; } 
+.asteroid:nth-child(1) { --random-move-x: 220px; --random-move-y: -180px; }
+.asteroid:nth-child(2) { --random-move-x: -250px; --random-move-y: 150px; }
+.asteroid:nth-child(3) { --random-move-x: 180px; --random-move-y: 220px; }
+.asteroid:nth-child(4) { --random-move-x: -200px; --random-move-y: -210px; }
+.asteroid:nth-child(5) { --random-move-x: 240px; --random-move-y: 130px; }
+.asteroid:nth-child(6) { --random-move-x: -170px; --random-move-y: -190px; }
+.asteroid:nth-child(7) { --random-move-x: 190px; --random-move-y: -230px; }
+.asteroid:nth-child(8) { --random-move-x: -230px; --random-move-y: 190px; }
+.asteroid:nth-child(9) { --random-move-x: 160px; --random-move-y: 170px; }
+.asteroid:nth-child(10) { --random-move-x: -210px; --random-move-y: -160px; }
+.asteroid:nth-child(11) { --random-move-x: 230px; --random-move-y: 180px; }
+.asteroid:nth-child(12) { --random-move-x: -180px; --random-move-y: -240px; }
+.asteroid:nth-child(13) { --random-move-x: 170px; --random-move-y: 200px; }
+.asteroid:nth-child(14) { --random-move-x: -220px; --random-move-y: -140px; }
+.asteroid:nth-child(15) { --random-move-x: 200px; --random-move-y: 160px; }
+.asteroid:nth-child(16) { --random-move-x: -170px; --random-move-y: -190px; }
+.asteroid:nth-child(17) { --random-move-x: 190px; --random-move-y: 210px; }
+.asteroid:nth-child(18) { --random-move-x: -240px; --random-move-y: -170px; }
+.asteroid:nth-child(19) { --random-move-x: 170px; --random-move-y: 180px; }
+.asteroid:nth-child(20) { --random-move-x: -190px; --random-move-y: -200px; }
+.asteroid:nth-child(21) { --random-move-x: 210px; --random-move-y: 150px; }
+.asteroid:nth-child(22) { --random-move-x: -160px; --random-move-y: -220px; }
+.asteroid:nth-child(23) { --random-move-x: 180px; --random-move-y: 190px; }
+.asteroid:nth-child(24) { --random-move-x: -200px; --random-move-y: -160px; }
+.asteroid:nth-child(25) { --random-move-x: 220px; --random-move-y: 170px; }
+.asteroid:nth-child(26) { --random-move-x: -150px; --random-move-y: -180px; }
+.asteroid:nth-child(27) { --random-move-x: 190px; --random-move-y: 200px; }
+.asteroid:nth-child(28) { --random-move-x: -210px; --random-move-y: -190px; }
+.asteroid:nth-child(29) { --random-move-x: 160px; --random-move-y: 210px; }
+.asteroid:nth-child(30) { --random-move-x: -220px; --random-move-y: -150px; } 
