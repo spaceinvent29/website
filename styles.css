@@ -879,6 +879,39 @@ footer {
     .cursor, .cursor-follower {
         display: none;
     }
+    
+    /* Improved contact section mobile layout */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .contact-card {
+        height: 100%;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        margin: 0 auto 0.75rem;
+    }
+    
+    .contact-details h4 {
+        font-size: 1rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -900,18 +933,48 @@ footer {
         text-align: center;
     }
     
-    .contact-card {
-        padding: 1.25rem;
+    /* Improved small mobile contact layout */
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .contact-icon {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
     
     .contact-form-container {
         padding: 1.5rem;
+        margin-top: 1rem;
     }
     
-    .contact-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+    .contact-form-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-control {
+        padding: 0.75rem 1rem;
+    }
+    
+    .contact .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .contact {
+        padding: 4rem 0;
     }
 }
 
@@ -1000,12 +1063,14 @@ footer {
     gap: 4rem;
     max-width: 1100px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
 }
 
 .contact-card {
@@ -1018,6 +1083,8 @@ footer {
     border: 1px solid rgba(66, 66, 69, 0.3);
     text-decoration: none;
     display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-card:hover {
@@ -1031,6 +1098,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    width: 100%;
 }
 
 .contact-icon {
@@ -1497,6 +1565,8 @@ footer {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(66, 66, 69, 0.3);
     box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 100%;
 }
 
 .contact-form-container h3 {
@@ -1510,12 +1580,14 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1.75rem;
+    width: 100%;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .form-group label {
@@ -1536,6 +1608,7 @@ footer {
     transition: var(--transition);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    box-sizing: border-box;
 }
 
 .form-control:focus {
