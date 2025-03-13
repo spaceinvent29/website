@@ -744,21 +744,45 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background-color: rgba(30, 41, 59, 0.5);
     color: var(--text-color);
     font-size: 1.125rem;
     transition: var(--transition);
     text-decoration: none;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(129, 140, 248, 0.1);
+    overflow: hidden;
+}
+
+.social-icons a.x-icon {
+    background-color: #000000;
+    border-radius: 20%;
+}
+
+.social-icons a.instagram-icon {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-radius: 30%;
+}
+
+.social-icons a.gmail-icon {
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.social-icons a.gmail-icon i {
+    color: transparent;
+    background: conic-gradient(
+        #4285F4 0deg 90deg,
+        #34A853 90deg 180deg,
+        #FBBC05 180deg 270deg,
+        #EA4335 270deg 360deg
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .social-icons a:hover {
-    background: var(--gradient-primary);
-    color: var(--white);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(129, 140, 248, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Design */
@@ -995,7 +1019,6 @@ footer {
 .contact-icon {
     width: 48px;
     height: 48px;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1007,14 +1030,14 @@ footer {
     overflow: hidden;
 }
 
-/* Gmail icon styling */
-.gmail-icon {
+/* Gmail icon in contact section */
+.contact-icon.gmail-icon {
     background: #ffffff;
-    border: 1px solid #f2f2f2;
     border-radius: 12px;
+    border: 1px solid #f2f2f2;
 }
 
-.gmail-icon i {
+.contact-icon.gmail-icon i {
     color: transparent;
     font-size: 1.5rem;
     background: conic-gradient(
@@ -1027,285 +1050,26 @@ footer {
     background-clip: text;
 }
 
-.gmail-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    z-index: -1;
-}
-
-/* X icon styling */
-.x-icon {
-    background: #000000;
-    border-radius: 50%;
-}
-
-.x-icon i {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* Instagram icon styling */
-.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    border-radius: 50%;
-}
-
-/* Ensure contact section icons match footer exactly */
-.contact-icon.x-icon,
-.contact-icon.instagram-icon,
-.contact-icon.gmail-icon {
-    width: 48px;
-    height: 48px;
-}
-
-/* Fix Gmail icon in contact section to match official app icon */
-.contact-icon.gmail-icon {
-    background: #ffffff !important;
-    border-radius: 12px !important;
-    border: 1px solid #f2f2f2 !important;
-    overflow: hidden;
-}
-
-/* Fix X icon in contact section to match official app icon */
+/* X icon in contact section */
 .contact-icon.x-icon {
-    background: #000000 !important;
-    border-radius: 20% !important;
-    overflow: hidden;
-}
-
-/* Fix Instagram icon in contact section to match official app icon */
-.contact-icon.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
-    border-radius: 30% !important;
-    overflow: hidden;
-}
-
-/* Update footer social icons to match official app icons */
-.social-icons a.x-icon {
-    background-color: #000000;
+    background: #000000;
     border-radius: 20%;
 }
 
-.social-icons a.instagram-icon {
+.contact-icon.x-icon i {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+/* Instagram icon in contact section */
+.contact-icon.instagram-icon {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     border-radius: 30%;
 }
 
-.instagram-icon i {
+.contact-icon.instagram-icon i {
     color: #ffffff;
     font-size: 1.5rem;
-}
-
-/* Footer social icons with brand colors */
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: var(--text-color);
-    font-size: 1.125rem;
-    transition: var(--transition);
-    text-decoration: none;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(129, 140, 248, 0.1);
-}
-
-.social-icons a.x-icon {
-    background-color: #000000;
-    border-radius: 50%;
-}
-
-.social-icons a.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    border-radius: 50%;
-}
-
-.social-icons a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Remove the old brand-specific styling */
-.contact-card:nth-child(1) .contact-icon,
-.contact-card:nth-child(2) .contact-icon,
-.contact-card:nth-child(3) .contact-icon {
-    background: none;
-}
-
-.contact-icon .fa-google,
-.contact-icon .fa-x,
-.contact-icon .fa-instagram {
-    background: none;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    -webkit-text-fill-color: initial;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-details h4 {
-    margin-bottom: 0.25rem;
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-.contact-details p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    margin-bottom: 0;
-}
-
-.contact-form-container {
-    background-color: rgba(29, 29, 31, 0.5);
-    border-radius: 24px;
-    padding: 2.5rem;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(66, 66, 69, 0.3);
-    box-shadow: var(--shadow-sm);
-}
-
-.contact-form-container h3 {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-    color: var(--text-color);
-    text-align: center;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.form-control {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
-    border: 1px solid rgba(66, 66, 69, 0.5);
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--text-color);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1rem;
-    transition: var(--transition);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-textarea.form-control {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.cta-button.primary {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 980px;
-    font-weight: 500;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1rem;
-}
-
-.cta-button.primary:hover {
-    background-color: #2997ff;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.cta-button.primary i {
-    font-size: 1rem;
-}
-
-.form-fallback {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-.form-fallback a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.form-fallback a:hover {
-    text-decoration: underline;
-}
-
-.success-message {
-    text-align: center;
-    padding: 3rem 0;
-}
-
-.success-icon {
-    font-size: 3rem;
-    color: #4ade80;
-    margin-bottom: 1.5rem;
-}
-
-.success-message h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-}
-
-.success-message p {
-    color: var(--text-light);
-    font-size: 1rem;
-}
-
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .contact-info {
-        order: 2;
-    }
-    
-    .contact-form-container {
-        order: 1;
-    }
 }
 
 /* Footer */
