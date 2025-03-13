@@ -883,7 +883,7 @@ footer {
     /* Improved contact section mobile layout */
     .contact-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
     
     .contact-info {
@@ -934,6 +934,11 @@ footer {
     }
     
     /* Improved small mobile contact layout */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
     .contact-info {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -946,6 +951,7 @@ footer {
     
     .contact-icon {
         margin: 0;
+        margin-right: 1rem;
         width: 40px;
         height: 40px;
         font-size: 1rem;
@@ -982,10 +988,6 @@ footer {
     /* Fix for contact form on very small screens */
     .contact .container {
         padding: 0 15px;
-    }
-    
-    .contact-grid {
-        gap: 1.5rem;
     }
     
     textarea.form-control {
@@ -1059,70 +1061,11 @@ footer {
     max-width: 1200px;
     width: 100%;
     box-sizing: border-box;
+    padding: 0 24px;
 }
 
 .contact .section-header {
     margin-bottom: 5rem;
-}
-
-.contact .section-header h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    letter-spacing: -1px;
-    position: relative;
-    display: inline-block;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px rgba(0, 113, 227, 0.5);
-}
-
-.contact .section-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: var(--gradient-primary);
-    border-radius: 3px;
-    box-shadow: 0 0 15px rgba(129, 140, 248, 0.8);
-}
-
-.contact .section-header .highlight {
-    position: relative;
-    color: var(--secondary-color);
-    text-shadow: 0 0 15px rgba(129, 140, 248, 0.8);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
-}
-
-.contact .section-subtitle {
-    margin-top: 1.5rem;
-    color: var(--text-color);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem;
-    font-weight: 300;
-}
-
-/* Contact Details */
-.contact-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-details h4 {
-    margin-bottom: 0.25rem;
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-.contact-details p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    margin-bottom: 0;
 }
 
 /* Contact Section - Fixed Formatting */
@@ -1143,487 +1086,158 @@ footer {
     width: 100%;
 }
 
-.contact-card {
-    background-color: rgba(15, 15, 15, 0.7);
-    border-radius: 16px;
-    padding: 1.5rem;
-    transition: var(--transition);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(66, 66, 69, 0.3);
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    background-color: rgba(20, 20, 20, 0.8);
-    border-color: rgba(66, 66, 69, 0.5);
-    box-shadow: var(--shadow-md);
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    width: 100%;
-}
-
-.contact-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-details h4 {
-    margin-bottom: 0.25rem;
-    font-size: 1.1rem;
-    color: var(--text-color);
-}
-
-.contact-details p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    margin-bottom: 0;
-}
-
-/* Gmail icon in contact section */
-.contact-icon.gmail-icon {
-    background: white;
-}
-
-.contact-icon.gmail-icon img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-}
-
-/* X icon in contact section */
-.contact-icon.x-icon {
-    background: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-icon.x-icon svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Instagram icon in contact section */
-.contact-icon.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-}
-
-.contact-icon.instagram-icon svg {
-    width: 30px;
-    height: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-/* Footer social icons */
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    transition: var(--transition);
-    text-decoration: none;
-    border: 1px solid rgba(129, 140, 248, 0.1);
-    overflow: hidden;
-}
-
-/* X icon in footer */
-.social-icons a.x-icon {
-    background-color: #000000;
-}
-
-.social-icons a.x-icon svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Instagram icon in footer */
-.social-icons a.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-}
-
-.social-icons a.instagram-icon svg {
-    width: 30px;
-    height: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.social-icons a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer */
-.footer {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 4rem 0 2rem;
-    position: relative;
-    border-top: 1px solid rgba(66, 66, 69, 0.3);
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-.footer-logo {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    display: inline-block;
-    letter-spacing: -0.5px;
-}
-
-.footer-text {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    max-width: 300px;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-link {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    background-color: var(--secondary-color);
-    color: var(--white);
-    transform: translateY(-3px);
-}
-
-.footer-title {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-}
-
-.footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.footer-links li a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.95rem;
-}
-
-.footer-links li a:hover {
-    color: var(--secondary-color);
-    padding-left: 5px;
-}
-
-.footer-bottom {
-    padding-top: 2rem;
-    border-top: 1px solid rgba(66, 66, 69, 0.3);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.copyright {
-    color: var(--text-light);
-    font-size: 0.9rem;
-}
-
-.footer-bottom-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-bottom-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.footer-bottom-links a:hover {
-    color: var(--secondary-color);
-}
-
-/* Removed cosmic planet
-.cosmic-planet {
-    position: absolute;
-    bottom: -150px;
-    right: -150px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #0071e3, #000000);
-    box-shadow: 
-        0 0 80px rgba(0, 113, 227, 0.8),
-        0 0 140px rgba(0, 113, 227, 0.4),
-        inset 0 0 60px rgba(41, 151, 255, 0.8);
-    z-index: 4;
-    pointer-events: none;
-    animation: planet-glow 8s ease-in-out infinite alternate;
-}
-
-@keyframes planet-glow {
-    0% {
-        box-shadow: 
-            0 0 80px rgba(0, 113, 227, 0.8),
-            0 0 140px rgba(0, 113, 227, 0.4),
-            inset 0 0 60px rgba(41, 151, 255, 0.8);
-    }
-    100% {
-        box-shadow: 
-            0 0 120px rgba(0, 113, 227, 1),
-            0 0 180px rgba(0, 113, 227, 0.6),
-            inset 0 0 80px rgba(41, 151, 255, 1);
-    }
-}
-*/
-
-.shooting-star {
-    position: absolute;
-    width: 150px;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #ffffff, transparent);
-    transform: rotate(-45deg);
-    animation: shooting 5s linear infinite;
-    z-index: 4;
-    pointer-events: none;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-}
-
-.shooting-star:nth-child(1) {
-    top: 50px;
-    left: 250px;
-    animation-delay: 0s;
-}
-
-.shooting-star:nth-child(2) {
-    top: 100px;
-    left: 70%;
-    animation-delay: 2s;
-}
-
-.shooting-star:nth-child(3) {
-    top: 80%;
-    left: 30%;
-    animation-delay: 3.5s;
-}
-
-.shooting-star:nth-child(4) {
-    top: 30%;
-    left: 10%;
-    animation-delay: 1.5s;
-}
-
-.shooting-star:nth-child(5) {
-    top: 40%;
-    left: 80%;
-    animation-delay: 4s;
-}
-
-@keyframes shooting {
-    0% {
-        transform: translateX(0) translateY(0) rotate(-45deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    15% {
-        transform: translateX(300px) translateY(300px) rotate(-45deg);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(300px) translateY(300px) rotate(-45deg);
-        opacity: 0;
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
     }
 }
 
-/* Orbit Container */
-.orbit-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    filter: drop-shadow(0 0 20px rgba(0, 113, 227, 0.3));
-}
-
-.planet {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    box-shadow: 
-        0 0 30px rgba(0, 113, 227, 0.7), 
-        inset 0 0 30px rgba(41, 151, 255, 0.5);
-}
-
-.orbit {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid rgba(0, 113, 227, 0.6);
-    border-radius: 50%;
-    animation: orbit 10s linear infinite;
-    box-shadow: 0 0 15px rgba(0, 113, 227, 0.5);
-}
-
-.satellite {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--secondary-color);
-    box-shadow: 0 0 20px rgba(0, 113, 227, 1);
-    animation: satellite-pulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes orbit {
-    0% {
-        transform: rotate(0deg);
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
-    100% {
-        transform: rotate(360deg);
+    
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        margin: 0 auto 0.75rem;
     }
 }
 
-@keyframes satellite-pulse {
-    0% {
-        box-shadow: 0 0 20px rgba(0, 113, 227, 1);
+@media (max-width: 576px) {
+    .solution-grid {
+        grid-template-columns: 1fr;
     }
-    100% {
-        box-shadow: 0 0 30px rgba(0, 113, 227, 1);
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Improved small mobile contact layout */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .contact-icon {
+        margin: 0;
+        margin-right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem;
+        margin-top: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .contact-form-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-control {
+        padding: 0.75rem 1rem;
+    }
+    
+    .contact .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .contact {
+        padding: 4rem 0;
+    }
+    
+    /* Fix for contact form on very small screens */
+    .contact .container {
+        padding: 0 15px;
+    }
+    
+    textarea.form-control {
+        min-height: 120px;
+    }
+    
+    .cta-button.primary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .form-fallback {
+        font-size: 0.85rem;
     }
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-light);
-    font-size: 0.875rem;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
+/* Additional mobile fixes for very small screens */
+@media (max-width: 375px) {
+    .contact {
+        padding: 3rem 0;
     }
-    40% {
-        transform: translateY(-10px) translateX(-50%);
+    
+    .contact-form-container {
+        padding: 1.25rem;
     }
-    60% {
-        transform: translateY(-5px) translateX(-50%);
+    
+    .contact-form-container h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
     }
-}
-
-.contact .section-header h2 {
-    position: relative;
-    display: inline-block;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px rgba(129, 140, 248, 0.8), 0 0 30px rgba(192, 132, 252, 0.5);
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-}
-
-.contact .section-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: var(--gradient-primary);
-    border-radius: 3px;
-    box-shadow: 0 0 15px rgba(129, 140, 248, 0.8);
-}
-
-.contact .section-header .highlight {
-    position: relative;
-    color: var(--secondary-color);
-    text-shadow: 0 0 15px rgba(129, 140, 248, 0.8);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 400;
-}
-
-.contact .section-subtitle {
-    margin-top: 1.5rem;
-    color: var(--text-color);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem;
-    font-weight: 300;
+    
+    .form-control {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    .contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.8rem;
+    }
 }
 
 /* Contact Form Styling */
@@ -1832,7 +1446,7 @@ textarea.form-control {
     --random-y: 0.7;
     width: 2px;
     height: 2px;
-    animation: asteroid-random 5s linear infinite;
+    animation: asteroid-random 3s linear infinite;
 }
 
 .asteroid:nth-child(2) {
@@ -1840,7 +1454,7 @@ textarea.form-control {
     --random-y: 0.3;
     width: 3px;
     height: 3px;
-    animation: asteroid-random 7s linear infinite;
+    animation: asteroid-random 4s linear infinite;
     animation-delay: 0.5s;
 }
 
@@ -1849,7 +1463,7 @@ textarea.form-control {
     --random-y: 0.2;
     width: 1px;
     height: 1px;
-    animation: asteroid-random 4s linear infinite;
+    animation: asteroid-random 2.5s linear infinite;
     animation-delay: 1s;
 }
 
@@ -1858,7 +1472,7 @@ textarea.form-control {
     --random-y: 0.9;
     width: 2px;
     height: 2px;
-    animation: asteroid-random 6s linear infinite;
+    animation: asteroid-random 3.5s linear infinite;
     animation-delay: 1.5s;
 }
 
@@ -1867,7 +1481,7 @@ textarea.form-control {
     --random-y: 0.6;
     width: 2px;
     height: 2px;
-    animation: asteroid-random 5.5s linear infinite;
+    animation: asteroid-random 3.2s linear infinite;
     animation-delay: 2s;
 }
 
@@ -1876,7 +1490,7 @@ textarea.form-control {
     --random-y: 0.4;
     width: 3px;
     height: 3px;
-    animation: asteroid-random 6.5s linear infinite;
+    animation: asteroid-random 4.2s linear infinite;
     animation-delay: 0.2s;
 }
 
@@ -1886,7 +1500,7 @@ textarea.form-control {
     --random-y: 0.1;
     width: 1px;
     height: 1px;
-    animation: asteroid-random 4.5s linear infinite;
+    animation: asteroid-random 2.8s linear infinite;
     animation-delay: 0.7s;
 }
 
@@ -1895,7 +1509,7 @@ textarea.form-control {
     --random-y: 0.8;
     width: 2px;
     height: 2px;
-    animation: asteroid-random 7.5s linear infinite;
+    animation: asteroid-random 4.5s linear infinite;
     animation-delay: 1.2s;
 }
 
@@ -1904,7 +1518,7 @@ textarea.form-control {
     --random-y: 0.5;
     width: 1px;
     height: 1px;
-    animation: asteroid-random 3.5s linear infinite;
+    animation: asteroid-random 2.2s linear infinite;
     animation-delay: 0.3s;
 }
 
@@ -1913,7 +1527,7 @@ textarea.form-control {
     --random-y: 0.3;
     width: 2px;
     height: 2px;
-    animation: asteroid-random 6.2s linear infinite;
+    animation: asteroid-random 3.8s linear infinite;
     animation-delay: 1.7s;
 }
 
@@ -1936,146 +1550,64 @@ textarea.form-control {
     }
 }
 
-/* Apply random movement variables to asteroids */
-.asteroid:nth-child(1) { --random-move-x: 120px; --random-move-y: -80px; }
-.asteroid:nth-child(2) { --random-move-x: -150px; --random-move-y: 70px; }
-.asteroid:nth-child(3) { --random-move-x: 80px; --random-move-y: 130px; }
-.asteroid:nth-child(4) { --random-move-x: -100px; --random-move-y: -120px; }
-.asteroid:nth-child(5) { --random-move-x: 140px; --random-move-y: 60px; }
-.asteroid:nth-child(6) { --random-move-x: -70px; --random-move-y: -90px; }
-.asteroid:nth-child(7) { --random-move-x: 90px; --random-move-y: -110px; }
-.asteroid:nth-child(8) { --random-move-x: -130px; --random-move-y: 100px; }
-.asteroid:nth-child(9) { --random-move-x: 60px; --random-move-y: 80px; }
-.asteroid:nth-child(10) { --random-move-x: -110px; --random-move-y: -70px; }
-.asteroid:nth-child(11) { --random-move-x: 130px; --random-move-y: 90px; }
-.asteroid:nth-child(12) { --random-move-x: -90px; --random-move-y: -130px; }
-.asteroid:nth-child(13) { --random-move-x: 70px; --random-move-y: 110px; }
-.asteroid:nth-child(14) { --random-move-x: -120px; --random-move-y: -60px; }
-.asteroid:nth-child(15) { --random-move-x: 110px; --random-move-y: 70px; }
-.asteroid:nth-child(16) { --random-move-x: -80px; --random-move-y: -100px; }
-.asteroid:nth-child(17) { --random-move-x: 100px; --random-move-y: 120px; }
-.asteroid:nth-child(18) { --random-move-x: -140px; --random-move-y: -80px; }
-.asteroid:nth-child(19) { --random-move-x: 80px; --random-move-y: 90px; }
-.asteroid:nth-child(20) { --random-move-x: -100px; --random-move-y: -110px; }
-.asteroid:nth-child(21) { --random-move-x: 120px; --random-move-y: 60px; }
-.asteroid:nth-child(22) { --random-move-x: -70px; --random-move-y: -130px; }
-.asteroid:nth-child(23) { --random-move-x: 90px; --random-move-y: 100px; }
-.asteroid:nth-child(24) { --random-move-x: -110px; --random-move-y: -70px; }
-.asteroid:nth-child(25) { --random-move-x: 130px; --random-move-y: 80px; }
-.asteroid:nth-child(26) { --random-move-x: -60px; --random-move-y: -90px; }
-.asteroid:nth-child(27) { --random-move-x: 100px; --random-move-y: 110px; }
-.asteroid:nth-child(28) { --random-move-x: -120px; --random-move-y: -100px; }
-.asteroid:nth-child(29) { --random-move-x: 70px; --random-move-y: 120px; }
-.asteroid:nth-child(30) { --random-move-x: -130px; --random-move-y: -60px; }
-.asteroid:nth-child(31) { --random-move-x: 110px; --random-move-y: 70px; }
-.asteroid:nth-child(32) { --random-move-x: -80px; --random-move-y: -120px; }
-.asteroid:nth-child(33) { --random-move-x: 140px; --random-move-y: 90px; }
-.asteroid:nth-child(34) { --random-move-x: -90px; --random-move-y: -80px; }
-.asteroid:nth-child(35) { --random-move-x: 60px; --random-move-y: 130px; }
-.asteroid:nth-child(36) { --random-move-x: -100px; --random-move-y: -70px; }
-.asteroid:nth-child(37) { --random-move-x: 120px; --random-move-y: 100px; }
-.asteroid:nth-child(38) { --random-move-x: -70px; --random-move-y: -110px; }
-.asteroid:nth-child(39) { --random-move-x: 90px; --random-move-y: 60px; }
-.asteroid:nth-child(40) { --random-move-x: -130px; --random-move-y: -90px; }
-.asteroid:nth-child(41) { --random-move-x: 80px; --random-move-y: 120px; }
-.asteroid:nth-child(42) { --random-move-x: -110px; --random-move-y: -80px; }
-.asteroid:nth-child(43) { --random-move-x: 70px; --random-move-y: 90px; }
-.asteroid:nth-child(44) { --random-move-x: -120px; --random-move-y: -100px; }
-.asteroid:nth-child(45) { --random-move-x: 130px; --random-move-y: 70px; }
-.asteroid:nth-child(46) { --random-move-x: -60px; --random-move-y: -110px; }
-.asteroid:nth-child(47) { --random-move-x: 100px; --random-move-y: 80px; }
-.asteroid:nth-child(48) { --random-move-x: -90px; --random-move-y: -120px; }
-.asteroid:nth-child(49) { --random-move-x: 110px; --random-move-y: 60px; }
-.asteroid:nth-child(50) { --random-move-x: -80px; --random-move-y: -90px; }
-
-/* Additional asteroids with varied positions */
-.asteroid:nth-child(11) {
-    --random-x: 0.3;
-    --random-y: 0.5;
-    width: 2px;
-    height: 2px;
-    animation: asteroid-random 5.2s linear infinite;
-    animation-delay: 0.9s;
-}
-
-.asteroid:nth-child(12) {
-    --random-x: 0.8;
-    --random-y: 0.2;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 4.8s linear infinite;
-    animation-delay: 1.3s;
-}
-
-/* Continue with similar patterns for asteroids 13-50 */
-.asteroid:nth-child(13) {
-    --random-x: 0.6;
-    --random-y: 0.7;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 3.8s linear infinite;
-    animation-delay: 0.1s;
-}
-
-.asteroid:nth-child(14) {
-    --random-x: 0.2;
-    --random-y: 0.4;
-    width: 2px;
-    height: 2px;
-    animation: asteroid-random 5.7s linear infinite;
-    animation-delay: 0.6s;
-}
-
-.asteroid:nth-child(15) {
-    --random-x: 0.9;
-    --random-y: 0.6;
-    width: 2px;
-    height: 2px;
-    animation: asteroid-random 6.3s linear infinite;
-    animation-delay: 1.1s;
-}
-
-.asteroid:nth-child(16) {
-    --random-x: 0.4;
-    --random-y: 0.1;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 4.2s linear infinite;
-    animation-delay: 1.6s;
-}
-
-.asteroid:nth-child(17) {
-    --random-x: 0.7;
-    --random-y: 0.8;
-    width: 3px;
-    height: 3px;
-    animation: asteroid-random 7.2s linear infinite;
-    animation-delay: 0.4s;
-}
-
-.asteroid:nth-child(18) {
-    --random-x: 0.1;
-    --random-y: 0.3;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 3.7s linear infinite;
-    animation-delay: 0.8s;
-}
-
-.asteroid:nth-child(19) {
-    --random-x: 0.5;
-    --random-y: 0.9;
-    width: 2px;
-    height: 2px;
-    animation: asteroid-random 5.9s linear infinite;
-    animation-delay: 1.4s;
-}
-
-.asteroid:nth-child(20) {
-    --random-x: 0.3;
-    --random-y: 0.2;
-    width: 1px;
-    height: 1px;
-    animation: asteroid-random 4.4s linear infinite;
-    animation-delay: 1.9s;
-} 
+/* Apply random movement variables to asteroids with increased distances */
+.asteroid:nth-child(1) { --random-move-x: 180px; --random-move-y: -120px; }
+.asteroid:nth-child(2) { --random-move-x: -200px; --random-move-y: 100px; }
+.asteroid:nth-child(3) { --random-move-x: 120px; --random-move-y: 180px; }
+.asteroid:nth-child(4) { --random-move-x: -150px; --random-move-y: -160px; }
+.asteroid:nth-child(5) { --random-move-x: 190px; --random-move-y: 90px; }
+.asteroid:nth-child(6) { --random-move-x: -110px; --random-move-y: -130px; }
+.asteroid:nth-child(7) { --random-move-x: 140px; --random-move-y: -170px; }
+.asteroid:nth-child(8) { --random-move-x: -180px; --random-move-y: 140px; }
+.asteroid:nth-child(9) { --random-move-x: 100px; --random-move-y: 120px; }
+.asteroid:nth-child(10) { --random-move-x: -160px; --random-move-y: -110px; }
+.asteroid:nth-child(11) { --random-move-x: 170px; --random-move-y: 130px; }
+.asteroid:nth-child(12) { --random-move-x: -130px; --random-move-y: -180px; }
+.asteroid:nth-child(13) { --random-move-x: 110px; --random-move-y: 150px; }
+.asteroid:nth-child(14) { --random-move-x: -170px; --random-move-y: -90px; }
+.asteroid:nth-child(15) { --random-move-x: 150px; --random-move-y: 110px; }
+.asteroid:nth-child(16) { --random-move-x: -120px; --random-move-y: -140px; }
+.asteroid:nth-child(17) { --random-move-x: 140px; --random-move-y: 160px; }
+.asteroid:nth-child(18) { --random-move-x: -190px; --random-move-y: -120px; }
+.asteroid:nth-child(19) { --random-move-x: 120px; --random-move-y: 130px; }
+.asteroid:nth-child(20) { --random-move-x: -140px; --random-move-y: -150px; }
+.asteroid:nth-child(21) { --random-move-x: 160px; --random-move-y: 100px; }
+.asteroid:nth-child(22) { --random-move-x: -110px; --random-move-y: -170px; }
+.asteroid:nth-child(23) { --random-move-x: 130px; --random-move-y: 140px; }
+.asteroid:nth-child(24) { --random-move-x: -150px; --random-move-y: -110px; }
+.asteroid:nth-child(25) { --random-move-x: 170px; --random-move-y: 120px; }
+.asteroid:nth-child(26) { --random-move-x: -100px; --random-move-y: -130px; }
+.asteroid:nth-child(27) { --random-move-x: 140px; --random-move-y: 150px; }
+.asteroid:nth-child(28) { --random-move-x: -160px; --random-move-y: -140px; }
+.asteroid:nth-child(29) { --random-move-x: 110px; --random-move-y: 160px; }
+.asteroid:nth-child(30) { --random-move-x: -170px; --random-move-y: -100px; }
+.asteroid:nth-child(31) { --random-move-x: 150px; --random-move-y: 110px; }
+.asteroid:nth-child(32) { --random-move-x: -120px; --random-move-y: -160px; }
+.asteroid:nth-child(33) { --random-move-x: 180px; --random-move-y: 130px; }
+.asteroid:nth-child(34) { --random-move-x: -130px; --random-move-y: -120px; }
+.asteroid:nth-child(35) { --random-move-x: 100px; --random-move-y: 170px; }
+.asteroid:nth-child(36) { --random-move-x: -140px; --random-move-y: -110px; }
+.asteroid:nth-child(37) { --random-move-x: 160px; --random-move-y: 140px; }
+.asteroid:nth-child(38) { --random-move-x: -110px; --random-move-y: -150px; }
+.asteroid:nth-child(39) { --random-move-x: 130px; --random-move-y: 100px; }
+.asteroid:nth-child(40) { --random-move-x: -170px; --random-move-y: -130px; }
+.asteroid:nth-child(41) { --random-move-x: 120px; --random-move-y: 160px; }
+.asteroid:nth-child(42) { --random-move-x: -150px; --random-move-y: -120px; }
+.asteroid:nth-child(43) { --random-move-x: 110px; --random-move-y: 130px; }
+.asteroid:nth-child(44) { --random-move-x: -160px; --random-move-y: -140px; }
+.asteroid:nth-child(45) { --random-move-x: 170px; --random-move-y: 110px; }
+.asteroid:nth-child(46) { --random-move-x: -100px; --random-move-y: -150px; }
+.asteroid:nth-child(47) { --random-move-x: 140px; --random-move-y: 120px; }
+.asteroid:nth-child(48) { --random-move-x: -130px; --random-move-y: -160px; }
+.asteroid:nth-child(49) { --random-move-x: 150px; --random-move-y: 100px; }
+.asteroid:nth-child(50) { --random-move-x: -120px; --random-move-y: -130px; }
+.asteroid:nth-child(51) { --random-move-x: 160px; --random-move-y: 140px; }
+.asteroid:nth-child(52) { --random-move-x: -110px; --random-move-y: -120px; }
+.asteroid:nth-child(53) { --random-move-x: 130px; --random-move-y: 150px; }
+.asteroid:nth-child(54) { --random-move-x: -140px; --random-move-y: -110px; }
+.asteroid:nth-child(55) { --random-move-x: 120px; --random-move-y: 130px; }
+.asteroid:nth-child(56) { --random-move-x: -150px; --random-move-y: -140px; }
+.asteroid:nth-child(57) { --random-move-x: 110px; --random-move-y: 120px; }
+.asteroid:nth-child(58) { --random-move-x: -130px; --random-move-y: -150px; }
+.asteroid:nth-child(59) { --random-move-x: 140px; --random-move-y: 110px; }
+.asteroid:nth-child(60) { --random-move-x: -120px; --random-move-y: -130px; } 
