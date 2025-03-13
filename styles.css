@@ -1040,7 +1040,7 @@ footer {
 /* X icon styling */
 .x-icon {
     background: #000000;
-    border-radius: 12px;
+    border-radius: 50%;
 }
 
 .x-icon i {
@@ -1055,9 +1055,13 @@ footer {
     border-radius: 50%;
 }
 
-/* Ensure contact section Instagram icon matches footer exactly */
+/* Ensure contact section icons match footer exactly */
+.contact-icon.x-icon,
 .contact-icon.instagram-icon {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: inherit;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
 }
 
 .instagram-icon i {
