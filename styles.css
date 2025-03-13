@@ -1015,9 +1015,10 @@ footer {
     font-size: 1.5rem;
 }
 
-.contact-icon .fa-twitter {
+.contact-icon .fa-x {
     color: #ffffff;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .contact-icon .fa-instagram {
