@@ -1060,6 +1060,7 @@ footer {
 .contact .container {
     max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
     box-sizing: border-box;
     padding: 0 24px;
 }
@@ -1086,158 +1087,38 @@ footer {
     width: 100%;
 }
 
-/* Mobile Responsive Adjustments */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    
-    .contact-info {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-    
-    .contact-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-icon {
-        margin: 0 auto 0.75rem;
-    }
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--white);
+    flex-shrink: 0;
 }
 
-@media (max-width: 576px) {
-    .solution-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .cta-group {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .cta-button {
-        width: 100%;
-        text-align: center;
-    }
-    
-    /* Improved small mobile contact layout */
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .contact-info {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .contact-item {
-        flex-direction: row;
-        text-align: left;
-    }
-    
-    .contact-icon {
-        margin: 0;
-        margin-right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .contact-form-container {
-        padding: 1.5rem;
-        margin-top: 1rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .contact-form-container h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .form-group {
-        margin-bottom: 1rem;
-    }
-    
-    .form-control {
-        padding: 0.75rem 1rem;
-    }
-    
-    .contact .section-header {
-        margin-bottom: 2rem;
-    }
-    
-    .contact {
-        padding: 4rem 0;
-    }
-    
-    /* Fix for contact form on very small screens */
-    .contact .container {
-        padding: 0 15px;
-    }
-    
-    textarea.form-control {
-        min-height: 120px;
-    }
-    
-    .cta-button.primary {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.95rem;
-    }
-    
-    .form-fallback {
-        font-size: 0.85rem;
-    }
+.contact-details {
+    flex-grow: 1;
 }
 
-/* Additional mobile fixes for very small screens */
-@media (max-width: 375px) {
-    .contact {
-        padding: 3rem 0;
-    }
-    
-    .contact-form-container {
-        padding: 1.25rem;
-    }
-    
-    .contact-form-container h3 {
-        font-size: 1.35rem;
-        margin-bottom: 1.25rem;
-    }
-    
-    .form-control {
-        padding: 0.7rem 0.9rem;
-        font-size: 0.95rem;
-    }
-    
-    .contact-icon {
-        width: 36px;
-        height: 36px;
-    }
-    
-    .contact-details h4 {
-        font-size: 0.95rem;
-    }
-    
-    .contact-details p {
-        font-size: 0.8rem;
-    }
+.contact-details h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
 /* Contact Form Styling */
@@ -1371,6 +1252,134 @@ textarea.form-control {
 .success-message p {
     color: var(--text-light);
     font-size: 1rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-form-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 6rem 0;
+    }
+    
+    .contact .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        margin: 0 auto 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact {
+        padding: 4rem 0;
+    }
+    
+    .contact .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .contact-icon {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    /* Fix for contact form on very small screens */
+    .contact .container {
+        padding: 0 15px;
+    }
+    
+    textarea.form-control {
+        min-height: 120px;
+    }
+    
+    .cta-button.primary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .form-fallback {
+        font-size: 0.85rem;
+    }
+}
+
+/* Additional mobile fixes for very small screens */
+@media (max-width: 375px) {
+    .contact {
+        padding: 3rem 0;
+    }
+    
+    .contact-form-container {
+        padding: 1.25rem;
+    }
+    
+    .contact-form-container h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .form-control {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    .contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.8rem;
+    }
 }
 
 /* Big Bang Animation - Reduced effect */
