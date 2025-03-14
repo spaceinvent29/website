@@ -1057,12 +1057,22 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: rgba(15, 15, 15, 0.7);
     border-radius: 12px;
     transition: var(--transition);
     text-decoration: none;
-    border: 1px solid rgba(129, 140, 248, 0.1);
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+/* X (Twitter) icon styling in footer */
+.social-icons a.x-icon {
+    background-color: #000000;
+}
+
+/* Instagram icon styling in footer */
+.social-icons a.instagram-icon {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
 .social-icons a svg {
@@ -1367,7 +1377,7 @@ footer {
     margin-bottom: 5rem;
 }
 
-/* Contact Section - Fixed Formatting */
+/* Further fix contact section and form alignment */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -1376,8 +1386,10 @@ footer {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    align-items: flex-start;
 }
 
+/* Ensure contact cards are properly spaced */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -1385,77 +1397,156 @@ footer {
     width: 100%;
 }
 
+.contact-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    background-color: rgba(15, 15, 15, 0.5);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(66, 66, 69, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin-bottom: 0;
+}
+
+/* Fix contact item alignment */
 .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.contact-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+.contact-details {
+    flex-grow: 1;
+}
+
+.contact-details h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Fix Google form fields styling */
+.form-group {
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(66, 66, 69, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    height: auto;
+    line-height: 1.5;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Fix submit button styling */
+.cta-button.primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 980px;
+    font-weight: 500;
+    font-size: 1rem;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 0.75rem;
+    transition: var(--transition);
     border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    height: auto;
+    line-height: 1.5;
 }
 
-/* Gmail icon styling */
-.contact-icon.gmail-icon {
-    background-color: #ffffff;
+.cta-button.primary:hover {
+    background-color: #2997ff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-.contact-icon.gmail-icon img {
-    width: 28px;
-    height: 28px;
+.cta-button.primary i {
+    font-size: 1rem;
 }
 
-/* X (Twitter) icon styling */
-.contact-icon.x-icon {
-    background-color: #000000;
+/* Fix form container styling */
+.contact-form-container {
+    background-color: rgba(15, 15, 15, 0.7);
+    border-radius: 24px;
+    padding: 2.5rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(66, 66, 69, 0.3);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 100%;
 }
 
-.contact-icon.x-icon svg {
-    width: 24px;
-    height: 24px;
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-/* Instagram icon styling */
-.contact-icon.instagram-icon {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    object-fit: contain;
+/* Fix form fallback text */
+.form-fallback {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
 }
 
-/* Fix mobile layout for contact section */
-@media (max-width: 768px) {
-    .contact-info {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .contact-card {
-        height: auto;
-    }
-    
-    .contact-item {
-        flex-direction: row;
-        text-align: left;
-        align-items: center;
-    }
-    
-    .contact-icon {
-        margin: 0;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
+.form-fallback a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.form-fallback a:hover {
+    text-decoration: underline;
 }
 
 /* Fix cosmic system z-index */
