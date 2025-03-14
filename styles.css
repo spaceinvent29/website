@@ -999,6 +999,7 @@ footer {
     padding: 2rem 0;
     position: relative;
     border-top: 1px solid rgba(66, 66, 69, 0.2);
+    margin-top: 4rem;
 }
 
 .footer-bottom {
@@ -1017,10 +1018,17 @@ footer {
 }
 
 .social-icons a {
-    background-color: rgba(15, 15, 15, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(15, 15, 15, 0.7);
+    border-radius: 12px;
+    transition: var(--transition);
+    text-decoration: none;
+    border: 1px solid rgba(129, 140, 248, 0.1);
+    overflow: hidden;
 }
 
 .social-icons a svg {
@@ -1031,6 +1039,12 @@ footer {
 .social-icons a:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.x-icon, .instagram-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsive Design */
