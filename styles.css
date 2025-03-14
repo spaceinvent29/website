@@ -2012,3 +2012,131 @@ textarea.form-control {
         display: none;
     }
 }
+
+/* Add more Milky Way elements */
+.milky-way-dust {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><g fill="%23FFFFFF"><circle cx="50" cy="50" r="0.5" opacity="0.2"/><circle cx="100" cy="75" r="0.3" opacity="0.2"/><circle cx="150" cy="125" r="0.4" opacity="0.2"/><circle cx="200" cy="150" r="0.25" opacity="0.2"/><circle cx="250" cy="200" r="0.35" opacity="0.2"/><circle cx="300" cy="250" r="0.3" opacity="0.2"/><circle cx="350" cy="300" r="0.4" opacity="0.2"/></g></svg>') repeat;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+    animation: milky-way-drift 120s linear infinite;
+}
+
+@keyframes milky-way-drift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400px 400px;
+    }
+}
+
+.milky-way-arm-3 {
+    width: 1500px;
+    height: 350px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(138, 43, 226, 0.15), rgba(70, 131, 180, 0.15), rgba(255, 255, 255, 0.05));
+    top: 45%;
+    left: -20%;
+    transform: rotate(15deg);
+    filter: blur(40px);
+    opacity: 0.08;
+    animation: arm-pulse 25s ease-in-out infinite alternate;
+}
+
+@keyframes arm-pulse {
+    0% {
+        opacity: 0.08;
+        transform: rotate(15deg) scale(1);
+    }
+    50% {
+        opacity: 0.12;
+        transform: rotate(15deg) scale(1.03);
+    }
+    100% {
+        opacity: 0.08;
+        transform: rotate(15deg) scale(1);
+    }
+}
+
+/* Add cosmic gas clouds */
+.gas-cloud {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.07;
+    z-index: 1;
+    pointer-events: none;
+    animation: gas-float 40s ease-in-out infinite alternate;
+}
+
+.gas-cloud-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 0, 128, 0.3), transparent 70%);
+    top: 15%;
+    left: 65%;
+    animation-delay: 0s;
+}
+
+.gas-cloud-2 {
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 128, 255, 0.25), transparent 70%);
+    top: 70%;
+    left: 25%;
+    animation-delay: 7s;
+}
+
+.gas-cloud-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(128, 0, 255, 0.2), transparent 70%);
+    top: 35%;
+    left: 40%;
+    animation-delay: 15s;
+}
+
+@keyframes gas-float {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.07;
+    }
+    50% {
+        transform: translate(30px, -30px) scale(1.1);
+        opacity: 0.09;
+    }
+    100% {
+        transform: translate(-30px, 30px) scale(0.95);
+        opacity: 0.06;
+    }
+}
+
+/* Add more cosmic elements - Quasars */
+.quasar {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+    animation: quasar-pulse 3s ease-in-out infinite;
+}
+
+.quasar-1 {
+    top: 15%;
+    left: 25%;
+    animation-delay: 0s;
+}
+.quasar-2 {
+    top: 75%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.quasar-3 {
+    top: 60%;
