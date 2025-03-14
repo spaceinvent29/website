@@ -1531,99 +1531,99 @@ textarea.form-control {
     box-shadow: 0 0 20px rgba(0, 113, 227, 0.3);
 }
 
+/* Align planets with their corresponding elliptical orbits */
 .planet-1 {
     width: 20px;
     height: 20px;
     background: linear-gradient(135deg, #0071e3, #5ac8fa);
-    top: calc(50% - 150px);
-    left: 50%;
-    animation: planet-elliptical-orbit-1 30s linear infinite;
+    top: 40%;
+    left: 60%;
+    animation: planet-on-elliptical-orbit-1 80s linear infinite;
 }
 
 .planet-2 {
     width: 15px;
     height: 15px;
     background: linear-gradient(135deg, #5ac8fa, #34c759);
-    top: 50%;
-    left: calc(50% + 250px);
-    animation: planet-elliptical-orbit-2 45s linear infinite reverse;
+    top: 60%;
+    left: 40%;
+    animation: planet-on-elliptical-orbit-2 120s linear infinite reverse;
 }
 
 .planet-3 {
     width: 25px;
     height: 25px;
     background: linear-gradient(135deg, #ff9500, #ff2d55);
-    top: calc(50% + 350px);
-    left: 50%;
-    animation: planet-elliptical-orbit-3 60s linear infinite;
+    top: 30%;
+    left: 70%;
+    animation: planet-on-elliptical-orbit-3 60s linear infinite;
 }
 
-/* Add more planets */
 .planet-4 {
     width: 30px;
     height: 30px;
     background: linear-gradient(135deg, #af52de, #5856d6);
-    top: calc(50% - 200px);
-    left: 30%;
-    animation: planet-elliptical-orbit-4 70s linear infinite reverse;
+    top: 25%;
+    left: 35%;
+    animation: planet-on-elliptical-orbit-4 95s linear infinite reverse;
 }
 
 .planet-5 {
     width: 18px;
     height: 18px;
     background: linear-gradient(135deg, #ff2d55, #ff3b30);
-    top: calc(50% + 100px);
-    left: 70%;
-    animation: planet-elliptical-orbit-5 50s linear infinite;
+    top: 75%;
+    left: 65%;
+    animation: planet-on-elliptical-orbit-5 110s linear infinite;
 }
 
-/* Planet elliptical orbit animations */
-@keyframes planet-elliptical-orbit-1 {
+/* Planet animations that follow elliptical paths */
+@keyframes planet-on-elliptical-orbit-1 {
     0% {
-        transform: rotate(0deg) translateX(200px) translateY(50px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translate(200px, 100px) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(200px) translateY(50px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translate(200px, 100px) rotate(-360deg);
     }
 }
 
-@keyframes planet-elliptical-orbit-2 {
+@keyframes planet-on-elliptical-orbit-2 {
     0% {
-        transform: rotate(0deg) translateX(180px) translateY(80px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translate(300px, 150px) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(180px) translateY(80px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translate(300px, 150px) rotate(-360deg);
     }
 }
 
-@keyframes planet-elliptical-orbit-3 {
+@keyframes planet-on-elliptical-orbit-3 {
     0% {
-        transform: rotate(0deg) translateX(250px) translateY(100px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translate(150px, 75px) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(250px) translateY(100px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translate(150px, 75px) rotate(-360deg);
     }
 }
 
-@keyframes planet-elliptical-orbit-4 {
+@keyframes planet-on-elliptical-orbit-4 {
     0% {
-        transform: rotate(0deg) translateX(220px) translateY(70px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translate(250px, 90px) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(220px) translateY(70px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translate(250px, 90px) rotate(-360deg);
     }
 }
 
-@keyframes planet-elliptical-orbit-5 {
+@keyframes planet-on-elliptical-orbit-5 {
     0% {
-        transform: rotate(0deg) translateX(150px) translateY(60px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translate(175px, 125px) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(150px) translateY(60px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translate(175px, 125px) rotate(-360deg);
     }
 }
 
-/* Add a ringed planet */
+/* Update ringed planet to match elliptical orbit */
 .ringed-planet {
     position: fixed;
     width: 35px;
@@ -1633,9 +1633,9 @@ textarea.form-control {
     z-index: 2;
     pointer-events: none;
     box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
-    top: 40%;
-    left: 60%;
-    animation: ringed-planet-orbit 80s linear infinite;
+    top: 50%;
+    left: 50%;
+    animation: ringed-planet-elliptical-orbit 100s linear infinite;
 }
 
 .planet-ring {
@@ -1651,11 +1651,16 @@ textarea.form-control {
     z-index: 1;
 }
 
-@keyframes ringed-planet-orbit {
+@keyframes ringed-planet-elliptical-orbit {
     0% {
-        transform: rotate(0deg) translateX(280px) translateY(120px) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg) translate(350px, 200px) rotate(0deg);
     }
     100% {
-        transform: rotate(360deg) translateX(280px) translateY(120px) rotate(-360deg);
+        transform: translate(-50%, -50%) rotate(360deg) translate(350px, 200px) rotate(-360deg);
     }
+}
+
+/* Hide planet-orbit elements since we're using elliptical orbits */
+.planet-orbit {
+    display: none;
 }
