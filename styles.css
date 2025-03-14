@@ -2856,4 +2856,12 @@ textarea.form-control {
         opacity: 0.3;
     }
 }
-.tiny-meteor
+
+/* Add these styles to create different colors for Space and Invent in the logo */
+.logo span.space {
+    color: #64b5f6; /* Light blue color for "Space" */
+    text-shadow: 0 0 10px rgba(100, 181, 246, 0.7);
+}
+
+.logo span.invent {
+    color: #ff9e80; /*
