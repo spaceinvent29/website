@@ -2899,3 +2899,14 @@ textarea.form-control {
 .meteor.purple::before {
     background: linear-gradient(to left, rgba(186, 104, 200, 1), transparent);
 }
+
+/* Add this to your CSS file to create consistent white meteors */
+.meteor.small {
+    width: 2px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    z-index: 5;
+    opacity: 0;
+    animation: meteor-streak var(--meteor-duration) linear var(--meteor-delay) infinite;
+}
