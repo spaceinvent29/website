@@ -1017,23 +1017,15 @@ footer {
 }
 
 .social-icons a {
+    background-color: rgba(15, 15, 15, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 12px;
-    transition: var(--transition);
-    text-decoration: none;
-    border: 1px solid rgba(129, 140, 248, 0.1);
-    overflow: hidden;
 }
 
-.social-icons a img {
+.social-icons a svg {
     width: 24px;
     height: 24px;
-    object-fit: contain;
 }
 
 .social-icons a:hover {
@@ -2118,4 +2110,101 @@ textarea.form-control {
     .belt-particle:nth-child(n) {
         transform: rotate(calc(3.6deg * var(--i, 1))) translateX(90px);
     }
-} 
+}
+
+/* Fix contact icons and cards */
+.contact-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    background-color: rgba(15, 15, 15, 0.5);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(66, 66, 69, 0.3);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(29, 29, 31, 0.7);
+    border-color: rgba(66, 66, 69, 0.5);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+    overflow: hidden;
+}
+
+.contact-icon svg,
+.contact-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Fix mobile layout for contact section */
+@media (max-width: 768px) {
+    .contact-info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-card {
+        height: auto;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        margin: 0;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Fix cosmic system z-index */
+.cosmic-system {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure hero content is above cosmic elements */
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fix hero section height */
+.hero {
+    min-height: 100vh;
+    height: auto;
+    padding: 8rem 0;
+}
