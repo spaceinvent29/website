@@ -452,37 +452,63 @@ p {
     }
 }
 
-/* Add orbits */
+/* Remove circular orbits and enhance elliptical ones */
 .orbit {
+    display: none; /* Hide circular orbits */
+}
+
+/* Enhanced Elliptical Orbits */
+.elliptical-orbit {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.orbit-1 {
-    width: 300px;
+.elliptical-orbit-1 {
+    width: 400px;
+    height: 200px;
+    top: 40%;
+    left: 60%;
+    animation: elliptical-rotate 80s linear infinite;
+}
+
+.elliptical-orbit-2 {
+    width: 600px;
     height: 300px;
-    animation: orbit-rotate 60s linear infinite;
+    top: 60%;
+    left: 40%;
+    animation: elliptical-rotate 120s linear infinite reverse;
 }
 
-.orbit-2 {
+.elliptical-orbit-3 {
+    width: 300px;
+    height: 150px;
+    top: 30%;
+    left: 70%;
+    animation: elliptical-rotate 60s linear infinite;
+}
+
+/* Add more elliptical orbits */
+.elliptical-orbit-4 {
     width: 500px;
-    height: 500px;
-    animation: orbit-rotate 90s linear infinite reverse;
+    height: 180px;
+    top: 25%;
+    left: 35%;
+    animation: elliptical-rotate 95s linear infinite reverse;
 }
 
-.orbit-3 {
-    width: 700px;
-    height: 700px;
-    animation: orbit-rotate 120s linear infinite;
+.elliptical-orbit-5 {
+    width: 350px;
+    height: 250px;
+    top: 75%;
+    left: 65%;
+    animation: elliptical-rotate 110s linear infinite;
 }
 
-@keyframes orbit-rotate {
+@keyframes elliptical-rotate {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
     }
@@ -491,237 +517,117 @@ p {
     }
 }
 
-/* Fix contact icons */
-.contact-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: none;
-}
-
-/* Gmail icon styling */
-.contact-icon.gmail-icon {
-    background-color: #ffffff;
-}
-
-.contact-icon.gmail-icon img {
-    width: 28px;
-    height: 28px;
-}
-
-/* X (Twitter) icon styling */
-.contact-icon.x-icon {
-    background-color: #000000;
-}
-
-.contact-icon.x-icon svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Instagram icon styling */
-.contact-icon.instagram-icon {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.contact-icon.instagram-icon svg {
-    width: 28px;
-    height: 28px;
-}
-
-/* Add hover effect to match footer */
-.contact-card:hover .contact-icon {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Ensure consistent styling for all icons */
-.gmail-icon, .x-icon, .instagram-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Add planet elements */
-.planet {
-    position: fixed;
-    border-radius: 50%;
-    z-index: 2;
+/* Add more moving objects - Space Debris */
+.space-debris {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 1px;
+    z-index: 3;
     pointer-events: none;
-    box-shadow: 0 0 20px rgba(0, 113, 227, 0.3);
+    opacity: 0.7;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    animation: debris-float 25s linear infinite;
+    --debris-size: 2px;
+    --debris-rotate: 0deg;
+    --debris-delay: 0s;
+    --debris-duration: 25s;
+    width: var(--debris-size);
+    height: var(--debris-size);
+    animation-delay: var(--debris-delay);
+    animation-duration: var(--debris-duration);
 }
 
-.planet-1 {
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(135deg, #0071e3, #5ac8fa);
-    top: calc(50% - 150px);
-    left: 50%;
-    animation: planet-orbit-1 30s linear infinite;
-}
-
-.planet-2 {
-    width: 15px;
-    height: 15px;
-    background: linear-gradient(135deg, #5ac8fa, #34c759);
-    top: 50%;
-    left: calc(50% + 250px);
-    animation: planet-orbit-2 45s linear infinite reverse;
-}
-
-.planet-3 {
-    width: 25px;
-    height: 25px;
-    background: linear-gradient(135deg, #ff9500, #ff2d55);
-    top: calc(50% + 350px);
-    left: 50%;
-    animation: planet-orbit-3 60s linear infinite;
-}
-
-@keyframes planet-orbit-1 {
+@keyframes debris-float {
     0% {
-        transform: rotate(0deg) translateX(150px) rotate(0deg);
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.7;
     }
     100% {
-        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+        transform: translate(var(--debris-x, 100vw), var(--debris-y, 100vh)) rotate(var(--debris-rotate));
+        opacity: 0;
     }
 }
 
-@keyframes planet-orbit-2 {
-    0% {
-        transform: rotate(0deg) translateX(250px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(250px) rotate(-360deg);
-    }
+/* Generate 10 unique space debris elements */
+.space-debris:nth-child(1) { top: 15%; left: 10%; --debris-size: 1.5px; --debris-rotate: 360deg; --debris-delay: 0s; --debris-duration: 20s; --debris-x: 80vw; --debris-y: 70vh; }
+.space-debris:nth-child(2) { top: 25%; left: 90%; --debris-size: 2.2px; --debris-rotate: 720deg; --debris-delay: 5s; --debris-duration: 30s; --debris-x: -70vw; --debris-y: 50vh; }
+.space-debris:nth-child(3) { top: 60%; left: 5%; --debris-size: 1.8px; --debris-rotate: 540deg; --debris-delay: 10s; --debris-duration: 25s; --debris-x: 90vw; --debris-y: -40vh; }
+.space-debris:nth-child(4) { top: 80%; left: 95%; --debris-size: 1.2px; --debris-rotate: 360deg; --debris-delay: 15s; --debris-duration: 22s; --debris-x: -80vw; --debris-y: -60vh; }
+.space-debris:nth-child(5) { top: 40%; left: 50%; --debris-size: 2.5px; --debris-rotate: 180deg; --debris-delay: 7s; --debris-duration: 28s; --debris-x: -50vw; --debris-y: 80vh; }
+.space-debris:nth-child(6) { top: 70%; left: 30%; --debris-size: 1.3px; --debris-rotate: 450deg; --debris-delay: 12s; --debris-duration: 18s; --debris-x: 60vw; --debris-y: -30vh; }
+.space-debris:nth-child(7) { top: 20%; left: 70%; --debris-size: 1.9px; --debris-rotate: 270deg; --debris-delay: 3s; --debris-duration: 35s; --debris-x: -40vw; --debris-y: 90vh; }
+.space-debris:nth-child(8) { top: 55%; left: 15%; --debris-size: 2.1px; --debris-rotate: 630deg; --debris-delay: 8s; --debris-duration: 27s; --debris-x: 70vw; --debris-y: 20vh; }
+.space-debris:nth-child(9) { top: 85%; left: 60%; --debris-size: 1.4px; --debris-rotate: 360deg; --debris-delay: 18s; --debris-duration: 32s; --debris-x: -60vw; --debris-y: -70vh; }
+.space-debris:nth-child(10) { top: 35%; left: 85%; --debris-size: 2.3px; --debris-rotate: 540deg; --debris-delay: 2s; --debris-duration: 24s; --debris-x: -90vw; --debris-y: 40vh; }
+
+/* Add Satellite Objects */
+.satellite-obj {
+    position: absolute;
+    width: 4px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 1px;
+    z-index: 3;
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    animation: satellite-move var(--satellite-duration, 40s) linear infinite;
+    --satellite-delay: 0s;
+    --satellite-duration: 40s;
+    animation-delay: var(--satellite-delay);
 }
 
-@keyframes planet-orbit-3 {
-    0% {
-        transform: rotate(0deg) translateX(350px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(350px) rotate(-360deg);
-    }
-}
-
-/* Big Bang Animation */
-.big-bang {
-    position: fixed;
+.satellite-obj::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 3px;
-    height: 3px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.7),
-                0 0 30px 8px rgba(0, 113, 227, 0.5);
-    z-index: 2;
-    animation: big-bang 20s ease-out infinite;
-    pointer-events: none;
-    opacity: 0.7;
 }
 
-@keyframes big-bang {
+@keyframes satellite-move {
     0% {
-        transform: translate(-50%, -50%) scale(0.1);
-        opacity: 0.7;
-        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.7),
-                    0 0 30px 8px rgba(0, 113, 227, 0.5);
-    }
-    20% {
-        transform: translate(-50%, -50%) scale(10);
-        opacity: 0.5;
-        box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.4),
-                    0 0 100px 20px rgba(0, 113, 227, 0.3);
-    }
-    40% {
-        transform: translate(-50%, -50%) scale(20);
-        opacity: 0.3;
+        top: var(--satellite-start-y, 0%);
+        left: var(--satellite-start-x, 0%);
+        transform: rotate(var(--satellite-start-rotate, 0deg));
     }
     100% {
-        transform: translate(-50%, -50%) scale(40);
-        opacity: 0;
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0),
-                    0 0 0 0 rgba(0, 113, 227, 0);
+        top: var(--satellite-end-y, 100%);
+        left: var(--satellite-end-x, 100%);
+        transform: rotate(var(--satellite-end-rotate, 360deg));
     }
 }
 
-/* Enhanced Cosmic Elements */
-/* More asteroids with varied sizes and speeds */
-.asteroid {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    z-index: 4;
-    pointer-events: none;
-    /* Distribute asteroids across the screen */
-    top: calc(10% + (80% * var(--random-y, 0.5)));
-    left: calc(10% + (80% * var(--random-x, 0.5)));
-    opacity: 1;
-}
+/* Generate 5 unique satellite objects */
+.satellite-obj:nth-child(1) { --satellite-start-x: -5%; --satellite-start-y: 30%; --satellite-end-x: 105%; --satellite-end-y: 70%; --satellite-start-rotate: 0deg; --satellite-end-rotate: 360deg; --satellite-delay: 0s; --satellite-duration: 45s; }
+.satellite-obj:nth-child(2) { --satellite-start-x: 105%; --satellite-start-y: 60%; --satellite-end-x: -5%; --satellite-end-y: 20%; --satellite-start-rotate: 180deg; --satellite-end-rotate: 540deg; --satellite-delay: 10s; --satellite-duration: 50s; }
+.satellite-obj:nth-child(3) { --satellite-start-x: 50%; --satellite-start-y: -5%; --satellite-end-x: 20%; --satellite-end-y: 105%; --satellite-start-rotate: 90deg; --satellite-end-rotate: 450deg; --satellite-delay: 20s; --satellite-duration: 40s; }
+.satellite-obj:nth-child(4) { --satellite-start-x: 70%; --satellite-start-y: 105%; --satellite-end-x: 30%; --satellite-end-y: -5%; --satellite-start-rotate: 270deg; --satellite-end-rotate: 630deg; --satellite-delay: 5s; --satellite-duration: 55s; }
+.satellite-obj:nth-child(5) { --satellite-start-x: -5%; --satellite-start-y: 80%; --satellite-end-x: 105%; --satellite-end-y: 40%; --satellite-start-rotate: 45deg; --satellite-end-rotate: 405deg; --satellite-delay: 15s; --satellite-duration: 48s; }
 
-.asteroid::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-    border-radius: inherit;
-    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.7);
-}
-
-/* Generate more asteroids with varied sizes and speeds */
-.asteroid:nth-child(1) { --random-x: 0.2; --random-y: 0.7; width: 2px; height: 2px; animation: asteroid-random 0.8s linear infinite; }
-.asteroid:nth-child(2) { --random-x: 0.8; --random-y: 0.3; width: 3px; height: 3px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.1s; }
-.asteroid:nth-child(3) { --random-x: 0.5; --random-y: 0.2; width: 1px; height: 1px; animation: asteroid-random 0.6s linear infinite; animation-delay: 0.2s; }
-.asteroid:nth-child(4) { --random-x: 0.3; --random-y: 0.9; width: 2.5px; height: 2.5px; animation: asteroid-random 1.0s linear infinite; animation-delay: 0.3s; }
-.asteroid:nth-child(5) { --random-x: 0.7; --random-y: 0.6; width: 1.5px; height: 1.5px; animation: asteroid-random 0.7s linear infinite; animation-delay: 0.1s; }
-.asteroid:nth-child(6) { --random-x: 0.1; --random-y: 0.4; width: 3.2px; height: 3.2px; animation: asteroid-random 1.1s linear infinite; animation-delay: 0.05s; }
-.asteroid:nth-child(7) { --random-x: 0.9; --random-y: 0.1; width: 1.7px; height: 1.7px; animation: asteroid-random 0.9s linear infinite; animation-delay: 0.2s; }
-.asteroid:nth-child(8) { --random-x: 0.4; --random-y: 0.8; width: 2.8px; height: 2.8px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.3s; }
-.asteroid:nth-child(9) { --random-x: 0.6; --random-y: 0.5; width: 1.9px; height: 1.9px; animation: asteroid-random 0.5s linear infinite; animation-delay: 0.1s; }
-.asteroid:nth-child(10) { --random-x: 0.2; --random-y: 0.3; width: 2.6px; height: 2.6px; animation: asteroid-random 0.8s linear infinite; animation-delay: 0.4s; }
-
-/* Define faster random movement keyframes */
-@keyframes asteroid-random {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0.5;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        /* Random movement in all directions with increased distance */
-        transform: translate(var(--random-move-x, 200px), var(--random-move-y, 200px)) rotate(360deg);
-        opacity: 0.5;
-    }
-}
-
-/* Apply random movement variables to asteroids with increased distances */
-.asteroid:nth-child(1) { --random-move-x: 250px; --random-move-y: -220px; }
-.asteroid:nth-child(2) { --random-move-x: -280px; --random-move-y: 200px; }
-.asteroid:nth-child(3) { --random-move-x: 230px; --random-move-y: 260px; }
-.asteroid:nth-child(4) { --random-move-x: -240px; --random-move-y: -250px; }
-.asteroid:nth-child(5) { --random-move-x: 270px; --random-move-y: 190px; }
-.asteroid:nth-child(6) { --random-move-x: -220px; --random-move-y: -230px; }
-.asteroid:nth-child(7) { --random-move-x: 240px; --random-move-y: -270px; }
-.asteroid:nth-child(8) { --random-move-x: -260px; --random-move-y: 240px; }
-.asteroid:nth-child(9) { --random-move-x: 210px; --random-move-y: 220px; }
-.asteroid:nth-child(10) { --random-move-x: -250px; --random-move-y: -210px; }
+/* Add more asteroids (41-60) */
+.asteroid:nth-child(41) { --start-x: -5%; --start-y: 15%; --end-x: 110%; --end-y: 65%; --size: 2.1px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 13s; --travel-delay: 16.2s; }
+.asteroid:nth-child(42) { --start-x: 110%; --start-y: 30%; --end-x: -10%; --end-y: 80%; --size: 1.4px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 17s; --travel-delay: 16.9s; }
+.asteroid:nth-child(43) { --start-x: 45%; --start-y: -5%; --end-x: 15%; --end-y: 110%; --size: 2.7px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 14s; --travel-delay: 17.6s; }
+.asteroid:nth-child(44) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 1.2px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 19s; --travel-delay: 18.3s; }
+.asteroid:nth-child(45) { --start-x: -10%; --start-y: 55%; --end-x: 110%; --end-y: 35%; --size: 3.0px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 15s; --travel-delay: 19.0s; }
+.asteroid:nth-child(46) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 1.6px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 16s; --travel-delay: 19.7s; }
+.asteroid:nth-child(47) { --start-x: 20%; --start-y: -10%; --end-x: 70%; --end-y: 110%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 12s; --travel-delay: 20.4s; }
+.asteroid:nth-child(48) { --start-x: 85%; --start-y: 110%; --end-x: 35%; --end-y: -5%; --size: 1.5px; width: var(--size); height: var(--size); --rotation: 720deg; --travel-duration: 18s; --travel-delay: 21.1s; }
+.asteroid:nth-child(49) { --start-x: -5%; --start-y: 75%; --end-x: 110%; --end-y: 25%; --size: 2.8px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 14s; --travel-delay: 21.8s; }
+.asteroid:nth-child(50) { --start-x: 110%; --start-y: 50%; --end-x: -10%; --end-y: 100%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 17s; --travel-delay: 22.5s; }
+.asteroid:nth-child(51) { --start-x: 60%; --start-y: -5%; --end-x: 10%; --end-y: 110%; --size: 2.0px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 15s; --travel-delay: 23.2s; }
+.asteroid:nth-child(52) { --start-x: 65%; --start-y: 110%; --end-x: 15%; --end-y: -10%; --size: 3.2px; width: var(--size); height: var(--size); --rotation: 720deg; --travel-duration: 20s; --travel-delay: 23.9s; }
+.asteroid:nth-child(53) { --start-x: -10%; --start-y: 45%; --end-x: 110%; --end-y: 95%; --size: 1.7px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 16s; --travel-delay: 24.6s; }
+.asteroid:nth-child(54) { --start-x: 110%; --start-y: 40%; --end-x: -5%; --end-y: 90%; --size: 2.5px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 18s; --travel-delay: 25.3s; }
+.asteroid:nth-child(55) { --start-x: 30%; --start-y: -10%; --end-x: 80%; --end-y: 110%; --size: 1.1px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 14s; --travel-delay: 26.0s; }
+.asteroid:nth-child(56) { --start-x: 95%; --start-y: 110%; --end-x: 45%; --end-y: -5%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 19s; --travel-delay: 26.7s; }
+.asteroid:nth-child(57) { --start-x: -5%; --start-y: 65%; --end-x: 110%; --end-y: 15%; --size: 1.8px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 15s; --travel-delay: 27.4s; }
+.asteroid:nth-child(58) { --start-x: 110%; --start-y: 60%; --end-x: -10%; --end-y: 10%; --size: 2.2px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 17s; --travel-delay: 28.1s; }
+.asteroid:nth-child(59) { --start-x: 40%; --start-y: -5%; --end-x: 90%; --end-y: 110%; --size: 1.4px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 16s; --travel-delay: 28.8s; }
+.asteroid:nth-child(60) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 720deg; --travel-duration: 21s; --travel-delay: 29.5s; }
 
 /* Add shooting stars */
 .shooting-star {
@@ -1528,111 +1434,6 @@ textarea.form-control {
     padding: 8rem 0;
 }
 
-/* Enhanced Cosmic Elements - Elliptical Orbits and More Space Objects */
-
-/* Elliptical Orbits */
-.elliptical-orbit {
-    position: fixed;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.elliptical-orbit-1 {
-    width: 400px;
-    height: 200px;
-    top: 40%;
-    left: 60%;
-    animation: elliptical-rotate 80s linear infinite;
-}
-
-.elliptical-orbit-2 {
-    width: 600px;
-    height: 300px;
-    top: 60%;
-    left: 40%;
-    animation: elliptical-rotate 120s linear infinite reverse;
-}
-
-.elliptical-orbit-3 {
-    width: 300px;
-    height: 150px;
-    top: 30%;
-    left: 70%;
-    animation: elliptical-rotate 60s linear infinite;
-}
-
-@keyframes elliptical-rotate {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Space Objects */
-.comet {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    z-index: 3;
-    pointer-events: none;
-    opacity: 0;
-    animation: comet-travel 15s linear infinite;
-}
-
-.comet::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 2px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
-    transform: translateX(-100%);
-}
-
-.comet:nth-child(1) {
-    top: 15%;
-    left: 85%;
-    animation-delay: 2s;
-}
-
-.comet:nth-child(2) {
-    top: 75%;
-    left: 25%;
-    animation-delay: 8s;
-}
-
-.comet:nth-child(3) {
-    top: 45%;
-    left: 65%;
-    animation-delay: 14s;
-}
-
-@keyframes comet-travel {
-    0% {
-        transform: translate(0, 0) rotate(-30deg);
-        opacity: 0;
-    }
-    5% {
-        opacity: 1;
-    }
-    20% {
-        transform: translate(-300px, 300px) rotate(-30deg);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(-300px, 300px) rotate(-30deg);
-        opacity: 0;
-    }
-}
-
 /* Space Station */
 .space-station {
     position: fixed;
@@ -1721,79 +1522,140 @@ textarea.form-control {
     }
 }
 
-/* Enhanced Asteroids with More Variety */
-/* Additional asteroids with varied sizes and speeds */
-.asteroid:nth-child(31) { --random-x: 0.15; --random-y: 0.85; width: 3.3px; height: 3.3px; animation: asteroid-random 0.5s linear infinite; animation-delay: 0.15s; }
-.asteroid:nth-child(32) { --random-x: 0.92; --random-y: 0.18; width: 1.2px; height: 1.2px; animation: asteroid-random 1.1s linear infinite; animation-delay: 0.25s; }
-.asteroid:nth-child(33) { --random-x: 0.37; --random-y: 0.63; width: 2.7px; height: 2.7px; animation: asteroid-random 0.7s linear infinite; animation-delay: 0.35s; }
-.asteroid:nth-child(34) { --random-x: 0.81; --random-y: 0.29; width: 1.4px; height: 1.4px; animation: asteroid-random 1.3s linear infinite; animation-delay: 0.45s; }
-.asteroid:nth-child(35) { --random-x: 0.53; --random-y: 0.47; width: 2.9px; height: 2.9px; animation: asteroid-random 0.6s linear infinite; animation-delay: 0.55s; }
-.asteroid:nth-child(36) { --random-x: 0.74; --random-y: 0.26; width: 1.6px; height: 1.6px; animation: asteroid-random 1.0s linear infinite; animation-delay: 0.65s; }
-.asteroid:nth-child(37) { --random-x: 0.28; --random-y: 0.72; width: 3.1px; height: 3.1px; animation: asteroid-random 0.8s linear infinite; animation-delay: 0.75s; }
-.asteroid:nth-child(38) { --random-x: 0.63; --random-y: 0.37; width: 1.8px; height: 1.8px; animation: asteroid-random 1.2s linear infinite; animation-delay: 0.85s; }
-.asteroid:nth-child(39) { --random-x: 0.19; --random-y: 0.81; width: 2.3px; height: 2.3px; animation: asteroid-random 0.9s linear infinite; animation-delay: 0.95s; }
-.asteroid:nth-child(40) { --random-x: 0.47; --random-y: 0.53; width: 1.1px; height: 1.1px; animation: asteroid-random 0.7s linear infinite; animation-delay: 1.05s; }
-
-/* Apply random movement variables to new asteroids */
-.asteroid:nth-child(31) { --random-move-x: 290px; --random-move-y: -180px; }
-.asteroid:nth-child(32) { --random-move-x: -210px; --random-move-y: 270px; }
-.asteroid:nth-child(33) { --random-move-x: 240px; --random-move-y: 220px; }
-.asteroid:nth-child(34) { --random-move-x: -270px; --random-move-y: -190px; }
-.asteroid:nth-child(35) { --random-move-x: 200px; --random-move-y: 280px; }
-.asteroid:nth-child(36) { --random-move-x: -230px; --random-move-y: -260px; }
-.asteroid:nth-child(37) { --random-move-x: 260px; --random-move-y: 200px; }
-.asteroid:nth-child(38) { --random-move-x: -290px; --random-move-y: -210px; }
-.asteroid:nth-child(39) { --random-move-x: 220px; --random-move-y: 250px; }
-.asteroid:nth-child(40) { --random-move-x: -240px; --random-move-y: -280px; }
-
-/* Pulsar Star */
-.pulsar {
+/* Add enhanced planet styles */
+.planet {
     position: fixed;
-    width: 4px;
-    height: 4px;
-    background-color: #ffffff;
     border-radius: 50%;
-    z-index: 3;
+    z-index: 2;
     pointer-events: none;
-    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8),
-                0 0 30px 10px rgba(100, 200, 255, 0.5);
-    animation: pulsar-pulse 3s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(0, 113, 227, 0.3);
 }
 
-.pulsar-1 {
-    top: 25%;
-    left: 15%;
+.planet-1 {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #0071e3, #5ac8fa);
+    top: calc(50% - 150px);
+    left: 50%;
+    animation: planet-elliptical-orbit-1 30s linear infinite;
 }
 
-.pulsar-2 {
-    top: 75%;
-    left: 85%;
-    animation-delay: 1s;
+.planet-2 {
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #5ac8fa, #34c759);
+    top: 50%;
+    left: calc(50% + 250px);
+    animation: planet-elliptical-orbit-2 45s linear infinite reverse;
 }
 
-.pulsar-3 {
-    top: 60%;
-    left: 20%;
-    animation-delay: 2s;
+.planet-3 {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(135deg, #ff9500, #ff2d55);
+    top: calc(50% + 350px);
+    left: 50%;
+    animation: planet-elliptical-orbit-3 60s linear infinite;
 }
 
-@keyframes pulsar-pulse {
+/* Add more planets */
+.planet-4 {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #af52de, #5856d6);
+    top: calc(50% - 200px);
+    left: 30%;
+    animation: planet-elliptical-orbit-4 70s linear infinite reverse;
+}
+
+.planet-5 {
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #ff2d55, #ff3b30);
+    top: calc(50% + 100px);
+    left: 70%;
+    animation: planet-elliptical-orbit-5 50s linear infinite;
+}
+
+/* Planet elliptical orbit animations */
+@keyframes planet-elliptical-orbit-1 {
     0% {
-        transform: scale(0.8);
-        opacity: 0.7;
-        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8),
-                    0 0 30px 10px rgba(100, 200, 255, 0.5);
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-        box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.9),
-                    0 0 40px 15px rgba(100, 200, 255, 0.7);
+        transform: rotate(0deg) translateX(200px) translateY(50px) rotate(0deg);
     }
     100% {
-        transform: scale(0.8);
-        opacity: 0.7;
-        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8),
-                    0 0 30px 10px rgba(100, 200, 255, 0.5);
+        transform: rotate(360deg) translateX(200px) translateY(50px) rotate(-360deg);
+    }
+}
+
+@keyframes planet-elliptical-orbit-2 {
+    0% {
+        transform: rotate(0deg) translateX(180px) translateY(80px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(180px) translateY(80px) rotate(-360deg);
+    }
+}
+
+@keyframes planet-elliptical-orbit-3 {
+    0% {
+        transform: rotate(0deg) translateX(250px) translateY(100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(250px) translateY(100px) rotate(-360deg);
+    }
+}
+
+@keyframes planet-elliptical-orbit-4 {
+    0% {
+        transform: rotate(0deg) translateX(220px) translateY(70px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(220px) translateY(70px) rotate(-360deg);
+    }
+}
+
+@keyframes planet-elliptical-orbit-5 {
+    0% {
+        transform: rotate(0deg) translateX(150px) translateY(60px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(150px) translateY(60px) rotate(-360deg);
+    }
+}
+
+/* Add a ringed planet */
+.ringed-planet {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #ffcc00, #ff9500);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
+    top: 40%;
+    left: 60%;
+    animation: ringed-planet-orbit 80s linear infinite;
+}
+
+.planet-ring {
+    position: absolute;
+    width: 70px;
+    height: 10px;
+    background: rgba(255, 204, 0, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(75deg);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    z-index: 1;
+}
+
+@keyframes ringed-planet-orbit {
+    0% {
+        transform: rotate(0deg) translateX(280px) translateY(120px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(280px) translateY(120px) rotate(-360deg);
     }
 }
