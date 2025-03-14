@@ -2508,9 +2508,9 @@ textarea.form-control {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60px;
+    width: var(--meteor-tail-length, 80px);
     height: 2px;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
     border-radius: 50%;
     transform-origin: right center;
     transform: translateX(-100%);
@@ -2544,3 +2544,47 @@ textarea.form-control {
     0% {
         transform: translate(0, 0) rotate(0deg);
     }
+}
+
+/* Faster animation for meteors */
+@keyframes meteor-streak {
+    0% {
+        transform: translate(var(--meteor-start-x), var(--meteor-start-y)) rotate(var(--meteor-angle));
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--meteor-end-x), var(--meteor-end-y)) rotate(var(--meteor-angle));
+        opacity: 0;
+    }
+}
+
+/* Additional meteor shower styles */
+.meteor-shower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Individual meteor properties - much faster and more numerous */
+.meteor:nth-child(1) { --meteor-start-x: -5%; --meteor-start-y: 20%; --meteor-end-x: 60%; --meteor-end-y: 80%; --meteor-angle: 45deg; --meteor-delay: 1s; --meteor-duration: 2s; --meteor-tail-length: 100px; }
+.meteor:nth-child(2) { --meteor-start-x: 110%; --meteor-start-y: 15%; --meteor-end-x: 30%; --meteor-end-y: 60%; --meteor-angle: 135deg; --meteor-delay: 3s; --meteor-duration: 1.8s; --meteor-tail-length: 90px; }
+.meteor:nth-child(3) { --meteor-start-x: 80%; --meteor-start-y: -5%; --meteor-end-x: 30%; --meteor-end-y: 70%; --meteor-angle: 110deg; --meteor-delay: 5s; --meteor-duration: 2.2s; --meteor-tail-length: 120px; }
+.meteor:nth-child(4) { --meteor-start-x: 20%; --meteor-start-y: -5%; --meteor-end-x: 70%; --meteor-end-y: 60%; --meteor-angle: 70deg; --meteor-delay: 2s; --meteor-duration: 1.5s; --meteor-tail-length: 110px; }
+.meteor:nth-child(5) { --meteor-start-x: -5%; --meteor-start-y: 60%; --meteor-end-x: 50%; --meteor-end-y: 110%; --meteor-angle: -45deg; --meteor-delay: 4s; --meteor-duration: 2.5s; --meteor-tail-length: 95px; }
+.meteor:nth-child(6) { --meteor-start-x: 110%; --meteor-start-y: 70%; --meteor-end-x: 40%; --meteor-end-y: 20%; --meteor-angle: 225deg; --meteor-delay: 0.5s; --meteor-duration: 1.7s; --meteor-tail-length: 105px; }
+.meteor:nth-child(7) { --meteor-start-x: 60%; --meteor-start-y: -5%; --meteor-end-x: 10%; --meteor-end-y: 50%; --meteor-angle: 135deg; --meteor-delay: 2.5s; --meteor-duration: 2.1s; --meteor-tail-length: 115px; }
+.meteor:nth-child(8) { --meteor-start-x: 30%; --meteor-start-y: -5%; --meteor-end-x: 80%; --meteor-end-y: 50%; --meteor-angle: 45deg; --meteor-delay: 1.2s; --meteor-duration: 1.9s; --meteor-tail-length: 85px; }
+.meteor:nth-child(9) { --meteor-start-x: 40%; --meteor-start-y: -5%; --meteor-end-x: 10%; --meteor-end-y: 70%; --meteor-angle: 120deg; --meteor-delay: 3.5s; --meteor-duration: 1.6s; --meteor-tail-length: 125px; }
+.meteor:nth-child(10) { --meteor-start-x: 90%; --meteor-start-y: -5%; --meteor-end-x: 40%; --meteor-end-y: 80%; --meteor-angle: 100deg; --meteor-delay: 0.8s; --meteor-duration: 2.3s; --meteor-tail-length: 130px; }
+.meteor:nth-child(11) { --meteor-start-x: 10%; --meteor-start-y: -5%; --meteor-end-x: 60%; --meteor-end-y: 70%; --meteor-angle: 60deg; --meteor-delay: 4.5s; --meteor-duration: 1.4s; --meteor-tail-length: 95px; }
+.meteor:nth-child(12) { --meteor-start-x: 110%; --meteor-start-y: 30%; --meteor-end-x: 50%; --meteor-end-y: 10%; --meteor-angle: 190deg; --meteor-delay: 2.8s; --meteor-duration: 2.0s; --meteor-tail-length: 110px; }
