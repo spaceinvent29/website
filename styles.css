@@ -2420,3 +2420,52 @@ textarea.form-control {
     height: 5px;
     animation-delay: 1.5s;
 }
+
+/* Enhanced Dark Purple Milky Way Background */
+.milky-way-galaxy {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, 
+                rgba(5, 0, 15, 0.9), 
+                rgba(10, 0, 25, 0.95), 
+                rgba(15, 5, 30, 0.9));
+    z-index: -1;
+    pointer-events: none;
+}
+
+.galactic-center {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, 
+                rgba(60, 20, 80, 0.15) 0%, 
+                rgba(40, 10, 60, 0.1) 30%, 
+                rgba(20, 5, 40, 0.05) 60%, 
+                rgba(10, 0, 20, 0) 100%);
+    filter: blur(40px);
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+    animation: center-glow 25s ease-in-out infinite alternate;
+}
+
+@keyframes center-glow {
+    0% {
+        opacity: 0.3;
+        filter: blur(40px);
+    }
+    100% {
+        opacity: 0.4;
+        filter: blur(35px);
+    }
+}
+.spiral-arm {
+    position: fixed;
+    background: linear-gradient(to right,
+                rgba(20, 0, 40, 0) 0%,
