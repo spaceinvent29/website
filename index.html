@@ -145,6 +145,24 @@
             <div class="asteroid"></div>
             <div class="asteroid"></div>
             
+            <!-- Replace the existing meteor shower with this immediately visible version -->
+            <div class="continuous-meteor-shower">
+                <!-- Center-originating meteors (radiating outward in all directions) -->
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: 110%; --meteor-end-y: 50%; --meteor-angle: 0deg; --meteor-delay: 0s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: -10%; --meteor-end-y: 50%; --meteor-angle: 180deg; --meteor-delay: 0.2s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: 50%; --meteor-end-y: 110%; --meteor-angle: 90deg; --meteor-delay: 0.4s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: 50%; --meteor-end-y: -10%; --meteor-angle: 270deg; --meteor-delay: 0.6s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                
+                <!-- Diagonal center-originating meteors -->
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: 110%; --meteor-end-y: 110%; --meteor-angle: 45deg; --meteor-delay: 0.8s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: -10%; --meteor-end-y: 110%; --meteor-angle: 135deg; --meteor-delay: 1.0s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: -10%; --meteor-end-y: -10%; --meteor-angle: 225deg; --meteor-delay: 1.2s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 50%; --meteor-start-y: 50%; --meteor-end-x: 110%; --meteor-end-y: -10%; --meteor-angle: 315deg; --meteor-delay: 1.4s; --meteor-duration: 2s; --meteor-tail-length: 350px;"></div>
+            </div>
+
+            <div class="meteor-shower">
+                <!-- Random-direction meteors from edges -->
+                <div class="meteor blue" style="--meteor-start-x: -5%; --meteor-start-y: 20%; --meteor-end-x: 60%; --meteor-end-y: 80%; --meteor-angle: 45deg; --meteor-delay: 0s; --meteor-duration: 1.5s; --meteor-tail-length: 300px;"></div>
             <!-- Shooting Stars -->
             <div class="shooting-star"></div>
             <div class="shooting-star"></div>
