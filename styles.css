@@ -2587,3 +2587,137 @@ textarea.form-control {
 .fast-meteor.fm4 { --start-x: 75vw; --start-y: 105vh; --end-x: 25vw; --end-y: -5vh; --angle: 240deg; --tail-length: 70px; animation-delay: 1.3s; }
 .fast-meteor.fm5 { --start-x: -5vw; --start-y: 75vh; --end-x: 105vw; --end-y: 25vh; --angle: 330deg; --tail-length: 90px; animation-delay: 1.7s; }
 .fast-meteor.fm6 { --start-x: 105vw; --start-y: 85vh; --end-x: -5vw; --end-y: 15vh; --angle: 150deg; --tail-length: 65px; animation-delay: 2.1s; }
+
+/* Tiny meteors - small and numerous */
+.tiny-meteor {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transform-origin: center;
+    animation: tiny-meteor-move 3s linear infinite; /* Faster animation */
+}
+
+.tiny-meteor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--tail-length, 20px);
+    height: 1px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
+    transform-origin: right center;
+    transform: translateX(-100%);
+}
+
+@keyframes tiny-meteor-move {
+    0% {
+        opacity: 0;
+        transform: translate(var(--start-x, 0), var(--start-y, 0)) rotate(var(--angle, 0deg));
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x, 100vw), var(--end-y, 100vh)) rotate(var(--angle, 0deg));
+    }
+}
+
+/* Tiny meteor positions - completely random directions with staggered timing */
+.tiny-meteor.tm1 { --start-x: -5vw; --start-y: 10vh; --end-x: 105vw; --end-y: 90vh; --angle: 30deg; --tail-length: 15px; animation-delay: 0.1s; }
+.tiny-meteor.tm2 { --start-x: 105vw; --start-y: 20vh; --end-x: -5vw; --end-y: 80vh; --angle: 210deg; --tail-length: 18px; animation-delay: 0.2s; }
+.tiny-meteor.tm3 { --start-x: 20vw; --start-y: -5vh; --end-x: 80vw; --end-y: 105vh; --angle: 60deg; --tail-length: 12px; animation-delay: 0.3s; }
+.tiny-meteor.tm4 { --start-x: 80vw; --start-y: 105vh; --end-x: 20vw; --end-y: -5vh; --angle: 240deg; --tail-length: 16px; animation-delay: 0.4s; }
+.tiny-meteor.tm5 { --start-x: -5vw; --start-y: 80vh; --end-x: 105vw; --end-y: 20vh; --angle: 330deg; --tail-length: 14px; animation-delay: 0.5s; }
+.tiny-meteor.tm6 { --start-x: 105vw; --start-y: 90vh; --end-x: -5vw; --end-y: 10vh; --angle: 150deg; --tail-length: 17px; animation-delay: 0.6s; }
+.tiny-meteor.tm7 { --start-x: 30vw; --start-y: -5vh; --end-x: 70vw; --end-y: 105vh; --angle: 70deg; --tail-length: 13px; animation-delay: 0.7s; }
+.tiny-meteor.tm8 { --start-x: 70vw; --start-y: 105vh; --end-x: 30vw; --end-y: -5vh; --angle: 250deg; --tail-length: 19px; animation-delay: 0.8s; }
+.tiny-meteor.tm9 { --start-x: -5vw; --start-y: 30vh; --end-x: 105vw; --end-y: 70vh; --angle: 20deg; --tail-length: 15px; animation-delay: 0.9s; }
+.tiny-meteor.tm10 { --start-x: 105vw; --start-y: 40vh; --end-x: -5vw; --end-y: 60vh; --angle: 200deg; --tail-length: 18px; animation-delay: 1.0s; }
+.tiny-meteor.tm11 { --start-x: 10vw; --start-y: -5vh; --end-x: 90vw; --end-y: 105vh; --angle: 50deg; --tail-length: 12px; animation-delay: 1.1s; }
+.tiny-meteor.tm12 { --start-x: 90vw; --start-y: 105vh; --end-x: 10vw; --end-y: -5vh; --angle: 230deg; --tail-length: 16px; animation-delay: 1.2s; }
+.tiny-meteor.tm13 { --start-x: -5vw; --start-y: 90vh; --end-x: 105vw; --end-y: 10vh; --angle: 340deg; --tail-length: 14px; animation-delay: 1.3s; }
+.tiny-meteor.tm14 { --start-x: 105vw; --start-y: 70vh; --end-x: -5vw; --end-y: 30vh; --angle: 160deg; --tail-length: 17px; animation-delay: 1.4s; }
+.tiny-meteor.tm15 { --start-x: 40vw; --start-y: -5vh; --end-x: 60vw; --end-y: 105vh; --angle: 80deg; --tail-length: 13px; animation-delay: 1.5s; }
+.tiny-meteor.tm16 { --start-x: 60vw; --start-y: 105vh; --end-x: 40vw; --end-y: -5vh; --angle: 260deg; --tail-length: 19px; animation-delay: 1.6s; }
+.tiny-meteor.tm17 { --start-x: -5vw; --start-y: 50vh; --end-x: 105vw; --end-y: 50vh; --angle: 0deg; --tail-length: 15px; animation-delay: 1.7s; }
+.tiny-meteor.tm18 { --start-x: 105vw; --start-y: 60vh; --end-x: -5vw; --end-y: 40vh; --angle: 180deg; --tail-length: 18px; animation-delay: 1.8s; }
+.tiny-meteor.tm19 { --start-x: 0vw; --start-y: -5vh; --end-x: 100vw; --end-y: 105vh; --angle: 45deg; --tail-length: 12px; animation-delay: 1.9s; }
+.tiny-meteor.tm20 { --start-x: 100vw; --start-y: 105vh; --end-x: 0vw; --end-y: -5vh; --angle: 225deg; --tail-length: 16px; animation-delay: 2.0s; }
+.tiny-meteor.tm21 { --start-x: -5vw; --start-y: 0vh; --end-x: 105vw; --end-y: 100vh; --angle: 35deg; --tail-length: 14px; animation-delay: 2.1s; }
+.tiny-meteor.tm22 { --start-x: 105vw; --start-y: 10vh; --end-x: -5vw; --end-y: 90vh; --angle: 215deg; --tail-length: 17px; animation-delay: 2.2s; }
+.tiny-meteor.tm23 { --start-x: 10vw; --start-y: -5vh; --end-x: 90vw; --end-y: 105vh; --angle: 55deg; --tail-length: 13px; animation-delay: 2.3s; }
+.tiny-meteor.tm24 { --start-x: 90vw; --start-y: 105vh; --end-x: 10vw; --end-y: -5vh; --angle: 235deg; --tail-length: 19px; animation-delay: 2.4s; }
+.tiny-meteor.tm25 { --start-x: -5vw; --start-y: 100vh; --end-x: 105vw; --end-y: 0vh; --angle: 345deg; --tail-length: 15px; animation-delay: 2.5s; }
+.tiny-meteor.tm26 { --start-x: 105vw; --start-y: 100vh; --end-x: -5vw; --end-y: 0vh; --angle: 165deg; --tail-length: 18px; animation-delay: 2.6s; }
+.tiny-meteor.tm27 { --start-x: 20vw; --start-y: -5vh; --end-x: 80vw; --end-y: 105vh; --angle: 65deg; --tail-length: 12px; animation-delay: 2.7s; }
+.tiny-meteor.tm28 { --start-x: 80vw; --start-y: 105vh; --end-x: 20vw; --end-y: -5vh; --angle: 245deg; --tail-length: 16px; animation-delay: 2.8s; }
+.tiny-meteor.tm29 { --start-x: -5vw; --start-y: 20vh; --end-x: 105vw; --end-y: 80vh; --angle: 25deg; --tail-length: 14px; animation-delay: 2.9s; }
+.tiny-meteor.tm30 { --start-x: 105vw; --start-y: 30vh; --end-x: -5vw; --end-y: 70vh; --angle: 205deg; --tail-length: 17px; animation-delay: 3.0s; }
+.tiny-meteor.tm31 { --start-x: 15vw; --start-y: -5vh; --end-x: 85vw; --end-y: 105vh; --angle: 52deg; --tail-length: 15px; animation-delay: 0.15s; }
+.tiny-meteor.tm32 { --start-x: 85vw; --start-y: 105vh; --end-x: 15vw; --end-y: -5vh; --angle: 232deg; --tail-length: 18px; animation-delay: 0.25s; }
+.tiny-meteor.tm33 { --start-x: -5vw; --start-y: 85vh; --end-x: 105vw; --end-y: 15vh; --angle: 342deg; --tail-length: 12px; animation-delay: 0.35s; }
+.tiny-meteor.tm34 { --start-x: 105vw; --start-y: 75vh; --end-x: -5vw; --end-y: 25vh; --angle: 162deg; --tail-length: 16px; animation-delay: 0.45s; }
+.tiny-meteor.tm35 { --start-x: 45vw; --start-y: -5vh; --end-x: 55vw; --end-y: 105vh; --angle: 82deg; --tail-length: 14px; animation-delay: 0.55s; }
+.tiny-meteor.tm36 { --start-x: 55vw; --start-y: 105vh; --end-x: 45vw; --end-y: -5vh; --angle: 262deg; --tail-length: 17px; animation-delay: 0.65s; }
+.tiny-meteor.tm37 { --start-x: -5vw; --start-y: 55vh; --end-x: 105vw; --end-y: 45vh; --angle: 352deg; --tail-length: 13px; animation-delay: 0.75s; }
+.tiny-meteor.tm38 { --start-x: 105vw; --start-y: 65vh; --end-x: -5vw; --end-y: 35vh; --angle: 172deg; --tail-length: 19px; animation-delay: 0.85s; }
+.tiny-meteor.tm39 { --start-x: 5vw; --start-y: -5vh; --end-x: 95vw; --end-y: 105vh; --angle: 42deg; --tail-length: 15px; animation-delay: 0.95s; }
+.tiny-meteor.tm40 { --start-x: 95vw; --start-y: 105vh; --end-x: 5vw; --end-y: -5vh; --angle: 222deg; --tail-length: 18px; animation-delay: 1.05s; }
+.tiny-meteor.tm41 { --start-x: -5vw; --start-y: 5vh; --end-x: 105vw; --end-y: 95vh; --angle: 32deg; --tail-length: 12px; animation-delay: 1.15s; }
+.tiny-meteor.tm42 { --start-x: 105vw; --start-y: 15vh; --end-x: -5vw; --end-y: 85vh; --angle: 212deg; --tail-length: 16px; animation-delay: 1.25s; }
+.tiny-meteor.tm43 { --start-x: 15vw; --start-y: -5vh; --end-x: 85vw; --end-y: 105vh; --angle: 52deg; --tail-length: 14px; animation-delay: 1.35s; }
+.tiny-meteor.tm44 { --start-x: 85vw; --start-y: 105vh; --end-x: 15vw; --end-y: -5vh; --angle: 232deg; --tail-length: 17px; animation-delay: 1.45s; }
+.tiny-meteor.tm45 { --start-x: -5vw; --start-y: 95vh; --end-x: 105vw; --end-y: 5vh; --angle: 342deg; --tail-length: 13px; animation-delay: 1.55s; }
+.tiny-meteor.tm46 { --start-x: 105vw; --start-y: 95vh; --end-x: -5vw; --end-y: 5vh; --angle: 162deg; --tail-length: 19px; animation-delay: 1.65s; }
+.tiny-meteor.tm47 { --start-x: 25vw; --start-y: -5vh; --end-x: 75vw; --end-y: 105vh; --angle: 62deg; --tail-length: 15px; animation-delay: 1.75s; }
+.tiny-meteor.tm48 { --start-x: 75vw; --start-y: 105vh; --end-x: 25vw; --end-y: -5vh; --angle: 242deg; --tail-length: 18px; animation-delay: 1.85s; }
+.tiny-meteor.tm49 { --start-x: -5vw; --start-y: 25vh; --end-x: 105vw; --end-y: 75vh; --angle: 22deg; --tail-length: 12px; animation-delay: 1.95s; }
+.tiny-meteor.tm50 { --start-x: 105vw; --start-y: 35vh; --end-x: -5vw; --end-y: 65vh; --angle: 202deg; --tail-length: 16px; animation-delay: 2.05s; }
+.tiny-meteor.tm51 { --start-x: 35vw; --start-y: -5vh; --end-x: 65vw; --end-y: 105vh; --angle: 72deg; --tail-length: 14px; animation-delay: 2.15s; }
+.tiny-meteor.tm52 { --start-x: 65vw; --start-y: 105vh; --end-x: 35vw; --end-y: -5vh; --angle: 252deg; --tail-length: 17px; animation-delay: 2.25s; }
+.tiny-meteor.tm53 { --start-x: -5vw; --start-y: 35vh; --end-x: 105vw; --end-y: 65vh; --angle: 22deg; --tail-length: 13px; animation-delay: 2.35s; }
+.tiny-meteor.tm54 { --start-x: 105vw; --start-y: 45vh; --end-x: -5vw; --end-y: 55vh; --angle: 202deg; --tail-length: 19px; animation-delay: 2.45s; }
+.tiny-meteor.tm55 { --start-x: 45vw; --start-y: -5vh; --end-x: 55vw; --end-y: 105vh; --angle: 82deg; --tail-length: 15px; animation-delay: 2.55s; }
+.tiny-meteor.tm56 { --start-x: 55vw; --start-y: 105vh; --end-x: 45vw; --end-y: -5vh; --angle: 262deg; --tail-length: 18px; animation-delay: 2.65s; }
+.tiny-meteor.tm57 { --start-x: -5vw; --start-y: 45vh; --end-x: 105vw; --end-y: 55vh; --angle: 12deg; --tail-length: 12px; animation-delay: 2.75s; }
+.tiny-meteor.tm58 { --start-x: 105vw; --start-y: 55vh; --end-x: -5vw; --end-y: 45vh; --angle: 192deg; --tail-length: 16px; animation-delay: 2.85s; }
+.tiny-meteor.tm59 { --start-x: 55vw; --start-y: -5vh; --end-x: 45vw; --end-y: 105vh; --angle: 92deg; --tail-length: 14px; animation-delay: 2.95s; }
+.tiny-meteor.tm60 { --start-x: 45vw; --start-y: 105vh; --end-x: 55vw; --end-y: -5vh; --angle: 272deg; --tail-length: 17px; animation-delay: 0.12s; }
+.tiny-meteor.tm61 { --start-x: -5vw; --start-y: 55vh; --end-x: 105vw; --end-y: 45vh; --angle: 2deg; --tail-length: 13px; animation-delay: 0.22s; }
+.tiny-meteor.tm62 { --start-x: 105vw; --start-y: 65vh; --end-x: -5vw; --end-y: 35vh; --angle: 182deg; --tail-length: 19px; animation-delay: 0.32s; }
+.tiny-meteor.tm63 { --start-x: 65vw; --start-y: -5vh; --end-x: 35vw; --end-y: 105vh; --angle: 102deg; --tail-length: 15px; animation-delay: 0.42s; }
+.tiny-meteor.tm64 { --start-x: 35vw; --start-y: 105vh; --end-x: 65vw; --end-y: -5vh; --angle: 282deg; --tail-length: 18px; animation-delay: 0.52s; }
+.tiny-meteor.tm65 { --start-x: -5vw; --start-y: 65vh; --end-x: 105vw; --end-y: 35vh; --angle: 352deg; --tail-length: 12px; animation-delay: 0.62s; }
+.tiny-meteor.tm66 { --start-x: 105vw; --start-y: 75vh; --end-x: -5vw; --end-y: 25vh; --angle: 172deg; --tail-length: 16px; animation-delay: 0.72s; }
+.tiny-meteor.tm67 { --start-x: 75vw; --start-y: -5vh; --end-x: 25vw; --end-y: 105vh; --angle: 112deg; --tail-length: 14px; animation-delay: 0.82s; }
+.tiny-meteor.tm68 { --start-x: 25vw; --start-y: 105vh; --end-x: 75vw; --end-y: -5vh; --angle: 292deg; --tail-length: 17px; animation-delay: 0.92s; }
+.tiny-meteor.tm69 { --start-x: -5vw; --start-y: 75vh; --end-x: 105vw; --end-y: 25vh; --angle: 342deg; --tail-length: 13px; animation-delay: 1.02s; }
+.tiny-meteor.tm70 { --start-x: 105vw; --start-y: 85vh; --end-x: -5vw; --end-y: 15vh; --angle: 162deg; --tail-length: 19px; animation-delay: 1.12s; }
+.tiny-meteor.tm71 { --start-x: 85vw; --start-y: -5vh; --end-x: 15vw; --end-y: 105vh; --angle: 122deg; --tail-length: 15px; animation-delay: 1.22s; }
+.tiny-meteor.tm72 { --start-x: 15vw; --start-y: 105vh; --end-x: 85vw; --end-y: -5vh; --angle: 302deg; --tail-length: 18px; animation-delay: 1.32s; }
+.tiny-meteor.tm73 { --start-x: -5vw; --start-y: 85vh; --end-x: 105vw; --end-y: 15vh; --angle: 332deg; --tail-length: 12px; animation-delay: 1.42s; }
+.tiny-meteor.tm74 { --start-x: 105vw; --start-y: 95vh; --end-x: -5vw; --end-y: 5vh; --angle: 152deg; --tail-length: 16px; animation-delay: 1.52s; }
+.tiny-meteor.tm75 { --start-x: 95vw; --start-y: -5vh; --end-x: 5vw; --end-y: 105vh; --angle: 132deg; --tail-length: 14px; animation-delay: 1.62s; }
+.tiny-meteor.tm76 { --start-x: 5vw; --start-y: 105vh; --end-x: 95vw; --end-y: -5vh; --angle: 312deg; --tail-length: 17px; animation-delay: 1.72s; }
+.tiny-meteor.tm77 { --start-x: -5vw; --start-y: 95vh; --end-x: 105vw; --end-y: 5vh; --angle: 322deg; --tail-length: 13px; animation-delay: 1.82s; }
+.tiny-meteor.tm78 { --start-x: 105vw; --start-y: 5vh; --end-x: -5vw; --end-y: 95vh; --angle: 142deg; --tail-length: 19px; animation-delay: 1.92s; }
+.tiny-meteor.tm79 { --start-x: 5vw; --start-y: -5vh; --end-x: 95vw; --end-y: 105vh; --angle: 42deg; --tail-length: 15px; animation-delay: 2.02s; }
+.tiny-meteor.tm80 { --start-x: 95vw; --start-y: 105vh; --end-x: 5vw; --end-y: -5vh; --angle: 222deg; --tail-length: 18px; animation-delay: 2.12s; }
+
+/* Tiny meteors - small and subtle */
+.tiny-meteor {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.4);
+.tiny-meteor
