@@ -147,67 +147,60 @@
             
             <!-- Replace the existing meteor shower with this improved version -->
             <div class="meteor-shower">
-                <!-- Horizontal meteors (left to right and right to left) -->
-                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 15%; --meteor-end-x: 105%; --meteor-end-y: 15%; --meteor-angle: 0deg; --meteor-delay: 0s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
-                <div class="meteor prominent" style="--meteor-start-x: 105%; --meteor-start-y: 35%; --meteor-end-x: -5%; --meteor-end-y: 35%; --meteor-angle: 180deg; --meteor-delay: 0.3s; --meteor-duration: 1.7s; --meteor-tail-length: 320px;"></div>
-                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 55%; --meteor-end-x: 105%; --meteor-end-y: 55%; --meteor-angle: 0deg; --meteor-delay: 0.6s; --meteor-duration: 1.5s; --meteor-tail-length: 310px;"></div>
-                <div class="meteor prominent" style="--meteor-start-x: 105%; --meteor-start-y: 75%; --meteor-end-x: -5%; --meteor-end-y: 75%; --meteor-angle: 180deg; --meteor-delay: 0.9s; --meteor-duration: 1.8s; --meteor-tail-length: 330px;"></div>
+                <!-- Horizontal meteors (left to right and right to left) - avoiding top-left -->
+                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 40%; --meteor-end-x: 105%; --meteor-end-y: 40%; --meteor-angle: 0deg; --meteor-delay: 0s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 105%; --meteor-start-y: 60%; --meteor-end-x: -5%; --meteor-end-y: 60%; --meteor-angle: 180deg; --meteor-delay: 0.3s; --meteor-duration: 1.7s; --meteor-tail-length: 320px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 80%; --meteor-end-x: 105%; --meteor-end-y: 80%; --meteor-angle: 0deg; --meteor-delay: 0.6s; --meteor-duration: 1.5s; --meteor-tail-length: 310px;"></div>
                 
-                <!-- Vertical meteors (top to bottom and bottom to top) -->
-                <div class="meteor blue" style="--meteor-start-x: 20%; --meteor-start-y: -5%; --meteor-end-x: 20%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 0.2s; --meteor-duration: 1.7s; --meteor-tail-length: 280px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 40%; --meteor-start-y: 105%; --meteor-end-x: 40%; --meteor-end-y: -5%; --meteor-angle: 270deg; --meteor-delay: 0.5s; --meteor-duration: 1.6s; --meteor-tail-length: 290px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 60%; --meteor-start-y: -5%; --meteor-end-x: 60%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 0.8s; --meteor-duration: 1.8s; --meteor-tail-length: 300px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 80%; --meteor-start-y: 105%; --meteor-end-x: 80%; --meteor-end-y: -5%; --meteor-angle: 270deg; --meteor-delay: 1.1s; --meteor-duration: 1.5s; --meteor-tail-length: 310px;"></div>
+                <!-- Vertical meteors (top to bottom and bottom to top) - avoiding top-left -->
+                <div class="meteor blue" style="--meteor-start-x: 50%; --meteor-start-y: -5%; --meteor-end-x: 50%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 0.2s; --meteor-duration: 1.7s; --meteor-tail-length: 280px;"></div>
+                <div class="meteor blue" style="--meteor-start-x: 70%; --meteor-start-y: 105%; --meteor-end-x: 70%; --meteor-end-y: -5%; --meteor-angle: 270deg; --meteor-delay: 0.5s; --meteor-duration: 1.6s; --meteor-tail-length: 290px;"></div>
+                <div class="meteor blue" style="--meteor-start-x: 90%; --meteor-start-y: -5%; --meteor-end-x: 90%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 0.8s; --meteor-duration: 1.8s; --meteor-tail-length: 300px;"></div>
                 
-                <!-- Diagonal meteors (corners to opposite corners) -->
-                <div class="meteor gold" style="--meteor-start-x: -5%; --meteor-start-y: -5%; --meteor-end-x: 105%; --meteor-end-y: 105%; --meteor-angle: 45deg; --meteor-delay: 0.4s; --meteor-duration: 2.0s; --meteor-tail-length: 350px;"></div>
+                <!-- Diagonal meteors (corners to opposite corners) - avoiding top-left -->
                 <div class="meteor gold" style="--meteor-start-x: 105%; --meteor-start-y: -5%; --meteor-end-x: -5%; --meteor-end-y: 105%; --meteor-angle: 135deg; --meteor-delay: 0.7s; --meteor-duration: 1.9s; --meteor-tail-length: 340px;"></div>
                 <div class="meteor gold" style="--meteor-start-x: -5%; --meteor-start-y: 105%; --meteor-end-x: 105%; --meteor-end-y: -5%; --meteor-angle: 315deg; --meteor-delay: 1.0s; --meteor-duration: 2.1s; --meteor-tail-length: 360px;"></div>
                 <div class="meteor gold" style="--meteor-start-x: 105%; --meteor-start-y: 105%; --meteor-end-x: -5%; --meteor-end-y: -5%; --meteor-angle: 225deg; --meteor-delay: 1.3s; --meteor-duration: 1.8s; --meteor-tail-length: 330px;"></div>
                 
-                <!-- Random angled meteors from various edges -->
-                <div class="meteor purple" style="--meteor-start-x: -5%; --meteor-start-y: 25%; --meteor-end-x: 65%; --meteor-end-y: 85%; --meteor-angle: 30deg; --meteor-delay: 0.1s; --meteor-duration: 1.4s; --meteor-tail-length: 280px;"></div>
-                <div class="meteor green" style="--meteor-start-x: 105%; --meteor-start-y: 25%; --meteor-end-x: 35%; --meteor-end-y: 85%; --meteor-angle: 150deg; --meteor-delay: 0.4s; --meteor-duration: 1.5s; --meteor-tail-length: 290px;"></div>
-                <div class="meteor purple" style="--meteor-start-x: 25%; --meteor-start-y: -5%; --meteor-end-x: 85%; --meteor-end-y: 65%; --meteor-angle: 60deg; --meteor-delay: 0.7s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
-                <div class="meteor green" style="--meteor-start-x: 25%; --meteor-start-y: 105%; --meteor-end-x: 85%; --meteor-end-y: 35%; --meteor-angle: 300deg; --meteor-delay: 1.0s; --meteor-duration: 1.7s; --meteor-tail-length: 310px;"></div>
+                <!-- Random angled meteors from various edges - avoiding top-left -->
+                <div class="meteor purple" style="--meteor-start-x: -5%; --meteor-start-y: 55%; --meteor-end-x: 65%; --meteor-end-y: 85%; --meteor-angle: 30deg; --meteor-delay: 0.1s; --meteor-duration: 1.4s; --meteor-tail-length: 280px;"></div>
+                <div class="meteor green" style="--meteor-start-x: 105%; --meteor-start-y: 45%; --meteor-end-x: 35%; --meteor-end-y: 85%; --meteor-angle: 150deg; --meteor-delay: 0.4s; --meteor-duration: 1.5s; --meteor-tail-length: 290px;"></div>
+                <div class="meteor purple" style="--meteor-start-x: 65%; --meteor-start-y: -5%; --meteor-end-x: 85%; --meteor-end-y: 65%; --meteor-angle: 60deg; --meteor-delay: 0.7s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
+                <div class="meteor green" style="--meteor-start-x: 45%; --meteor-start-y: 105%; --meteor-end-x: 85%; --meteor-end-y: 35%; --meteor-angle: 300deg; --meteor-delay: 1.0s; --meteor-duration: 1.7s; --meteor-tail-length: 310px;"></div>
             </div>
 
-            <!-- Second meteor shower with different timing for continuous effect -->
+            <!-- Second meteor shower with different timing for continuous effect - avoiding top-left -->
             <div class="continuous-meteor-shower">
-                <!-- Horizontal meteors with offset timing -->
-                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 25%; --meteor-end-x: 105%; --meteor-end-y: 25%; --meteor-angle: 0deg; --meteor-delay: 1.5s; --meteor-duration: 1.7s; --meteor-tail-length: 320px;"></div>
-                <div class="meteor prominent" style="--meteor-start-x: 105%; --meteor-start-y: 45%; --meteor-end-x: -5%; --meteor-end-y: 45%; --meteor-angle: 180deg; --meteor-delay: 1.8s; --meteor-duration: 1.6s; --meteor-tail-length: 310px;"></div>
-                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 65%; --meteor-end-x: 105%; --meteor-end-y: 65%; --meteor-angle: 0deg; --meteor-delay: 2.1s; --meteor-duration: 1.9s; --meteor-tail-length: 330px;"></div>
-                <div class="meteor prominent" style="--meteor-start-x: 105%; --meteor-start-y: 85%; --meteor-end-x: -5%; --meteor-end-y: 85%; --meteor-angle: 180deg; --meteor-delay: 2.4s; --meteor-duration: 1.8s; --meteor-tail-length: 340px;"></div>
+                <!-- Horizontal meteors with offset timing - avoiding top-left -->
+                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 50%; --meteor-end-x: 105%; --meteor-end-y: 50%; --meteor-angle: 0deg; --meteor-delay: 1.5s; --meteor-duration: 1.7s; --meteor-tail-length: 320px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: 105%; --meteor-start-y: 70%; --meteor-end-x: -5%; --meteor-end-y: 70%; --meteor-angle: 180deg; --meteor-delay: 1.8s; --meteor-duration: 1.6s; --meteor-tail-length: 310px;"></div>
+                <div class="meteor prominent" style="--meteor-start-x: -5%; --meteor-start-y: 90%; --meteor-end-x: 105%; --meteor-end-y: 90%; --meteor-angle: 0deg; --meteor-delay: 2.1s; --meteor-duration: 1.9s; --meteor-tail-length: 330px;"></div>
                 
-                <!-- Vertical meteors with offset timing -->
-                <div class="meteor blue" style="--meteor-start-x: 30%; --meteor-start-y: -5%; --meteor-end-x: 30%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 1.7s; --meteor-duration: 1.8s; --meteor-tail-length: 300px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 50%; --meteor-start-y: 105%; --meteor-end-x: 50%; --meteor-end-y: -5%; --meteor-angle: 270deg; --meteor-delay: 2.0s; --meteor-duration: 1.7s; --meteor-tail-length: 290px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 70%; --meteor-start-y: -5%; --meteor-end-x: 70%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 2.3s; --meteor-duration: 1.9s; --meteor-tail-length: 310px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 90%; --meteor-start-y: 105%; --meteor-end-x: 90%; --meteor-end-y: -5%; --meteor-angle: 270deg; --meteor-delay: 2.6s; --meteor-duration: 1.6s; --meteor-tail-length: 320px;"></div>
+                <!-- Vertical meteors with offset timing - avoiding top-left -->
+                <div class="meteor blue" style="--meteor-start-x: 60%; --meteor-start-y: -5%; --meteor-end-x: 60%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 1.7s; --meteor-duration: 1.8s; --meteor-tail-length: 300px;"></div>
+                <div class="meteor blue" style="--meteor-start-x: 80%; --meteor-start-y: 105%; --meteor-end-x: 80%; --meteor-end-y: -5%; --meteor-angle: 270deg; --meteor-delay: 2.0s; --meteor-duration: 1.7s; --meteor-tail-length: 290px;"></div>
+                <div class="meteor blue" style="--meteor-start-x: 100%; --meteor-start-y: -5%; --meteor-end-x: 100%; --meteor-end-y: 105%; --meteor-angle: 90deg; --meteor-delay: 2.3s; --meteor-duration: 1.9s; --meteor-tail-length: 310px;"></div>
                 
-                <!-- Diagonal meteors with offset timing -->
-                <div class="meteor gold" style="--meteor-start-x: 25%; --meteor-start-y: -5%; --meteor-end-x: 75%; --meteor-end-y: 105%; --meteor-angle: 75deg; --meteor-delay: 1.9s; --meteor-duration: 2.0s; --meteor-tail-length: 330px;"></div>
+                <!-- Diagonal meteors with offset timing - avoiding top-left -->
+                <div class="meteor gold" style="--meteor-start-x: 55%; --meteor-start-y: -5%; --meteor-end-x: 75%; --meteor-end-y: 105%; --meteor-angle: 75deg; --meteor-delay: 1.9s; --meteor-duration: 2.0s; --meteor-tail-length: 330px;"></div>
                 <div class="meteor gold" style="--meteor-start-x: 75%; --meteor-start-y: -5%; --meteor-end-x: 25%; --meteor-end-y: 105%; --meteor-angle: 105deg; --meteor-delay: 2.2s; --meteor-duration: 1.9s; --meteor-tail-length: 320px;"></div>
                 <div class="meteor gold" style="--meteor-start-x: 25%; --meteor-start-y: 105%; --meteor-end-x: 75%; --meteor-end-y: -5%; --meteor-angle: 285deg; --meteor-delay: 2.5s; --meteor-duration: 2.1s; --meteor-tail-length: 340px;"></div>
                 <div class="meteor gold" style="--meteor-start-x: 75%; --meteor-start-y: 105%; --meteor-end-x: 25%; --meteor-end-y: -5%; --meteor-angle: 255deg; --meteor-delay: 2.8s; --meteor-duration: 1.8s; --meteor-tail-length: 350px;"></div>
             </div>
 
-            <!-- Third meteor shower with random directions from all sides -->
+            <!-- Third meteor shower with random directions from right side and bottom only -->
             <div class="meteor-shower">
-                <!-- Random directions from left edge -->
-                <div class="meteor" style="--meteor-start-x: -5%; --meteor-start-y: 10%; --meteor-end-x: 60%; --meteor-end-y: 40%; --meteor-angle: 20deg; --meteor-delay: 0.2s; --meteor-duration: 1.4s; --meteor-tail-length: 280px;"></div>
-                <div class="meteor purple" style="--meteor-start-x: -5%; --meteor-start-y: 30%; --meteor-end-x: 70%; --meteor-end-y: 10%; --meteor-angle: 350deg; --meteor-delay: 0.9s; --meteor-duration: 1.5s; --meteor-tail-length: 290px;"></div>
-                <div class="meteor green" style="--meteor-start-x: -5%; --meteor-start-y: 50%; --meteor-end-x: 50%; --meteor-end-y: 90%; --meteor-angle: 40deg; --meteor-delay: 1.6s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
-                <div class="meteor" style="--meteor-start-x: -5%; --meteor-start-y: 70%; --meteor-end-x: 60%; --meteor-end-y: 20%; --meteor-angle: 330deg; --meteor-delay: 2.3s; --meteor-duration: 1.7s; --meteor-tail-length: 310px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: -5%; --meteor-start-y: 90%; --meteor-end-x: 70%; --meteor-end-y: 60%; --meteor-angle: 15deg; --meteor-delay: 3.0s; --meteor-duration: 1.8s; --meteor-tail-length: 320px;"></div>
-                
                 <!-- Random directions from right edge -->
-                <div class="meteor" style="--meteor-start-x: 105%; --meteor-start-y: 10%; --meteor-end-x: 40%; --meteor-end-y: 40%; --meteor-angle: 160deg; --meteor-delay: 0.5s; --meteor-duration: 1.5s; --meteor-tail-length: 290px;"></div>
-                <div class="meteor purple" style="--meteor-start-x: 105%; --meteor-start-y: 30%; --meteor-end-x: 30%; --meteor-end-y: 10%; --meteor-angle: 190deg; --meteor-delay: 1.2s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
-                <div class="meteor green" style="--meteor-start-x: 105%; --meteor-start-y: 50%; --meteor-end-x: 50%; --meteor-end-y: 90%; --meteor-angle: 140deg; --meteor-delay: 1.9s; --meteor-duration: 1.7s; --meteor-tail-length: 310px;"></div>
-                <div class="meteor" style="--meteor-start-x: 105%; --meteor-start-y: 70%; --meteor-end-x: 40%; --meteor-end-y: 20%; --meteor-angle: 210deg; --meteor-delay: 2.6s; --meteor-duration: 1.8s; --meteor-tail-length: 320px;"></div>
-                <div class="meteor blue" style="--meteor-start-x: 105%; --meteor-start-y: 90%; --meteor-end-x: 30%; --meteor-end-y: 60%; --meteor-angle: 165deg; --meteor-delay: 3.3s; --meteor-duration: 1.9s; --meteor-tail-length: 330px;"></div>
+                <div class="meteor" style="--meteor-start-x: 105%; --meteor-start-y: 30%; --meteor-end-x: 40%; --meteor-end-y: 40%; --meteor-angle: 160deg; --meteor-delay: 0.5s; --meteor-duration: 1.5s; --meteor-tail-length: 290px;"></div>
+                <div class="meteor purple" style="--meteor-start-x: 105%; --meteor-start-y: 50%; --meteor-end-x: 30%; --meteor-end-y: 30%; --meteor-angle: 190deg; --meteor-delay: 1.2s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
+                <div class="meteor green" style="--meteor-start-x: 105%; --meteor-start-y: 70%; --meteor-end-x: 50%; --meteor-end-y: 90%; --meteor-angle: 140deg; --meteor-delay: 1.9s; --meteor-duration: 1.7s; --meteor-tail-length: 310px;"></div>
+                <div class="meteor" style="--meteor-start-x: 105%; --meteor-start-y: 90%; --meteor-end-x: 40%; --meteor-end-y: 60%; --meteor-angle: 210deg; --meteor-delay: 2.6s; --meteor-duration: 1.8s; --meteor-tail-length: 320px;"></div>
+                
+                <!-- Random directions from bottom edge -->
+                <div class="meteor blue" style="--meteor-start-x: 20%; --meteor-start-y: 105%; --meteor-end-x: 40%; --meteor-end-y: 40%; --meteor-angle: 290deg; --meteor-delay: 0.3s; --meteor-duration: 1.6s; --meteor-tail-length: 300px;"></div>
+                <div class="meteor purple" style="--meteor-start-x: 40%; --meteor-start-y: 105%; --meteor-end-x: 60%; --meteor-end-y: 30%; --meteor-angle: 280deg; --meteor-delay: 1.0s; --meteor-duration: 1.7s; --meteor-tail-length: 310px;"></div>
+                <div class="meteor green" style="--meteor-start-x: 60%; --meteor-start-y: 105%; --meteor-end-x: 80%; --meteor-end-y: 50%; --meteor-angle: 260deg; --meteor-delay: 1.7s; --meteor-duration: 1.8s; --meteor-tail-length: 320px;"></div>
+                <div class="meteor" style="--meteor-start-x: 80%; --meteor-start-y: 105%; --meteor-end-x: 40%; --meteor-end-y: 60%; --meteor-angle: 240deg; --meteor-delay: 2.4s; --meteor-duration: 1.9s; --meteor-tail-length: 330px;"></div>
             </div>
 
             <!-- Add inside the space-background div, after the cosmic-rays div -->
