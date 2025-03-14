@@ -2720,4 +2720,140 @@ textarea.form-control {
     background-color: #fff;
     border-radius: 50%;
     box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Twinkling stars with enhanced visual effects */
+.twinkling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.twinkling-star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 var(--glow-size, 8px) var(--glow-size, 4px) rgba(255, 255, 255, 0.7);
+    width: var(--star-size, 2px);
+    height: var(--star-size, 2px);
+    opacity: var(--star-opacity, 0.8);
+    animation: twinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+    animation-delay: var(--twinkle-delay, 0s);
+}
+
+/* Star twinkling animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: var(--star-opacity, 0.8);
+        transform: scale(1);
+        box-shadow: 0 0 var(--glow-size, 8px) var(--glow-size, 4px) rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        opacity: var(--star-dim-opacity, 0.3);
+        transform: scale(0.8);
+        box-shadow: 0 0 calc(var(--glow-size, 8px) * 0.5) calc(var(--glow-size, 4px) * 0.5) rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Bright star with rays */
+.twinkling-star.bright {
+    position: relative;
+}
+
+.twinkling-star.bright::before,
+.twinkling-star.bright::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7), transparent);
+    width: calc(var(--star-size, 2px) * 6);
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.twinkling-star.bright::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Individual star properties with varied positions, sizes, and animations */
+.twinkling-star.ts1 { --star-size: 3px; --glow-size: 10px; --star-opacity: 0.9; --star-dim-opacity: 0.4; --twinkle-duration: 5s; --twinkle-delay: 0.2s; top: 15%; left: 12%; }
+.twinkling-star.ts2 { --star-size: 2px; --glow-size: 8px; --star-opacity: 0.8; --star-dim-opacity: 0.3; --twinkle-duration: 4.5s; --twinkle-delay: 0.7s; top: 25%; left: 28%; }
+.twinkling-star.ts3 { --star-size: 4px; --glow-size: 12px; --star-opacity: 1; --star-dim-opacity: 0.5; --twinkle-duration: 6s; --twinkle-delay: 1.2s; top: 8%; left: 45%; }
+.twinkling-star.ts4 { --star-size: 2.5px; --glow-size: 9px; --star-opacity: 0.85; --star-dim-opacity: 0.35; --twinkle-duration: 5.5s; --twinkle-delay: 1.7s; top: 18%; left: 65%; }
+.twinkling-star.ts5 { --star-size: 3.5px; --glow-size: 11px; --star-opacity: 0.95; --star-dim-opacity: 0.45; --twinkle-duration: 4.8s; --twinkle-delay: 2.2s; top: 12%; left: 82%; }
+.twinkling-star.ts6 { --star-size: 2.2px; --glow-size: 7px; --star-opacity: 0.75; --star-dim-opacity: 0.25; --twinkle-duration: 4.2s; --twinkle-delay: 2.7s; top: 35%; left: 8%; }
+.twinkling-star.ts7 { --star-size: 3.8px; --glow-size: 13px; --star-opacity: 1; --star-dim-opacity: 0.5; --twinkle-duration: 6.2s; --twinkle-delay: 3.2s; top: 42%; left: 22%; }
+.twinkling-star.ts8 { --star-size: 2.8px; --glow-size: 9px; --star-opacity: 0.85; --star-dim-opacity: 0.35; --twinkle-duration: 5.2s; --twinkle-delay: 3.7s; top: 38%; left: 38%; }
+.twinkling-star.ts9 { --star-size: 3.2px; --glow-size: 10px; --star-opacity: 0.9; --star-dim-opacity: 0.4; --twinkle-duration: 5.8s; --twinkle-delay: 4.2s; top: 45%; left: 55%; }
+.twinkling-star.ts10 { --star-size: 2.5px; --glow-size: 8px; --star-opacity: 0.8; --star-dim-opacity: 0.3; --twinkle-duration: 4.5s; --twinkle-delay: 4.7s; top: 32%; left: 72%; }
+.twinkling-star.ts11 { --star-size: 3.5px; --glow-size: 12px; --star-opacity: 0.95; --star-dim-opacity: 0.45; --twinkle-duration: 6s; --twinkle-delay: 5.2s; top: 28%; left: 88%; }
+.twinkling-star.ts12 { --star-size: 2px; --glow-size: 7px; --star-opacity: 0.75; --star-dim-opacity: 0.25; --twinkle-duration: 4s; --twinkle-delay: 5.7s; top: 58%; left: 15%; }
+.twinkling-star.ts13 { --star-size: 4px; --glow-size: 14px; --star-opacity: 1; --star-dim-opacity: 0.5; --twinkle-duration: 6.5s; --twinkle-delay: 6.2s; top: 65%; left: 35%; }
+.twinkling-star.ts14 { --star-size: 3px; --glow-size: 10px; --star-opacity: 0.9; --star-dim-opacity: 0.4; --twinkle-duration: 5.5s; --twinkle-delay: 6.7s; top: 72%; left: 62%; }
+.twinkling-star.ts15 { --star-size: 2.8px; --glow-size: 9px; --star-opacity: 0.85; --star-dim-opacity: 0.35; --twinkle-duration: 5s; --twinkle-delay: 7.2s; top: 68%; left: 85%; }
+
+/* Add a few special bright stars with rays */
+.twinkling-star.ts3,
+.twinkling-star.ts7,
+.twinkling-star.ts13 {
+    --star-size: 4px;
+    --glow-size: 14px;
+    --star-opacity: 1;
+    --star-dim-opacity: 0.6;
+    --twinkle-duration: 7s;
+}
+
+/* Make these stars have rays */
+.twinkling-star.ts3::before,
+.twinkling-star.ts3::after,
+.twinkling-star.ts7::before,
+.twinkling-star.ts7::after,
+.twinkling-star.ts13::before,
+.twinkling-star.ts13::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7), transparent);
+    width: 24px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ray-pulse 7s ease-in-out infinite;
+}
+
+.twinkling-star.ts3::after,
+.twinkling-star.ts7::after,
+.twinkling-star.ts13::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Add diagonal rays to make them more star-like */
+.twinkling-star.ts3::before,
+.twinkling-star.ts7::before,
+.twinkling-star.ts13::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.twinkling-star.ts3::after,
+.twinkling-star.ts7::after,
+.twinkling-star.ts13::after {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+/* Ray pulsing animation */
+@keyframes ray-pulse {
+    0%, 100% {
+        width: 24px;
+        opacity: 0.7;
+    }
+    50% {
+        width: 16px;
+        opacity: 0.3;
+    }
+}
 .tiny-meteor
