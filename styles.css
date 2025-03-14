@@ -496,22 +496,34 @@ p {
     width: 50px;
     height: 50px;
     border-radius: 12px;
-    background: var(--gradient-primary);
+    background-color: rgba(15, 15, 15, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    color: var(--white);
     flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+    border: 1px solid rgba(129, 140, 248, 0.1);
     overflow: hidden;
 }
 
-.contact-icon i {
-    font-size: 1.25rem;
-    line-height: 1;
-    display: inline-flex;
-    color: var(--white);
+.contact-icon.gmail-icon img,
+.contact-icon.x-icon svg,
+.contact-icon.instagram-icon svg {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Add hover effect to match footer */
+.contact-card:hover .contact-icon {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure consistent styling for all icons */
+.gmail-icon, .x-icon, .instagram-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Add planet elements */
