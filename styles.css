@@ -703,20 +703,20 @@ p {
 .asteroid:nth-child(44) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 1.2px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 19s; --travel-delay: 18.3s; }
 .asteroid:nth-child(45) { --start-x: -10%; --start-y: 55%; --end-x: 110%; --end-y: 35%; --size: 3.0px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 15s; --travel-delay: 19.0s; }
 .asteroid:nth-child(46) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 1.6px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 16s; --travel-delay: 19.7s; }
-.asteroid:nth-child(47) { --start-x: 20%; --start-y: -10%; --end-x: 70%; --end-y: 110%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 12s; --travel-delay: 20.4s; }
-.asteroid:nth-child(48) { --start-x: 85%; --start-y: 110%; --end-x: 35%; --end-y: -5%; --size: 1.5px; width: var(--size); height: var(--size); --rotation: 720deg; --travel-duration: 18s; --travel-delay: 21.1s; }
-.asteroid:nth-child(49) { --start-x: -5%; --start-y: 75%; --end-x: 110%; --end-y: 25%; --size: 2.8px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 14s; --travel-delay: 21.8s; }
-.asteroid:nth-child(50) { --start-x: 110%; --start-y: 50%; --end-x: -10%; --end-y: 100%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 17s; --travel-delay: 22.5s; }
-.asteroid:nth-child(51) { --start-x: 60%; --start-y: -5%; --end-x: 10%; --end-y: 110%; --size: 2.0px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 15s; --travel-delay: 23.2s; }
-.asteroid:nth-child(52) { --start-x: 65%; --start-y: 110%; --end-x: 15%; --end-y: -10%; --size: 3.2px; width: var(--size); height: var(--size); --rotation: 720deg; --travel-duration: 20s; --travel-delay: 23.9s; }
-.asteroid:nth-child(53) { --start-x: -10%; --start-y: 45%; --end-x: 110%; --end-y: 95%; --size: 1.7px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 16s; --travel-delay: 24.6s; }
-.asteroid:nth-child(54) { --start-x: 110%; --start-y: 40%; --end-x: -5%; --end-y: 90%; --size: 2.5px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 18s; --travel-delay: 25.3s; }
-.asteroid:nth-child(55) { --start-x: 30%; --start-y: -10%; --end-x: 80%; --end-y: 110%; --size: 1.1px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 14s; --travel-delay: 26.0s; }
-.asteroid:nth-child(56) { --start-x: 95%; --start-y: 110%; --end-x: 45%; --end-y: -5%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 19s; --travel-delay: 26.7s; }
-.asteroid:nth-child(57) { --start-x: -5%; --start-y: 65%; --end-x: 110%; --end-y: 15%; --size: 1.8px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 15s; --travel-delay: 27.4s; }
-.asteroid:nth-child(58) { --start-x: 110%; --start-y: 60%; --end-x: -10%; --end-y: 10%; --size: 2.2px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 17s; --travel-delay: 28.1s; }
-.asteroid:nth-child(59) { --start-x: 40%; --start-y: -5%; --end-x: 90%; --end-y: 110%; --size: 1.4px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 16s; --travel-delay: 28.8s; }
-.asteroid:nth-child(60) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 720deg; --travel-duration: 21s; --travel-delay: 29.5s; }
+.asteroid:nth-child(47) { --start-x: 25%; --start-y: -5%; --end-x: 75%; --end-y: 110%; --size: 1.7px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 15s; --travel-delay: 20.4s; }
+.asteroid:nth-child(48) { --start-x: 80%; --start-y: 110%; --end-x: 20%; --end-y: -10%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 20s; --travel-delay: 21.1s; }
+.asteroid:nth-child(49) { --start-x: -10%; --start-y: 65%; --end-x: 110%; --end-y: 35%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 17s; --travel-delay: 21.8s; }
+.asteroid:nth-child(50) { --start-x: 110%; --start-y: 20%; --end-x: -5%; --end-y: 80%; --size: 2.5px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 18s; --travel-delay: 22.5s; }
+.asteroid:nth-child(51) { --start-x: 40%; --start-y: -10%; --end-x: 60%; --end-y: 110%; --size: 1.5px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 14s; --travel-delay: 23.2s; }
+.asteroid:nth-child(52) { --start-x: 55%; --start-y: 110%; --end-x: 45%; --end-y: -5%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 20s; --travel-delay: 23.9s; }
+.asteroid:nth-child(53) { --start-x: -5%; --start-y: 55%; --end-x: 110%; --end-y: 45%; --size: 1.5px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 15s; --travel-delay: 24.6s; }
+.asteroid:nth-child(54) { --start-x: 110%; --start-y: 40%; --end-x: -10%; --end-y: 60%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 17s; --travel-delay: 25.3s; }
+.asteroid:nth-child(55) { --start-x: 30%; --start-y: -5%; --end-x: 70%; --end-y: 110%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 13s; --travel-delay: 26.0s; }
+.asteroid:nth-child(56) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 19s; --travel-delay: 26.7s; }
+.asteroid:nth-child(57) { --start-x: -10%; --start-y: 65%; --end-x: 110%; --end-y: 35%; --size: 1.4px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 16s; --travel-delay: 27.4s; }
+.asteroid:nth-child(58) { --start-x: 110%; --start-y: 20%; --end-x: -5%; --end-y: 80%; --size: 2.4px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(59) { --start-x: 40%; --start-y: -10%; --end-x: 60%; --end-y: 110%; --size: 1.7px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 14s; --travel-delay: 28.8s; }
+.asteroid:nth-child(60) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 20s; --travel-delay: 29.5s; }
 
 /* Add shooting stars */
 .shooting-star {
@@ -1608,5 +1608,407 @@ textarea.form-control {
     100% {
         transform: translate(-20px, 20px) scale(0.95);
         opacity: 0.1;
+    }
+}
+
+/* Add Milky Way elements */
+.milky-way {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><rect width="1000" height="1000" fill="none"/><g fill="%23FFFFFF"><circle cx="100" cy="100" r="0.7" opacity="0.3"/><circle cx="200" cy="150" r="0.6" opacity="0.3"/><circle cx="300" cy="250" r="0.8" opacity="0.3"/><circle cx="400" cy="300" r="0.5" opacity="0.3"/><circle cx="500" cy="400" r="0.7" opacity="0.3"/><circle cx="600" cy="500" r="0.6" opacity="0.3"/><circle cx="700" cy="600" r="0.8" opacity="0.3"/><circle cx="800" cy="700" r="0.5" opacity="0.3"/><circle cx="900" cy="800" r="0.7" opacity="0.3"/></g></svg>');
+    opacity: 0.4;
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(3px);
+}
+
+.milky-way-arm {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+    transform: rotate(45deg);
+}
+
+.milky-way-arm-1 {
+    width: 1200px;
+    height: 300px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(70, 131, 180, 0.2), rgba(138, 43, 226, 0.2), rgba(255, 255, 255, 0.1));
+    top: 30%;
+    left: -10%;
+}
+
+.milky-way-arm-2 {
+    width: 1000px;
+    height: 250px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 223, 0, 0.15), rgba(255, 105, 180, 0.15), rgba(255, 255, 255, 0.1));
+    top: 60%;
+    left: 20%;
+    transform: rotate(-30deg);
+}
+
+.milky-way-center {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 223, 0, 0.2), rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.15;
+    top: 40%;
+    left: 30%;
+    z-index: 1;
+    pointer-events: none;
+    animation: center-pulse 20s ease-in-out infinite alternate;
+}
+
+@keyframes center-pulse {
+    0% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+}
+
+/* Add more asteroids (61-100) */
+.asteroid:nth-child(61) { --start-x: -5%; --start-y: 22%; --end-x: 110%; --end-y: 78%; --size: 1.9px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 16s; --travel-delay: 30.2s; }
+.asteroid:nth-child(62) { --start-x: 110%; --start-y: 35%; --end-x: -10%; --end-y: 65%; --size: 2.4px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 19s; --travel-delay: 30.9s; }
+.asteroid:nth-child(63) { --start-x: 55%; --start-y: -5%; --end-x: 25%; --end-y: 110%; --size: 1.7px; width: var(--size); height: var(--size); --rotation: 540deg; --travel-duration: 14s; --travel-delay: 17.6s; }
+.asteroid:nth-child(64) { --start-x: 35%; --start-y: 110%; --end-x: 65%; --end-y: -10%; --size: 3.1px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 20s; --travel-delay: 32.3s; }
+.asteroid:nth-child(65) { --start-x: -10%; --start-y: 85%; --end-x: 110%; --end-y: 45%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 19.0s; }
+.asteroid:nth-child(66) { --start-x: 110%; --start-y: 25%; --end-x: -5%; --end-y: 70%; --size: 2.2px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 21.8s; }
+.asteroid:nth-child(67) { --start-x: 40%; --start-y: -10%; --end-x: 90%; --end-y: 110%; --size: 1.6px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 16s; --travel-delay: 22.5s; }
+.asteroid:nth-child(68) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 20s; --travel-delay: 32.3s; }
+.asteroid:nth-child(69) { --start-x: 110%; --start-y: 70%; --end-x: -5%; --end-y: 50%; --size: 2.5px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 18s; --travel-delay: 33.0s; }
+.asteroid:nth-child(70) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 33.7s; }
+.asteroid:nth-child(71) { --start-x: 30%; --start-y: -5%; --end-x: 70%; --end-y: 110%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 24.6s; }
+.asteroid:nth-child(72) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
+.asteroid:nth-child(73) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(74) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
+.asteroid:nth-child(75) { --start-x: 30%; --start-y: 70%; --end-x: 110%; --end-y: 35%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 24.6s; }
+.asteroid:nth-child(76) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
+.asteroid:nth-child(77) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(78) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
+.asteroid:nth-child(79) { --start-x: 30%; --start-y: 70%; --end-x: 110%; --end-y: 35%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 24.6s; }
+.asteroid:nth-child(80) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
+.asteroid:nth-child(81) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(82) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
+.asteroid:nth-child(83) { --start-x: 30%; --start-y: 70%; --end-x: 110%; --end-y: 35%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 24.6s; }
+.asteroid:nth-child(84) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: 45%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
+.asteroid:nth-child(85) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(86) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
+.asteroid:nth-child(87) { --start-x: 30%; --start-y: 70%; --end-x: 110%; --end-y: 35%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 24.6s; }
+.asteroid:nth-child(88) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: 45%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
+.asteroid:nth-child(89) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(90) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
+.asteroid:nth-child(91) { --start-x: 40%; --start-y: -10%; --end-x: 90%; --end-y: 110%; --size: 1.6px; width: var(--size); height: var(--size); --rotation: 450deg; --travel-duration: 16s; --travel-delay: 29.5s; }
+.asteroid:nth-child(92) { --start-x: 55%; --start-y: 110%; --end-x: 45%; --end-y: -5%; --size: 3.3px; width: var(--size); height: var(--size); --rotation: 360deg; --travel-duration: 20s; --travel-delay: 30.2s; }
+.asteroid:nth-child(93) { --start-x: -5%; --start-y: 55%; --end-x: 110%; --end-y: 45%; --size: 1.3px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 15s; --travel-delay: 30.9s; }
+.asteroid:nth-child(94) { --start-x: 110%; --start-y: 40%; --end-x: -5%; --end-y: 60%; --size: 2.5px; width: var(--size); height: var(--size); --rotation: 270deg; --travel-duration: 18s; --travel-delay: 31.6s; }
+.asteroid:nth-child(95) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: -10%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
+.asteroid:nth-child(96) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+.asteroid:nth-child(97) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
+.asteroid:nth-child(98) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.2px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 29.5s; }
+.asteroid:nth-child(99) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.5px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 18s; --travel-delay: 30.2s; }
+.asteroid:nth-child(100) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
+
+/* Add more dust particles */
+.dust-particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    animation: dust-float 8s ease-in-out infinite;
+    --dust-size: 1px;
+    --dust-delay: 0s;
+    width: var(--dust-size);
+    height: var(--dust-size);
+    animation-delay: var(--dust-delay);
+}
+
+@keyframes dust-float {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.7;
+    }
+    75% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(var(--dust-x, 50px), var(--dust-y, 50px));
+        opacity: 0;
+    }
+}
+
+/* Generate 30 dust particles */
+.dust-particle:nth-child(1) { top: 10%; left: 20%; --dust-size: 0.8px; --dust-delay: 0s; --dust-x: 30px; --dust-y: 20px; }
+.dust-particle:nth-child(2) { top: 15%; left: 30%; --dust-size: 0.6px; --dust-delay: 0.5s; --dust-x: -20px; --dust-y: 25px; }
+.dust-particle:nth-child(3) { top: 20%; left: 40%; --dust-size: 0.9px; --dust-delay: 1s; --dust-x: 25px; --dust-y: 30px; }
+.dust-particle:nth-child(4) { top: 25%; left: 50%; --dust-size: 0.7px; --dust-delay: 1.5s; --dust-x: -15px; --dust-y: 35px; }
+.dust-particle:nth-child(5) { top: 30%; left: 60%; --dust-size: 1.0px; --dust-delay: 2s; --dust-x: 20px; --dust-y: 40px; }
+.dust-particle:nth-child(6) { top: 35%; left: 70%; --dust-size: 0.7px; --dust-delay: 2.5s; --dust-x: 20px; --dust-y: 45px; }
+.dust-particle:nth-child(7) { top: 40%; left: 80%; --dust-size: 0.7px; --dust-delay: 3s; --dust-x: 25px; --dust-y: 50px; }
+.dust-particle:nth-child(8) { top: 45%; left: 90%; --dust-size: 0.7px; --dust-delay: 3.5s; --dust-x: 25px; --dust-y: 55px; }
+.dust-particle:nth-child(9) { top: 50%; left: 100%; --dust-size: 0.7px; --dust-delay: 4s; --dust-x: 25px; --dust-y: 60px; }
+.dust-particle:nth-child(10) { top: 55%; left: 110%; --dust-size: 0.7px; --dust-delay: 4.5s; --dust-x: 25px; --dust-y: 65px; }
+
+/* Improved Responsive Design for Contact Section */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        margin: 0 auto 0.75rem;
+    }
+    
+    .contact-details h4 {
+        font-size: 1rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.85rem;
+    }
+    
+    .contact-form-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        margin: 0 1rem 0 0;
+        min-width: 40px;
+        height: 40px;
+    }
+    
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-control {
+        padding: 0.75rem 1rem;
+    }
+    
+    .cta-button.primary {
+        padding: 0.75rem 1.5rem;
+    }
+    
+    /* Fix for space background elements on small screens */
+    .planet {
+        transform: scale(0.8);
+    }
+    
+    .ringed-planet {
+        transform: scale(0.8);
+    }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 375px) {
+    .contact-form-container {
+        padding: 1.25rem;
+    }
+    
+    .contact-form-container h3 {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .form-control {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    .contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .contact-details h4 {
+        font-size: 0.95rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.8rem;
+    }
+    
+    /* Adjust cosmic elements for very small screens */
+    .milky-way-arm {
+        opacity: 0.08;
+    }
+    
+    .nebula-cloud {
+        opacity: 0.1;
+    }
+}
+
+/* Fix for contact form container */
+.contact-form-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Ensure form elements are properly sized */
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure contact cards are properly styled */
+.contact-card {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+/* Fix for contact icons */
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: rgba(0, 113, 227, 0.1);
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+/* Ensure contact details take available space */
+.contact-details {
+    flex: 1;
+}
+
+/* Fix for mobile menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        position: relative;
+        z-index: 102;
+        width: 30px;
+        height: 20px;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-color);
+        position: absolute;
+        transition: var(--transition);
+    }
+    
+    .menu-toggle span:nth-child(1) {
+        top: 0;
+    }
+    
+    .menu-toggle span:nth-child(2) {
+        top: 9px;
+    }
+    
+    .menu-toggle span:nth-child(3) {
+        top: 18px;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 9px;
+    }
+}
+
+/* Improve overall mobile experience */
+@media (max-width: 576px) {
+    .hero {
+        padding: 6rem 0;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    /* Reduce number of visible cosmic elements on small screens for better performance */
+    .asteroid:nth-child(n+50):nth-child(-n+100) {
+        display: none;
+    }
+    
+    .dust-particle:nth-child(n+15):nth-child(-n+30) {
+        display: none;
     }
 }
