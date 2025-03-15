@@ -2922,3 +2922,129 @@ textarea.form-control {
     height: 10px;
     background: radial-gradient(ellipse at left, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 80%);
     transform-origin: left center;
+}
+
+/* Highly Visible Milky Way Galaxy - New Approach */
+.milky-way-prominent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.milky-way-band {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vw; /* Extra wide to ensure full coverage */
+    height: 120px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(60, 50, 120, 0.2) 10%,
+        rgba(100, 90, 180, 0.3) 20%,
+        rgba(180, 170, 255, 0.5) 30%,
+        rgba(255, 240, 220, 0.7) 50%,
+        rgba(180, 170, 255, 0.5) 70%,
+        rgba(100, 90, 180, 0.3) 80%,
+        rgba(60, 50, 120, 0.2) 90%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    transform: translate(-50%, -50%) rotate(30deg);
+    box-shadow: 0 0 40px 20px rgba(180, 170, 255, 0.3);
+    opacity: 0.8;
+}
+
+/* Bright stars along the Milky Way band */
+.milky-way-star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    animation: star-twinkle-bright 3s infinite alternate;
+}
+
+@keyframes star-twinkle-bright {
+    0% { opacity: 0.7; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Dust clouds in the Milky Way */
+.milky-way-dust-cloud {
+    position: absolute;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.5) 40%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+/* Bright core region */
+.milky-way-bright-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 240, 200, 1) 0%,
+        rgba(255, 220, 150, 0.9) 20%,
+        rgba(255, 200, 100, 0.7) 40%,
+        rgba(200, 150, 100, 0.5) 60%,
+        rgba(150, 100, 80, 0.3) 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 50px 30px rgba(255, 220, 150, 0.5);
+    animation: core-pulse-bright 8s infinite alternate;
+    z-index: 2;
+}
+
+@keyframes core-pulse-bright {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.9; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+/* Glowing nebula regions */
+.milky-way-nebula {
+    position: absolute;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 100, 150, 0.6) 0%,
+        rgba(255, 100, 150, 0.3) 50%,
+        rgba(255, 100, 150, 0) 100%
+    );
+    border-radius: 50%;
+    filter: blur(8px);
+    animation: nebula-glow 10s infinite alternate;
+}
+
+@keyframes nebula-glow {
+    0% { opacity: 0.6; transform: scale(0.95); }
+    100% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Overlay text label to ensure users know what they're looking at */
+.milky-way-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 10px;
+    z-index: 3;
+    pointer-events: none;
+}
