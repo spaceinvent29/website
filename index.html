@@ -14,108 +14,6 @@
     <script src="https://unpkg.com/simple-icons@v9/icons/x.js"></script>
     <script src="https://unpkg.com/simple-icons@v9/icons/instagram.js"></script>
     <script src="https://unpkg.com/simple-icons@v9/icons/gmail.js"></script>
-    <!-- Add this inline style for immediate effect -->
-    <style>
-        .logo span.space {
-            color: #1e90ff !important;
-            text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
-            font-weight: 800 !important;
-            display: inline-block !important;
-        }
-        .logo span.invent {
-            color: #ffd700 !important;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
-            font-weight: 800 !important;
-            display: inline-block !important;
-        }
-        .social-icons {
-            display: flex !important;
-            justify-content: center !important;
-            gap: 20px !important;
-            margin: 20px auto !important;
-        }
-        .social-icons a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 40px !important;
-            height: 40px !important;
-            background-color: rgba(30, 30, 50, 0.8) !important;
-            border-radius: 50% !important;
-        }
-        .social-icons a svg {
-            fill: #ffffff !important;
-            width: 20px !important;
-            height: 20px !important;
-        }
-        body, h1, h2, h3, h4, h5, h6, p, a, span, li {
-            color: #ffffff !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-    </style>
-    <!-- Add this right before the closing </head> tag -->
-    <style>
-        .logo span.space {
-            color: #1e90ff !important;
-            visibility: visible !important;
-            display: inline-block !important;
-        }
-        .logo span.invent {
-            color: #ffd700 !important;
-            visibility: visible !important;
-            display: inline-block !important;
-        }
-        .social-icons {
-            display: flex !important;
-            justify-content: center !important;
-        }
-        .social-icons a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-        .social-icons a svg {
-            fill: #ffffff !important;
-        }
-    </style>
-    <link rel="stylesheet" href="fix.css">
-    <link rel="stylesheet" href="minimal-fix.css">
-    <style>
-      /* Inline critical fixes */
-      .logo span.space {
-        color: #1e90ff !important;
-        text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
-        font-weight: 800 !important;
-        display: inline-block !important;
-        margin-right: 5px !important;
-      }
-      .logo span.invent {
-        color: #ffd700 !important;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
-        font-weight: 800 !important;
-        display: inline-block !important;
-      }
-      .social-icons {
-        display: flex !important;
-        justify-content: center !important;
-        gap: 20px !important;
-      }
-      .social-icons a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 40px !important;
-        height: 40px !important;
-        background-color: rgba(30, 30, 50, 0.8) !important;
-        border-radius: 50% !important;
-      }
-      .social-icons a svg {
-        fill: #ffffff !important;
-        width: 20px !important;
-        height: 20px !important;
-      }
-    </style>
 </head>
 <body>
     <div class="cursor"></div>
@@ -123,9 +21,7 @@
 
     <nav class="navbar">
         <div class="container">
-            <div class="logo">
-                <span class="space">Space</span> <span class="invent">Invent</span>
-            </div>
+            <a href="#home" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -199,6 +95,7 @@
             <div class="big-bang"></div>
             
             <!-- Enhanced Asteroids - Adding more for a richer cosmic experience -->
+            <div class="asteroid"></div>
             <div class="asteroid"></div>
             <div class="asteroid"></div>
             <div class="asteroid"></div>
@@ -790,58 +687,6 @@
                     e.preventDefault();
                 });
             }
-            
-            // CRITICAL FIX: Force direct styling on key elements
-            // Fix logo
-            const logoSpace = document.querySelector('.logo span.space');
-            const logoInvent = document.querySelector('.logo span.invent');
-            
-            if (logoSpace) {
-                logoSpace.style.color = '#1e90ff';
-                logoSpace.style.textShadow = '0 0 10px rgba(30, 144, 255, 0.8)';
-                logoSpace.style.fontWeight = '800';
-                logoSpace.style.letterSpacing = '0.5px';
-                logoSpace.style.display = 'inline-block';
-                logoSpace.style.marginRight = '5px';
-                logoSpace.style.visibility = 'visible';
-                logoSpace.style.opacity = '1';
-                logoSpace.style.fontFamily = 'Arial, sans-serif';
-                logoSpace.style.webkitFontSmoothing = 'antialiased';
-                logoSpace.style.mozOsxFontSmoothing = 'grayscale';
-            }
-            
-            if (logoInvent) {
-                logoInvent.style.color = '#ffd700';
-                logoInvent.style.textShadow = '0 0 10px rgba(255, 215, 0, 0.8)';
-                logoInvent.style.fontWeight = '800';
-                logoInvent.style.letterSpacing = '0.5px';
-                logoInvent.style.display = 'inline-block';
-                logoInvent.style.visibility = 'visible';
-                logoInvent.style.opacity = '1';
-                logoInvent.style.fontFamily = 'Arial, sans-serif';
-                logoInvent.style.webkitFontSmoothing = 'antialiased';
-                logoInvent.style.mozOsxFontSmoothing = 'grayscale';
-            }
-            
-            // Fix footer icons
-            const socialIcons = document.querySelectorAll('.social-icons a');
-            socialIcons.forEach(icon => {
-                icon.style.display = 'flex';
-                icon.style.alignItems = 'center';
-                icon.style.justifyContent = 'center';
-                icon.style.width = '40px';
-                icon.style.height = '40px';
-                icon.style.borderRadius = '50%';
-                icon.style.backgroundColor = 'rgba(30, 30, 50, 0.8)';
-                icon.style.border = '1px solid rgba(100, 100, 150, 0.5)';
-                
-                const svg = icon.querySelector('svg');
-                if (svg) {
-                    svg.style.fill = '#ffffff';
-                    svg.style.width = '20px';
-                    svg.style.height = '20px';
-                }
-            });
         });
     </script>
 </body>
