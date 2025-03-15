@@ -1447,7 +1447,7 @@ textarea.form-control {
 
 /* Fix submit button styling */
 .cta-button.primary {
-    background-color: var(--accent-color); /* Explicitly setting background color */
+    background-color: #4361ee; /* Explicitly setting blue background color */
     color: #ffffff; /* Ensuring text is white */
     border: none;
     padding: 1rem 2rem;
