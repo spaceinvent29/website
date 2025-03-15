@@ -1,3 +1,44 @@
+/* Fix text visibility throughout the website */
+body, h1, h2, h3, h4, h5, h6, p, a, span, li, label, input, textarea, button {
+    color: #ffffff;
+    visibility: visible !important;
+    display: initial !important;
+    opacity: 1 !important;
+}
+
+/* Ensure text has proper contrast against background */
+h1, h2, h3, h4, h5, h6, p, a, span, li, label {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Fix specific text elements */
+.navbar .logo,
+.navbar .nav-links li a,
+.section-header h2,
+.section-subtitle,
+.feature-title,
+.feature-text,
+.blog-card h3,
+.blog-card p,
+.contact-details h4,
+.contact-details p,
+.form-group label,
+.footer-bottom {
+    color: #ffffff !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Ensure logo text is visible */
+.logo span.space {
+    color: #1e90ff; /* Dodger blue */
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
+    visibility: visible !important;
+    display: inline !important;
+}
+
+.logo span.invent {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
