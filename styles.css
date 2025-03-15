@@ -3048,3 +3048,14 @@ textarea.form-control {
     z-index: 3;
     pointer-events: none;
 }
+
+/* Remove the recently added prominent Milky Way */
+.milky-way-prominent,
+.milky-way-band,
+.milky-way-bright-core,
+.milky-way-star,
+.milky-way-dust-cloud,
+.milky-way-nebula,
+.milky-way-label {
+    display: none !important;
+}
