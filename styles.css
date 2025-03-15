@@ -122,34 +122,36 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     margin-bottom: 1rem;
     letter-spacing: -0.5px;
+    color: #ffffff; /* Ensuring headers are white and visible */
 }
 
 h1 {
     font-size: 4rem;
-    color: var(--text-color);
+    color: #ffffff; /* Explicitly setting to white */
     margin-bottom: 1.5rem;
     font-weight: 700;
 }
 
 h2 {
     font-size: 3rem;
-    color: var(--text-color);
+    color: #ffffff; /* Explicitly setting to white */
     position: relative;
 }
 
 h3 {
     font-size: 2rem;
-    color: var(--text-color);
+    color: #ffffff; /* Explicitly setting to white */
 }
 
 h4 {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: #ffffff; /* Explicitly setting to white */
 }
 
 p {
+    color: #e0e0e0; /* Light gray for better visibility */
     margin-bottom: 1rem;
-    font-weight: 300;
+    line-height: 1.6;
 }
 
 .highlight {
@@ -231,7 +233,7 @@ p {
 }
 
 .nav-links li a {
-    color: var(--text-color);
+    color: #ffffff; /* White text for navigation links */
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
@@ -990,12 +992,11 @@ p {
 
 /* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 2rem 0;
+    background-color: rgba(10, 10, 20, 0.8); /* Darker background for contrast */
+    color: #ffffff; /* White text */
+    padding: 3rem 0;
     position: relative;
-    border-top: 1px solid rgba(66, 66, 69, 0.2);
-    margin-top: 0;
+    z-index: 10;
 }
 
 .footer-bottom {
@@ -1003,7 +1004,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    color: var(--text-light);
+    color: #ffffff; /* Ensuring white text */
     font-size: 0.875rem;
     font-weight: 300;
 }
@@ -1388,10 +1389,11 @@ footer {
 .contact-details h4 {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    color: #ffffff; /* White text for contact item headers */
 }
 
 .contact-details p {
-    color: var(--text-light);
+    color: #e0e0e0; /* Light gray for contact details */
     font-size: 0.95rem;
     margin-bottom: 0;
 }
@@ -1407,7 +1409,7 @@ footer {
 
 .form-group label {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: #ffffff; /* White text for form labels */
     font-weight: 500;
     margin-bottom: 0.25rem;
 }
@@ -1498,12 +1500,12 @@ textarea.form-control {
     text-align: center;
     margin-top: 1.5rem;
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: #e0e0e0; /* Light gray for form fallback text */
     line-height: 1.5;
 }
 
 .form-fallback a {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     text-decoration: none;
     transition: var(--transition);
 }
