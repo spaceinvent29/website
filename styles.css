@@ -28,21 +28,25 @@ body, h1, h2, h3, h4, h5, h6, p, a, span, li, label, input, textarea, button, di
 .logo span.space {
     color: #1e90ff !important; /* Bright blue */
     text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     letter-spacing: 0.5px !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .logo span.invent {
     color: #ffd700 !important; /* Gold */
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
-    font-weight: 800 !important;
+    font-weight: 700 !important;
     letter-spacing: 0.5px !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 /* Fix footer and social icons */
@@ -62,15 +66,10 @@ footer {
 
 .social-icons {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 20px !important;
     margin: 20px auto !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 300px !important;
 }
 
 .social-icons a {
@@ -82,18 +81,12 @@ footer {
     border-radius: 50% !important;
     background-color: rgba(30, 30, 50, 0.8) !important;
     border: 1px solid rgba(100, 100, 150, 0.5) !important;
-    transition: all 0.3s ease !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative !important;
 }
 
 .social-icons a svg {
     width: 20px !important;
     height: 20px !important;
     fill: #ffffff !important;
-    display: block !important;
-    margin: 0 auto !important;
 }
 
 .social-icons a.github-icon svg,
@@ -192,13 +185,14 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Hide Milky Way elements that might be causing issues */
-.milky-way-prominent,
-.milky-way-band,
-.milky-way-star,
-.milky-way-dust-cloud,
-.milky-way-bright-core,
-.milky-way-nebula,
-.milky-way-label {
+/* Ensure text visibility in key areas */
+.navbar, .footer-bottom, .contact-details h4, .contact-details p {
+    color: #ffffff !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Remove the Milky Way elements that might be causing issues */
+.milky-way-prominent {
     display: none !important;
 }
