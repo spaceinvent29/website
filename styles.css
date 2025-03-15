@@ -2591,14 +2591,15 @@ textarea.form-control {
 /* Tiny meteors - small and numerous */
 .tiny-meteor {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 2px;
+    height: 2px;
     background-color: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
     opacity: 0;
-    transform-origin: center;
-    animation: tiny-meteor-move 3s linear infinite; /* Faster animation */
+    transform: rotate(var(--angle, 0deg));
+    animation: tiny-meteor-move var(--travel-duration, 10s) ease-out infinite;
+    animation-delay: var(--travel-delay, 0s);
+    z-index: 1;
 }
 
 .tiny-meteor::before {
@@ -2606,11 +2607,17 @@ textarea.form-control {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-100%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.3);
+    opacity: 0.8;
+    z-index: 1;
+    transform-origin: right center;
     width: var(--tail-length, 20px);
     height: 1px;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
-    transform-origin: right center;
-    transform: translateX(-100%);
 }
 
 @keyframes tiny-meteor-move {
@@ -2618,7 +2625,7 @@ textarea.form-control {
         opacity: 0;
         transform: translate(var(--start-x, 0), var(--start-y, 0)) rotate(var(--angle, 0deg));
     }
-    10% {
+    5% {
         opacity: 1;
     }
     90% {
@@ -2629,6 +2636,18 @@ textarea.form-control {
         transform: translate(var(--end-x, 100vw), var(--end-y, 100vh)) rotate(var(--angle, 0deg));
     }
 }
+
+/* Completely randomized meteor paths and timings */
+.tiny-meteor.tm1 { --start-x: 10vw; --start-y: 15vh; --end-x: 45vw; --end-y: 80vh; --angle: 65deg; --tail-length: 15px; --travel-duration: 8s; animation-delay: 0.1s; }
+.tiny-meteor.tm2 { --start-x: 95vw; --start-y: 20vh; --end-x: 30vw; --end-y: 70vh; --angle: 210deg; --tail-length: 18px; --travel-duration: 12s; animation-delay: 3.7s; }
+.tiny-meteor.tm3 { --start-x: 20vw; --start-y: 5vh; --end-x: 60vw; --end-y: 95vh; --angle: 60deg; --tail-length: 12px; --travel-duration: 9.5s; animation-delay: 7.3s; }
+.tiny-meteor.tm4 { --start-x: 80vw; --start-y: 95vh; --end-x: 40vw; --end-y: 15vh; --angle: 240deg; --tail-length: 16px; --travel-duration: 11s; animation-delay: 5.4s; }
+.tiny-meteor.tm5 { --start-x: 5vw; --start-y: 80vh; --end-x: 75vw; --end-y: 20vh; --angle: 330deg; --tail-length: 14px; --travel-duration: 10.5s; animation-delay: 2.5s; }
+.tiny-meteor.tm6 { --start-x: 85vw; --start-y: 90vh; --end-x: 15vw; --end-y: 30vh; --angle: 150deg; --tail-length: 17px; --travel-duration: 13s; animation-delay: 8.6s; }
+.tiny-meteor.tm7 { --start-x: 30vw; --start-y: 5vh; --end-x: 70vw; --end-y: 85vh; --angle: 70deg; --tail-length: 13px; --travel-duration: 9s; animation-delay: 4.7s; }
+.tiny-meteor.tm8 { --start-x: 70vw; --start-y: 95vh; --end-x: 25vw; --end-y: 15vh; --angle: 250deg; --tail-length: 19px; --travel-duration: 14s; animation-delay: 1.8s; }
+.tiny-meteor.tm9 { --start-x: 5vw; --start-y: 30vh; --end-x: 65vw; --end-y: 90vh; --angle: 20deg; --tail-length: 15px; --travel-duration: 10s; animation-delay: 6.9s; }
+.tiny-meteor.tm10 { --start-x: 90vw; --start-y: 40vh; --end-x: 20vw; --end-y: 75vh; --angle: 200deg; --tail-length: 18px; --travel-duration: 12.5s; animation-delay: 9.2s; }
 
 /* Tiny meteor positions - completely random directions with staggered timing */
 .tiny-meteor.tm1 { --start-x: -5vw; --start-y: 10vh; --end-x: 105vw; --end-y: 90vh; --angle: 30deg; --tail-length: 15px; animation-delay: 0.1s; }
