@@ -1,0 +1,96 @@
+/* Reset all text visibility */
+* {
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: white !important;
+}
+
+/* Logo specific fixes */
+.logo {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+.logo span.space {
+  color: #1e90ff !important; /* Bright blue */
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
+  font-weight: 800 !important;
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.logo span.invent {
+  color: #ffd700 !important; /* Gold */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+  font-weight: 800 !important;
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Footer icons fix */
+.social-icons {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  margin: 20px auto !important;
+}
+
+.social-icons a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: rgba(30, 30, 50, 0.8) !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(100, 100, 150, 0.5) !important;
+}
+
+.social-icons a svg {
+  fill: #ffffff !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Hide problematic elements */
+.milky-way-prominent,
+.prominent-milky-way {
+  display: none !important;
+}
+
+/* Ensure all text is visible */
+h1, h2, h3, h4, h5, h6, p, a, span, li, label, input, textarea, button {
+  color: #ffffff !important;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Contact section fixes */
+.contact-details h4,
+.contact-details p {
+  color: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Form elements */
+.form-control {
+  background-color: rgba(30, 30, 50, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(100, 100, 150, 0.5) !important;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(10, 10, 30, 0.9) !important;
+}
+
+.footer-bottom {
+  color: #ffffff !important;
+} 
