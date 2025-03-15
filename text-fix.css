@@ -1,0 +1,113 @@
+/* Emergency text visibility fix */
+* {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Fix header logo and navigation */
+.navbar {
+    background-color: rgba(10, 10, 30, 0.8) !important;
+}
+
+.logo span.space {
+    color: #1e90ff !important; /* Bright blue */
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
+    font-weight: 700 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+.logo span.invent {
+    color: #ffd700 !important; /* Gold */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+    font-weight: 700 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+.nav-links li a {
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fix footer and social icons */
+footer {
+    background-color: rgba(10, 10, 30, 0.8) !important;
+}
+
+.footer-bottom {
+    color: #ffffff !important;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.social-icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+.social-icons a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: rgba(30, 30, 50, 0.8) !important;
+}
+
+.social-icons a svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: #ffffff !important;
+}
+
+/* Fix contact section */
+.contact {
+    background-color: rgba(15, 15, 35, 0.7) !important;
+}
+
+.contact-card {
+    background-color: rgba(20, 20, 40, 0.8) !important;
+    border-radius: 10px !important;
+    padding: 30px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.contact-icon {
+    background-color: rgba(30, 30, 50, 0.8) !important;
+    color: #ffffff !important;
+}
+
+.contact-details h4 {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    visibility: visible !important;
+}
+
+.contact-details p {
+    color: #ffffff !important;
+    visibility: visible !important;
+}
+
+.form-control {
+    background-color: rgba(30, 30, 50, 0.8) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(100, 100, 150, 0.5) !important;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #1e90ff, #4169e1) !important;
+    color: #ffffff !important;
+}
+
+/* Remove the Milky Way elements that might be causing issues */
+.milky-way-prominent,
+.milky-way-band,
+.milky-way-bright-core,
+.milky-way-star,
+.milky-way-dust-cloud,
+.milky-way-nebula,
+.milky-way-label {
+    display: none !important;
+}
