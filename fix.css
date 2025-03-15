@@ -1,8 +1,89 @@
-/* Reset for critical elements */
-.logo, .logo span, .social-icons, .social-icons a, .social-icons a svg {
+/* CRITICAL FIXES - Override everything */
+
+/* Reset visibility for all elements */
+* {
   visibility: visible !important;
   opacity: 1 !important;
-  display: block !important;
+}
+
+/* Logo fixes */
+.logo {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.logo span.space {
+  color: #1e90ff !important;
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
+  font-weight: 800 !important;
+  font-family: Arial, sans-serif !important;
+  display: inline-block !important;
+  margin-right: 5px !important;
+  letter-spacing: 0.5px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.logo span.invent {
+  color: #ffd700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+  font-weight: 800 !important;
+  font-family: Arial, sans-serif !important;
+  display: inline-block !important;
+  letter-spacing: 0.5px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Footer social icons fixes */
+.footer-bottom .social-icons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 20px !important;
+  margin: 20px auto !important;
+}
+
+.footer-bottom .social-icons a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: rgba(30, 30, 50, 0.8) !important;
+  border: 1px solid rgba(100, 100, 150, 0.5) !important;
+}
+
+.footer-bottom .social-icons a svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: #ffffff !important;
+}
+
+/* Hide problematic elements */
+.milky-way-prominent,
+.prominent-milky-way {
+  display: none !important;
+}
+
+/* Text visibility in key areas */
+.navbar, .footer-bottom, .contact-details h4, .contact-details p {
+  color: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure form elements are visible */
+.form-control {
+  color: #ffffff !important;
+  background-color: rgba(30, 30, 50, 0.8) !important;
+  border: 1px solid rgba(100, 100, 150, 0.5) !important;
+}
+
+.cta-button.primary {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #1e90ff, #4169e1) !important;
 }
 
 /* Super specific logo fixes */
@@ -90,19 +171,6 @@ footer .container .footer-bottom .social-icons a svg {
   position: relative !important;
 }
 
-/* Hide problematic elements */
-.milky-way-prominent,
-.prominent-milky-way {
-  display: none !important;
-}
-
-/* Ensure all text is visible */
-.navbar, .footer-bottom, .contact-details h4, .contact-details p {
-  color: #ffffff !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
 /* Add this to ensure the logo text is crisp */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .navbar .container .logo span.space,
@@ -150,13 +218,6 @@ footer .container .footer-bottom .social-icons a svg {
   color: #ffffff !important;
   visibility: visible !important;
   opacity: 1 !important;
-}
-
-/* Form elements */
-.form-control {
-  background-color: rgba(30, 30, 50, 0.8) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(100, 100, 150, 0.5) !important;
 }
 
 /* Footer */
