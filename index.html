@@ -14,6 +14,46 @@
     <script src="https://unpkg.com/simple-icons@v9/icons/x.js"></script>
     <script src="https://unpkg.com/simple-icons@v9/icons/instagram.js"></script>
     <script src="https://unpkg.com/simple-icons@v9/icons/gmail.js"></script>
+    <!-- Add this inline style for immediate effect -->
+    <style>
+        .logo span.space {
+            color: #1e90ff !important;
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
+            font-weight: 800 !important;
+            display: inline-block !important;
+        }
+        .logo span.invent {
+            color: #ffd700 !important;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+            font-weight: 800 !important;
+            display: inline-block !important;
+        }
+        .social-icons {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            margin: 20px auto !important;
+        }
+        .social-icons a {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 40px !important;
+            height: 40px !important;
+            background-color: rgba(30, 30, 50, 0.8) !important;
+            border-radius: 50% !important;
+        }
+        .social-icons a svg {
+            fill: #ffffff !important;
+            width: 20px !important;
+            height: 20px !important;
+        }
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li {
+            color: #ffffff !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+    </style>
 </head>
 <body>
     <div class="cursor"></div>
@@ -21,7 +61,9 @@
 
     <nav class="navbar">
         <div class="container">
-            <a href="#home" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
+            <div class="logo">
+                <span class="space">Space</span> <span class="invent">Invent</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
