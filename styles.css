@@ -1447,29 +1447,30 @@ textarea.form-control {
 
 /* Fix submit button styling */
 .cta-button.primary {
-    background-color: var(--secondary-color);
-    color: var(--white);
+    background: var(--accent-color);
+    color: #ffffff; /* Ensuring text is white */
+    border: none;
     padding: 1rem 2rem;
-    border-radius: 980px;
-    font-weight: 500;
     font-size: 1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1rem;
-    height: auto;
-    line-height: 1.5;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    opacity: 1; /* Ensuring button is fully visible */
+    visibility: visible; /* Explicitly setting visibility */
 }
 
 .cta-button.primary:hover {
-    background-color: #2997ff;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: var(--accent-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button.primary i {
