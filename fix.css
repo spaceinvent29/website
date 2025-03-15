@@ -1,35 +1,122 @@
+/* Reset for critical elements */
+.logo, .logo span, .social-icons, .social-icons a, .social-icons a svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Super specific logo fixes */
+.navbar .container .logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  width: auto !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.navbar .container .logo span.space {
+  color: #1e90ff !important; /* Bright blue */
+  text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline !important;
+  margin-right: 5px !important;
+  font-family: Arial, sans-serif !important;
+}
+
+.navbar .container .logo span.invent {
+  color: #ffd700 !important; /* Gold */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  display: inline !important;
+  font-family: Arial, sans-serif !important;
+}
+
+/* Super specific footer fixes */
+footer .container .footer-bottom {
+  text-align: center !important;
+  padding-top: 20px !important;
+  margin-top: 30px !important;
+  color: #ffffff !important;
+  position: relative !important;
+}
+
+footer .container .footer-bottom .social-icons {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 20px !important;
+  margin: 20px auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 300px !important;
+  position: relative !important;
+}
+
+footer .container .footer-bottom .social-icons a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: rgba(30, 30, 50, 0.8) !important;
+  border: 1px solid rgba(100, 100, 150, 0.5) !important;
+  transition: all 0.3s ease !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+footer .container .footer-bottom .social-icons a svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: #ffffff !important;
+  display: block !important;
+  margin: 0 auto !important;
+  position: relative !important;
+}
+
+/* Hide problematic elements */
+.milky-way-prominent,
+.prominent-milky-way {
+  display: none !important;
+}
+
+/* Ensure all text is visible */
+.navbar, .footer-bottom, .contact-details h4, .contact-details p {
+  color: #ffffff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Add this to ensure the logo text is crisp */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .navbar .container .logo span.space,
+  .navbar .container .logo span.invent {
+    -webkit-text-stroke: 0.5px !important;
+    text-rendering: geometricPrecision !important;
+  }
+}
+
 /* Reset all text visibility */
 * {
   visibility: visible !important;
   opacity: 1 !important;
   color: white !important;
-}
-
-/* Logo specific fixes */
-.logo {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  font-size: 24px !important;
-  font-weight: 700 !important;
-}
-
-.logo span.space {
-  color: #1e90ff !important; /* Bright blue */
-  text-shadow: 0 0 10px rgba(30, 144, 255, 0.8) !important;
-  font-weight: 800 !important;
-  display: inline !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.logo span.invent {
-  color: #ffd700 !important; /* Gold */
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8) !important;
-  font-weight: 800 !important;
-  display: inline !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 /* Footer icons fix */
@@ -55,20 +142,6 @@
   fill: #ffffff !important;
   width: 20px !important;
   height: 20px !important;
-}
-
-/* Hide problematic elements */
-.milky-way-prominent,
-.prominent-milky-way {
-  display: none !important;
-}
-
-/* Ensure all text is visible */
-h1, h2, h3, h4, h5, h6, p, a, span, li, label, input, textarea, button {
-  color: #ffffff !important;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8) !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 /* Contact section fixes */

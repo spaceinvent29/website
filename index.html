@@ -756,5 +756,61 @@
             }
         });
     </script>
+
+    <!-- Add this right before the closing </body> tag -->
+    <script>
+      // Force logo styling
+      document.addEventListener('DOMContentLoaded', function() {
+        // Fix logo
+        const logoSpace = document.querySelector('.logo span.space');
+        const logoInvent = document.querySelector('.logo span.invent');
+        
+        if (logoSpace) {
+          logoSpace.style.color = '#1e90ff';
+          logoSpace.style.textShadow = '0 0 10px rgba(30, 144, 255, 0.8)';
+          logoSpace.style.fontWeight = '800';
+          logoSpace.style.letterSpacing = '0.5px';
+          logoSpace.style.display = 'inline';
+          logoSpace.style.visibility = 'visible';
+          logoSpace.style.opacity = '1';
+          logoSpace.style.fontFamily = 'Arial, sans-serif';
+          logoSpace.style.webkitFontSmoothing = 'antialiased';
+          logoSpace.style.mozOsxFontSmoothing = 'grayscale';
+        }
+        
+        if (logoInvent) {
+          logoInvent.style.color = '#ffd700';
+          logoInvent.style.textShadow = '0 0 10px rgba(255, 215, 0, 0.8)';
+          logoInvent.style.fontWeight = '800';
+          logoInvent.style.letterSpacing = '0.5px';
+          logoInvent.style.display = 'inline';
+          logoInvent.style.visibility = 'visible';
+          logoInvent.style.opacity = '1';
+          logoInvent.style.fontFamily = 'Arial, sans-serif';
+          logoInvent.style.webkitFontSmoothing = 'antialiased';
+          logoInvent.style.mozOsxFontSmoothing = 'grayscale';
+        }
+        
+        // Fix footer icons
+        const socialIcons = document.querySelectorAll('.social-icons a');
+        socialIcons.forEach(icon => {
+          icon.style.display = 'flex';
+          icon.style.alignItems = 'center';
+          icon.style.justifyContent = 'center';
+          icon.style.width = '40px';
+          icon.style.height = '40px';
+          icon.style.borderRadius = '50%';
+          icon.style.backgroundColor = 'rgba(30, 30, 50, 0.8)';
+          icon.style.border = '1px solid rgba(100, 100, 150, 0.5)';
+          
+          const svg = icon.querySelector('svg');
+          if (svg) {
+            svg.style.fill = '#ffffff';
+            svg.style.width = '20px';
+            svg.style.height = '20px';
+          }
+        });
+      });
+    </script>
 </body>
 </html> 
