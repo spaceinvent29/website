@@ -77,4 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // EXACT FORM JAVASCRIPT FROM BACKUP - Add original form JavaScript here
 }); 
