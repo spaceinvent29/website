@@ -1336,7 +1336,7 @@
     display: none !important;
 }
 
-/* Privacy Policy Page Styles */
+/* Privacy Policy Page Styles - Contained to only affect the privacy policy page */
 .privacy-policy {
     padding: 120px 0 80px;
     background-color: rgba(10, 10, 20, 0.9);
@@ -1346,6 +1346,7 @@
 .privacy-policy .container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .privacy-policy h1 {
@@ -1358,7 +1359,6 @@
     margin: 2rem 0 1rem;
     font-size: 1.8rem;
     color: #4361ee;
-    top: 50%;
 }
 
 .privacy-policy p, 
@@ -1375,6 +1375,70 @@
 
 .privacy-policy ul li {
     margin-bottom: 0.5rem;
+}
+
+/* Fix Cookie Consent Banner without affecting other elements */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(20, 20, 40, 0.95);
+    color: #ffffff;
+    padding: 1rem;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cookie-content p {
+    margin: 0;
+    flex: 1;
+    min-width: 280px;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.cookie-content a {
+    color: #4361ee;
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.cookie-btn.accept {
+    background-color: #4361ee;
+    color: #ffffff;
+}
+
+.cookie-btn.decline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 @media (max-width: 768px) {
