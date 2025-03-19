@@ -100,25 +100,36 @@
             </div>
         </section>
 
-        <!-- Contact Section from Backup -->
+        <!-- Contact Section with Improved Form -->
         <section id="contact" class="contact">
             <div class="container">
-                <div class="contact-grid">
-                    <!-- Google Form from backup -->
+                <div class="contact-wrapper">
                     <div class="contact-form-container">
                         <h3>Send Message</h3>
-                        <!-- Replace with your actual Google Form from backup -->
                         <form id="contact-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID_FROM_BACKUP/formResponse" method="post" target="_blank">
                             <div class="form-group">
-                                <input type="text" name="entry.XXXXXX" class="form-control" placeholder="Your Name" required>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="entry.XXXXXX" class="form-control" placeholder="Your name" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="entry.XXXXXX" class="form-control" placeholder="Your Email" required>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="entry.XXXXXX" class="form-control" placeholder="Your email address" required>
                             </div>
                             <div class="form-group">
-                                <textarea name="entry.XXXXXX" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="entry.XXXXXX" class="form-control" placeholder="Your message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="cta-button primary">Send Message</button>
+                            <div class="form-submit">
+                                <button type="submit" class="cta-button primary">
+                                    <span class="button-text">Send Message</span>
+                                    <span class="button-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>

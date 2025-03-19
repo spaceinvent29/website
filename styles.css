@@ -1948,3 +1948,210 @@ footer {
 
 /* Add any other missing CSS from backup */
 /* ... */
+
+/* Improved Contact Form Styling */
+.contact {
+    padding: 100px 0;
+    position: relative;
+}
+
+.contact-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* Add a subtle cosmic glow to the form container */
+.contact-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(ellipse at center, rgba(67, 97, 238, 0.1) 0%, rgba(10, 10, 20, 0) 70%);
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.contact-form-container {
+    background-color: rgba(15, 15, 30, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 0 30px rgba(67, 97, 238, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+        0 0 30px rgba(67, 97, 238, 0.25);
+}
+
+.contact-form-container h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(67, 97, 238, 0.5);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(30, 30, 50, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.form-control:focus {
+    border-color: rgba(67, 97, 238, 0.5);
+    background-color: rgba(40, 40, 70, 0.5);
+    box-shadow: 
+        0 2px 5px rgba(0, 0, 0, 0.1) inset,
+        0 0 0 3px rgba(67, 97, 238, 0.25);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-submit {
+    text-align: right;
+}
+
+.cta-button.primary {
+    background-color: #4361ee;
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 10px rgba(67, 97, 238, 0.4),
+        0 0 0 rgba(67, 97, 238, 0) inset;
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.cta-button.primary:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 15px rgba(67, 97, 238, 0.5),
+        0 0 0 rgba(67, 97, 238, 0) inset;
+}
+
+.cta-button.primary:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 5px rgba(67, 97, 238, 0.3),
+        0 0 0 rgba(67, 97, 238, 0) inset;
+}
+
+.cta-button.primary .button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button.primary .button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.cta-button.primary:hover .button-icon {
+    transform: translateX(3px);
+}
+
+/* Style active/focus states for better accessibility */
+.cta-button.primary:focus {
+    outline: none;
+    box-shadow: 
+        0 4px 10px rgba(67, 97, 238, 0.4),
+        0 0 0 3px rgba(67, 97, 238, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact {
+        padding: 80px 0;
+    }
+    
+    .contact-form-container {
+        padding: 30px;
+    }
+    
+    .contact-form-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+    
+    .form-control {
+        padding: 12px;
+    }
+    
+    .cta-button.primary {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
