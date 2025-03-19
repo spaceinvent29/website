@@ -1,12 +1,14 @@
-/* Base Styles */
+/* Reset and General Styles */
 :root {
     --accent-color: #4361ee;
     --accent-hover-color: #3a56d4;
     --text-color: #ffffff;
-    --text-muted: #e0e0e0;
+    --text-muted: rgba(255, 255, 255, 0.8);
     --bg-dark: #0a0a14;
     --bg-darker: rgba(10, 10, 20, 0.9);
     --bg-lighter: rgba(30, 30, 50, 0.6);
+    --transition: all 0.3s ease;
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -16,11 +18,13 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-dark);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -30,44 +34,199 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    color: var(--text-color);
-}
-
-p {
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-}
-
 a {
-    color: var(--accent-color);
+    color: var(--text-color);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
-a:hover {
-    color: var(--accent-hover-color);
+ul {
+    list-style: none;
 }
 
-section {
-    padding: 100px 0;
-    position: relative;
-}
-
-/* Background */
-.space-background {
+/* Clean Header - Apple/Airbnb Style */
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: var(--bg-dark);
-    z-index: -1;
-    overflow: hidden;
+    z-index: 1000;
+    background-color: rgba(10, 10, 20, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.logo span.space {
+    color: var(--text-color);
+}
+
+.logo span.invent {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--text-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Clean Footer - Apple/Airbnb Style */
+.site-footer {
+    background-color: rgba(10, 10, 20, 0.8);
+    padding: 60px 0 30px;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    flex: 0 0 25%;
+}
+
+.footer-links {
+    flex: 0 0 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 0 0 48%;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-column a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-color);
+        border-radius: 3px;
+        transition: var(--transition);
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
 /* Navigation */
 .navbar {
     position: fixed;
@@ -1620,3 +1779,166 @@ footer {
 }
 
 /* EXACT FORM CSS FROM BACKUP - Add your original form CSS here */
+
+/* Add Milky Way theme styles from backup */
+.milky-way-galaxy {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+    z-index: -2;
+}
+
+.galactic-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,223,186,0.6) 20%, rgba(255,190,121,0.4) 40%, rgba(161,107,72,0.2) 60%, rgba(87,64,51,0.1) 80%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 80px 40px rgba(255, 223, 186, 0.5);
+    animation: center-glow 8s infinite alternate ease-in-out;
+}
+
+@keyframes center-glow {
+    0% {
+        box-shadow: 0 0 80px 40px rgba(255, 223, 186, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 100px 60px rgba(255, 223, 186, 0.7);
+    }
+}
+
+.spiral-arm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform-origin: center;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) inset;
+}
+
+.spiral-arm-1 {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    border-top: 5px solid rgba(255, 223, 186, 0.2);
+    border-right: 3px solid rgba(161, 107, 72, 0.2);
+    animation: arm-pulse-1 10s infinite alternate ease-in-out;
+}
+
+.spiral-arm-2 {
+    transform: translate(-50%, -50%) rotate(120deg) scale(0.8);
+    border-top: 5px solid rgba(255, 223, 186, 0.2);
+    border-right: 3px solid rgba(161, 107, 72, 0.2);
+    animation: arm-pulse-2 12s infinite alternate ease-in-out;
+}
+
+.spiral-arm-3 {
+    transform: translate(-50%, -50%) rotate(240deg) scale(0.6);
+    border-top: 5px solid rgba(255, 223, 186, 0.2);
+    border-right: 3px solid rgba(161, 107, 72, 0.2);
+    animation: arm-pulse-3 14s infinite alternate ease-in-out;
+}
+
+@keyframes arm-pulse-1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(10deg) scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes arm-pulse-2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg) scale(0.8);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(130deg) scale(0.85);
+        opacity: 0.9;
+    }
+}
+
+@keyframes arm-pulse-3 {
+    0% {
+        transform: translate(-50%, -50%) rotate(240deg) scale(0.6);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(250deg) scale(0.65);
+        opacity: 0.8;
+    }
+}
+
+.star-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)), 
+                      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)), 
+                      radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+                      radial-gradient(1px 1px at 160px 120px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: star-shimmer 60s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes star-shimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* Add more space elements CSS from backup here */
+/* ... */
+
+/* Add contact form CSS from backup */
+.contact-form-container {
+    background-color: rgba(30, 30, 50, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.cta-button.primary {
+    background-color: #4361ee;
+    color: #ffffff;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cta-button.primary:hover {
+    background-color: #3a56d4;
+}
+
+/* Add any other missing CSS from backup */
+/* ... */

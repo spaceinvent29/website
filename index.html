@@ -21,72 +21,148 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Space Background Elements -->
+    <!-- Space Background with Milky Way Theme (restored from backup) -->
     <div class="space-background">
-        <div class="twinkling-stars">
-            <div class="twinkling-star ts1"></div>
-            <div class="twinkling-star ts2"></div>
-            <div class="twinkling-star ts3"></div>
-            <div class="twinkling-star ts4"></div>
-            <div class="twinkling-star ts5"></div>
-            <!-- Add more stars as needed -->
+        <!-- Milky Way elements from backup -->
+        <div class="milky-way-galaxy">
+            <div class="galactic-center"></div>
+            <div class="spiral-arm spiral-arm-1"></div>
+            <div class="spiral-arm spiral-arm-2"></div>
+            <div class="spiral-arm spiral-arm-3"></div>
         </div>
+        
+        <div class="star-field"></div>
+        
+        <div class="milky-way-dust">
+            <div class="milky-way-arm milky-way-arm-1"></div>
+            <div class="milky-way-arm milky-way-arm-2"></div>
+            <div class="milky-way-arm milky-way-arm-3"></div>
+        </div>
+        
+        <div class="dust-lane dust-lane-1"></div>
+        <div class="dust-lane dust-lane-2"></div>
+        
+        <!-- Meteor elements from backup -->
         <div class="random-meteor-shower">
             <div class="fast-meteor fm1"></div>
             <div class="fast-meteor fm2"></div>
             <div class="fast-meteor fm3"></div>
+            <div class="fast-meteor fm4"></div>
+            <div class="fast-meteor fm5"></div>
+            <div class="fast-meteor fm6"></div>
+            
+            <!-- Add tiny meteors -->
+            <div class="tiny-meteor tm1"></div>
+            <div class="tiny-meteor tm2"></div>
+            <div class="tiny-meteor tm3"></div>
+            <div class="tiny-meteor tm4"></div>
+            <div class="tiny-meteor tm5"></div>
+            <div class="tiny-meteor tm6"></div>
+            <div class="tiny-meteor tm7"></div>
+            <div class="tiny-meteor tm8"></div>
+            <div class="tiny-meteor tm9"></div>
+            <div class="tiny-meteor tm10"></div>
         </div>
+        
+        <!-- Bright stars -->
+        <div class="bright-star bright-star-1"></div>
+        <div class="bright-star bright-star-2"></div>
+        <div class="bright-star bright-star-3"></div>
+        <div class="bright-star bright-star-4"></div>
+        <div class="bright-star bright-star-5"></div>
     </div>
 
-    <!-- Header / Navigation -->
-    <nav class="navbar">
+    <!-- Clean, Modern Header -->
+    <header class="site-header">
         <div class="container">
-            <a href="index.html" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <!-- Remove or replace this link if there was no contact section -->
-                <!-- <li><a href="#contact" class="nav-link">Contact</a></li> -->
-                <!-- Add any other navigation links that were in your original site -->
-            </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- Add any other nav links from your backup -->
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <!-- Main Content Area -->
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
-                <!-- Text has been removed as requested -->
+                <!-- Hero content from backup, if any -->
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section from Backup -->
         <section id="contact" class="contact">
             <div class="container">
-                <!-- Any remaining content you want to keep -->
+                <div class="contact-grid">
+                    <!-- Google Form from backup -->
+                    <div class="contact-form-container">
+                        <h3>Send Message</h3>
+                        <!-- Replace with your actual Google Form from backup -->
+                        <form id="contact-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID_FROM_BACKUP/formResponse" method="post" target="_blank">
+                            <div class="form-group">
+                                <input type="text" name="entry.XXXXXX" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="entry.XXXXXX" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="entry.XXXXXX" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-button primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Clean, Modern Footer -->
+    <footer class="site-footer">
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <span class="space">Space</span><span class="invent">Invent</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://x.com/spaceinvent" target="_blank">X (Twitter)</a></li>
+                            <li><a href="https://instagram.com/spaceinvent" target="_blank">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 SpaceInvent. All rights reserved.</p>
                 <div class="social-icons">
-                    <a href="https://x.com/spaceinvent" target="_blank" class="x-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="#ffffff" d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5549 21H20.7996L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"/>
+                    <a href="https://x.com/spaceinvent" target="_blank" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5549 21H20.7996L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"/>
                         </svg>
                     </a>
-                    <a href="https://instagram.com/spaceinvent" target="_blank" class="instagram-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="#FFFFFF" d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c3.252,0.148,4.771,1.691,4.919,4.919c0.058,1.265,0.069,1.645,0.069,4.849c0,3.205-0.012,3.584-0.069,4.849c-0.149,3.225-1.664,4.771-4.919,4.919c-1.266,0.058-1.644,0.07-4.85,0.07c-3.204,0-3.584-0.012-4.849-0.07c-3.26-0.149-4.771-1.699-4.919-4.92c-0.058-1.265-0.07-1.644-0.07-4.849c0-3.204,0.013-3.583,0.07-4.849C2.381,3.924,3.896,2.38,7.151,2.232C8.417,2.175,8.796,2.163,12,2.163z M12,0C8.741,0,8.333,0.014,7.053,0.072c-4.358,0.2-6.78,2.618-6.98,6.98C0.014,8.333,0,8.741,0,12s0.014,3.668,0.072,4.948c0.2,4.358,2.618,6.78,6.98,6.98C8.333,23.986,8.741,24,12,24s3.668-0.014,4.948-0.072c4.354-0.2,6.782-2.618,6.979-6.98C23.986,15.668,24,15.259,24,12s-0.014-3.667-0.072-4.947c-0.196-4.354-2.617-6.78-6.979-6.98C15.668,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.796,0-1.441,0.645-1.441,1.44s0.645,1.44,1.441,1.44c0.795,0,1.439-0.645,1.439-1.44S19.201,4.155,18.406,4.155z"/>
+                    <a href="https://instagram.com/spaceinvent" target="_blank" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c3.252,0.148,4.771,1.691,4.919,4.919c0.058,1.265,0.069,1.645,0.069,4.849c0,3.205-0.012,3.584-0.069,4.849c-0.149,3.225-1.664,4.771-4.919,4.919c-1.266,0.058-1.644,0.07-4.85,0.07c-3.204,0-3.584-0.012-4.849-0.07c-3.26-0.149-4.771-1.699-4.919-4.92c-0.058-1.265-0.07-1.644-0.07-4.849c0-3.204,0.013-3.583,0.07-4.849C2.381,3.924,3.896,2.38,7.151,2.232C8.417,2.175,8.796,2.163,12,2.163z M12,0C8.741,0,8.333,0.014,7.053,0.072c-4.358,0.2-6.78,2.618-6.98,6.98C0.014,8.333,0,8.741,0,12s0.014,3.668,0.072,4.948c0.2,4.358,2.618,6.78,6.98,6.98C8.333,23.986,8.741,24,12,24s3.668-0.014,4.948-0.072c4.354-0.2,6.782-2.618,6.979-6.98C23.986,15.668,24,15.259,24,12s-0.014-3.667-0.072-4.947c-0.196-4.354-2.617-6.78-6.979-6.98C15.668,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.796,0-1.441,0.645-1.441,1.44s0.645,1.44,1.441,1.44c0.795,0,1.439-0.645,1.439-1.44S19.201,4.155,18.406,4.155z"/>
                         </svg>
                     </a>
                 </div>

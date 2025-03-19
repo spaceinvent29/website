@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetElement.offsetTop - 70, // Adjusted for header height
                     behavior: 'smooth'
                 });
                 
@@ -67,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // For custom form: Track form submissions
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Track submission in Google Analytics
+        contactForm.addEventListener('submit', function() {
+            // Track form submission in Google Analytics
             if (typeof gtag === 'function') {
                 gtag('event', 'form_submission', {
                     'event_category': 'Contact',
@@ -79,4 +81,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // EXACT FORM JAVASCRIPT FROM BACKUP - Add original form JavaScript here
+    
+    // Header scroll effect
+    const header = document.querySelector('.site-header');
+    
+    function updateHeader() {
+        if (window.scrollY > 50) {
+            header.style.backgroundColor = 'rgba(10, 10, 20, 0.95)';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.backgroundColor = 'rgba(10, 10, 20, 0.8)';
+            header.style.boxShadow = 'none';
+        }
+    }
+    
+    window.addEventListener('scroll', updateHeader);
+    updateHeader(); // Run once on load
 }); 
