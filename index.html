@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- GitHub Pages Deployment Trigger -->
     <title>SpaceInvent</title>
-    <!-- Updated index file -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Font Awesome for basic icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Add Simple Icons for more accurate brand icons -->
-    <script src="https://unpkg.com/simple-icons@v9/icons/x.js"></script>
-    <script src="https://unpkg.com/simple-icons@v9/icons/instagram.js"></script>
-    <script src="https://unpkg.com/simple-icons@v9/icons/gmail.js"></script>
+    
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JB3DDV2FDQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-JB3DDV2FDQ');
     </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <!-- Space Background Elements -->
+    <div class="space-background">
+        <div class="twinkling-stars">
+            <div class="twinkling-star ts1"></div>
+            <div class="twinkling-star ts2"></div>
+            <div class="twinkling-star ts3"></div>
+            <div class="twinkling-star ts4"></div>
+            <div class="twinkling-star ts5"></div>
+            <!-- Add more stars as needed -->
+        </div>
+        <div class="random-meteor-shower">
+            <div class="fast-meteor fm1"></div>
+            <div class="fast-meteor fm2"></div>
+            <div class="fast-meteor fm3"></div>
+        </div>
+    </div>
 
+    <!-- Header / Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#home" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
+            <a href="index.html" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -42,543 +54,75 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="space-background">
-            <div class="milky-way-galaxy"></div>
-            <div class="bright-star bright-star-1"></div>
-            <div class="bright-star bright-star-2"></div>
-            <div class="bright-star bright-star-3"></div>
-            <div class="bright-star bright-star-4"></div>
-            <div class="bright-star bright-star-5"></div>
-            <div class="stars"></div>
-            <div class="stars2"></div>
-            <div class="stars3"></div>
-            
-            <!-- Enhanced Planets with built-in elliptical paths -->
-            <div class="planet planet-1"></div>
-            <div class="planet planet-2"></div>
-            <div class="planet planet-3"></div>
-            <div class="planet planet-4"></div>
-            <div class="planet planet-5"></div>
-            <div class="ringed-planet">
-                <div class="planet-ring"></div>
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Explore the <span>Universe</span> of Innovation</h1>
+                <p>Pioneering the future through space technology and cosmic inventions</p>
             </div>
-            
-            <!-- Space Objects -->
-            <div class="space-station"></div>
-            <div class="comet"></div>
-            <div class="comet"></div>
-            <div class="comet"></div>
-            
-            <!-- New Space Debris -->
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            <div class="space-debris"></div>
-            
-            <!-- New Satellite Objects -->
-            <div class="satellite-obj"></div>
-            <div class="satellite-obj"></div>
-            <div class="satellite-obj"></div>
-            <div class="satellite-obj"></div>
-            <div class="satellite-obj"></div>
-            
-            <!-- Nebula Clouds -->
-            <div class="nebula-cloud nebula-cloud-1"></div>
-            <div class="nebula-cloud nebula-cloud-2"></div>
-            <div class="nebula-cloud nebula-cloud-3"></div>
-            
-            <!-- Pulsars -->
-            <div class="pulsar pulsar-1"></div>
-            <div class="pulsar pulsar-2"></div>
-            <div class="pulsar pulsar-3"></div>
-            
-            <!-- Big Bang -->
-            <div class="big-bang"></div>
-            
-            <!-- Enhanced Asteroids - Adding more for a richer cosmic experience -->
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            
-            <!-- Additional Asteroids (41-60) -->
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            
-            <!-- Add inside the space-background div, after the cosmic-rays div -->
-            <div class="milky-way-dust"></div>
-            <div class="milky-way-arm milky-way-arm-3"></div>
+        </section>
 
-            <!-- Add gas clouds -->
-            <div class="gas-cloud gas-cloud-1"></div>
-            <div class="gas-cloud gas-cloud-2"></div>
-            <div class="gas-cloud gas-cloud-3"></div>
-
-            <!-- Add quasars -->
-            <div class="quasar quasar-1"></div>
-            <div class="quasar quasar-2"></div>
-            <div class="quasar quasar-3"></div>
-
-            <!-- Add wormhole -->
-            <div class="wormhole"></div>
-
-            <!-- Add more comets (5 more) -->
-            <div class="comet"></div>
-            <div class="comet"></div>
-
-            <!-- Add these elements right after the opening div.space-background -->
-            <div class="milky-way-background"></div>
-            <div class="milky-way-core"></div>
-            <div class="milky-way-arm-4"></div>
-            <div class="milky-way-arm-5"></div>
-            <div class="star-cluster star-cluster-1"></div>
-            <div class="star-cluster star-cluster-2"></div>
-            <div class="star-cluster star-cluster-3"></div>
-            <div class="star-cluster star-cluster-4"></div>
-            <div class="cosmic-dust-field"></div>
-
-            <!-- Additional Asteroids (101-115) -->
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-            <div class="asteroid"></div>
-
-            <!-- Meteoroids -->
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-            <div class="meteoroid"></div>
-
-            <!-- Meteorites -->
-            <div class="meteorite"></div>
-            <div class="meteorite"></div>
-            <div class="meteorite"></div>
-            <div class="meteorite"></div>
-            <div class="meteorite"></div>
-
-            <!-- Replace the existing star-meteors and shooting-stars with this enhanced version -->
-            <div class="meteor-field">
-                <!-- First layer - Frequent small meteors -->
-                <div class="micro-meteor m1"></div>
-                <div class="micro-meteor m2"></div>
-                <div class="micro-meteor m3"></div>
-                <div class="micro-meteor m4"></div>
-                <div class="micro-meteor m5"></div>
-                <div class="micro-meteor m6"></div>
-                <div class="micro-meteor m7"></div>
-                <div class="micro-meteor m8"></div>
-                <div class="micro-meteor m9"></div>
-                <div class="micro-meteor m10"></div>
-                <div class="micro-meteor m11"></div>
-                <div class="micro-meteor m12"></div>
-                <div class="micro-meteor m13"></div>
-                <div class="micro-meteor m14"></div>
-                <div class="micro-meteor m15"></div>
-                <div class="micro-meteor m16"></div>
-                <div class="micro-meteor m17"></div>
-                <div class="micro-meteor m18"></div>
-                <div class="micro-meteor m19"></div>
-                <div class="micro-meteor m20"></div>
-                <div class="micro-meteor m21"></div>
-                <div class="micro-meteor m22"></div>
-                <div class="micro-meteor m23"></div>
-                <div class="micro-meteor m24"></div>
-                <div class="micro-meteor m25"></div>
-                <div class="micro-meteor m26"></div>
-                <div class="micro-meteor m27"></div>
-                <div class="micro-meteor m28"></div>
-                <div class="micro-meteor m29"></div>
-                <div class="micro-meteor m30"></div>
-                
-                <!-- Second layer - Medium occasional meteors -->
-                <div class="swift-meteor s1"></div>
-                <div class="swift-meteor s2"></div>
-                <div class="swift-meteor s3"></div>
-                <div class="swift-meteor s4"></div>
-                <div class="swift-meteor s5"></div>
-                <div class="swift-meteor s6"></div>
-                <div class="swift-meteor s7"></div>
-                <div class="swift-meteor s8"></div>
-                <div class="swift-meteor s9"></div>
-                <div class="swift-meteor s10"></div>
-                <div class="swift-meteor s11"></div>
-                <div class="swift-meteor s12"></div>
-                <div class="swift-meteor s13"></div>
-                <div class="swift-meteor s14"></div>
-                <div class="swift-meteor s15"></div>
-                
-                <!-- Third layer - Rare bright meteors -->
-                <div class="bright-meteor b1"></div>
-                <div class="bright-meteor b2"></div>
-                <div class="bright-meteor b3"></div>
-                <div class="bright-meteor b4"></div>
-                <div class="bright-meteor b5"></div>
-            </div>
-
-            <!-- Replace the existing random-meteor-shower div with this reduced version -->
-            <div class="random-meteor-shower">
-                <!-- Reduced to 10 random meteors with varied starting positions and directions -->
-                <div class="tiny-meteor tm1"></div>
-                <div class="tiny-meteor tm2"></div>
-                <div class="tiny-meteor tm3"></div>
-                <div class="tiny-meteor tm4"></div>
-                <div class="tiny-meteor tm5"></div>
-                <div class="tiny-meteor tm6"></div>
-                <div class="tiny-meteor tm7"></div>
-                <div class="tiny-meteor tm8"></div>
-                <div class="tiny-meteor tm9"></div>
-                <div class="tiny-meteor tm10"></div>
-            </div>
-
-            <!-- Add these additional asteroids after your existing asteroid elements -->
-            <div class="moving-asteroid ma1"></div>
-            <div class="moving-asteroid ma2"></div>
-            <div class="moving-asteroid ma3"></div>
-            <div class="moving-asteroid ma4"></div>
-            <div class="moving-asteroid ma5"></div>
-            <div class="moving-asteroid ma6"></div>
-            <div class="moving-asteroid ma7"></div>
-            <div class="moving-asteroid ma8"></div>
-            <div class="moving-asteroid ma9"></div>
-            <div class="moving-asteroid ma10"></div>
-            <div class="moving-asteroid ma11"></div>
-            <div class="moving-asteroid ma12"></div>
-            <div class="moving-asteroid ma13"></div>
-            <div class="moving-asteroid ma14"></div>
-            <div class="moving-asteroid ma15"></div>
-            <div class="moving-asteroid ma16"></div>
-            <div class="moving-asteroid ma17"></div>
-            <div class="moving-asteroid ma18"></div>
-            <div class="moving-asteroid ma19"></div>
-            <div class="moving-asteroid ma20"></div>
-
-            <!-- Add these new stars after your existing stars elements -->
-            <div class="twinkling-stars">
-                <div class="twinkling-star ts1"></div>
-                <div class="twinkling-star ts2"></div>
-                <div class="twinkling-star ts3"></div>
-                <div class="twinkling-star ts4"></div>
-                <div class="twinkling-star ts5"></div>
-                <div class="twinkling-star ts6"></div>
-                <div class="twinkling-star ts7"></div>
-                <div class="twinkling-star ts8"></div>
-                <div class="twinkling-star ts9"></div>
-                <div class="twinkling-star ts10"></div>
-                <div class="twinkling-star ts11"></div>
-                <div class="twinkling-star ts12"></div>
-                <div class="twinkling-star ts13"></div>
-                <div class="twinkling-star ts14"></div>
-                <div class="twinkling-star ts15"></div>
-            </div>
-
-            <!-- Replace the existing small planets with this new fixed left-side planets container -->
-            <div class="left-side-planets">
-                <div class="left-planet lp1"></div>
-                <div class="left-planet lp2"></div>
-                <div class="left-planet lp3"></div>
-                <div class="left-planet lp4"></div>
-                <div class="left-planet lp5"></div>
-                <div class="left-planet lp6"></div>
-                <div class="left-planet lp7"></div>
-                <div class="left-planet lp8"></div>
-                <div class="left-planet lp9"></div>
-                <div class="left-planet lp10"></div>
-                <div class="left-planet lp11"></div>
-                <div class="left-planet lp12"></div>
-                <div class="left-planet lp13"></div>
-            </div>
-
-            <!-- Pulsating stars -->
-            <div class="pulsating-star ps1"></div>
-            <div class="pulsating-star ps2"></div>
-            <div class="pulsating-star ps3"></div>
-            <div class="pulsating-star ps4"></div>
-            <div class="pulsating-star ps5"></div>
-            <div class="pulsating-star ps6"></div>
-
-            <!-- Comets with long tails -->
-            <div class="comet c1"></div>
-            <div class="comet c2"></div>
-            <div class="comet c3"></div>
-
-            <!-- Satellites with blinking lights -->
-            <div class="satellite s1"></div>
-            <div class="satellite s2"></div>
-            <div class="satellite s3"></div>
-
-            <!-- Distant galaxies -->
-            <div class="distant-galaxy g1"></div>
-            <div class="distant-galaxy g2"></div>
-            <div class="distant-galaxy g3"></div>
-
-            <!-- Small planets with rings -->
-            <div class="small-ringed-planet srp1"></div>
-            <div class="small-ringed-planet srp2"></div>
-
-            <!-- Supernova explosion effect -->
-            <div class="supernova sn1"></div>
-            <div class="supernova sn2"></div>
-
-            <!-- Space station with solar panels -->
-            <div class="space-station-mini"></div>
-
-            <!-- Additional fast meteors -->
-            <div class="fast-meteor fm7"></div>
-            <div class="fast-meteor fm8"></div>
-            <div class="fast-meteor fm9"></div>
-            <div class="fast-meteor fm10"></div>
-
-            <!-- Spiral galaxies -->
-            <div class="spiral-galaxy sg1">
-                <div class="spiral-arm" style="--arm-angle: 0deg;"></div>
-                <div class="spiral-arm" style="--arm-angle: 90deg;"></div>
-                <div class="spiral-arm" style="--arm-angle: 180deg;"></div>
-                <div class="spiral-arm" style="--arm-angle: 270deg;"></div>
-            </div>
-            <div class="spiral-galaxy sg2">
-                <div class="spiral-arm" style="--arm-angle: 0deg;"></div>
-                <div class="spiral-arm" style="--arm-angle: 120deg;"></div>
-                <div class="spiral-arm" style="--arm-angle: 240deg;"></div>
-            </div>
-
-            <!-- Elliptical galaxies -->
-            <div class="elliptical-galaxy eg1"></div>
-            <div class="elliptical-galaxy eg2"></div>
-
-            <!-- Irregular galaxy -->
-            <div class="irregular-galaxy ig1"></div>
-
-            <!-- Black hole with accretion disk -->
-            <div class="black-hole-system">
-                <div class="black-hole"></div>
-                <div class="accretion-disk"></div>
-            </div>
-
-            <!-- Neutron star with pulsar beam -->
-            <div class="neutron-star-system">
-                <div class="neutron-star"></div>
-                <div class="pulsar-beam"></div>
-            </div>
-
-            <!-- Colorful nebulas -->
-            <div class="colorful-nebula cn1"></div>
-            <div class="colorful-nebula cn2"></div>
-
-            <!-- Enhanced Milky Way Galaxy -->
-            <div class="prominent-milky-way">
-                <!-- Galaxy halo -->
-                <div class="milky-way-halo"></div>
-                
-                <!-- Galaxy core -->
-                <div class="milky-way-core"></div>
-                
-                <!-- Spiral arms -->
-                <!-- Arm 1 - Main arm -->
-                <div class="milky-way-arm-path" style="--path-angle: 0deg;">
-                    <div class="milky-way-spiral-arm" style="--arm-angle: 0deg; --arm-scale: 1;"></div>
-                    <div class="milky-way-dust-lane" style="--arm-angle: 0deg; --arm-scale: 1;"></div>
-                    
-                    <!-- Star clusters along arm 1 -->
-                    <div class="milky-way-star-cluster" style="top: -5px; left: 30px;"></div>
-                    <div class="milky-way-star-cluster" style="top: 5px; left: 70px;"></div>
-                    <div class="milky-way-star-cluster" style="top: -8px; left: 110px;"></div>
-                </div>
-                
-                <!-- Arm 2 - Opposite main arm -->
-                <div class="milky-way-arm-path" style="--path-angle: 180deg;">
-                    <div class="milky-way-spiral-arm" style="--arm-angle: 0deg; --arm-scale: 1;"></div>
-                    <div class="milky-way-dust-lane" style="--arm-angle: 0deg; --arm-scale: 1;"></div>
-                    
-                    <!-- Star clusters along arm 2 -->
-                    <div class="milky-way-star-cluster" style="top: 8px; left: 40px;"></div>
-                    <div class="milky-way-star-cluster" style="top: -6px; left: 85px;"></div>
-                    <div class="milky-way-star-cluster" style="top: 10px; left: 120px;"></div>
-                </div>
-                
-                <!-- Arm 3 - Secondary arm -->
-                <div class="milky-way-arm-path" style="--path-angle: 90deg;">
-                    <div class="milky-way-spiral-arm" style="--arm-angle: 0deg; --arm-scale: 0.9;"></div>
-                    <div class="milky-way-dust-lane" style="--arm-angle: 0deg; --arm-scale: 0.9;"></div>
-                    
-                    <!-- Star clusters along arm 3 -->
-                    <div class="milky-way-star-cluster" style="top: -7px; left: 50px;"></div>
-                    <div class="milky-way-star-cluster" style="top: 9px; left: 90px;"></div>
-                </div>
-                
-                <!-- Arm 4 - Opposite secondary arm -->
-                <div class="milky-way-arm-path" style="--path-angle: 270deg;">
-                    <div class="milky-way-spiral-arm" style="--arm-angle: 0deg; --arm-scale: 0.9;"></div>
-                    <div class="milky-way-dust-lane" style="--arm-angle: 0deg; --arm-scale: 0.9;"></div>
-                    
-                    <!-- Star clusters along arm 4 -->
-                    <div class="milky-way-star-cluster" style="top: 7px; left: 45px;"></div>
-                    <div class="milky-way-star-cluster" style="top: -8px; left: 95px;"></div>
-                </div>
-                
-                <!-- Additional star clusters in the core region -->
-                <div class="milky-way-star-cluster" style="top: 45%; left: 48%;"></div>
-                <div class="milky-way-star-cluster" style="top: 52%; left: 53%;"></div>
-                <div class="milky-way-star-cluster" style="top: 47%; left: 55%;"></div>
-                <div class="milky-way-star-cluster" style="top: 53%; left: 46%;"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <div class="orbit-container">
-                        <div class="planet"></div>
-                        <div class="orbit">
-                            <div class="satellite"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header light">
-                <!-- Removed "Have questions?" heading -->
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <a href="mailto:space.reinvent@gmail.com" class="contact-card">
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact <span>Us</span></h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
                         <div class="contact-item">
-                            <div class="contact-icon gmail-icon">
-                                <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" width="24" height="24">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>123 Galaxy Way, Cosmos City</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-details">
                                 <h4>Email</h4>
-                                <p>space.reinvent@gmail.com</p>
+                                <p>contact@spaceinvent.com</p>
                             </div>
                         </div>
-                    </a>
-                    
-                    <a href="https://x.com/spaceinvent" target="_blank" class="contact-card">
                         <div class="contact-item">
-                            <div class="contact-icon x-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="#ffffff" d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5549 21H20.7996L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"/>
-                                </svg>
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>X</h4>
-                                <p>@spaceinvent</p>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
                             </div>
                         </div>
-                    </a>
-                    
-                    <a href="https://instagram.com/spaceinvent" target="_blank" class="contact-card">
-                        <div class="contact-item">
-                            <div class="contact-icon instagram-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path fill="#FFFFFF" d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c3.252,0.148,4.771,1.691,4.919,4.919c0.058,1.265,0.069,1.645,0.069,4.849c0,3.205-0.012,3.584-0.069,4.849c-0.149,3.225-1.664,4.771-4.919,4.919c-1.266,0.058-1.644,0.07-4.85,0.07c-3.204,0-3.584-0.012-4.849-0.07c-3.26-0.149-4.771-1.699-4.919-4.92c-0.058-1.265-0.07-1.644-0.07-4.849c0-3.204,0.013-3.583,0.07-4.849C2.381,3.924,3.896,2.38,7.151,2.232C8.417,2.175,8.796,2.163,12,2.163z M12,0C8.741,0,8.333,0.014,7.053,0.072c-4.358,0.2-6.78,2.618-6.98,6.98C0.014,8.333,0,8.741,0,12s0.014,3.668,0.072,4.948c0.2,4.358,2.618,6.78,6.98,6.98C8.333,23.986,8.741,24,12,24s3.668-0.014,4.948-0.072c4.354-0.2,6.782-2.618,6.979-6.98C23.986,15.668,24,15.259,24,12s-0.014-3.667-0.072-4.947c-0.196-4.354-2.617-6.78-6.979-6.98C15.668,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.796,0-1.441,0.645-1.441,1.44s0.645,1.44,1.441,1.44c0.795,0,1.439-0.645,1.439-1.44S19.201,4.155,18.406,4.155z"/>
-                                </svg>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Send Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
                             </div>
-                            <div class="contact-details">
-                                <h4>Instagram</h4>
-                                <p>@spaceinvent</p>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="POST" target="hidden_iframe">
-                        <h3>Send a Message</h3>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="entry.1740724123" placeholder="Your name" required class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="entry.1732875791" placeholder="your.email@example.com" required class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="entry.1099130722" placeholder="Your message" rows="5" required class="form-control"></textarea>
-                        </div>
-                        <button type="submit" class="cta-button primary">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                        <p class="form-fallback">Having trouble with the form? <a href="mailto:space.reinvent@gmail.com?subject=Message from SpaceInvent Website">Email me directly</a>.</p>
-                    </form>
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-button primary">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 SpaceInvent. <a href="privacy-policy.html">Privacy Policy</a></p>
+                <p>&copy; 2025 SpaceInvent. All rights reserved.</p>
                 <div class="social-icons">
                     <a href="https://x.com/spaceinvent" target="_blank" class="x-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -595,119 +139,7 @@
         </div>
     </footer>
 
-    <!-- Simplified Cookie Consent Banner -->
-    <div id="cookie-consent" class="cookie-banner">
-        <div class="cookie-content">
-            <p>This website uses cookies to improve your experience. <a href="privacy-policy.html">Learn more</a></p>
-            <div class="cookie-buttons">
-                <button id="cookie-accept" class="cookie-btn accept">Accept</button>
-                <button id="cookie-decline" class="cookie-btn decline">Decline</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Simple JavaScript for interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menu toggle for mobile
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            
-            menuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const navLink = document.querySelectorAll('.nav-link');
-            navLink.forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                });
-            });
-            
-            // Custom cursor
-            const cursor = document.querySelector('.cursor');
-            const cursorFollower = document.querySelector('.cursor-follower');
-            
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                
-                setTimeout(function() {
-                    cursorFollower.style.left = e.clientX + 'px';
-                    cursorFollower.style.top = e.clientY + 'px';
-                }, 100);
-            });
-            
-            // Add active class to links and buttons on hover
-            const links = document.querySelectorAll('a, button');
-            links.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    cursor.classList.add('cursor-active');
-                    cursorFollower.classList.add('cursor-active');
-                });
-                
-                link.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('cursor-active');
-                    cursorFollower.classList.remove('cursor-active');
-                });
-            });
-            
-            // Handle contact form submission
-            const contactForm = document.getElementById('contact-form');
-            
-            if (contactForm) {
-                // Function to show success message
-                const showSuccessMessage = () => {
-                    // Create a success message
-                    const successMessage = document.createElement('div');
-                    successMessage.className = 'success-message';
-                    successMessage.innerHTML = `
-                        <div class="success-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for your message. I'll get back to you as soon as possible.</p>
-                    `;
-                    successMessage.style.textAlign = 'center';
-                    successMessage.style.padding = '2rem 0';
-                    
-                    // Replace form with success message
-                    contactForm.style.display = 'none';
-                    contactForm.parentNode.appendChild(successMessage);
-                };
-                
-                contactForm.addEventListener('submit', function(e) {
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    
-                    // Show loading state
-                    submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
-                    submitBtn.disabled = true;
-                    
-                    // Get form data for submission
-                    const formData = new FormData(contactForm);
-                    
-                    // Submit form data using fetch API
-                    fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        mode: 'no-cors'
-                    })
-                    .finally(() => {
-                        // Show success message after a short delay
-                        setTimeout(showSuccessMessage, 1000);
-                    });
-                    
-                    // Prevent default form submission to handle it manually
-                    e.preventDefault();
-                });
-            }
-        });
-    </script>
-    <script src="analytics.js"></script>
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
 </body>
 </html> 

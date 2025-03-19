@@ -1,3 +1,85 @@
+/* Base Styles */
+:root {
+    --accent-color: #4361ee;
+    --accent-hover-color: #3a56d4;
+    --text-color: #ffffff;
+    --text-muted: #e0e0e0;
+    --bg-dark: #0a0a14;
+    --bg-darker: rgba(10, 10, 20, 0.9);
+    --bg-lighter: rgba(30, 30, 50, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    color: var(--text-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover-color);
+}
+
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Background */
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: rgba(10, 10, 20, 0.9);
+}
+
 .asteroid:nth-child(84) { --start-x: 75%; --start-y: 110%; --end-x: 25%; --end-y: 45%; --size: 2.6px; width: var(--size); height: var(--size); --rotation: 630deg; --travel-duration: 17s; --travel-delay: 26.7s; }
 .asteroid:nth-child(85) { --start-x: 110%; --start-y: 80%; --end-x: -5%; --end-y: 30%; --size: 2.3px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 18s; --travel-delay: 28.1s; }
 .asteroid:nth-child(86) { --start-x: 110%; --start-y: 55%; --end-x: -5%; --end-y: 45%; --size: 2.9px; width: var(--size); height: var(--size); --rotation: 180deg; --travel-duration: 19s; --travel-delay: 28.8s; }
@@ -1335,3 +1417,156 @@
 .milky-way-label {
     display: none !important;
 }
+
+/* Header, navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: rgba(10, 10, 20, 0.9);
+}
+
+/* Form styling */
+.contact-form-container {
+    background-color: rgba(10, 10, 20, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(30, 30, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Footer styling */
+footer {
+    background-color: rgba(10, 10, 20, 0.8);
+    padding: 40px 0 20px;
+    position: relative;
+    z-index: 10;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Add this to the end of your CSS file */
+/* Space Elements */
+.space-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(25, 33, 60, 0.8) 0%, rgba(10, 10, 20, 1) 70%);
+}
+
+/* Stars */
+.twinkling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.twinkling-star {
+    position: absolute;
+    width: var(--star-size, 2px);
+    height: var(--star-size, 2px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: var(--star-opacity, 0.8);
+    animation: twinkle var(--twinkle-duration, 4s) infinite ease-in-out;
+    animation-delay: var(--twinkle-delay, 0s);
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: var(--star-opacity, 0.8);
+        transform: scale(1);
+    }
+    50% {
+        opacity: var(--star-dim-opacity, 0.3);
+        transform: scale(0.8);
+    }
+}
+
+/* Add more stars as needed */
+.twinkling-star.ts1 { --star-size: 3px; --star-opacity: 0.9; --twinkle-duration: 5s; --twinkle-delay: 0.2s; top: 15%; left: 12%; }
+.twinkling-star.ts2 { --star-size: 2px; --star-opacity: 0.8; --twinkle-duration: 4.5s; --twinkle-delay: 0.7s; top: 25%; left: 28%; }
+.twinkling-star.ts3 { --star-size: 4px; --star-opacity: 1; --twinkle-duration: 6s; --twinkle-delay: 1.2s; top: 8%; left: 45%; }
+.twinkling-star.ts4 { --star-size: 2.5px; --star-opacity: 0.85; --twinkle-duration: 5.5s; --twinkle-delay: 1.7s; top: 18%; left: 65%; }
+.twinkling-star.ts5 { --star-size: 3.5px; --star-opacity: 0.95; --twinkle-duration: 4.8s; --twinkle-delay: 2.2s; top: 12%; left: 82%; }
+
+/* Random Meteors */
+.random-meteor-shower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.fast-meteor {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(1px);
+    z-index: 2;
+    animation: fast-meteor-move 3.5s linear infinite;
+}
+
+.fast-meteor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(var(--angle, 0deg));
+    width: var(--tail-length, 80px);
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+    transform-origin: left center;
+}
+
+@keyframes fast-meteor-move {
+    0% {
+        opacity: 0;
+        transform: translate(var(--start-x), var(--start-y));
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--end-x), var(--end-y));
+    }
+}
+
+.fast-meteor.fm1 { --start-x: -5vw; --start-y: 15vh; --end-x: 105vw; --end-y: 85vh; --angle: 30deg; --tail-length: 80px; animation-delay: 3.7s; }
+.fast-meteor.fm2 { --start-x: 105vw; --start-y: 25vh; --end-x: -5vw; --end-y: 75vh; --angle: 210deg; --tail-length: 75px; animation-delay: 8.5s; }
+.fast-meteor.fm3 { --start-x: 25vw; --start-y: -5vh; --end-x: 75vw; --end-y: 105vh; --angle: 60deg; --tail-length: 85px; animation-delay: 15.9s; }
