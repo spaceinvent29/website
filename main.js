@@ -72,16 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get the button
-            const submitButton = this.querySelector('.cta-button.primary');
+            const submitBtn = this.querySelector('.submit-btn');
             
-            // Update button to show loading state
-            if (submitButton) {
-                submitButton.classList.add('loading');
-                submitButton.disabled = true;
+            if (submitBtn) {
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
             }
             
-            // Track form submission in Google Analytics
+            // Track submission in Google Analytics
             if (typeof gtag === 'function') {
                 gtag('event', 'form_submission', {
                     'event_category': 'Contact',
@@ -89,10 +87,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // Submit the form after a short delay to show loading state
+            // Submit form after small delay to show loading state
             setTimeout(() => {
                 this.submit();
             }, 800);
+        });
+    }
+    
+    // Automatically adjust textarea height as content grows
+    const messageArea = document.getElementById('message');
+    if (messageArea) {
+        messageArea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
         });
     }
     

@@ -2256,3 +2256,20 @@ textarea.form-control {
     width: 100%;
     padding: 15px;
     background-color: rgba(15, 15, 25, 0.8);    border: 1px solid rgba(255, 255, 255, 0.1);
+
+/* Clean, Minimalist Contact Section */
+.clean-contact {
+    padding: 100px 0;
+    background-color: #0a0a14;
+    position: relative;
+}
+
+.contact-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(15, 15, 25, 0.6);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
