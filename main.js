@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = this.querySelector('.submit-btn');
+            const submitBtn = this.querySelector('.perplexity-button');
             
             if (submitBtn) {
                 submitBtn.classList.add('loading');
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // Submit form after small delay to show loading state
+            // Submit form after delay to show loading state
             setTimeout(() => {
                 this.submit();
             }, 800);

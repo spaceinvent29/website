@@ -100,34 +100,38 @@
             </div>
         </section>
 
-        <!-- Clean, Minimalist Contact Section -->
-        <section id="contact" class="clean-contact">
+        <!-- Perplexity.ai Style Contact Section -->
+        <section id="contact" class="perplexity-contact">
             <div class="container">
-                <div class="contact-box">
-                    <!-- Simple Form -->
+                <div class="perplexity-form-container">
+                    <div class="form-header">
+                        <h2>Contact Us</h2>
+                        <p>Send us a message and we'll get back to you soon.</p>
+                    </div>
+                    
                     <form id="contact-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID_FROM_BACKUP/formResponse" method="post" target="_blank">
-                        <h2>Get in touch</h2>
-                        
-                        <!-- Name Field -->
-                        <div class="input-field">
-                            <input type="text" id="name" name="entry.XXXXXX" required>
+                        <div class="perplexity-input-group">
+                            <input type="text" id="name" name="entry.XXXXXX" required autocomplete="name">
                             <label for="name">Name</label>
                         </div>
                         
-                        <!-- Email Field -->
-                        <div class="input-field">
-                            <input type="email" id="email" name="entry.XXXXXX" required>
+                        <div class="perplexity-input-group">
+                            <input type="email" id="email" name="entry.XXXXXX" required autocomplete="email">
                             <label for="email">Email</label>
                         </div>
                         
-                        <!-- Message Field -->
-                        <div class="input-field">
-                            <textarea id="message" name="entry.XXXXXX" required></textarea>
+                        <div class="perplexity-input-group">
+                            <textarea id="message" name="entry.XXXXXX" required rows="4"></textarea>
                             <label for="message">Message</label>
                         </div>
                         
-                        <!-- Submit Button -->
-                        <button type="submit" class="submit-btn">Send</button>
+                        <button type="submit" class="perplexity-button">
+                            <span>Send message</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.75 6.75L19.25 12L13.75 17.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M19 12H4.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
                     </form>
                 </div>
             </div>

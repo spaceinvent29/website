@@ -2273,3 +2273,77 @@ textarea.form-control {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Perplexity.ai Inspired Contact Form */
+.perplexity-contact {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(15, 15, 25, 0.9));
+    position: relative;
+}
+
+.perplexity-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(28, 30, 39, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.form-header p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+/* Perplexity-style input groups */
+.perplexity-input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.perplexity-input-group input,
+.perplexity-input-group textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+}
+
+.perplexity-input-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.perplexity-input-group label {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transition: all 0.2s ease;
+    font-size: 16px;    transform-origin: left top;
+}
+
+/* Focus and filled states */
+.perplexity-input-group input:focus,
