@@ -126,33 +126,24 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateHeader);
     updateHeader(); // Run once on load
     
-    // Form field input handling for better UX
-    const formControls = document.querySelectorAll('.form-control');
-    if (formControls.length) {
-        formControls.forEach(control => {
-            // Add active class to parent when field is focused
-            control.addEventListener('focus', function() {
-                this.closest('.input-container').classList.add('active');
-            });
+    // Form handling for inputs
+    const formInputs = document.querySelectorAll('.input-group input, .input-group textarea');
+    
+    if (formInputs.length) {
+        formInputs.forEach(input => {
+            // Initial check for values (for page refreshes, etc.)
+            if (input.value.trim() !== '') {
+                input.classList.add('has-value');
+            }
             
-            // Remove active class when field loses focus
-            control.addEventListener('blur', function() {
-                this.closest('.input-container').classList.remove('active');
-            });
-            
-            // Add field validation visualization
-            control.addEventListener('input', function() {
+            // Input event listener to track changes
+            input.addEventListener('input', function() {
                 if (this.value.trim() !== '') {
                     this.classList.add('has-value');
                 } else {
                     this.classList.remove('has-value');
                 }
             });
-            
-            // Check on page load if fields have values
-            if (control.value.trim() !== '') {
-                control.classList.add('has-value');
-            }
         });
     }
     

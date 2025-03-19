@@ -268,8 +268,10 @@ body {
     margin-bottom: 0;
 }
 
+/* Form input groups with better label positioning */
 .input-group {
     position: relative;
+    margin-bottom: 24px;
 }
 
 .input-group input,
@@ -281,26 +283,30 @@ body {
     color: var(--apple-text);
     font-size: 16px;
     padding: 16px;
+    padding-top: 22px; /* Additional top padding for label */
+    padding-bottom: 10px; /* Reduced bottom padding to balance */
     transition: var(--apple-transition);
 }
 
 .input-group textarea {
     min-height: 120px;
     resize: vertical;
+    padding-top: 28px; /* Even more top padding for textarea */
 }
 
 .input-group label {
     position: absolute;
-    top: 16px;
+    top: 8px; /* Position at the top of the input */
     left: 16px;
     color: var(--apple-text-secondary);
     pointer-events: none;
-    transition: var(--apple-transition);
-    font-size: 16px;
-    transform-origin: left top;
+    font-size: 12px; /* Smaller font size for labels */
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
 }
 
-/* Focus and filled states */
+/* Focus states - refined */
 .input-group input:focus,
 .input-group textarea:focus {
     border-color: var(--apple-accent);
@@ -309,17 +315,24 @@ body {
 }
 
 .input-group input:focus + label,
-.input-group textarea:focus + label,
-.input-group input:not(:placeholder-shown) + label,
-.input-group textarea:not(:placeholder-shown) + label {
-    transform: translateY(-24px) scale(0.85);
+.input-group textarea:focus + label {
     color: var(--apple-accent);
+    opacity: 1;
 }
 
-/* Adding placeholder to make the not(:placeholder-shown) selector work */
-.input-group input,
-.input-group textarea {
-    placeholder: " ";
+/* Empty state handling */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: transparent; /* Hide the placeholder */
+}
+
+/* Extra specificity for better browser compatibility */
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--apple-text);
+    -webkit-box-shadow: 0 0 0px 1000px rgba(30, 30, 35, 0.8) inset;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .apple-button {
