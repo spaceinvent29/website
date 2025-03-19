@@ -1,36 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const mainNav = document.querySelector('.main-nav');
     
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            mainNav.classList.toggle('active');
         });
     }
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
             
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70, // Adjusted for header height
+                    top: targetElement.offsetTop - 64, // Adjusted for header height
                     behavior: 'smooth'
                 });
                 
                 // Close mobile menu if open
                 if (menuToggle && menuToggle.classList.contains('active')) {
                     menuToggle.classList.remove('active');
-                    navLinks.classList.remove('active');
+                    mainNav.classList.remove('active');
                 }
+                
+                // Update active nav link
+                document.querySelectorAll('.main-nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
             }
         });
     });
@@ -72,14 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = this.querySelector('.perplexity-button');
+            const submitBtn = this.querySelector('.apple-button');
             
             if (submitBtn) {
                 submitBtn.classList.add('loading');
                 submitBtn.disabled = true;
             }
             
-            // Track submission in Google Analytics
+            // Track form submission in Google Analytics
             if (typeof gtag === 'function') {
                 gtag('event', 'form_submission', {
                     'event_category': 'Contact',
@@ -150,4 +155,49 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Fix for the label animation
+    const formInputs = document.querySelectorAll('.input-group input, .input-group textarea');
+    
+    formInputs.forEach(input => {
+        // Check if field already has value
+        if (input.value.trim() !== '') {
+            input.nextElementSibling.classList.add('filled');
+        }
+        
+        // When input gets focus
+        input.addEventListener('focus', function() {
+            this.setAttribute('placeholder', ' '); // Space placeholder
+        });
+        
+        // When input loses focus
+        input.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                this.setAttribute('placeholder', ''); // Empty placeholder
+            }
+        });
+    });
+    
+    // Active navigation based on scroll position
+    function updateActiveNavOnScroll() {
+        const scrollPosition = window.scrollY;
+        
+        document.querySelectorAll('section[id]').forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                document.querySelectorAll('.main-nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                    if (navLink.getAttribute('href') === `#${sectionId}`) {
+                        navLink.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveNavOnScroll);
+    updateActiveNavOnScroll(); // Run on page load
 }); 
