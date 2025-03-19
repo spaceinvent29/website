@@ -70,21 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Prevent immediate submission
             e.preventDefault();
             
             // Get the button
             const submitButton = this.querySelector('.cta-button.primary');
             
-            // Update button to show submission is in progress
+            // Update button to show loading state
             if (submitButton) {
-                const originalText = submitButton.innerHTML;
-                submitButton.innerHTML = '<span class="button-text">Sending...</span>';
+                submitButton.classList.add('loading');
                 submitButton.disabled = true;
-                submitButton.classList.add('submitting');
             }
             
-            // Track submission in Google Analytics
+            // Track form submission in Google Analytics
             if (typeof gtag === 'function') {
                 gtag('event', 'form_submission', {
                     'event_category': 'Contact',
@@ -92,16 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // Submit the form after a slight delay to show the "Sending..." state
+            // Submit the form after a short delay to show loading state
             setTimeout(() => {
                 this.submit();
-                
-                // Reset button after submission (in case they navigate back)
-                if (submitButton) {
-                    submitButton.innerHTML = originalText;
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('submitting');
-                }
             }, 800);
         });
     }
@@ -124,30 +114,32 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateHeader);
     updateHeader(); // Run once on load
     
-    // Form field animations
+    // Form field input handling for better UX
     const formControls = document.querySelectorAll('.form-control');
-    
     if (formControls.length) {
         formControls.forEach(control => {
-            // Add focus effect
+            // Add active class to parent when field is focused
             control.addEventListener('focus', function() {
-                this.parentElement.classList.add('focused');
+                this.closest('.input-container').classList.add('active');
             });
             
-            // Remove focus effect
+            // Remove active class when field loses focus
             control.addEventListener('blur', function() {
-                this.parentElement.classList.remove('focused');
-                // Add 'has-value' class if the field has a value
+                this.closest('.input-container').classList.remove('active');
+            });
+            
+            // Add field validation visualization
+            control.addEventListener('input', function() {
                 if (this.value.trim() !== '') {
-                    this.parentElement.classList.add('has-value');
+                    this.classList.add('has-value');
                 } else {
-                    this.parentElement.classList.remove('has-value');
+                    this.classList.remove('has-value');
                 }
             });
             
-            // Check on load if fields have values
+            // Check on page load if fields have values
             if (control.value.trim() !== '') {
-                control.parentElement.classList.add('has-value');
+                control.classList.add('has-value');
             }
         });
     }

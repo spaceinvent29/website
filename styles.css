@@ -2155,3 +2155,104 @@ textarea.form-control {
         padding: 12px 20px;
     }
 }
+
+/* Structured Contact Section with Black Background */
+.contact-section {
+    padding: 100px 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.5) inset;
+    z-index: 10;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.section-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-divider span {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #4361ee, transparent);
+    border-radius: 2px;
+}
+
+.contact-form-wrapper {
+    position: relative;
+}
+
+/* Card styling */
+.contact-card {
+    background-color: rgba(20, 20, 30, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 25px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 30px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.card-header {
+    background-color: rgba(30, 30, 50, 0.9);
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.input-container {
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(15, 15, 25, 0.8);    border: 1px solid rgba(255, 255, 255, 0.1);
