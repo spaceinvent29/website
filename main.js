@@ -33,23 +33,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form submission tracking for Google Analytics
+    // For iframe form: Listen for the iframe to load
+    const formIframe = document.querySelector('.google-form-container iframe');
+    
+    if (formIframe) {
+        // Track form views
+        if (typeof gtag === 'function') {
+            gtag('event', 'form_view', {
+                'event_category': 'Contact',
+                'event_label': 'Google Form View'
+            });
+        }
+        
+        // Try to track form submissions by listening for iframe navigation
+        formIframe.addEventListener('load', function() {
+            // This will fire when the iframe loads initially and after submission
+            // You might need a flag to track only submissions
+            if (this.submissionTracked) return;
+            
+            // Set a timeout to check if the URL changed (indicating form submission)
+            setTimeout(() => {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'form_submission', {
+                        'event_category': 'Contact',
+                        'event_label': 'Google Form Submission'
+                    });
+                    this.submissionTracked = true;
+                }
+            }, 2000);
+        });
+    }
+    
+    // For custom form: Track form submissions
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Track form submission in Google Analytics
+            // Track submission in Google Analytics
             if (typeof gtag === 'function') {
                 gtag('event', 'form_submission', {
                     'event_category': 'Contact',
                     'event_label': 'Contact Form'
                 });
             }
-            
-            // Show success message (you can customize this)
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
         });
     }
 }); 

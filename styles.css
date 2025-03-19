@@ -1570,3 +1570,51 @@ footer {
 .fast-meteor.fm1 { --start-x: -5vw; --start-y: 15vh; --end-x: 105vw; --end-y: 85vh; --angle: 30deg; --tail-length: 80px; animation-delay: 3.7s; }
 .fast-meteor.fm2 { --start-x: 105vw; --start-y: 25vh; --end-x: -5vw; --end-y: 75vh; --angle: 210deg; --tail-length: 75px; animation-delay: 8.5s; }
 .fast-meteor.fm3 { --start-x: 25vw; --start-y: -5vh; --end-x: 75vw; --end-y: 105vh; --angle: 60deg; --tail-length: 85px; animation-delay: 15.9s; }
+
+/* Google Form Styling */
+.google-form-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.google-form-container iframe {
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+}
+
+/* Adjust height on smaller screens */
+@media (max-width: 768px) {
+    .google-form-container iframe {
+        height: 600px; /* Increased height for mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .google-form-container {
+        margin: 0 -10px; /* Negative margin to give more space */
+    }
+    
+    .contact-form-container {
+        padding: 20px 10px; /* Reduced padding to give more space to the form */
+    }
+}
+
+/* Additional styling for Google Forms iframe */
+.google-form-container {
+    background-color: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+/* This helps with iframe resizing */
+.google-form-container iframe html {
+    background-color: transparent !important;
+}
+
+/* Fix form visibility issues */
+.contact-form-container {
+    background-color: rgba(30, 30, 50, 0.6); /* Semi-transparent background */
+}
