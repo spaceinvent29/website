@@ -157,7 +157,8 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba');
+  /* Using a NASA image of just the Milky Way */
+  background-image: url('https://images.nasa.gov/images/a_changed_milky_way-1~medium.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -167,6 +168,11 @@ main {
   mix-blend-mode: screen;
   animation: milky-way-drift 60s infinite ease-in-out;
 }
+
+/* Alternative URLs if NASA image doesn't work:
+  - https://svs.gsfc.nasa.gov/vis/a010000/a013600/a013686/MilkyWay_print.jpg
+  - https://cdn.spacetelescope.org/archives/images/screen/potw1211a.jpg
+*/
 
 @keyframes milky-way-drift {
   0% {
