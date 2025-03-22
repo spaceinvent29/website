@@ -82,23 +82,15 @@
                 <div class="milky-way-dust"></div>
             </div>
             <div class="galaxy-container">
-                <!-- Add this inside the galaxy-container div, just before the floating-planets div -->
-                <div class="background-stars">
-                    <div class="bg-star bs-1"></div>
-                    <div class="bg-star bs-2"></div>
-                    <div class="bg-star bs-3"></div>
-                    <div class="bg-star bs-4"></div>
-                    <div class="bg-star bs-5"></div>
-                    <div class="bg-star bs-6"></div>
-                    <div class="bg-star bs-7"></div>
-                    <div class="bg-star bs-8"></div>
-                    <div class="bg-star bs-9"></div>
-                    <div class="bg-star bs-10"></div>
-                    <div class="bg-star bs-11"></div>
-                    <div class="bg-star bs-12"></div>
-                    <div class="bg-star bs-13"></div>
-                    <div class="bg-star bs-14"></div>
-                    <div class="bg-star bs-15"></div>
+                <!-- Replace your current background-stars div with this one -->
+                <div class="bright-stars" style="display: block !important; visibility: visible !important; opacity: 1 !important; z-index: 1000 !important;">
+                    <div class="bright-star star1" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                    <div class="bright-star star2" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                    <div class="bright-star star3" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                    <div class="bright-star star4" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                    <div class="bright-star star5" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                    <div class="bright-star star6" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
+                    <div class="bright-star star7" style="display: block !important; visibility: visible !important; opacity: 1 !important;"></div>
                 </div>
                 <!-- ONLY KEEP LARGE PLANETS - Remove small planets -->
                 <div class="floating-planets">
@@ -210,6 +202,29 @@
                 
                 console.log('Space elements visibility enforced');
             }, 500);
+        });
+
+        // Immediately create and add a very visible test star
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create an absolutely visible star as a test
+            const testStar = document.createElement('div');
+            testStar.style.position = 'absolute';
+            testStar.style.width = '8px';
+            testStar.style.height = '8px';
+            testStar.style.backgroundColor = 'white';
+            testStar.style.borderRadius = '50%';
+            testStar.style.boxShadow = '0 0 15px 5px white';
+            testStar.style.top = '50%';
+            testStar.style.left = '50%';
+            testStar.style.zIndex = '9999';
+            testStar.style.opacity = '1';
+            
+            // Add it to the galaxy container
+            const galaxyContainer = document.querySelector('.galaxy-container');
+            if (galaxyContainer) {
+                galaxyContainer.appendChild(testStar);
+                console.log('Test star added to center of galaxy container');
+            }
         });
     </script>
 </body>
