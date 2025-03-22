@@ -21,9 +21,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Add this at the very beginning of your <body> tag -->
-    <div style="position: fixed; top: 100px; left: 100px; width: 50px; height: 50px; background-color: white; border-radius: 50%; box-shadow: 0 0 30px white; z-index: 9999;"></div>
-
     <!-- Space Background (Stays fixed behind everything) -->
     <div class="space-background">
         <!-- Milky Way Elements -->
@@ -85,18 +82,21 @@
                 <div class="milky-way-dust"></div>
             </div>
             <div class="galaxy-container">
-                <!-- ONLY Planets - Everything Else Removed -->
+                <!-- ONLY KEEP LARGE PLANETS - Remove small planets -->
                 <div class="floating-planets">
+                    <!-- Keep only the 6 largest planets -->
                     <div class="floating-planet blue-planet"></div>
                     <div class="floating-planet red-planet"></div>
                     <div class="floating-planet purple-planet"></div>
-                    <div class="floating-planet green-planet"></div>
                     <div class="floating-planet orange-planet"></div>
-                    <div class="floating-planet teal-planet"></div>
-                    <div class="floating-planet gold-planet"></div>
                     <div class="floating-planet ringed-planet">
                         <div class="planet-ring"></div>
                     </div>
+                    
+                    <!-- REMOVE THESE SMALLER PLANETS -->
+                    <!-- <div class="floating-planet green-planet"></div> -->
+                    <!-- <div class="floating-planet teal-planet"></div> -->
+                    <!-- <div class="floating-planet gold-planet"></div> -->
                 </div>
             </div>
         </section>
