@@ -156,6 +156,7 @@ main {
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: float-general 20s infinite ease-in-out;
 }
 
 .blue-planet {
@@ -163,8 +164,9 @@ main {
   top: 30%;
   left: 20%;
   box-shadow: 0 0 30px rgba(85, 85, 255, 0.7);
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
+  animation: float-blue 25s infinite alternate ease-in-out;
 }
 
 .red-planet {
@@ -172,8 +174,9 @@ main {
   top: 50%;
   left: 40%;
   box-shadow: 0 0 30px rgba(255, 85, 85, 0.7);
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
+  animation: float-red 30s infinite alternate ease-in-out;
 }
 
 .purple-planet {
@@ -181,8 +184,9 @@ main {
   top: 40%;
   left: 70%;
   box-shadow: 0 0 30px rgba(170, 85, 255, 0.7);
-  width: 65px;
-  height: 65px;
+  width: 48px;
+  height: 48px;
+  animation: float-purple 28s infinite alternate ease-in-out;
 }
 
 .orange-planet {
@@ -190,8 +194,9 @@ main {
   top: 70%;
   left: 60%;
   box-shadow: 0 0 30px rgba(255, 170, 85, 0.7);
-  width: 70px;
-  height: 70px;
+  width: 52px;
+  height: 52px;
+  animation: float-orange 32s infinite alternate ease-in-out;
 }
 
 .ringed-planet {
@@ -199,19 +204,21 @@ main {
   top: 60%;
   left: 80%;
   box-shadow: 0 0 30px rgba(170, 136, 102, 0.7);
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
+  animation: float-ringed 27s infinite alternate ease-in-out;
 }
 
 .planet-ring {
   position: absolute;
-  width: 70px;
-  height: 20px;
-  border: 2px solid rgba(255, 255, 200, 0.7);
+  width: 55px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 200, 0.7);
   border-radius: 50%;
-  top: 12px;
-  left: -12px;
+  top: 9px;
+  left: -10px;
   transform: rotate(-20deg);
+  animation: ring-rotate 15s infinite linear;
 }
 
 /* Stars */
@@ -573,4 +580,55 @@ header a::after {
 /* Override any inline styles with !important */
 [style*="background-color"] {
   background-color: #000000 !important;
+}
+
+/* Define keyframes for planet movements */
+@keyframes float-general {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -10px); }
+}
+
+@keyframes float-blue {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(15px, -15px) rotate(5deg); }
+  50% { transform: translate(5px, -25px) rotate(0deg); }
+  75% { transform: translate(-15px, -10px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes float-red {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-20px, 15px) rotate(-3deg); }
+  66% { transform: translate(20px, 20px) rotate(3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes float-purple {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-10px, -20px) rotate(-2deg); }
+  50% { transform: translate(-20px, 0px) rotate(2deg); }
+  75% { transform: translate(-5px, 15px) rotate(0deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes float-orange {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(5px, -20px) rotate(2deg); }
+  40% { transform: translate(20px, -10px) rotate(4deg); }
+  60% { transform: translate(25px, 5px) rotate(2deg); }
+  80% { transform: translate(10px, 15px) rotate(-2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes float-ringed {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-15px, -5px) rotate(-5deg); }
+  50% { transform: translate(-5px, 15px) rotate(0deg); }
+  75% { transform: translate(10px, 5px) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes ring-rotate {
+  0% { transform: rotate(-20deg); }
+  100% { transform: rotate(340deg); }
 }
