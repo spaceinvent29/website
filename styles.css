@@ -1043,3 +1043,144 @@ body::after {
   pointer-events: none;
 }
 
+/* Realistic meteors */
+.realistic-meteors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.realistic-meteor {
+  position: absolute;
+  height: 2px;
+  transform-origin: left center;
+  opacity: 0;
+  z-index: 10;
+  animation: realistic-meteor-fall 4s ease-in infinite;
+}
+
+/* First meteor - longer with brighter trail */
+.realistic-meteor-1 {
+  width: 120px;
+  background: linear-gradient(to right, 
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.1) 10%, 
+      rgba(255, 255, 255, 0.3) 20%,
+      rgba(255, 240, 220, 0.5) 30%, 
+      rgba(255, 220, 180, 0.8) 50%, 
+      rgba(255, 255, 255, 1) 60%,
+      rgba(200, 200, 255, 0.6) 70%,
+      rgba(150, 150, 255, 0.3) 80%,
+      rgba(100, 100, 200, 0.1) 90%,
+      rgba(100, 100, 200, 0) 100%);
+  filter: blur(0.5px);
+}
+
+/* Second meteor - shorter with reddish tint */
+.realistic-meteor-2 {
+  width: 90px;
+  background: linear-gradient(to right, 
+      rgba(255, 255, 255, 0),
+      rgba(255, 240, 220, 0.1) 10%, 
+      rgba(255, 220, 180, 0.3) 20%,
+      rgba(255, 200, 150, 0.5) 30%, 
+      rgba(255, 180, 120, 0.8) 50%, 
+      rgba(255, 220, 180, 1) 60%,
+      rgba(255, 200, 150, 0.6) 70%,
+      rgba(220, 150, 100, 0.3) 80%,
+      rgba(200, 100, 50, 0.1) 90%,
+      rgba(200, 100, 50, 0) 100%);
+  filter: blur(0.5px);
+}
+
+/* Additional meteors */
+.realistic-meteor-3 {
+  width: 150px;
+  background: linear-gradient(to right, 
+      rgba(255, 255, 255, 0),
+      rgba(200, 220, 255, 0.1) 10%, 
+      rgba(180, 200, 255, 0.3) 20%,
+      rgba(150, 180, 255, 0.5) 30%, 
+      rgba(120, 160, 255, 0.8) 50%, 
+      rgba(180, 200, 255, 1) 60%,
+      rgba(150, 180, 255, 0.6) 70%,
+      rgba(120, 150, 255, 0.3) 80%,
+      rgba(100, 120, 255, 0.1) 90%,
+      rgba(100, 120, 255, 0) 100%);
+  filter: blur(0.5px);
+}
+
+.realistic-meteor-4 {
+  width: 70px;
+  background: linear-gradient(to right, 
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 230, 0.1) 10%, 
+      rgba(255, 255, 200, 0.3) 20%,
+      rgba(255, 255, 170, 0.5) 30%, 
+      rgba(255, 255, 140, 0.8) 50%, 
+      rgba(255, 255, 210, 1) 60%,
+      rgba(255, 240, 180, 0.6) 70%,
+      rgba(255, 220, 150, 0.3) 80%,
+      rgba(255, 200, 100, 0.1) 90%,
+      rgba(255, 200, 100, 0) 100%);
+  filter: blur(0.5px);
+}
+
+/* Meteor head glow effects */
+.realistic-meteor::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 240, 220, 0.8) 30%,
+    rgba(255, 220, 180, 0.4) 70%,
+    transparent 100%
+  );
+  filter: blur(0.5px);
+}
+
+/* Realistic meteor animations */
+@keyframes realistic-meteor-fall {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(var(--angle, 30deg));
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--dist-x, -200px)) translateY(var(--dist-y, 600px)) rotate(var(--angle, 30deg));
+  }
+}
+
+/* Wobble animation */
+@keyframes meteor-wobble {
+  0% {
+    margin-top: -0.5px;
+  }
+  50% {
+    margin-top: 0.5px;
+  }
+  100% {
+    margin-top: -0.5px;
+  }
+}
+
