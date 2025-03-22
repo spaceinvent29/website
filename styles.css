@@ -539,3 +539,23 @@ main {
     padding: 60px 0;
   }
 }
+
+/* Remove the line below "Home" in the header */
+.main-nav a.active,
+.main-nav a,
+.main-nav li a,
+header a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.main-nav a.active::after,
+.main-nav a::after,
+.main-nav li a::after,
+header a::after {
+  display: none !important;
+  content: none !important;
+  border: none !important;
+  height: 0 !important;
+  background: transparent !important;
+}
