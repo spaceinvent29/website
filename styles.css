@@ -1043,7 +1043,7 @@ body::after {
   pointer-events: none;
 }
 
-/* Add realistic meteors */
+/* Update realistic meteors to allow for more varied directions */
 .realistic-meteors {
   position: absolute;
   top: 0;
@@ -1061,14 +1061,13 @@ body::after {
   transform-origin: left center;
   opacity: 0;
   z-index: 10;
+  /* Remove fixed rotation - will be handled by JS */
   animation: realistic-meteor-fall 4s ease-in infinite;
 }
 
 /* First meteor - longer with brighter trail */
 .realistic-meteor-1 {
   width: 120px;
-  top: 20%;
-  left: 80%;
   background: linear-gradient(to right, 
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0.1) 10%, 
@@ -1080,16 +1079,12 @@ body::after {
       rgba(150, 150, 255, 0.3) 80%,
       rgba(100, 100, 200, 0.1) 90%,
       rgba(100, 100, 200, 0) 100%);
-  transform: rotate(35deg);
   filter: blur(0.5px);
-  animation-delay: 2s;
 }
 
 /* Second meteor - shorter with reddish tint */
 .realistic-meteor-2 {
   width: 90px;
-  top: 40%;
-  left: 70%;
   background: linear-gradient(to right, 
       rgba(255, 255, 255, 0),
       rgba(255, 240, 220, 0.1) 10%, 
@@ -1101,9 +1096,40 @@ body::after {
       rgba(220, 150, 100, 0.3) 80%,
       rgba(200, 100, 50, 0.1) 90%,
       rgba(200, 100, 50, 0) 100%);
-  transform: rotate(22deg);
   filter: blur(0.5px);
-  animation-delay: 7s;
+}
+
+/* Add additional meteors for more variety */
+.realistic-meteor-3 {
+  width: 150px;
+  background: linear-gradient(to right, 
+      rgba(255, 255, 255, 0),
+      rgba(200, 220, 255, 0.1) 10%, 
+      rgba(180, 200, 255, 0.3) 20%,
+      rgba(150, 180, 255, 0.5) 30%, 
+      rgba(120, 160, 255, 0.8) 50%, 
+      rgba(180, 200, 255, 1) 60%,
+      rgba(150, 180, 255, 0.6) 70%,
+      rgba(120, 150, 255, 0.3) 80%,
+      rgba(100, 120, 255, 0.1) 90%,
+      rgba(100, 120, 255, 0) 100%);
+  filter: blur(0.5px);
+}
+
+.realistic-meteor-4 {
+  width: 70px;
+  background: linear-gradient(to right, 
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 230, 0.1) 10%, 
+      rgba(255, 255, 200, 0.3) 20%,
+      rgba(255, 255, 170, 0.5) 30%, 
+      rgba(255, 255, 140, 0.8) 50%, 
+      rgba(255, 255, 210, 1) 60%,
+      rgba(255, 240, 180, 0.6) 70%,
+      rgba(255, 220, 150, 0.3) 80%,
+      rgba(255, 200, 100, 0.1) 90%,
+      rgba(255, 200, 100, 0) 100%);
+  filter: blur(0.5px);
 }
 
 /* Meteor head glow effects */
@@ -1125,11 +1151,11 @@ body::after {
   filter: blur(0.5px);
 }
 
-/* Realistic meteor animation */
+/* Updated realistic meteor animation - using CSS variables for full customization */
 @keyframes realistic-meteor-fall {
   0% {
     opacity: 0;
-    transform: translateX(0) translateY(0) var(--rotation, rotate(30deg));
+    transform: translateX(0) translateY(0) rotate(var(--angle, 30deg));
   }
   10% {
     opacity: 1;
@@ -1142,19 +1168,11 @@ body::after {
   }
   100% {
     opacity: 0;
-    transform: translateX(var(--dist, -200px)) translateY(var(--dist-y, 600px)) var(--rotation, rotate(30deg));
+    transform: translateX(var(--dist-x, -200px)) translateY(var(--dist-y, 600px)) rotate(var(--angle, 30deg));
   }
 }
 
-/* Add wobble effect to the meteors */
-.realistic-meteor-1 {
-  animation: realistic-meteor-fall 6s ease-in infinite, meteor-wobble 0.5s ease-in-out infinite;
-}
-
-.realistic-meteor-2 {
-  animation: realistic-meteor-fall 5s ease-in infinite 7s, meteor-wobble 0.3s ease-in-out infinite;
-}
-
+/* Wobble animation */
 @keyframes meteor-wobble {
   0% {
     margin-top: -0.5px;
@@ -1166,3 +1184,4 @@ body::after {
     margin-top: -0.5px;
   }
 }
+
