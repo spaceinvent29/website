@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Add this at the very beginning of your <body> tag -->
+    <div style="position: fixed; top: 100px; left: 100px; width: 50px; height: 50px; background-color: white; border-radius: 50%; box-shadow: 0 0 30px white; z-index: 9999;"></div>
+
     <!-- Space Background (Stays fixed behind everything) -->
     <div class="space-background">
         <!-- Milky Way Elements -->
@@ -83,16 +86,12 @@
             </div>
             <div class="galaxy-container">
                 <!-- Super Visible Space Objects -->
-                <div class="satellites">
-                    <div class="satellite sat-1"></div>
-                    <div class="satellite sat-2"></div>
-                    <div class="satellite sat-3"></div>
-                    <div class="satellite sat-4"></div>
-                    <div class="satellite sat-5"></div>
-                    <div class="satellite sat-6"></div>
-                    <div class="satellite sat-7"></div>
-                    <div class="satellite sat-8"></div>
-                    <div class="satellite sat-9"></div>
+                <div class="visible-satellites">
+                    <div class="bright-satellite bs-1"></div>
+                    <div class="bright-satellite bs-2"></div>
+                    <div class="bright-satellite bs-3"></div>
+                    <div class="bright-satellite bs-4"></div>
+                    <div class="bright-satellite bs-5"></div>
                 </div>
                 
                 <div class="additional-stars">
@@ -139,7 +138,6 @@
                     <div class="floating-planet ringed-planet">
                         <div class="planet-ring"></div>
                     </div>
-                    <div class="floating-planet small-blue-planet"></div>
                     <div class="floating-planet small-red-planet"></div>
                 </div>
             </div>

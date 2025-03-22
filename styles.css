@@ -1879,3 +1879,70 @@ body {
 .sat-3 { top: 60% !important; left: 60% !important; }
 .sat-4 { top: 80% !important; left: 80% !important; }
 .sat-5 { top: 50% !important; left: 10% !important; }
+
+/* SUPER VISIBLE SATELLITES - ADD THIS TO THE END OF YOUR CSS FILE */
+.visible-satellites {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Extremely high z-index */
+}
+
+.bright-satellite {
+    position: absolute;
+    width: 12px; /* Larger size */
+    height: 12px;
+    background-color: white; /* Pure white */
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px white,
+        0 0 40px rgba(255, 255, 255, 0.8);
+    animation: simple-orbit 20s linear infinite;
+}
+
+/* Fixed positions that are easy to see */
+.bs-1 { 
+    top: 30%; 
+    left: 30%; 
+    animation-delay: 0s;
+}
+
+.bs-2 { 
+    top: 70%; 
+    left: 70%; 
+    animation-delay: -5s;
+}
+
+.bs-3 { 
+    top: 30%; 
+    left: 70%; 
+    animation-delay: -10s;
+}
+
+.bs-4 { 
+    top: 70%; 
+    left: 30%; 
+    animation-delay: -15s;
+}
+
+.bs-5 { 
+    top: 50%; 
+    left: 50%; 
+    width: 15px; /* Even larger */
+    height: 15px;
+    box-shadow: 
+        0 0 30px white,
+        0 0 60px rgba(255, 255, 255, 0.8);
+    animation-delay: -7s;
+}
+
+/* Super simple animation that's easy to see */
+@keyframes simple-orbit {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(100px, 0); }
+    50% { transform: translate(100px, 100px); }
+    75% { transform: translate(0, 100px); }
+    100% { transform: translate(0, 0); }
+}
