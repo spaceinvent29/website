@@ -267,12 +267,13 @@ main {
 
 .bright-star {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 2px;
+  height: 2px;
   background-color: white;
   border-radius: 50%;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8),
-              0 0 20px 5px rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 0 5px 1px rgba(255, 255, 255, 0.7),
+    0 0 10px 2px rgba(255, 255, 255, 0.3);
   animation: bright-twinkle 3s infinite alternate ease-in-out;
 }
 
@@ -285,8 +286,14 @@ main {
 .star7 { top: 60%; left: 60%; animation-delay: -3.5s; }
 
 @keyframes bright-twinkle {
-  0% { opacity: 0.3; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.3); }
+  0% { 
+    opacity: 0.3; 
+    transform: scale(0.7);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1.1);
+  }
 }
 
 /* ISS Station */
@@ -751,4 +758,31 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-28px);
   font-size: 12px;
   color: var(--primary-color);
+}
+
+/* Background stars if present */
+.bg-star {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Twinkling stars if present */
+.twinkling-star {
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+}
+
+/* For any manually added star test elements */
+[id^="test-star"],
+.test-star,
+div[style*="border-radius: 50%"][style*="background-color: white"] {
+  width: 3px !important;
+  height: 3px !important;
+  box-shadow: 0 0 8px 2px white !important;
 }

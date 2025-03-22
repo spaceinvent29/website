@@ -217,14 +217,14 @@
 
         // Immediately create and add a very visible test star
         document.addEventListener('DOMContentLoaded', function() {
-            // Create an absolutely visible star as a test
+            // Create an absolutely visible star as a test but smaller now
             const testStar = document.createElement('div');
             testStar.style.position = 'absolute';
-            testStar.style.width = '8px';
-            testStar.style.height = '8px';
+            testStar.style.width = '3px'; // Reduced from 8px
+            testStar.style.height = '3px'; // Reduced from 8px
             testStar.style.backgroundColor = 'white';
             testStar.style.borderRadius = '50%';
-            testStar.style.boxShadow = '0 0 15px 5px white';
+            testStar.style.boxShadow = '0 0 8px 2px white'; // Reduced from 15px 5px
             testStar.style.top = '50%';
             testStar.style.left = '50%';
             testStar.style.zIndex = '9999';
