@@ -236,5 +236,31 @@
 
     <!-- JavaScript -->
     <script src="main.js"></script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <script>
+        // Force browser to recognize space elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a moment for everything to load
+            setTimeout(function() {
+                // Get all space elements
+                const spaceElements = document.querySelectorAll('.space-stations, .iss-station, .comm-sat, .obs-sat');
+                
+                // Force them to be visible
+                spaceElements.forEach(function(element) {
+                    element.style.display = 'block';
+                    element.style.visibility = 'visible';
+                    element.style.opacity = '1';
+                    element.style.zIndex = '10000';
+                    
+                    // Force a repaint
+                    element.style.transform = 'translateZ(0)';
+                    void element.offsetWidth;
+                });
+                
+                console.log('Space elements visibility enforced');
+            }, 500);
+        });
+    </script>
 </body>
 </html> 

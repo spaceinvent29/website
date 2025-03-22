@@ -2099,3 +2099,95 @@ body {
     background-color: #80c0ff;
     border-radius: 50%;
     box-shadow: 0 0 8px rgba(128, 192, 255, 0.8);
+
+/* Add these cross-browser compatibility enhancements */
+.space-stations,
+.iss-station,
+.comm-satellites,
+.comm-sat,
+.obs-satellites,
+.obs-sat {
+    /* Force hardware acceleration on all browsers */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    
+    /* Ensure visibility across browsers */
+    visibility: visible !important;
+    opacity: 1 !important;
+    
+    /* Extreme z-index to overcome any stacking issues */
+    z-index: 10000 !important;
+    
+    /* Prevent clipping in some browsers */
+    overflow: visible !important;
+    
+    /* Ensure proper positioning */
+    position: absolute !important;
+    
+    /* Force display */
+    display: block !important;
+}
+
+/* Enhanced visibility for ISS components */
+.iss-body,
+.iss-panel,
+.sat-body,
+.sat-dish {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* Desktop-specific enhancements */
+@media screen and (min-width: 768px) {
+    /* Make elements larger and more visible on desktop */
+    .iss-station {
+        transform: scale(1.5) translateZ(0) !important;
+        -webkit-transform: scale(1.5) translateZ(0) !important;
+    }
+    
+    .comm-sat {
+        transform: scale(1.5) translateZ(0) !important;
+        -webkit-transform: scale(1.5) translateZ(0) !important;
+    }
+    
+    .obs-sat {
+        transform: scale(1.5) translateZ(0) !important;
+        -webkit-transform: scale(1.5) translateZ(0) !important;
+    }
+    
+    /* Enhance glow effects for desktop */
+    .iss-body {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1) !important;
+    }
+    
+    .sat-body {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 1) !important;
+    }
+    
+    .obs-sat {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1) !important;
+    }
+}
+
+/* Modernize animations for better performance across browsers */
+@keyframes iss-orbit {
+    0% { transform: translate(0, 0) rotate(0deg) translateZ(0); }
+    25% { transform: translate(150px, -70px) rotate(20deg) translateZ(0); }
+    50% { transform: translate(50px, 150px) rotate(-15deg) translateZ(0); }
+    75% { transform: translate(-120px, 50px) rotate(5deg) translateZ(0); }
+    100% { transform: translate(0, 0) rotate(0deg) translateZ(0); }
+}
+
+@-webkit-keyframes iss-orbit {
+    0% { -webkit-transform: translate(0, 0) rotate(0deg) translateZ(0); }
+    25% { -webkit-transform: translate(150px, -70px) rotate(20deg) translateZ(0); }
+    50% { -webkit-transform: translate(50px, 150px) rotate(-15deg) translateZ(0); }
+    75% { -webkit-transform: translate(-120px, 50px) rotate(5deg) translateZ(0); }
+    100% { -webkit-transform: translate(0, 0) rotate(0deg) translateZ(0); }
+}
+
+/* Add webkit versions for other animations similarly */
