@@ -1,6 +1,6 @@
 /* Basic styling to get your space site working */
 body {
-  background-color: #000033;
+  background-color: #000011;
   color: white;
   font-family: Arial, sans-serif;
   margin: 0;
@@ -27,12 +27,20 @@ body {
 .apple-header {
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   padding: 15px 0;
+}
+
+.apple-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
 }
 
 .main-nav ul {
@@ -58,6 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 60px;
 }
 
 .galaxy-container {
@@ -595,4 +604,21 @@ div[style*="top:5%"][style*="left:5%"] {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+/* Update the space-background */
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000011; /* Match with body */
+  overflow: hidden;
+}
+
+/* Add some padding to account for the fixed header */
+main {
+  padding-top: 70px; /* Adjust based on your header height */
 }
