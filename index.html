@@ -150,7 +150,7 @@
         randomizeShootingStars();
         setInterval(randomizeShootingStars, 10000);
         
-        // Completely randomize meteors with independent directions
+        // Update the meteor randomization function to reverse directions
         function randomizeMeteors() {
             const meteors = document.querySelectorAll('.realistic-meteor');
             
@@ -163,11 +163,11 @@
                 const topPos = Math.random() * 100; // Any vertical position
                 const leftPos = Math.random() * 100; // Any horizontal position
                 
-                // Random direction angle (full 360 degrees)
-                const angle = Math.random() * 360;
+                // Random direction angle (full 360 degrees) - adjusted for reversed direction
+                const angle = 150 + Math.random() * 60; // Now between 150-210 degrees (generally from bottom-left to top-right)
                 
                 // Random speed and distance based on direction
-                const distance = -200 - Math.random() * 600; // Longer paths
+                const distance = 200 + Math.random() * 600; // Positive distance for reversed direction
                 
                 // Calculate x and y components based on angle
                 const distX = distance * Math.cos(angle * Math.PI / 180);
@@ -197,23 +197,17 @@
             });
         }
 
-        // Initialize and then randomize meteors periodically
-        randomizeMeteors();
-        
-        // Randomize each meteor independently at staggered intervals
+        // Update the individual meteor randomization with reversed direction
         document.querySelectorAll('.realistic-meteor').forEach((meteor, index) => {
-            // Set up independent randomization cycles with different intervals
             const interval = 8000 + (index * 2000) + (Math.random() * 4000);
             setInterval(() => {
-                // Reset just this meteor's animation
                 meteor.style.animation = 'none';
-                meteor.offsetHeight; // Force reflow
+                meteor.offsetHeight;
                 
-                // Random position and direction
                 const topPos = Math.random() * 100;
                 const leftPos = Math.random() * 100;
-                const angle = Math.random() * 360;
-                const distance = -200 - Math.random() * 600;
+                const angle = 150 + Math.random() * 60; // Using reversed angle range
+                const distance = 200 + Math.random() * 600;
                 const distX = distance * Math.cos(angle * Math.PI / 180);
                 const distY = distance * Math.sin(angle * Math.PI / 180);
                 
@@ -224,7 +218,7 @@
                 meteor.style.setProperty('--dist-y', `${distY}px`);
                 
                 const duration = 3 + Math.random() * 4;
-                const delay = Math.random() * 5; // Shorter delay for reset
+                const delay = Math.random() * 5;
                 const wobbleSpeed = 0.2 + Math.random() * 0.4;
                 
                 meteor.style.animation = `
@@ -233,6 +227,9 @@
                 `;
             }, interval);
         });
+        
+        // Initialize
+        randomizeMeteors();
     </script>
 </body>
 </html> 

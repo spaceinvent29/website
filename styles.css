@@ -1154,7 +1154,7 @@ body::after {
 @keyframes realistic-meteor-fall {
   0% {
     opacity: 0;
-    transform: translateX(0) translateY(0) rotate(var(--angle, 30deg));
+    transform: translateX(0) translateY(0) rotate(var(--angle, 150deg)); /* Changed angle to opposite direction */
   }
   10% {
     opacity: 1;
@@ -1167,7 +1167,8 @@ body::after {
   }
   100% {
     opacity: 0;
-    transform: translateX(var(--dist-x, -200px)) translateY(var(--dist-y, 600px)) rotate(var(--angle, 30deg));
+    /* Reversed X and Y directions */
+    transform: translateX(var(--dist-x, 200px)) translateY(var(--dist-y, -600px)) rotate(var(--angle, 150deg));
   }
 }
 
