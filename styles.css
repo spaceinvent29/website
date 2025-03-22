@@ -769,6 +769,46 @@ body {
     filter: saturate(1.5);
 }
 
+/* Enhance existing planets with "space object" effects */
+.floating-planet::before {
+    content: '';
+    position: absolute;
+    top: -300%;
+    left: -300%;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: orbit-star 8s linear infinite;
+    z-index: 1000;
+}
+
+.floating-planet::after {
+    content: '';
+    position: absolute;
+    top: 200%;
+    left: 200%;
+    width: 4px;
+    height: 3px;
+    background-color: gold;
+    border-radius: 40%;
+    box-shadow: 0 0 8px gold;
+    animation: orbit-asteroid 12s linear infinite reverse;
+    z-index: 1000;
+}
+
+@keyframes orbit-star {
+    0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+@keyframes orbit-asteroid {
+    0% { transform: rotate(0deg) translateX(20px) rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) translateX(20px) rotate(-180deg) scale(1.2); }
+    100% { transform: rotate(360deg) translateX(20px) rotate(-360deg) scale(1); }
+}
+
 /* Planet styles with vibrant colors */
 .blue-planet {
     width: 18px;
@@ -777,6 +817,12 @@ body {
     top: 30%;
     left: 25%;
     animation: float-path-1 20s infinite alternate ease-in-out;
+    position: relative;
+}
+
+.blue-planet::before {
+    background-color: cyan !important;
+    box-shadow: 0 0 15px cyan !important;
 }
 
 .red-planet {
@@ -788,6 +834,13 @@ body {
     animation: float-path-2 25s infinite alternate ease-in-out;
 }
 
+.red-planet::after {
+    width: 6px !important;
+    height: 4px !important;
+    background-color: #ff7730 !important;
+    box-shadow: 0 0 12px #ff7730 !important;
+}
+
 .purple-planet {
     width: 22px;
     height: 22px;
@@ -795,6 +848,38 @@ body {
     top: 70%;
     left: 40%;
     animation: float-path-3 28s infinite alternate ease-in-out;
+    overflow: visible !important;
+}
+
+.purple-planet::before {
+    content: '';
+    position: absolute;
+    top: -500%;
+    left: -200%;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: shooting-effect 5s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes shooting-effect {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(300px, 300px);
+        opacity: 0;
+    }
 }
 
 .green-planet {
@@ -1032,32 +1117,168 @@ body {
 
 /* Add these new styles */
 /* Satellites */
-.satellite {
+.satellites {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #ffffff;
-    border-radius: 50%;
-    box-shadow: 
-        0 0 20px rgba(255, 255, 255, 0.9),
-        0 0 40px rgba(255, 255, 255, 0.5);
-    animation: satellite-orbit 30s linear infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 4;
 }
 
-.sat-1 { top: 20%; left: 30%; animation-delay: -2s; }
-.sat-2 { top: 40%; left: 60%; animation-delay: -5s; }
-.sat-3 { top: 60%; left: 25%; animation-delay: -8s; }
-.sat-4 { top: 35%; left: 75%; animation-delay: -11s; }
-.sat-5 { top: 70%; left: 45%; animation-delay: -14s; }
+.satellite {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #a0a0ff);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 12px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(160, 160, 255, 0.7);
+    animation: satellite-orbit var(--orbit-time, 40s) linear infinite;
+    z-index: 5;
+}
+
+.satellite::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--trail-length, 20px);
+    height: 1px;
+    background: linear-gradient(90deg, 
+        rgba(160, 160, 255, 0.8), 
+        rgba(160, 160, 255, 0.4),
+        transparent
+    );
+    transform: translate(-100%, -50%) rotate(var(--trail-angle, 135deg));
+    opacity: 0.7;
+}
+
+/* Unique satellite positioning and properties */
+.sat-1 { 
+    top: 25%; 
+    left: 35%; 
+    --orbit-time: 35s; 
+    --trail-length: 15px;
+    --trail-angle: 120deg;
+    animation-delay: -5s; 
+}
+
+.sat-2 { 
+    top: 40%; 
+    left: 60%; 
+    --orbit-time: 45s; 
+    --trail-length: 25px;
+    --trail-angle: 200deg;
+    animation-delay: -12s; 
+}
+
+.sat-3 { 
+    top: 65%; 
+    left: 30%; 
+    --orbit-time: 50s; 
+    --trail-length: 18px;
+    --trail-angle: 160deg;
+    animation-delay: -20s; 
+}
+
+.sat-4 { 
+    top: 30%; 
+    left: 70%; 
+    --orbit-time: 38s; 
+    --trail-length: 22px;
+    --trail-angle: 140deg;
+    animation-delay: -8s; 
+}
+
+.sat-5 { 
+    top: 75%; 
+    left: 45%; 
+    --orbit-time: 42s; 
+    --trail-length: 20px;
+    --trail-angle: 180deg;
+    animation-delay: -15s; 
+}
+
+.sat-6 { 
+    top: 15%; 
+    left: 50%; 
+    width: 7px;
+    height: 7px;
+    --orbit-time: 55s; 
+    --trail-length: 30px;
+    --trail-angle: 220deg;
+    animation-delay: -25s; 
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.9),
+        0 0 25px rgba(160, 160, 255, 0.7);
+}
+
+.sat-7 { 
+    top: 55%; 
+    left: 80%; 
+    width: 5px;
+    height: 5px;
+    --orbit-time: 32s; 
+    --trail-length: 12px;
+    --trail-angle: 150deg;
+    animation-delay: -18s; 
+}
+
+.sat-8 { 
+    top: 85%; 
+    left: 65%; 
+    --orbit-time: 48s; 
+    --trail-length: 24px;
+    --trail-angle: 170deg;
+    animation-delay: -30s; 
+}
+
+.sat-9 { 
+    top: 45%; 
+    left: 20%; 
+    width: 4px;
+    height: 4px;
+    --orbit-time: 28s; 
+    --trail-length: 10px;
+    --trail-angle: 190deg;
+    animation-delay: -10s; 
+}
 
 @keyframes satellite-orbit {
-    0% { transform: translate(0, 0) scale(1); filter: brightness(1); }
-    25% { transform: translate(200px, -100px) scale(0.8); filter: brightness(1.2); }
-    50% { transform: translate(100px, 200px) scale(1.2); filter: brightness(0.8); }
-    75% { transform: translate(-150px, 50px) scale(0.9); filter: brightness(1.1); }
-    100% { transform: translate(0, 0) scale(1); filter: brightness(1); }
+    0% { 
+        transform: translate(0, 0); 
+        filter: brightness(1);
+    }
+    25% { 
+        transform: translate(var(--dist-x, 120px), var(--dist-y-1, -80px)); 
+        filter: brightness(1.3);
+    }
+    50% { 
+        transform: translate(var(--dist-x-alt, 50px), var(--dist-y-2, 100px)); 
+        filter: brightness(0.8);
+    }
+    75% { 
+        transform: translate(var(--dist-x-neg, -150px), var(--dist-y-3, 30px)); 
+        filter: brightness(1.2);
+    }
+    100% { 
+        transform: translate(0, 0); 
+        filter: brightness(1);
+    }
 }
+
+/* Add these variable values for more random orbits */
+.sat-1 { --dist-x: 140px; --dist-y-1: -70px; --dist-x-alt: 40px; --dist-y-2: 120px; --dist-x-neg: -130px; --dist-y-3: 20px; }
+.sat-2 { --dist-x: 180px; --dist-y-1: -90px; --dist-x-alt: 60px; --dist-y-2: 140px; --dist-x-neg: -170px; --dist-y-3: 40px; }
+.sat-3 { --dist-x: 160px; --dist-y-1: -60px; --dist-x-alt: 70px; --dist-y-2: 130px; --dist-x-neg: -120px; --dist-y-3: 50px; }
+.sat-4 { --dist-x: 190px; --dist-y-1: -85px; --dist-x-alt: 80px; --dist-y-2: 110px; --dist-x-neg: -140px; --dist-y-3: 30px; }
+.sat-5 { --dist-x: 150px; --dist-y-1: -75px; --dist-x-alt: 55px; --dist-y-2: 150px; --dist-x-neg: -160px; --dist-y-3: 60px; }
+.sat-6 { --dist-x: 200px; --dist-y-1: -95px; --dist-x-alt: 90px; --dist-y-2: 160px; --dist-x-neg: -180px; --dist-y-3: 70px; }
+.sat-7 { --dist-x: 130px; --dist-y-1: -65px; --dist-x-alt: 45px; --dist-y-2: 90px; --dist-x-neg: -110px; --dist-y-3: 25px; }
+.sat-8 { --dist-x: 170px; --dist-y-1: -80px; --dist-x-alt: 75px; --dist-y-2: 170px; --dist-x-neg: -150px; --dist-y-3: 45px; }
+.sat-9 { --dist-x: 120px; --dist-y-1: -55px; --dist-x-alt: 35px; --dist-y-2: 80px; --dist-x-neg: -100px; --dist-y-3: 15px; }
 
 /* Asteroids */
 .asteroid {
@@ -1078,14 +1299,8 @@ body {
 .ast-4 { width: 9px; height: 7px; top: 15%; left: 65%; animation-delay: -11s; }
 .ast-5 { width: 11px; height: 9px; top: 75%; left: 25%; animation-delay: -14s; }
 .ast-6 { width: 13px; height: 10px; top: 55%; left: 45%; animation-delay: -17s; }
-.ast-1 { width: 8px; height: 6px; top: 25%; left: 15%; animation-delay: -2s; }
-.ast-2 { width: 5px; height: 4px; top: 45%; left: 85%; animation-delay: -5s; }
-.ast-3 { width: 7px; height: 5px; top: 65%; left: 35%; animation-delay: -8s; }
-.ast-4 { width: 4px; height: 3px; top: 15%; left: 65%; animation-delay: -11s; }
-.ast-5 { width: 6px; height: 4px; top: 75%; left: 25%; animation-delay: -14s; }
-.ast-6 { width: 9px; height: 7px; top: 55%; left: 45%; animation-delay: -17s; }
-.ast-7 { width: 6px; height: 5px; top: 35%; left: 85%; animation-delay: -20s; }
-.ast-8 { width: 8px; height: 6px; top: 85%; left: 35%; animation-delay: -23s; }
+.ast-7 { width: 10px; height: 8px; top: 35%; left: 85%; animation-delay: -20s; }
+.ast-8 { width: 12px; height: 9px; top: 85%; left: 35%; animation-delay: -23s; }
 
 @keyframes asteroid-float {
     0% { transform: translate(0, 0) rotate(0deg); }
@@ -1623,3 +1838,44 @@ body {
         opacity: 0;
     }
 }
+
+/* SUPER IMPORTANT - TEST STYLES */
+.galaxy-container .test-object {
+    position: absolute !important;
+    top: 40% !important;
+    left: 40% !important;
+    width: 80px !important;
+    height: 80px !important;
+    background-color: magenta !important;
+    border-radius: 50% !important;
+    z-index: 10000 !important;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 1) !important;
+    animation: none !important;
+    opacity: 1 !important;
+}
+
+/* Emergency CSS Reset for Space Objects */
+.satellites *,
+.asteroids *,
+.shooting-stars *,
+.additional-stars * {
+    all: initial !important;
+}
+
+.satellite {
+    position: fixed !important;
+    display: block !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: red !important;
+    border-radius: 50% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 99999 !important;
+}
+
+.sat-1 { top: 20% !important; left: 20% !important; }
+.sat-2 { top: 40% !important; left: 40% !important; }
+.sat-3 { top: 60% !important; left: 60% !important; }
+.sat-4 { top: 80% !important; left: 80% !important; }
+.sat-5 { top: 50% !important; left: 10% !important; }
