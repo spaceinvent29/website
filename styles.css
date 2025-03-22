@@ -11,7 +11,7 @@
   --transition: all 0.3s ease;
   --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --galactic-blue: #1E3799;
-  --nebula-purple: #9B59B6;
+  --nebula-purple: #8E44AD; /* Updated Nebula Purple to #8E44AD */
 }
 
 /* Reset and core styling */
@@ -73,13 +73,13 @@ body {
 
 /* Update logo colors */
 .space { 
-  color: var(--galactic-blue); /* Galactic Blue for "Space" in header */
+  color: var(--galactic-blue); /* Galactic Blue for "Space" */
   text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
 }
 
 .invent { 
-  color: var(--nebula-purple); /* Keep Nebula Purple for "Invent" */
-  text-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+  color: var(--nebula-purple); /* Updated Nebula Purple for "Invent" */
+  text-shadow: 0 0 10px rgba(142, 68, 173, 0.5); /* Updated shadow color */
 }
 
 /* Navigation styling */
@@ -856,13 +856,13 @@ main {
 }
 
 .section-header h2 .contact-space {
-  color: var(--galactic-blue); /* Galactic Blue for "Space" in contact section */
+  color: var(--galactic-blue); /* Galactic Blue for "Space" */
   text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
 }
 
 .section-header h2 .contact-invent {
-  color: var(--nebula-purple); /* Keep Nebula Purple for "Invent" */
-  text-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+  color: var(--nebula-purple); /* Updated Nebula Purple for "Invent" */
+  text-shadow: 0 0 10px rgba(142, 68, 173, 0.5); /* Updated shadow color */
 }
 
 /* Make the font weight and size match the header too */
@@ -926,10 +926,10 @@ main {
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: #9B59B6; /* Exact Nebula Purple from header */
+  border-color: var(--nebula-purple); /* Updated Nebula Purple */
   background-color: rgba(0, 0, 0, 0.8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(155, 89, 182, 0.2);
+  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2); /* Updated shadow color */
 }
 
 .input-group input:focus + label,
@@ -937,7 +937,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: #9B59B6; /* Exact Nebula Purple from header */
+  color: var(--nebula-purple); /* Updated Nebula Purple */
   background-color: transparent;
 }
 
@@ -947,8 +947,7 @@ main {
 }
 
 .apple-button {
-  background-color: #9B59B6; /* Exact Nebula Purple from header */
-  background-color: #4A6FA5; /* Deep space blue */
+  background-color: var(--nebula-purple); /* Updated Nebula Purple */
   color: white;
   border: none;
   border-radius: 8px;
@@ -964,7 +963,7 @@ main {
 }
 
 .apple-button:hover {
-  background-color: #3A5A8C; /* Darker shade on hover */
+  background-color: #7D3C98; /* Slightly darker shade on hover */
   transform: scale(1.02);
 }
 
@@ -1024,7 +1023,7 @@ main {
 }
 
 .social-link:nth-child(2):hover {
-  background-color: var(--nebula-purple); /* Nebula Purple for Instagram */
+  background-color: var(--nebula-purple); /* Updated Nebula Purple for Instagram */
 }
 
 .social-link:nth-child(3):hover {
@@ -1033,7 +1032,8 @@ main {
 
 /* Update form response message color */
 #responseMessage {
-  color: #00B2CA !important; /* Cyan blue for consistency */
+  color: var(--nebula-purple) !important; /* Updated Nebula Purple */
+  font-weight: 500;
 }
 
 /* Responsive styles */
