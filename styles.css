@@ -77,14 +77,36 @@ body {
     font-weight: 600;
     letter-spacing: -0.01em;
     text-decoration: none;
+    transition: var(--apple-transition);
 }
 
 .logo .space {
-    color: var(--apple-text);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .logo .invent {
-    color: var(--apple-accent);
+    background: linear-gradient(135deg, #a47cff 0%, #8366cc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Add hover effect */
+.logo:hover .space {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo:hover .invent {
+    background: linear-gradient(135deg, #8366cc 0%, #a47cff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .main-nav ul {
