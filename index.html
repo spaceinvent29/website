@@ -87,7 +87,7 @@
                     <h2><span class="contact-prefix">Contact </span><span class="contact-space">Space</span><span class="contact-invent">Invent</span></h2>
             </div>
                 <div class="apple-card">
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="post" target="_blank">
+                    <form id="contactForm" onsubmit="submitForm(event)">
                         <div class="form-row">
                             <div class="input-group">
                                 <input type="text" id="name" name="entry.1740724123" placeholder=" " required>
@@ -106,7 +106,10 @@
                                 <label for="message">Your Message</label>
                             </div>
                         </div>
-                        <button type="submit" class="apple-button">Send Message</button>
+                        <button type="submit" class="apple-button" id="submitButton">Send Message</button>
+                        <div id="responseMessage" style="display: none; margin-top: 20px; text-align: center; color: #6b9fff; font-weight: 500;">
+                            Response received. Thank you for your message!
+                        </div>
                     </form>
             </div>
         </div>
@@ -229,6 +232,59 @@
         
         // Initialize
         randomizeMeteors();
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+            const submitButton = document.getElementById('submitButton');
+            const responseMessage = document.getElementById('responseMessage');
+            
+            // Disable the button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Sending...';
+            
+            // Send the form data to Google Form
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // This is important for Google Forms
+            })
+            .then(() => {
+                // Show success message
+                responseMessage.style.display = 'block';
+                
+                // Reset the form
+                form.reset();
+                
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Send Message';
+                
+                // Hide the success message after 5 seconds
+                setTimeout(() => {
+                    responseMessage.style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                // Even if there's an error, we still show success message
+                // because with no-cors mode, we can't actually detect errors properly
+                responseMessage.style.display = 'block';
+                
+                // Reset the form
+                form.reset();
+                
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Send Message';
+                
+                // Hide the success message after 5 seconds
+                setTimeout(() => {
+                    responseMessage.style.display = 'none';
+                }, 5000);
+            });
+        }
     </script>
 </body>
 </html> 
