@@ -2223,3 +2223,23 @@ body {
         transform: scale(1.2);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        // Include the background stars in the selection
+        const spaceElements = document.querySelectorAll('.space-stations, .iss-station, .comm-sat, .obs-sat, .bg-star, .background-stars');
+        
+        spaceElements.forEach(function(element) {
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+            element.style.opacity = '1';
+            element.style.zIndex = '10000';
+            
+            // Force a repaint
+            element.style.transform = 'translateZ(0)';
+            void element.offsetWidth;
+        });
+        
+        console.log('Space elements visibility enforced, including background stars');
+    }, 500);
+});
