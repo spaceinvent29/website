@@ -2,13 +2,13 @@
 
 /* Core styles */
 :root {
-  --primary-color: #4488ff;
+  --primary-color: #ff6b6b; /* Coral/red as primary */
   --background-color: #000000;
-  --text-color: #e0f0ff;
-  --heading-color: #aed6ff;
-  --accent-color: #ffb17a;
-  --link-color: #7ab8ff;
-  --card-bg: rgba(30, 30, 50, 0.7);
+  --text-color: #e6c9ff; /* Light purple */
+  --heading-color: #ffd166; /* Golden yellow for headings */
+  --accent-color: #06d6a0; /* Teal/mint accent */
+  --link-color: #f9c74f; /* Yellow for links */
+  --card-bg: rgba(25, 20, 35, 0.7);
   --transition: all 0.3s ease;
 }
 
@@ -57,30 +57,30 @@ body {
 }
 
 .space { 
-  color: #aed6ff;
-  text-shadow: 0 0 10px rgba(174, 214, 255, 0.5);
+  color: #ffd166; /* Golden yellow */
+  text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
   transition: all 0.3s ease;
 }
 
 .invent { 
-  background: linear-gradient(to right, #ffb17a, #ff8a5e);
+  background: linear-gradient(to right, #ff6b6b, #ff9e7d);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 15px rgba(255, 177, 122, 0.4);
+  text-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
   transition: all 0.3s ease;
 }
 
 /* Add hover effect to the logo */
 .logo:hover .space {
-  text-shadow: 0 0 15px rgba(174, 214, 255, 0.8);
+  text-shadow: 0 0 15px rgba(255, 209, 102, 0.8);
 }
 
 .logo:hover .invent {
-  background: linear-gradient(to right, #ffb17a, #ff8a5e);
+  background: linear-gradient(to right, #ff6b6b, #ff9e7d);
   -webkit-background-clip: text;
   background-clip: text;
-  text-shadow: 0 0 20px rgba(255, 177, 122, 0.6);
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
 }
 
 .main-nav ul {
@@ -92,7 +92,7 @@ body {
 }
 
 .main-nav a {
-  color: #96c8ff;
+  color: #e6c9ff; /* Light purple for nav links */
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.8;
@@ -101,11 +101,12 @@ body {
 }
 
 .main-nav a:hover {
-  color: #ffb17a;
+  color: #ff6b6b; /* Coral on hover */
   opacity: 1;
 }
 
 .main-nav a.active {
+  color: #ff6b6b; /* Coral for active link */
   opacity: 1;
   border-bottom: 1px solid var(--primary-color);
   padding-bottom: 2px;
@@ -369,11 +370,11 @@ main {
 
 .section-header h2 {
   font-size: 36px;
-  color: #aed6ff;
+  color: #ffd166; /* Golden yellow for headings */
   font-weight: 600;
   letter-spacing: -0.5px;
   margin: 0;
-  text-shadow: 0 0 15px rgba(174, 214, 255, 0.3);
+  text-shadow: 0 0 15px rgba(255, 209, 102, 0.3);
 }
 
 .apple-card {
@@ -406,34 +407,30 @@ main {
 .input-group input,
 .input-group textarea {
   width: 100%;
-  color: #c9e2ff;
-  background-color: rgba(30, 40, 70, 0.4);
-  border: 1px solid rgba(154, 194, 255, 0.2);
+  background-color: rgba(25, 20, 35, 0.6);
+  border: 1px solid rgba(230, 201, 255, 0.2);
   border-radius: 8px;
   padding: 15px 20px;
+  color: #e6c9ff;
   font-size: 16px;
   transition: var(--transition);
-}
-
-.input-group textarea {
-  min-height: 120px;
-  resize: vertical;
 }
 
 .input-group label {
   position: absolute;
   top: 15px;
   left: 20px;
-  color: #8ab5e8;
+  color: #f9c74f;
   transition: var(--transition);
   pointer-events: none;
   font-size: 16px;
+  background: transparent;
+  padding: 0 5px;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-  background-color: rgba(40, 50, 80, 0.5);
-  border-color: rgba(154, 194, 255, 0.4);
+  border-color: #ff6b6b;
   outline: none;
 }
 
@@ -442,7 +439,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: #ffb17a;
+  color: #06d6a0;
 }
 
 .input-group input::placeholder,
@@ -451,8 +448,8 @@ main {
 }
 
 .apple-button {
-  background-color: #4488ff;
-  color: #e0f0ff;
+  background-color: #ff6b6b; /* Coral button */
+  color: #fff3e6; /* Very light peach */
   border: none;
   border-radius: 8px;
   padding: 15px 30px;
@@ -467,7 +464,7 @@ main {
 }
 
 .apple-button:hover {
-  background-color: #5599ff;
+  background-color: #ff8585;
   color: #f5faff;
   transform: translateY(-2px);
 }
