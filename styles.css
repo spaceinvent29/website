@@ -128,12 +128,15 @@ main {
   background-color: transparent; /* Ensure main content is transparent */
   position: relative;
   z-index: 1;
-  flex: 1;
+  flex: 1 0 auto; /* This allows main to grow but not shrink */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Space section */
 .milky-way-section {
-  min-height: calc(100vh - 60px);
+  flex: 1 0 auto; /* Allow this section to grow */
+  min-height: 80vh; /* Ensure a minimum height */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -830,11 +833,12 @@ main {
 /* Contact section */
 .contact-section {
   padding: 100px 0;
+  margin-bottom: 0;
+  width: 100%;
   background-color: rgba(0, 0, 10, 0.4); /* More transparent background */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding-bottom: 30px;
-  margin-bottom: 0;
 }
 
 .section-header {
@@ -948,6 +952,8 @@ main {
 
 /* Footer */
 .apple-footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -956,9 +962,6 @@ main {
   z-index: 10;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 0;
-  width: 100%;
-  display: block;
-  visibility: visible !important;
 }
 
 .footer-content {
@@ -1222,6 +1225,18 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto; /* This allows main to grow but not shrink */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Force the footer to remain at the bottom and visible */
