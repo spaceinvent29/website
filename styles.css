@@ -1282,19 +1282,61 @@ body::before {
     pointer-events: none;
 }
 
-/* Image-based Milky Way overlay */
+/* NASA Milky Way image overlay (Public Domain) */
 .milky-way-image-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://i.imgur.com/JqGOOFD.png');
+    background-image: url('milky-way.jpg'); /* Use your local file name */
     background-size: cover;
     background-position: center;
     opacity: 0.15;
-    transform: rotate(45deg) scale(1.5);
+    transform: rotate(45deg) scale(2);
     z-index: -1;
     pointer-events: none;
     mix-blend-mode: screen;
+}
+
+/* Make sure the Milky Way is visible but doesn't overwhelm other elements */
+.milky-way-image-overlay {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Ensure space objects remain visible */
+.bright-stars,
+.shooting-stars,
+.meteor-shower,
+.space-stations,
+.floating-planets {
+    z-index: 5 !important; /* Higher than milky way overlay */
+}
+
+/* Enhance contrast slightly for small objects */
+.bright-star {
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+.shooting-star,
+.meteor {
+    opacity: 1 !important;
+}
+
+/* Add subtle animation to the Milky Way */
+@keyframes milky-way-drift {
+    0% {
+        transform: rotate(45deg) scale(2) translate(0, 0);
+    }
+    50% {
+        transform: rotate(45deg) scale(2) translate(5px, -5px);
+    }
+    100% {
+        transform: rotate(45deg) scale(2) translate(0, 0);
+    }
+}
+
+.milky-way-image-overlay {
+    animation: milky-way-drift 60s infinite ease-in-out;
 }
