@@ -101,7 +101,7 @@ body {
 }
 
 .main-nav a {
-  color: #ffffff; /* Changed from #ff9bb3 to white */
+  color: #E8ECEF; /* Changed from #FFFFFF to #E8ECEF */
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.9;
@@ -110,15 +110,15 @@ body {
 }
 
 .main-nav a:hover {
-  color: #ffffff; /* Keep hover color white */
+  color: #E8ECEF; /* Keep hover color consistent */
   opacity: 1;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Add subtle glow on hover */
+  text-shadow: 0 0 8px rgba(232, 236, 239, 0.5); /* Adjusted shadow to match */
 }
 
 .main-nav a.active {
-  color: #ffffff; /* Keep active color white */
+  color: #E8ECEF; /* Keep active color consistent */
   opacity: 1;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Subtle glow for active link */
+  text-shadow: 0 0 8px rgba(232, 236, 239, 0.3); /* Adjusted shadow to match */
 }
 
 .main-nav a.active::after {
