@@ -919,7 +919,7 @@ main {
 }
 
 .apple-button {
-  background-color: var(--nebula-purple);
+  background-color: #2C3E50; /* Dark blue-gray color */
   color: var(--text-light);
   border: none;
   border-radius: 8px;
@@ -932,11 +932,20 @@ main {
   justify-content: center;
   gap: 10px;
   transition: var(--transition);
+  border: 1px solid rgba(236, 240, 241, 0.2); /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow */
 }
 
 .apple-button:hover {
-  background-color: #7D3C98;
-  transform: scale(1.02);
+  background-color: #34495E; /* Slightly lighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+  border: 1px solid rgba(236, 240, 241, 0.3); /* Brighter border on hover */
+}
+
+.apple-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Reduced shadow when clicked */
 }
 
 /* Footer */
