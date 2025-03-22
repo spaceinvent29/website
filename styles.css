@@ -157,11 +157,11 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Using a NASA image of just the Milky Way */
-  background-image: url('https://images.nasa.gov/images/a_changed_milky_way-1~medium.jpg');
+  /* Using a clearer image of just the Milky Way */
+  background-image: url('https://smd-cms.nasa.gov/wp-content/uploads/2023/03/pia15817-1-modest.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.15;
+  opacity: 0.25; /* Slightly increased opacity for better visibility */
   transform: rotate(45deg) scale(2);
   z-index: -1;
   pointer-events: none;
@@ -169,9 +169,10 @@ main {
   animation: milky-way-drift 60s infinite ease-in-out;
 }
 
-/* Alternative URLs if NASA image doesn't work:
-  - https://svs.gsfc.nasa.gov/vis/a010000/a013600/a013686/MilkyWay_print.jpg
-  - https://cdn.spacetelescope.org/archives/images/screen/potw1211a.jpg
+/* Alternative URLs if needed:
+  - https://cdn.sci.news/images/enlarge7/image_8320e-Milky-Way.jpg
+  - https://esahubble.org/media/archives/images/large/heic0406a.jpg
+  - https://science.nasa.gov/_ipx/w_2048&f_webp/https://smd-cms.nasa.gov/wp-content/uploads/2023/05/main_image_star-forming_region_carina_nircam_final-5mb.jpg
 */
 
 @keyframes milky-way-drift {
