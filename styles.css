@@ -928,3 +928,168 @@ main {
 .shooting-star.star-2 { --rotation: rotate(5deg); }
 .shooting-star.star-3 { --rotation: rotate(24deg); }
 .shooting-star.star-4 { --rotation: rotate(10deg); }
+
+/* Meteor shower styling */
+.meteor-shower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.meteor-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: meteor-group-fade 25s ease-in-out infinite;
+}
+
+.meteor-group.group-1 {
+    animation-delay: 0s;
+}
+
+.meteor-group.group-2 {
+    animation-delay: 12.5s;
+}
+
+.meteor {
+    position: absolute;
+    top: -10%; /* Start above the visible area */
+    left: 80%;
+    height: 1px;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0.9), 
+        rgba(255, 240, 220, 0.7) 15%, 
+        rgba(255, 210, 180, 0.5) 30%, 
+        rgba(255, 170, 120, 0.3) 50%, 
+        rgba(210, 140, 90, 0.1) 70%, 
+        transparent);
+    transform-origin: left center;
+    animation: meteor-fall 2.5s ease-in forwards;
+}
+
+/* Individual meteor properties */
+.meteor-group.group-1 .meteor-1 {
+    width: 120px; 
+    transform: rotate(35deg);
+    animation-delay: 0s;
+}
+
+.meteor-group.group-1 .meteor-2 {
+    width: 90px;
+    top: -5%;
+    left: 75%;
+    transform: rotate(40deg);
+    animation-delay: 0.3s;
+}
+
+.meteor-group.group-1 .meteor-3 {
+    width: 150px;
+    top: -15%;
+    left: 85%;
+    transform: rotate(30deg);
+    animation-delay: 0.5s;
+}
+
+.meteor-group.group-1 .meteor-4 {
+    width: 70px;
+    top: -8%;
+    left: 65%;
+    transform: rotate(45deg);
+    animation-delay: 0.7s;
+}
+
+.meteor-group.group-1 .meteor-5 {
+    width: 100px;
+    top: -12%;
+    left: 70%;
+    transform: rotate(38deg);
+    animation-delay: 0.9s;
+}
+
+.meteor-group.group-2 .meteor-1 {
+    width: 110px;
+    top: -5%;
+    left: 15%;
+    transform: rotate(140deg);
+    animation-delay: 0s;
+}
+
+.meteor-group.group-2 .meteor-2 {
+    width: 85px;
+    top: -10%;
+    left: 20%;
+    transform: rotate(145deg);
+    animation-delay: 0.4s;
+}
+
+.meteor-group.group-2 .meteor-3 {
+    width: 140px;
+    top: -8%;
+    left: 10%;
+    transform: rotate(135deg);
+    animation-delay: 0.6s;
+}
+
+.meteor-group.group-2 .meteor-4 {
+    width: 65px;
+    top: -15%;
+    left: 25%;
+    transform: rotate(150deg);
+    animation-delay: 0.8s;
+}
+
+.meteor-group.group-2 .meteor-5 {
+    width: 95px;
+    top: -12%;
+    left: 30%;
+    transform: rotate(138deg);
+    animation-delay: 1s;
+}
+
+/* Meteor animations */
+@keyframes meteor-group-fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 20% {
+        opacity: 1;
+    }
+}
+
+@keyframes meteor-fall {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) rotate(var(--angle, 35deg));
+    }
+    5% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(var(--dist, -150px)) translateY(var(--dist-y, 400px)) rotate(var(--angle, 35deg));
+    }
+}
+
+/* Add glow to the meteors */
+.meteor::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 5px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: rgba(255, 245, 220, 0.8);
+    box-shadow: 0 0 8px 4px rgba(255, 220, 180, 0.6);
+}

@@ -344,6 +344,61 @@
             randomizeShootingStars();
             setInterval(randomizeShootingStars, 10000); // Re-randomize every 10 seconds
         });
+
+        // Function to create a randomized meteor shower
+        function randomizeMeteorShower() {
+            const meteorGroups = document.querySelectorAll('.meteor-group');
+            
+            meteorGroups.forEach((group, groupIndex) => {
+                // Determine direction of this meteor group
+                const isRightToLeft = groupIndex % 2 === 0;
+                const startLeft = isRightToLeft ? '70%' : '30%';
+                const startAngle = isRightToLeft ? 35 : 145;
+                const angleVariation = 15;
+                
+                // Get all meteors in this group
+                const meteors = group.querySelectorAll('.meteor');
+                
+                meteors.forEach((meteor, i) => {
+                    // Calculate random properties
+                    const angle = startAngle + (Math.random() * angleVariation * 2 - angleVariation);
+                    const left = parseInt(startLeft) + (Math.random() * 30 - 15) + '%';
+                    const top = (Math.random() * 15 - 15) + '%'; // Start above viewport
+                    const width = Math.random() * 100 + 50; // 50-150px
+                    const delay = Math.random() * 1.5; // 0-1.5s delay
+                    const distX = isRightToLeft ? -150 - Math.random() * 150 : 150 + Math.random() * 150;
+                    const distY = 300 + Math.random() * 200;
+                    
+                    // Apply random properties
+                    meteor.style.transform = `rotate(${angle}deg)`;
+                    meteor.style.left = left;
+                    meteor.style.top = top;
+                    meteor.style.width = `${width}px`;
+                    meteor.style.animationDelay = `${delay}s`;
+                    meteor.style.setProperty('--angle', `${angle}deg`);
+                    meteor.style.setProperty('--dist', `${distX}px`);
+                    meteor.style.setProperty('--dist-y', `${distY}px`);
+                    
+                    // Make some meteors thicker
+                    if (Math.random() > 0.7) {
+                        meteor.style.height = '2px';
+                        meteor.style.opacity = '0.9';
+                    }
+                });
+            });
+        }
+        
+        // Run on page load and when meteor groups finish animating
+        document.addEventListener('DOMContentLoaded', function() {
+            randomizeMeteorShower();
+            
+            const meteorGroups = document.querySelectorAll('.meteor-group');
+            meteorGroups.forEach(group => {
+                group.addEventListener('animationiteration', () => {
+                    randomizeMeteorShower();
+                });
+            });
+        });
     </script>
 </body>
 </html> 
