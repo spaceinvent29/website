@@ -105,7 +105,7 @@ body {
 }
 
 .main-nav a {
-  color: var(--nav-text-color);
+  color: #8D9DB6; /* This is the color we want to match */
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.9;
@@ -829,8 +829,8 @@ main {
 }
 
 .section-header h2 .contact-prefix {
-  color: var(--text-light);
-  text-shadow: 0 0 10px rgba(236, 240, 241, 0.3);
+  color: #8D9DB6; /* Exact same color as header nav */
+  text-shadow: 0 0 10px rgba(141, 157, 182, 0.2);
 }
 
 .section-header h2 .contact-space {
@@ -975,9 +975,12 @@ main {
 }
 
 .copyright {
-  color: var(--text-light);
+  color: #8D9DB6; /* Exact same color as header nav */
   font-size: 14px;
-  margin: 0;
+  opacity: 0.9;
+  /* Removing any other styles that might interfere */
+  text-shadow: none;
+  font-weight: normal;
 }
 
 .social-links {
@@ -1277,6 +1280,13 @@ body::after {
 /* Space background for consistency */
 .space-background {
   display: none; /* Hide any duplicate backgrounds */
+}
+
+/* For extra certainty, let's override any other styles */
+.copyright, 
+.main-nav a,
+.section-header h2 .contact-prefix {
+  color: #8D9DB6 !important; /* Force the same color with !important */
 }
 
 
