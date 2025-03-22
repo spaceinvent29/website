@@ -932,9 +932,10 @@ body {
 
 .shooting-star {
     position: absolute;
-    width: 3px;
-    height: 3px;
-    background-color: #fff;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     animation: shooting 3s linear infinite;
     opacity: 0;
@@ -945,11 +946,11 @@ body {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 100px;
-    height: 1px;
+    width: 150px;
+    height: 2px;
     background: linear-gradient(90deg, 
-        rgba(255, 255, 255, 0.8), 
-        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.9), 
+        rgba(255, 255, 255, 0.5),
         transparent
     );
     transform: translateY(-50%);
@@ -1115,17 +1116,20 @@ body {
 /* Satellites */
 .satellite {
     position: absolute;
-    width: 6px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.8);
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-    animation: satellite-orbit 20s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: satellite-orbit 30s linear infinite;
+    z-index: 4;
 }
 
-.sat-1 { top: 30%; left: 20%; animation-delay: -5s; }
-.sat-2 { top: 60%; left: 70%; animation-delay: -2s; }
-.sat-3 { top: 40%; left: 40%; animation-delay: -8s; }
+.sat-1 { top: 20%; left: 30%; animation-delay: -2s; }
+.sat-2 { top: 40%; left: 60%; animation-delay: -5s; }
+.sat-3 { top: 60%; left: 25%; animation-delay: -8s; }
+.sat-4 { top: 35%; left: 75%; animation-delay: -11s; }
+.sat-5 { top: 70%; left: 45%; animation-delay: -14s; }
 
 @keyframes satellite-orbit {
     0% { transform: translate(0, 0) scale(1); }
@@ -1140,9 +1144,10 @@ body {
     position: absolute;
     background: linear-gradient(45deg, #8B7355, #6B4423);
     border-radius: 40%;
-    opacity: 0.7;
-    filter: brightness(0.8);
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(139, 115, 85, 0.6);
     animation: asteroid-float 25s linear infinite;
+    z-index: 3;
 }
 
 .ast-1 { width: 8px; height: 6px; top: 25%; left: 15%; animation-delay: -2s; }
@@ -1150,6 +1155,9 @@ body {
 .ast-3 { width: 7px; height: 5px; top: 65%; left: 35%; animation-delay: -8s; }
 .ast-4 { width: 4px; height: 3px; top: 15%; left: 65%; animation-delay: -11s; }
 .ast-5 { width: 6px; height: 4px; top: 75%; left: 25%; animation-delay: -14s; }
+.ast-6 { width: 9px; height: 7px; top: 55%; left: 45%; animation-delay: -17s; }
+.ast-7 { width: 6px; height: 5px; top: 35%; left: 85%; animation-delay: -20s; }
+.ast-8 { width: 8px; height: 6px; top: 85%; left: 35%; animation-delay: -23s; }
 
 @keyframes asteroid-float {
     0% { transform: translate(0, 0) rotate(0deg); }
@@ -1162,20 +1170,21 @@ body {
 /* Additional Stars */
 .add-star {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
     border-radius: 50%;
-    animation: star-twinkle 3s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    animation: star-twinkle 4s ease-in-out infinite;
+    z-index: 2;
 }
 
-/* Random positions for 15 stars */
-.star-a { top: 10%; left: 20%; animation-delay: -0.5s; }
-.star-b { top: 30%; left: 80%; animation-delay: -1s; }
-.star-c { top: 50%; left: 15%; animation-delay: -1.5s; }
-.star-d { top: 70%; left: 60%; animation-delay: -2s; }
-.star-e { top: 25%; left: 45%; animation-delay: -2.5s; }
-/* ... add more star positions ... */
+/* Add more random star positions */
+.star-f { top: 45%; left: 35%; animation-delay: -3s; }
+.star-g { top: 65%; left: 85%; animation-delay: -3.5s; }
+.star-h { top: 15%; left: 55%; animation-delay: -4s; }
+.star-i { top: 85%; left: 25%; animation-delay: -4.5s; }
+.star-j { top: 35%; left: 75%; animation-delay: -5s; }
 
 @keyframes star-twinkle {
     0%, 100% { transform: scale(1); opacity: 1; }
@@ -1184,11 +1193,11 @@ body {
 
 /* Enhanced Shooting Stars */
 .shooting-star::before {
-    width: 100px;
-    height: 1px;
+    width: 150px;
+    height: 2px;
     background: linear-gradient(90deg, 
-        rgba(255, 255, 255, 0.8), 
-        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.9), 
+        rgba(255, 255, 255, 0.5),
         transparent
     );
 }
