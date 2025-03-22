@@ -260,7 +260,7 @@ main {
   opacity: 0.85; /* Reduce overall brightness */
 }
 
-/* Blue planet - like Neptune or Uranus */
+/* Blue planet - clockwise, medium speed */
 .blue-planet {
   background: 
     radial-gradient(circle at 30% 30%, #3a3a99 0%, #222266 60%, #151540 100%),
@@ -270,7 +270,7 @@ main {
   left: 20%;
   width: 40px;
   height: 40px;
-  animation: blue-planet-journey 70s infinite ease-in-out;
+  animation: blue-planet-journey 85s infinite ease-in-out; /* Medium speed */
   /* Add subtle cloud bands */
   background-image: 
     linear-gradient(90deg, transparent 50%, rgba(100, 100, 200, 0.1) 52%, transparent 54%),
@@ -279,7 +279,7 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Red planet - like Mars */
+/* Red planet - counter-clockwise, faster */
 .red-planet {
   background: 
     radial-gradient(circle at 40% 40%, #883333 0%, #552222 60%, #331111 100%),
@@ -289,7 +289,7 @@ main {
   left: 40%;
   width: 35px;
   height: 35px;
-  animation: red-planet-journey 85s infinite ease-in-out;
+  animation: red-planet-journey 65s infinite ease-in-out; /* Faster */
   /* Add Mars-like surface features */
   background-image: 
     radial-gradient(circle at 30% 50%, #662211 0%, transparent 15%),
@@ -298,7 +298,7 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Purple planet - like a gas giant */
+/* Purple planet - zigzag pattern, variable speed */
 .purple-planet {
   background: 
     radial-gradient(circle at 35% 35%, #553377 0%, #442266 60%, #221133 100%),
@@ -308,7 +308,7 @@ main {
   left: 70%;
   width: 42px;
   height: 42px;
-  animation: purple-planet-journey 95s infinite ease-in-out;
+  animation: purple-planet-journey 100s infinite ease-in-out; /* Slower */
   /* Add gas giant bands */
   background-image: 
     linear-gradient(90deg, transparent 30%, rgba(170, 120, 220, 0.1) 32%, transparent 34%),
@@ -318,7 +318,7 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Orange planet - like Jupiter */
+/* Orange planet - figure-8 pattern, slow */
 .orange-planet {
   background: 
     radial-gradient(circle at 45% 45%, #aa6633 0%, #884422 60%, #552211 100%),
@@ -328,7 +328,7 @@ main {
   left: 60%;
   width: 45px;
   height: 45px;
-  animation: orange-planet-journey 80s infinite ease-in-out;
+  animation: orange-planet-journey 115s infinite ease-in-out; /* Very slow */
   /* Add Jupiter-like bands and Great Red Spot */
   background-image: 
     radial-gradient(ellipse at 75% 40%, #aa4422 0%, transparent 15%),
@@ -340,7 +340,7 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Ringed planet - like Saturn */
+/* Ringed planet - elliptical orbit, very slow */
 .ringed-planet {
   background: 
     radial-gradient(circle at 40% 40%, #aa8855 0%, #775533 60%, #443311 100%),
@@ -350,7 +350,7 @@ main {
   left: 80%;
   width: 30px;
   height: 30px;
-  animation: ringed-planet-journey 90s infinite ease-in-out;
+  animation: ringed-planet-journey 130s infinite ease-in-out; /* Extremely slow */
   /* Add Saturn-like features */
   background-image:
     linear-gradient(90deg, transparent 30%, rgba(180, 160, 110, 0.1) 32%, transparent 34%),
@@ -375,61 +375,31 @@ main {
   top: 8px;
   left: -9px;
   transform: rotate(-20deg);
-  animation: ring-rotate 20s infinite linear;
+  animation: ring-rotate 15s infinite linear; /* Faster ring rotation */
   opacity: 0.8; /* Slightly transparent */
 }
 
-/* Planet animations */
+/* Blue planet - clockwise, medium speed */
 @keyframes blue-planet-journey {
   0% {
     top: 30%;
     left: 20%;
     transform: scale(1) rotate(0deg);
   }
-  10% {
+  25% {
     top: 15%;
     left: 50%;
-    transform: scale(0.9) rotate(36deg);
-  }
-  20% {
-    top: 25%;
-    left: 75%;
-    transform: scale(1.1) rotate(72deg);
-  }
-  30% {
-    top: 50%;
-    left: 85%;
-    transform: scale(1) rotate(108deg);
-  }
-  40% {
-    top: 75%;
-    left: 70%;
-    transform: scale(0.95) rotate(144deg);
+    transform: scale(0.9) rotate(90deg);
   }
   50% {
-    top: 85%;
-    left: 40%;
-    transform: scale(1.05) rotate(180deg);
+    top: 40%;
+    left: 75%;
+    transform: scale(1.1) rotate(180deg);
   }
-  60% {
+  75% {
     top: 70%;
-    left: 15%;
-    transform: scale(1) rotate(216deg);
-  }
-  70% {
-    top: 45%;
-    left: 5%;
-    transform: scale(0.9) rotate(252deg);
-  }
-  80% {
-    top: 20%;
-    left: 10%;
-    transform: scale(1.1) rotate(288deg);
-  }
-  90% {
-    top: 10%;
     left: 30%;
-    transform: scale(1) rotate(324deg);
+    transform: scale(0.95) rotate(270deg);
   }
   100% {
     top: 30%;
@@ -438,89 +408,76 @@ main {
   }
 }
 
+/* Red planet - counter-clockwise, faster */
 @keyframes red-planet-journey {
   0% {
     top: 50%;
     left: 40%;
     transform: scale(1) rotate(0deg);
   }
-  15% {
+  20% {
     top: 70%;
-    left: 15%;
-    transform: scale(1.1) rotate(54deg);
+    left: 65%;
+    transform: scale(1.1) rotate(-72deg);
   }
-  30% {
-    top: 80%;
-    left: 50%;
-    transform: scale(0.9) rotate(108deg);
-  }
-  45% {
-    top: 60%;
-    left: 80%;
-    transform: scale(1) rotate(162deg);
+  40% {
+    top: 65%;
+    left: 20%;
+    transform: scale(0.9) rotate(-144deg);
   }
   60% {
-    top: 30%;
-    left: 85%;
-    transform: scale(1.05) rotate(216deg);
+    top: 35%;
+    left: 10%;
+    transform: scale(1) rotate(-216deg);
   }
-  75% {
-    top: 15%;
-    left: 60%;
-    transform: scale(0.95) rotate(270deg);
-  }
-  90% {
-    top: 30%;
-    left: 25%;
-    transform: scale(1) rotate(324deg);
+  80% {
+    top: 20%;
+    left: 50%;
+    transform: scale(1.05) rotate(-288deg);
   }
   100% {
     top: 50%;
     left: 40%;
-    transform: scale(1) rotate(360deg);
+    transform: scale(1) rotate(-360deg);
   }
 }
 
+/* Purple planet - zigzag pattern, variable speed */
 @keyframes purple-planet-journey {
   0% {
     top: 40%;
     left: 70%;
     transform: scale(1) rotate(0deg);
   }
-  12.5% {
-    top: 15%;
-    left: 85%;
-    transform: scale(0.9) rotate(45deg);
-  }
-  25% {
-    top: 10%;
-    left: 50%;
-    transform: scale(1.1) rotate(90deg);
-  }
-  37.5% {
+  15% {
     top: 20%;
-    left: 20%;
-    transform: scale(1) rotate(135deg);
+    left: 45%;
+    transform: scale(0.9) rotate(30deg);
   }
-  50% {
-    top: 40%;
-    left: 10%;
-    transform: scale(0.95) rotate(180deg);
+  30% {
+    top: 65%;
+    left: 30%;
+    transform: scale(1.1) rotate(80deg);
   }
-  62.5% {
-    top: 60%;
+  45% {
+    top: 35%;
     left: 15%;
-    transform: scale(1.05) rotate(225deg);
+    transform: scale(1) rotate(110deg);
+  }
+  60% {
+    top: 60%;
+    left: 35%;
+    transform: scale(0.95) rotate(190deg);
   }
   75% {
-    top: 80%;
-    left: 30%;
-    transform: scale(1) rotate(270deg);
-  }
-  87.5% {
-    top: 70%;
+    top: 25%;
     left: 60%;
-    transform: scale(0.9) rotate(315deg);
+    transform: scale(1.05) rotate(250deg);
+  }
+  90% {
+    top: 70%;
+    left: 80%;
+    transform: scale(0.92) rotate(330deg);
   }
   100% {
     top: 40%;
@@ -529,69 +486,106 @@ main {
   }
 }
 
+/* Orange planet - figure-8 pattern, slow */
 @keyframes orange-planet-journey {
   0% {
     top: 70%;
     left: 60%;
     transform: scale(1) rotate(0deg);
   }
-  20% {
-    top: 80%;
-    left: 20%;
-    transform: scale(0.9) rotate(72deg);
-  }
-  40% {
+  12.5% {
     top: 50%;
-    left: 5%;
-    transform: scale(1.1) rotate(144deg);
+    left: 75%;
+    transform: scale(0.9) rotate(-45deg);
   }
-  60% {
-    top: 20%;
-    left: 30%;
-    transform: scale(1) rotate(216deg);
-  }
-  80% {
+  25% {
     top: 30%;
-    left: 80%;
-    transform: scale(0.95) rotate(288deg);
+    left: 60%;
+    transform: scale(1.1) rotate(-90deg);
+  }
+  37.5% {
+    top: 50%;
+    left: 45%;
+    transform: scale(1) rotate(-135deg);
+  }
+  50% {
+    top: 70%;
+    left: 30%;
+    transform: scale(0.95) rotate(-180deg);
+  }
+  62.5% {
+    top: 50%;
+    left: 15%;
+    transform: scale(1.05) rotate(-225deg);
+  }
+  75% {
+    top: 30%;
+    left: 30%;
+    transform: scale(1) rotate(-270deg);
+  }
+  87.5% {
+    top: 50%;
+    left: 45%;
+    transform: scale(0.9) rotate(-315deg);
   }
   100% {
     top: 70%;
     left: 60%;
-    transform: scale(1) rotate(360deg);
+    transform: scale(1) rotate(-360deg);
   }
 }
 
+/* Ringed planet - elliptical orbit, very slow */
 @keyframes ringed-planet-journey {
   0% {
     top: 60%;
     left: 80%;
     transform: scale(1) rotate(0deg);
   }
-  16.6% {
-    top: 75%;
-    left: 50%;
-    transform: scale(1.1) rotate(60deg);
+  10% {
+    top: 40%;
+    left: 90%;
+    transform: scale(1.1) rotate(36deg);
   }
-  33.3% {
-    top: 65%;
-    left: 15%;
-    transform: scale(0.9) rotate(120deg);
+  20% {
+    top: 20%;
+    left: 85%;
+    transform: scale(0.9) rotate(72deg);
+  }
+  30% {
+    top: 10%;
+    left: 70%;
+    transform: scale(1) rotate(108deg);
+  }
+  40% {
+    top: 15%;
+    left: 50%;
+    transform: scale(1.05) rotate(144deg);
   }
   50% {
-    top: 35%;
-    left: 5%;
-    transform: scale(1) rotate(180deg);
+    top: 30%;
+    left: 30%;
+    transform: scale(0.95) rotate(180deg);
   }
-  66.6% {
-    top: 15%;
-    left: 35%;
-    transform: scale(1.05) rotate(240deg);
+  60% {
+    top: 50%;
+    left: 20%;
+    transform: scale(1) rotate(216deg);
   }
-  83.3% {
-    top: 25%;
-    left: 70%;
-    transform: scale(0.95) rotate(300deg);
+  70% {
+    top: 70%;
+    left: 25%;
+    transform: scale(0.9) rotate(252deg);
+  }
+  80% {
+    top: 80%;
+    left: 40%;
+    transform: scale(1.1) rotate(288deg);
+  }
+  90% {
+    top: 75%;
+    left: 60%;
+    transform: scale(1) rotate(324deg);
   }
   100% {
     top: 60%;
@@ -600,9 +594,10 @@ main {
   }
 }
 
+/* Update the ring rotation to be faster and in opposite direction */
 @keyframes ring-rotate {
   0% { transform: rotate(-20deg); }
-  100% { transform: rotate(340deg); }
+  100% { transform: rotate(340deg); } /* Clockwise rotation */
 }
 
 /* ISS Station */
