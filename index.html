@@ -311,6 +311,39 @@
                 submitBtn.querySelector('span').innerText = 'Send Message';
             });
         });
+
+        // Function to create randomized shooting stars
+        function randomizeShootingStars() {
+            const shootingStars = document.querySelectorAll('.shooting-star');
+            
+            shootingStars.forEach(star => {
+                // Random vertical position
+                const topPos = Math.random() * 90 + 5; // 5-95%
+                
+                // Random angle
+                const angle = Math.random() * 30 - 5; // -5 to 25 degrees
+                
+                // Random width/length
+                const width = Math.random() * 60 + 40; // 40-100px
+                
+                // Apply random properties
+                star.style.top = `${topPos}%`;
+                star.style.transform = `rotate(${angle}deg)`;
+                star.style.width = `${width}px`;
+                
+                // Reset animation
+                star.style.animation = 'none';
+                setTimeout(() => {
+                    star.style.animation = `shooting-star ${Math.random() * 3 + 3}s ease-in infinite ${Math.random() * 10}s`;
+                }, 10);
+            });
+        }
+        
+        // Run on page load and periodically
+        document.addEventListener('DOMContentLoaded', function() {
+            randomizeShootingStars();
+            setInterval(randomizeShootingStars, 10000); // Re-randomize every 10 seconds
+        });
     </script>
 </body>
 </html> 
