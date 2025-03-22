@@ -71,13 +71,13 @@ body {
 
 /* Update logo colors */
 .space { 
-  color: #00B2CA; /* Cyan blue */
+  color: #00B2CA; /* Keep Cyan blue for "Space" */
   text-shadow: 0 0 10px rgba(0, 178, 202, 0.4);
 }
 
 .invent { 
-  color: #7B85AD; /* Lavender blue */
-  text-shadow: 0 0 10px rgba(123, 133, 173, 0.4);
+  color: #C9A227; /* Rich gold/amber for "Invent" - suggests innovation & prestige */
+  text-shadow: 0 0 10px rgba(201, 162, 39, 0.4);
 }
 
 /* Navigation styling */
@@ -859,8 +859,8 @@ main {
 }
 
 .section-header h2 .contact-invent {
-  color: #7B85AD; /* Lavender blue to match "Invent" in header */
-  text-shadow: 0 0 10px rgba(123, 133, 173, 0.3);
+  color: #C9A227; /* Rich gold/amber to match "Invent" in header */
+  text-shadow: 0 0 10px rgba(201, 162, 39, 0.3);
 }
 
 .apple-card {
@@ -922,7 +922,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: #7B85AD; /* Lavender blue */
+  color: #C9A227; /* Rich gold/amber */
   background-color: transparent;
 }
 
@@ -1012,7 +1012,7 @@ main {
 }
 
 .social-link:nth-child(3):hover {
-  background-color: #7B85AD; /* Match highlight color for Email */
+  background-color: #C9A227; /* Rich gold/amber for Email */
 }
 
 /* Update form response message color */
