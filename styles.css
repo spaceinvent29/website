@@ -252,17 +252,18 @@ main {
 .floating-planet {
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  box-shadow: none;
   animation: float-general 20s infinite ease-in-out;
+  transform: scale(0.85);
 }
 
 .blue-planet {
   background: radial-gradient(circle, #5555ff 0%, #222299 100%);
   top: 30%;
   left: 20%;
-  box-shadow: 0 0 30px rgba(85, 85, 255, 0.7);
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
+  box-shadow: none;
   animation: blue-planet-journey 70s infinite ease-in-out;
 }
 
@@ -270,9 +271,9 @@ main {
   background: radial-gradient(circle, #ff5555 0%, #992222 100%);
   top: 50%;
   left: 40%;
-  box-shadow: 0 0 30px rgba(255, 85, 85, 0.7);
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  box-shadow: none;
   animation: red-planet-journey 85s infinite ease-in-out;
 }
 
@@ -280,9 +281,9 @@ main {
   background: radial-gradient(circle, #aa55ff 0%, #552299 100%);
   top: 40%;
   left: 70%;
-  box-shadow: 0 0 30px rgba(170, 85, 255, 0.7);
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
+  box-shadow: none;
   animation: purple-planet-journey 95s infinite ease-in-out;
 }
 
@@ -290,9 +291,9 @@ main {
   background: radial-gradient(circle, #ffaa55 0%, #995522 100%);
   top: 70%;
   left: 60%;
-  box-shadow: 0 0 30px rgba(255, 170, 85, 0.7);
-  width: 52px;
-  height: 52px;
+  width: 45px;
+  height: 45px;
+  box-shadow: none;
   animation: orange-planet-journey 80s infinite ease-in-out;
 }
 
