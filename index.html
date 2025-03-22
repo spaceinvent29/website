@@ -130,24 +130,24 @@
             </div>
                 
                 <div class="apple-card">
-                    <form id="contact-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID_FROM_BACKUP/formResponse" method="post" target="_blank">
+                    <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse" method="post" target="_blank">
                         <div class="form-row">
                             <div class="input-group">
-                                <input type="text" id="name" name="entry.XXXXXX" placeholder=" " required>
+                                <input type="text" id="name" name="entry.1740724123" placeholder=" " required>
                                 <label for="name">Name</label>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="input-group">
-                                <input type="email" id="email" name="entry.XXXXXX" placeholder=" " required>
+                                <input type="email" id="email" name="entry.1732875791" placeholder=" " required>
                                 <label for="email">Email</label>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="input-group">
-                                <textarea id="message" name="entry.XXXXXX" placeholder=" " required rows="4"></textarea>
+                                <textarea id="message" name="entry.1099130722" placeholder=" " required rows="4"></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>
@@ -291,6 +291,42 @@
                 `;
                 document.head.appendChild(fallbackStyle);
             }
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.apple-button');
+            submitBtn.disabled = true;
+            submitBtn.querySelector('span').innerText = 'Sending...';
+            
+            const formData = new FormData(this);
+            const url = 'https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse';
+            
+            fetch(url, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // This is important for cross-domain Google Forms submissions
+            })
+            .then(() => {
+                // Show success message
+                this.innerHTML = `
+                    <div style="text-align: center; padding: 30px 0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h3 style="margin-top: 20px; font-size: 24px;">Message Sent!</h3>
+                        <p style="margin-top: 10px; opacity: 0.8;">Thank you for reaching out. We'll get back to you soon.</p>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an issue sending your message. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.querySelector('span').innerText = 'Send Message';
+            });
         });
     </script>
 </body>
