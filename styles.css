@@ -23,17 +23,15 @@
 }
 
 body {
-  background-color: #000000;
-  background-image: none;
-  color: var(--text-color);
-  font-family: var(--font-primary);
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  background-color: #000000;
+  color: var(--text-light);
+  font-family: var(--font-primary);
   overflow-x: hidden;
   line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .container {
@@ -44,7 +42,7 @@ body {
 
 /* Header styles */
 .apple-header {
-  background-color: rgba(0, 0, 0, 0.4); /* More transparent header */
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   position: fixed;
@@ -52,7 +50,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 .apple-header .container {
@@ -157,33 +155,7 @@ main {
 
 /* Space background */
 .space-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(45deg, 
-    rgba(0,0,0,1) 0%, 
-    rgba(20,10,40,1) 20%, 
-    rgba(30,20,70,0.8) 35%, 
-    rgba(60,40,100,0.7) 45%, 
-    rgba(30,20,70,0.8) 55%, 
-    rgba(20,10,40,1) 70%, 
-    rgba(0,0,0,1) 100%
-  );
-}
-
-/* Restore a subtle overlay for better blending */
-.space-background::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Moderate dark overlay */
-  z-index: -2;
+  display: none; /* Hide any duplicate backgrounds */
 }
 
 /* Milky Way Image Overlay */
@@ -840,7 +812,7 @@ main {
   padding: 100px 0;
   margin-bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 10, 0.4); /* More transparent background */
+  background-color: rgba(0, 0, 10, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding-bottom: 30px;
@@ -852,21 +824,20 @@ main {
 }
 
 .section-header h2 .contact-prefix {
-  color: var(--text-light); /* Changed to #ECF0F1 */
-  text-shadow: 0 0 10px rgba(236, 240, 241, 0.3); /* Adjusted shadow to match */
+  color: var(--text-light);
+  text-shadow: 0 0 10px rgba(236, 240, 241, 0.3);
 }
 
 .section-header h2 .contact-space {
-  color: var(--galactic-blue); /* Galactic Blue for "Space" */
+  color: var(--galactic-blue);
   text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
 }
 
 .section-header h2 .contact-invent {
-  color: var(--nebula-purple); /* Updated Nebula Purple for "Invent" */
-  text-shadow: 0 0 10px rgba(142, 68, 173, 0.5); /* Updated shadow color */
+  color: var(--nebula-purple);
+  text-shadow: 0 0 10px rgba(142, 68, 173, 0.5);
 }
 
-/* Make the font weight and size match the header too */
 .section-header h2 {
   font-size: 24px;
   font-weight: 600;
@@ -880,15 +851,15 @@ main {
 }
 
 .apple-card {
-  background-color: rgba(25, 25, 28, 0.5); /* More transparent card */
+  background-color: rgba(18, 26, 38, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   max-width: 600px;
   margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 /* Form styling */
@@ -905,7 +876,7 @@ main {
 .input-group textarea {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(236, 240, 241, 0.15);
   border-radius: 8px;
   padding: 15px 20px;
   color: var(--text-light);
@@ -917,7 +888,7 @@ main {
   position: absolute;
   top: 15px;
   left: 20px;
-  color: rgba(236, 240, 241, 0.7); /* Slightly transparent version of the new color */
+  color: rgba(236, 240, 241, 0.7);
   transition: var(--transition);
   pointer-events: none;
   font-size: 16px;
@@ -927,10 +898,10 @@ main {
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: var(--nebula-purple); /* Updated Nebula Purple */
+  border-color: var(--nebula-purple);
   background-color: rgba(0, 0, 0, 0.8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2); /* Updated shadow color */
+  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2);
 }
 
 .input-group input:focus + label,
@@ -938,7 +909,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: var(--nebula-purple); /* Updated Nebula Purple */
+  color: var(--nebula-purple);
   background-color: transparent;
 }
 
@@ -948,7 +919,7 @@ main {
 }
 
 .apple-button {
-  background-color: var(--nebula-purple); /* Updated Nebula Purple */
+  background-color: var(--nebula-purple);
   color: var(--text-light);
   border: none;
   border-radius: 8px;
@@ -964,21 +935,21 @@ main {
 }
 
 .apple-button:hover {
-  background-color: #7D3C98; /* Slightly darker shade on hover */
+  background-color: #7D3C98;
   transform: scale(1.02);
 }
 
 /* Footer */
 .apple-footer {
-  flex-shrink: 0; /* Prevent footer from shrinking */
+  flex-shrink: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 30px 0;
   position: relative;
   z-index: 10;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(236, 240, 241, 0.1);
   margin-top: 0;
 }
 
@@ -1020,20 +991,20 @@ main {
 
 /* Update social icon hover colors */
 .social-link:nth-child(1):hover {
-  background-color: var(--galactic-blue); /* Galactic Blue for X */
+  background-color: var(--galactic-blue);
 }
 
 .social-link:nth-child(2):hover {
-  background-color: var(--nebula-purple); /* Updated Nebula Purple for Instagram */
+  background-color: var(--nebula-purple);
 }
 
 .social-link:nth-child(3):hover {
-  background-color: var(--galactic-blue); /* Galactic Blue for Email */
+  background-color: var(--galactic-blue);
 }
 
 /* Update form response message color */
 #responseMessage {
-  color: var(--nebula-purple) !important; /* Updated Nebula Purple */
+  color: var(--nebula-purple) !important;
   font-weight: 500;
 }
 
@@ -1067,38 +1038,6 @@ main {
   .section-header h2 {
     font-size: 24px;
   }
-}
-
-/* Update the Milky Way background image and improve visibility */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cdn.eso.org/images/screen/eso0932a.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7; /* Keep good visibility */
-  z-index: -1;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  filter: brightness(0.85) contrast(1.4) saturate(1.0);
-  animation: milky-way-drift 60s infinite ease-in-out;
-}
-
-/* Adjust the dark overlay to balance the more visible Milky Way */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Slightly reduced darkness */
-  z-index: -2;
-  pointer-events: none;
 }
 
 /* Realistic meteors */
@@ -1212,7 +1151,7 @@ body::after {
 @keyframes realistic-meteor-fall {
   0% {
     opacity: 0;
-    transform: translateX(0) translateY(0) rotate(var(--angle, 150deg)); /* Changed angle to opposite direction */
+    transform: translateX(0) translateY(0) rotate(var(--angle, 150deg));
   }
   10% {
     opacity: 1;
@@ -1225,7 +1164,6 @@ body::after {
   }
   100% {
     opacity: 0;
-    /* Reversed X and Y directions */
     transform: translateX(var(--dist-x, 200px)) translateY(var(--dist-y, -600px)) rotate(var(--angle, 150deg));
   }
 }
@@ -1243,26 +1181,6 @@ body::after {
   }
 }
 
-/* Ensure consistent background display across all sections */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  min-height: 100vh;
-}
-
-main {
-  flex: 1 0 auto; /* This allows main to grow but not shrink */
-  display: flex;
-  flex-direction: column;
-}
-
 /* Force the footer to remain at the bottom and visible */
 @media screen and (min-height: 800px) {
   .apple-footer {
@@ -1271,6 +1189,80 @@ main {
     left: 0;
     right: 0;
   }
+}
+
+/* Full-page background image using a pseudo-element */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.eso.org/images/screen/eso0932a.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: brightness(0.85) contrast(1.4) saturate(1.0);
+  animation: milky-way-drift 60s infinite ease-in-out;
+}
+
+/* Dark overlay for better readability */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Make all sections transparent to show background */
+.apple-header,
+.milky-way-section,
+.contact-section,
+.apple-footer {
+  background-color: transparent;
+  position: relative;
+}
+
+/* Add subtle semi-transparent backgrounds to improve readability */
+.apple-header {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+}
+
+.contact-section {
+  background-color: rgba(0, 0, 10, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.apple-footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(236, 240, 241, 0.1);
+}
+
+.apple-card {
+  background-color: rgba(18, 26, 38, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(236, 240, 241, 0.1);
+}
+
+/* Space background for consistency */
+.space-background {
+  display: none; /* Hide any duplicate backgrounds */
 }
 
 
