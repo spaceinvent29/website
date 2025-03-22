@@ -1946,3 +1946,156 @@ body {
     75% { transform: translate(0, 100px); }
     100% { transform: translate(0, 0); }
 }
+
+/* Space Stations and Satellites */
+.space-stations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ISS Station */
+.iss-station {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 30px;
+    height: 12px;
+    z-index: 11;
+    animation: iss-orbit 60s linear infinite;
+}
+
+.iss-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.iss-panel {
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    background: linear-gradient(90deg, #4b79df, #3562c7);
+    box-shadow: 0 0 8px rgba(59, 103, 196, 0.7);
+}
+
+.iss-panel.left {
+    top: 3px;
+    left: -18px;
+}
+
+.iss-panel.right {
+    top: 3px;
+    right: -18px;
+}
+
+@keyframes iss-orbit {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(150px, -70px) rotate(20deg); }
+    50% { transform: translate(50px, 150px) rotate(-15deg); }
+    75% { transform: translate(-120px, 50px) rotate(5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Communication Satellites */
+.comm-satellites {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+
+.comm-sat {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    animation: comm-sat-orbit 50s linear infinite;
+}
+
+.sat-body {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #c0c0c0;
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.sat-dish {
+    position: absolute;
+    top: 2px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 0 50% 50%;
+    background-color: #f0f0f0;
+    transform: rotate(45deg);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.comm-sat.sat-1 {
+    top: 25%;
+    left: 20%;
+    animation-delay: -10s;
+}
+
+.comm-sat.sat-2 {
+    top: 60%;
+    left: 70%;
+    animation-delay: -25s;
+}
+
+.comm-sat.sat-3 {
+    top: 75%;
+    left: 30%;
+    animation-delay: -40s;
+}
+
+@keyframes comm-sat-orbit {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(120px, -50px) rotate(90deg); }
+    50% { transform: translate(30px, 100px) rotate(180deg); }
+    75% { transform: translate(-100px, 30px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Weather/Observation Satellites */
+.obs-satellites {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+
+.obs-sat {
+    position: absolute;
+    width: 8px;
+    height: 15px;
+    background-color: #d8d8d8;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+    animation: obs-sat-orbit 40s linear infinite;}
+
+.obs-sat::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    background-color: #80c0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(128, 192, 255, 0.8);
