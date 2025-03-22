@@ -53,8 +53,32 @@ body {
   letter-spacing: -0.5px;
 }
 
-.space { color: #ffffff; }
-.invent { color: var(--primary-color); }
+.space { 
+  color: #e0f0ff; 
+  text-shadow: 0 0 10px rgba(224, 240, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.invent { 
+  background: linear-gradient(to right, #8a2be2, #4169e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Add hover effect to the logo */
+.logo:hover .space {
+  text-shadow: 0 0 15px rgba(224, 240, 255, 0.8);
+}
+
+.logo:hover .invent {
+  background: linear-gradient(to right, #9d44ff, #5e7cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(157, 68, 255, 0.6);
+}
 
 .main-nav ul {
   list-style: none;
