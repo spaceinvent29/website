@@ -786,3 +786,189 @@ div[style*="border-radius: 50%"][style*="background-color: white"] {
   height: 3px !important;
   box-shadow: 0 0 8px 2px white !important;
 }
+
+/* Asteroid styling */
+.asteroid-belt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.asteroid {
+    position: absolute;
+    background: radial-gradient(circle at 40% 40%, 
+        rgba(180, 170, 150, 0.8) 0%, 
+        rgba(120, 110, 100, 0.6) 40%, 
+        rgba(80, 70, 60, 0.4) 70%, 
+        rgba(50, 45, 40, 0.2) 90%);
+    border-radius: 50%;
+    filter: blur(0.5px);
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.5),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                0 0 5px rgba(255, 255, 220, 0.2);
+    animation: asteroid-float 25s infinite linear;
+}
+
+/* Different asteroid sizes and positions */
+.asteroid-1 {
+    width: 12px;
+    height: 10px;
+    top: 25%;
+    left: 15%;
+    animation-duration: 87s;
+    transform: rotate(23deg);
+}
+
+.asteroid-2 {
+    width: 18px;
+    height: 15px;
+    top: 40%;
+    left: 75%;
+    animation-duration: 95s;
+    transform: rotate(45deg);
+}
+
+.asteroid-3 {
+    width: 9px;
+    height: 8px;
+    top: 65%;
+    left: 35%;
+    animation-duration: 73s;
+    transform: rotate(12deg);
+}
+
+.asteroid-4 {
+    width: 14px;
+    height: 12px;
+    top: 20%;
+    left: 85%;
+    animation-duration: 103s;
+    transform: rotate(67deg);
+}
+
+.asteroid-5 {
+    width: 10px;
+    height: 9px;
+    top: 75%;
+    left: 25%;
+    animation-duration: 91s;
+    transform: rotate(34deg);
+}
+
+.asteroid-6 {
+    width: 16px;
+    height: 14px;
+    top: 58%;
+    left: 88%;
+    animation-duration: 85s;
+    transform: rotate(56deg);
+}
+
+.asteroid-7 {
+    width: 8px;
+    height: 7px;
+    top: 38%;
+    left: 52%;
+    animation-duration: 79s;
+    transform: rotate(89deg);
+}
+
+.asteroid-8 {
+    width: 13px;
+    height: 11px;
+    top: 80%;
+    left: 70%;
+    animation-duration: 97s;
+    transform: rotate(123deg);
+}
+
+/* Asteroid animation */
+@keyframes asteroid-float {
+    0% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    25% {
+        transform: rotate(90deg) translateX(100px) translateY(-50px);
+    }
+    50% {
+        transform: rotate(180deg) translateX(50px) translateY(100px);
+    }
+    75% {
+        transform: rotate(270deg) translateX(-80px) translateY(30px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(0) translateY(0);
+    }
+}
+
+/* Create more irregular shapes by adding pseudo-elements */
+.asteroid::before,
+.asteroid::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.asteroid::before {
+    width: 70%;
+    height: 70%;
+    top: -20%;
+    left: -20%;
+}
+
+.asteroid::after {
+    width: 60%;
+    height: 60%;
+    bottom: -15%;
+    right: -15%;
+}
+
+/* Add some rotation to make them look more dynamic */
+.asteroid-1, .asteroid-3, .asteroid-5, .asteroid-7 {
+    animation-name: asteroid-float-1;
+}
+
+.asteroid-2, .asteroid-4, .asteroid-6, .asteroid-8 {
+    animation-name: asteroid-float-2;
+}
+
+@keyframes asteroid-float-1 {
+    0% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    25% {
+        transform: rotate(90deg) translateX(80px) translateY(-30px);
+    }
+    50% {
+        transform: rotate(180deg) translateX(40px) translateY(90px);
+    }
+    75% {
+        transform: rotate(270deg) translateX(-60px) translateY(20px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(0) translateY(0);
+    }
+}
+
+@keyframes asteroid-float-2 {
+    0% {
+        transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    25% {
+        transform: rotate(-90deg) translateX(-70px) translateY(40px);
+    }
+    50% {
+        transform: rotate(-180deg) translateX(-30px) translateY(-80px);
+    }
+    75% {
+        transform: rotate(-270deg) translateX(50px) translateY(-25px);
+    }
+    100% {
+        transform: rotate(-360deg) translateX(0) translateY(0);
+    }
+}
