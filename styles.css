@@ -1123,162 +1123,71 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 4;
+    z-index: 4; /* Between stars and planets */
+    pointer-events: none;
 }
 
 .satellite {
     position: absolute;
+    width: 12px;
+    height: 6px;
+    transform-origin: center center;
+    animation: satellite-orbit 20s linear infinite;
+}
+
+.sat-body {
+    position: absolute;
     width: 6px;
     height: 6px;
-    background: radial-gradient(circle at 30% 30%, #ffffff, #a0a0ff);
-    border-radius: 50%;
-    box-shadow: 
-        0 0 12px rgba(255, 255, 255, 0.9),
-        0 0 20px rgba(160, 160, 255, 0.7);
-    animation: satellite-orbit var(--orbit-time, 40s) linear infinite;
-    z-index: 5;
+    background-color: #d8d8d8;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 3px;
 }
 
-.satellite::after {
-    content: '';
+.sat-panels {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: var(--trail-length, 20px);
-    height: 1px;
-    background: linear-gradient(90deg, 
-        rgba(160, 160, 255, 0.8), 
-        rgba(160, 160, 255, 0.4),
-        transparent
-    );
-    transform: translate(-100%, -50%) rotate(var(--trail-angle, 135deg));
-    opacity: 0.7;
+    width: 12px;
+    height: 2px;
+    background-color: #95c5ff;
+    top: 2px;
+    left: 0;
+    box-shadow: 0 0 3px #95c5ff;
 }
 
-/* Unique satellite positioning and properties */
-.sat-1 { 
-    top: 25%; 
-    left: 35%; 
-    --orbit-time: 35s; 
-    --trail-length: 15px;
-    --trail-angle: 120deg;
-    animation-delay: -5s; 
+/* Position satellites with different orbits */
+.sat1 {
+    top: 40%;
+    left: 40%;
+    animation-duration: 25s;
 }
 
-.sat-2 { 
-    top: 40%; 
-    left: 60%; 
-    --orbit-time: 45s; 
-    --trail-length: 25px;
-    --trail-angle: 200deg;
-    animation-delay: -12s; 
+.sat2 {
+    top: 55%;
+    left: 45%;
+    animation-duration: 35s;
+    transform: scale(0.8); /* Slightly smaller */
 }
 
-.sat-3 { 
-    top: 65%; 
-    left: 30%; 
-    --orbit-time: 50s; 
-    --trail-length: 18px;
-    --trail-angle: 160deg;
-    animation-delay: -20s; 
-}
-
-.sat-4 { 
-    top: 30%; 
-    left: 70%; 
-    --orbit-time: 38s; 
-    --trail-length: 22px;
-    --trail-angle: 140deg;
-    animation-delay: -8s; 
-}
-
-.sat-5 { 
-    top: 75%; 
-    left: 45%; 
-    --orbit-time: 42s; 
-    --trail-length: 20px;
-    --trail-angle: 180deg;
-    animation-delay: -15s; 
-}
-
-.sat-6 { 
-    top: 15%; 
-    left: 50%; 
-    width: 7px;
-    height: 7px;
-    --orbit-time: 55s; 
-    --trail-length: 30px;
-    --trail-angle: 220deg;
-    animation-delay: -25s; 
-    box-shadow: 
-        0 0 15px rgba(255, 255, 255, 0.9),
-        0 0 25px rgba(160, 160, 255, 0.7);
-}
-
-.sat-7 { 
-    top: 55%; 
-    left: 80%; 
-    width: 5px;
-    height: 5px;
-    --orbit-time: 32s; 
-    --trail-length: 12px;
-    --trail-angle: 150deg;
-    animation-delay: -18s; 
-}
-
-.sat-8 { 
-    top: 85%; 
-    left: 65%; 
-    --orbit-time: 48s; 
-    --trail-length: 24px;
-    --trail-angle: 170deg;
-    animation-delay: -30s; 
-}
-
-.sat-9 { 
-    top: 45%; 
-    left: 20%; 
-    width: 4px;
-    height: 4px;
-    --orbit-time: 28s; 
-    --trail-length: 10px;
-    --trail-angle: 190deg;
-    animation-delay: -10s; 
-}
-
+/* Satellite orbit animation */
 @keyframes satellite-orbit {
-    0% { 
-        transform: translate(0, 0); 
-        filter: brightness(1);
+    0% {
+        transform: translate(-100px, -50px) rotate(0deg);
     }
-    25% { 
-        transform: translate(var(--dist-x, 120px), var(--dist-y-1, -80px)); 
-        filter: brightness(1.3);
+    25% {
+        transform: translate(100px, -50px) rotate(90deg);
     }
-    50% { 
-        transform: translate(var(--dist-x-alt, 50px), var(--dist-y-2, 100px)); 
-        filter: brightness(0.8);
+    50% {
+        transform: translate(100px, 50px) rotate(180deg);
     }
-    75% { 
-        transform: translate(var(--dist-x-neg, -150px), var(--dist-y-3, 30px)); 
-        filter: brightness(1.2);
+    75% {
+        transform: translate(-100px, 50px) rotate(270deg);
     }
-    100% { 
-        transform: translate(0, 0); 
-        filter: brightness(1);
+    100% {
+        transform: translate(-100px, -50px) rotate(360deg);
     }
 }
-
-/* Add these variable values for more random orbits */
-.sat-1 { --dist-x: 140px; --dist-y-1: -70px; --dist-x-alt: 40px; --dist-y-2: 120px; --dist-x-neg: -130px; --dist-y-3: 20px; }
-.sat-2 { --dist-x: 180px; --dist-y-1: -90px; --dist-x-alt: 60px; --dist-y-2: 140px; --dist-x-neg: -170px; --dist-y-3: 40px; }
-.sat-3 { --dist-x: 160px; --dist-y-1: -60px; --dist-x-alt: 70px; --dist-y-2: 130px; --dist-x-neg: -120px; --dist-y-3: 50px; }
-.sat-4 { --dist-x: 190px; --dist-y-1: -85px; --dist-x-alt: 80px; --dist-y-2: 110px; --dist-x-neg: -140px; --dist-y-3: 30px; }
-.sat-5 { --dist-x: 150px; --dist-y-1: -75px; --dist-x-alt: 55px; --dist-y-2: 150px; --dist-x-neg: -160px; --dist-y-3: 60px; }
-.sat-6 { --dist-x: 200px; --dist-y-1: -95px; --dist-x-alt: 90px; --dist-y-2: 160px; --dist-x-neg: -180px; --dist-y-3: 70px; }
-.sat-7 { --dist-x: 130px; --dist-y-1: -65px; --dist-x-alt: 45px; --dist-y-2: 90px; --dist-x-neg: -110px; --dist-y-3: 25px; }
-.sat-8 { --dist-x: 170px; --dist-y-1: -80px; --dist-x-alt: 75px; --dist-y-2: 170px; --dist-x-neg: -150px; --dist-y-3: 45px; }
-.sat-9 { --dist-x: 120px; --dist-y-1: -55px; --dist-x-alt: 35px; --dist-y-2: 80px; --dist-x-neg: -100px; --dist-y-3: 15px; }
 
 /* Asteroids */
 .asteroid {
