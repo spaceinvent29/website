@@ -1221,7 +1221,7 @@ body {
 .ast-8 { width: 12px; height: 9px; top: 85%; left: 35%; animation-delay: -23s; }
 
 @keyframes asteroid-float {
-    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    0% { transform: translate(0, 0) rotate(0deg); }
     25% { transform: translate(150px, 75px) rotate(90deg) scale(1.1); }
     50% { transform: translate(-100px, 150px) rotate(180deg) scale(0.9); }
     75% { transform: translate(-75px, -100px) rotate(270deg) scale(1.2); }
@@ -1234,18 +1234,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 10;
 }
 
 .add-star {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     background: #ffffff;
     border-radius: 50%;
     box-shadow: 
-        0 0 15px rgba(255, 255, 255, 0.9),
-        0 0 30px rgba(255, 255, 255, 0.5);
+        0 0 15px rgba(255, 255, 255, 1),
+        0 0 30px rgba(255, 255, 255, 0.8);
     animation: star-twinkle 4s ease-in-out infinite;
 }
 
@@ -1262,7 +1262,7 @@ body {
 
 @keyframes star-twinkle {
     0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.3; }
+    50% { transform: scale(2); opacity: 0.5; }
 }
 
 .shooting-stars {
@@ -1271,7 +1271,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 12;
     pointer-events: none;
 }
 
@@ -1282,8 +1282,8 @@ body {
     background: #ffffff;
     border-radius: 50%;
     box-shadow: 
-        0 0 20px rgba(255, 255, 255, 0.9),
-        0 0 40px rgba(255, 255, 255, 0.5);
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 255, 255, 0.8);
     animation: shooting 3s linear infinite;
     opacity: 0;
 }
@@ -1303,11 +1303,11 @@ body {
     transform: translateY(-50%);
 }
 
-.star-1 { top: 20%; left: 10%; --angle: 15deg; --distance: 500px; --fall: 200px; }
-.star-2 { top: 30%; right: 10%; --angle: -25deg; --distance: 600px; --fall: 300px; }
-.star-3 { top: 40%; left: 20%; --angle: 35deg; --distance: 550px; --fall: 250px; }
-.star-4 { top: 30%; right: 20%; --angle: -15deg; --distance: 650px; --fall: 350px; }
-.star-5 { top: 50%; left: 50%; --angle: 25deg; --distance: 580px; --fall: 280px; }
+.star-1 { top: 20%; left: 10%; --angle: 15deg; --distance: 500px; --fall: 200px; animation-delay: 0s; }
+.star-2 { top: 30%; right: 10%; --angle: -25deg; --distance: 600px; --fall: 300px; animation-delay: 4s; }
+.star-3 { top: 40%; left: 20%; --angle: 35deg; --distance: 550px; --fall: 250px; animation-delay: 8s; }
+.star-4 { top: 30%; right: 20%; --angle: -15deg; --distance: 650px; --fall: 350px; animation-delay: 12s; }
+.star-5 { top: 50%; left: 50%; --angle: 25deg; --distance: 580px; --fall: 280px; animation-delay: 16s; }
 
 @keyframes shooting {
     0% {
@@ -1473,6 +1473,149 @@ body {
         opacity: 1;
     }
     80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--distance), var(--fall)) rotate(var(--angle));
+        opacity: 0;
+    }
+}
+
+/* Highly visible space objects */
+.space-objects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Ensure it's visible */
+}
+
+/* Brighter stars with stronger glow */
+.bright-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 1; /* Full opacity */
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.6);
+    animation: star-pulse 3s infinite alternate ease-in-out;
+}
+
+.bs-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.bs-2 { top: 25%; left: 30%; animation-delay: -1s; }
+.bs-3 { top: 60%; left: 15%; animation-delay: -2s; }
+.bs-4 { top: 35%; left: 70%; animation-delay: -3s; }
+.bs-5 { top: 75%; left: 80%; animation-delay: -4s; }
+
+@keyframes star-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.8); } /* More dramatic pulsing */
+}
+
+/* More visible satellites with trails */
+.visible-satellite {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(45deg, #ffffff, #a0a0ff);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 15px rgba(160, 160, 255, 0.9),
+        0 0 30px rgba(160, 160, 255, 0.6);
+    animation: satellite-move 30s linear infinite;
+}
+
+.visible-satellite::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(160, 160, 255, 0.8), transparent);
+    transform: translateY(-50%);
+}
+
+.vs-1 { top: 30%; left: 40%; animation-delay: -5s; }
+.vs-2 { top: 60%; left: 65%; animation-delay: -15s; }
+.vs-3 { top: 20%; left: 70%; animation-delay: -25s; }
+
+@keyframes satellite-move {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(150px, 80px); }
+    50% { transform: translate(0, 180px); }
+    75% { transform: translate(-150px, 80px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Large, golden asteroids */
+.large-asteroid {
+    position: absolute;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    border-radius: 40%;
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 165, 0, 0.3);
+    animation: asteroid-move 40s linear infinite;
+}
+
+.la-1 { width: 15px; height: 12px; top: 25%; left: 25%; animation-delay: -2s; }
+.la-2 { width: 18px; height: 14px; top: 65%; left: 75%; animation-delay: -10s; }
+.la-3 { width: 12px; height: 10px; top: 40%; left: 85%; animation-delay: -18s; }
+
+@keyframes asteroid-move {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(100px, -60px) rotate(120deg); }
+    66% { transform: translate(-80px, 50px) rotate(240deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+/* Dramatically bright shooting stars */
+.bright-meteor {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 255, 255, 0.8);
+    animation: meteor-shoot 8s linear infinite;
+    opacity: 0;
+    z-index: 20; /* Ensure it's on top */
+}
+
+.bright-meteor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 1), 
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transform: translateY(-50%);
+}
+
+.bm-1 { top: 20%; left: 10%; animation-delay: 0s; --angle: 15deg; --distance: 500px; --fall: 200px; }
+.bm-2 { top: 40%; right: 20%; animation-delay: 4s; --angle: -25deg; --distance: 550px; --fall: 250px; }
+
+@keyframes meteor-shoot {
+    0% {
+        transform: translate(0, 0) rotate(var(--angle));
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    90% {
         opacity: 1;
     }
     100% {
