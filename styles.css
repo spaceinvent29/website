@@ -955,7 +955,7 @@ main {
   }
 }
 
-/* Move the milky-way-image-overlay to the body to ensure it covers everything */
+/* Add this to the body element to ensure the background appears behind everything */
 body::before {
   content: '';
   position: fixed;
@@ -972,4 +972,17 @@ body::before {
   mix-blend-mode: color-dodge;
   filter: brightness(0.7) contrast(1.3) saturate(0.8);
   animation: milky-way-drift 60s infinite ease-in-out;
+}
+
+/* Add dark overlay to ensure readability */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -2;
+  pointer-events: none;
 }
