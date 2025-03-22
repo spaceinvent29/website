@@ -1241,3 +1241,174 @@ body {
 .star-3 { --angle: 35deg; --distance: 350px; --fall: 180px; }
 .star-4 { --angle: -15deg; --distance: 450px; --fall: 220px; }
 .star-5 { --angle: 25deg; --distance: 380px; --fall: 190px; }
+
+/* Space Objects - Add this as a new section in your styles.css */
+.satellites {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+
+.satellite {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(255, 255, 255, 0.5);
+    animation: satellite-orbit 30s linear infinite;
+}
+
+.sat-1 { top: 20%; left: 30%; animation-delay: -2s; }
+.sat-2 { top: 40%; left: 60%; animation-delay: -5s; }
+.sat-3 { top: 60%; left: 25%; animation-delay: -8s; }
+.sat-4 { top: 35%; left: 75%; animation-delay: -11s; }
+.sat-5 { top: 70%; left: 45%; animation-delay: -14s; }
+
+@keyframes satellite-orbit {
+    0% { transform: translate(0, 0) scale(1); filter: brightness(1); }
+    25% { transform: translate(200px, -100px) scale(0.8); filter: brightness(1.2); }
+    50% { transform: translate(100px, 200px) scale(1.2); filter: brightness(0.8); }
+    75% { transform: translate(-150px, 50px) scale(0.9); filter: brightness(1.1); }
+    100% { transform: translate(0, 0) scale(1); filter: brightness(1); }
+}
+
+.asteroids {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.asteroid {
+    position: absolute;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    border-radius: 40%;
+    opacity: 0.9;
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.6),
+        0 0 30px rgba(255, 165, 0, 0.3);
+    animation: asteroid-float 25s linear infinite;
+}
+
+.ast-1 { width: 12px; height: 10px; top: 25%; left: 15%; animation-delay: -2s; }
+.ast-2 { width: 10px; height: 8px; top: 45%; left: 85%; animation-delay: -5s; }
+.ast-3 { width: 14px; height: 11px; top: 65%; left: 35%; animation-delay: -8s; }
+.ast-4 { width: 9px; height: 7px; top: 15%; left: 65%; animation-delay: -11s; }
+.ast-5 { width: 11px; height: 9px; top: 75%; left: 25%; animation-delay: -14s; }
+.ast-6 { width: 13px; height: 10px; top: 55%; left: 45%; animation-delay: -17s; }
+.ast-7 { width: 10px; height: 8px; top: 35%; left: 85%; animation-delay: -20s; }
+.ast-8 { width: 12px; height: 9px; top: 85%; left: 35%; animation-delay: -23s; }
+
+@keyframes asteroid-float {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(150px, 75px) rotate(90deg) scale(1.1); }
+    50% { transform: translate(-100px, 150px) rotate(180deg) scale(0.9); }
+    75% { transform: translate(-75px, -100px) rotate(270deg) scale(1.2); }
+    100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+.additional-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.add-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(255, 255, 255, 0.5);
+    animation: star-twinkle 4s ease-in-out infinite;
+}
+
+.star-a { top: 10%; left: 20%; animation-delay: -0.5s; }
+.star-b { top: 30%; left: 80%; animation-delay: -1s; }
+.star-c { top: 50%; left: 15%; animation-delay: -1.5s; }
+.star-d { top: 70%; left: 60%; animation-delay: -2s; }
+.star-e { top: 25%; left: 45%; animation-delay: -2.5s; }
+.star-f { top: 45%; left: 35%; animation-delay: -3s; }
+.star-g { top: 65%; left: 85%; animation-delay: -3.5s; }
+.star-h { top: 15%; left: 55%; animation-delay: -4s; }
+.star-i { top: 85%; left: 25%; animation-delay: -4.5s; }
+.star-j { top: 35%; left: 75%; animation-delay: -5s; }
+
+@keyframes star-twinkle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.3; }
+}
+
+.shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(255, 255, 255, 0.5);
+    animation: shooting 3s linear infinite;
+    opacity: 0;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.9), 
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: translateY(-50%);
+}
+
+.star-1 { top: 20%; left: 10%; --angle: 15deg; --distance: 500px; --fall: 200px; }
+.star-2 { top: 30%; right: 10%; --angle: -25deg; --distance: 600px; --fall: 300px; }
+.star-3 { top: 40%; left: 20%; --angle: 35deg; --distance: 550px; --fall: 250px; }
+.star-4 { top: 30%; right: 20%; --angle: -15deg; --distance: 650px; --fall: 350px; }
+.star-5 { top: 50%; left: 50%; --angle: 25deg; --distance: 580px; --fall: 280px; }
+
+@keyframes shooting {
+    0% {
+        transform: translate(0, 0) rotate(var(--angle));
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--distance), var(--fall)) rotate(var(--angle));
+        opacity: 0;
+    }
+}
