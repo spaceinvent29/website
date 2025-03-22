@@ -2011,57 +2011,89 @@ body {
 
 /* Add these cross-browser compatibility enhancements */
 .space-stations,
-.iss-station,
-.comm-satellites,
-.comm-sat,
-.obs-satellites,
-.obs-sat {
-    /* Force hardware acceleration on all browsers */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    
-    /* Ensure visibility across browsers */
-    visibility: visible !important;
-    opacity: 1 !important;
-    
-    /* Extreme z-index to overcome any stacking issues */
-    z-index: 10000 !important;
-    
-    /* Prevent clipping in some browsers */
-    overflow: visible !important;
-    
-    /* Ensure proper positioning */
-    position: absolute !important;
-    
-    /* Force display */
-    display: block !important;
+    border-radius: 50%;
+    top: 3px;
+    left: 8px;
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+    animation: iss-gleam 5s infinite;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); /* Stronger glow */
+    animation: bg-star-twinkle 4s infinite alternate ease-in-out;
 }
 
-/* Enhanced visibility for ISS components */
-.iss-body,
-.iss-panel,
-.sat-body,
-.sat-dish {
-    visibility: visible !important;
-    opacity: 1 !important;
-    display: block !important;
+@keyframes bg-star-twinkle {
+    0%, 100% { 
+        opacity: 0.4; /* Brighter at lowest point */
+        transform: scale(0.8);
+    }
+    50% { 
+        opacity: 0.9; /* Nearly full brightness at peak */
+        transform: scale(1.2);
+    }
 }
 
-/* Desktop-specific enhancements */
-@media screen and (min-width: 768px) {
-    /* Make elements larger and more visible on desktop */
-    .iss-station {
-        transform: scale(1.5) translateZ(0) !important;
-        -webkit-transform: scale(1.5) translateZ(0) !important;
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        // Include the background stars in the selection
+        const spaceElements = document.querySelectorAll('.space-stations, .iss-station, .comm-sat, .obs-sat, .bg-star, .background-stars');
+        
+        spaceElements.forEach(function(element) {
+            element.style.display = 'block';
+            element.style.visibility = 'visible';
+            element.style.opacity = '1';
+            element.style.zIndex = '10000';
+            
+            // Force a repaint
+            element.style.transform = 'translateZ(0)';
+            void element.offsetWidth;
+        });
+        
+        console.log('Space elements visibility enforced, including background stars');
+    }, 500);
+});
+
+/* Bright visible stars */
+.bright-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* Higher z-index to ensure visibility */
+    pointer-events: none;
+}
+
+.bright-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px 2px rgba(255, 255, 255, 0.8),
+        0 0 20px 5px rgba(255, 255, 255, 0.4);
+    animation: bright-twinkle 3s infinite alternate ease-in-out;
+}
+
+/* Positioned more prominently in the viewport */
+.star1 { top: 20%; left: 20%; animation-delay: -0.5s; }
+.star2 { top: 30%; left: 50%; animation-delay: -1.0s; }
+.star3 { top: 50%; left: 30%; animation-delay: -1.5s; }
+.star4 { top: 70%; left: 70%; animation-delay: -2.0s; }
+.star5 { top: 40%; left: 80%; animation-delay: -2.5s; }
+.star6 { top: 80%; left: 40%; animation-delay: -3.0s; }
+.star7 { top: 60%; left: 60%; animation-delay: -3.5s; }
+
+@keyframes bright-twinkle {
+    0% { 
+        opacity: 0.3;
+        transform: scale(0.8);
     }
-    
-    .comm-sat {
-        transform: scale(1.5) translateZ(0) !important;
-        -webkit-transform: scale(1.5) translateZ(0) !important;
+    100% { 
+        opacity: 1;
+        transform: scale(1.3);
     }
+}
+
     
     .obs-sat {
         transform: scale(1.5) translateZ(0) !important;
