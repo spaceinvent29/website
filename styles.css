@@ -158,7 +158,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.82); /* Slightly lighter dark overlay */
   z-index: -2;
 }
 
@@ -172,11 +172,12 @@ main {
   background-image: url('https://cdn.eso.org/images/screen/eso0932a.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.15; /* Reduced opacity for a more subtle effect */
+  opacity: 0.2; /* Increased from 0.15 to 0.2 for better visibility */
   transform: rotate(45deg) scale(2);
   z-index: -1;
   pointer-events: none;
-  mix-blend-mode: soft-light; /* Changed from screen to soft-light for better dark integration */
+  mix-blend-mode: soft-light; /* Keep soft-light for good dark integration */
+  filter: brightness(1.2) contrast(1.1); /* Slightly boost brightness and contrast */
   animation: milky-way-drift 60s infinite ease-in-out;
 }
 
