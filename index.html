@@ -19,19 +19,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Add this to the head section after your existing CSS link -->
-    <style>
-      /* Immediate test styles to confirm CSS functionality */
-      body {
-        background-color: #000033 !important;
-        color: white !important;
-      }
-      
-      h2 {
-        color: #ff9900 !important;
-      }
-    </style>
 </head>
 <body>
     <!-- Space Background (Stays fixed behind everything) -->
@@ -146,21 +133,21 @@
                     <form id="contact-form" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID_FROM_BACKUP/formResponse" method="post" target="_blank">
                         <div class="form-row">
                             <div class="input-group">
-                                <input type="text" id="name" name="entry.XXXXXX" required>
+                                <input type="text" id="name" name="entry.XXXXXX" placeholder=" " required>
                                 <label for="name">Name</label>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="input-group">
-                                <input type="email" id="email" name="entry.XXXXXX" required>
+                                <input type="email" id="email" name="entry.XXXXXX" placeholder=" " required>
                                 <label for="email">Email</label>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="input-group">
-                                <textarea id="message" name="entry.XXXXXX" required rows="4"></textarea>
+                                <textarea id="message" name="entry.XXXXXX" placeholder=" " required rows="4"></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>

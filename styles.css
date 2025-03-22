@@ -1,11 +1,22 @@
-/* Basic styling to get your space site working */
+/* Clean CSS file with proper alignment and styling */
+
+/* Core styles */
+:root {
+  --primary-color: #4488ff;
+  --background-color: #000011;
+  --text-color: #ffffff;
+  --card-bg: rgba(30, 30, 50, 0.7);
+  --transition: all 0.3s ease;
+}
+
 body {
-  background-color: #000011;
-  color: white;
-  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  line-height: 1.5;
 }
 
 .container {
@@ -14,16 +25,7 @@ body {
   padding: 0 20px;
 }
 
-.logo {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.space { color: #ffffff; }
-.invent { color: #4488ff; }
-
+/* Header */
 .apple-header {
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
@@ -33,36 +35,100 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .apple-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
   height: 60px;
 }
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.space { color: #ffffff; }
+.invent { color: var(--primary-color); }
 
 .main-nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav a {
   color: white;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .main-nav a:hover {
-  color: #4488ff;
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.main-nav a.active {
+  opacity: 1;
+  position: relative;
+}
+
+.main-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: 1px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  width: 24px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle span:first-child {
+  top: 0;
+}
+
+.menu-toggle span:last-child {
+  bottom: 0;
+}
+
+/* Main content */
+main {
+  padding-top: 60px; /* Match header height */
 }
 
 .milky-way-section {
   min-height: calc(100vh - 60px);
-  padding-top: 0;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -76,6 +142,19 @@ body {
   height: 80vh;
 }
 
+/* Background */
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+/* Planets */
 .floating-planets {
   position: relative;
   width: 100%;
@@ -84,8 +163,6 @@ body {
 
 .floating-planet {
   position: absolute;
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
@@ -146,137 +223,26 @@ body {
   transform: rotate(-20deg);
 }
 
-.contact-section {
-  padding: 100px 0;
-  background-color: #000022;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-header h2 {
-  font-size: 36px;
-  color: white;
-}
-
-.apple-card {
-  background-color: rgba(30, 30, 50, 0.7);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-row {
-  margin-bottom: 20px;
-}
-
-.input-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.input-group input,
-.input-group textarea {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 8px;
-  padding: 15px 20px;
-  color: white;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-.input-group label {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: none;
-}
-
-.input-group input:focus + label,
-.input-group textarea:focus + label {
-  transform: translateY(-25px) scale(0.8);
-  color: #4488ff;
-}
-
-.apple-button {
-  background-color: #4488ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-}
-
-.apple-button:hover {
-  background-color: #5599ff;
-}
-
-.apple-footer {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 30px 0;
-  backdrop-filter: blur(10px);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.social-links {
-  display: flex;
-  gap: 20px;
-}
-
-.social-link {
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  color: white;
-}
-
-/* Space background stars */
+/* Stars */
 .bright-stars {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .bright-star {
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   background-color: white;
   border-radius: 50%;
-  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.6);
-  animation: star-twinkle 3s infinite alternate ease-in-out;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8),
+              0 0 20px 5px rgba(255, 255, 255, 0.4);
+  animation: bright-twinkle 3s infinite alternate ease-in-out;
 }
 
 .star1 { top: 20%; left: 20%; animation-delay: -0.5s; }
@@ -287,9 +253,9 @@ body {
 .star6 { top: 80%; left: 40%; animation-delay: -3.0s; }
 .star7 { top: 60%; left: 60%; animation-delay: -3.5s; }
 
-@keyframes star-twinkle {
+@keyframes bright-twinkle {
   0% { opacity: 0.3; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1.3); }
 }
 
 /* ISS Station */
@@ -363,13 +329,185 @@ body {
   100% { transform: translate(-120px, -60px) rotate(360deg) scale(1); }
 }
 
-/* Responsive adjustments */
+/* Contact Section */
+.contact-section {
+  padding: 100px 0;
+  background-color: rgba(0, 0, 15, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.apple-card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apple-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-row {
+  margin-bottom: 25px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px 20px;
+  color: white;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.input-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input-group label {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  transform: translateY(-35px) scale(0.85);
+  color: var(--primary-color);
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: transparent;
+}
+
+.apple-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.apple-button:hover {
+  background-color: #5599ff;
+  transform: translateY(-2px);
+}
+
+.apple-button:active {
+  transform: translateY(0);
+}
+
+.apple-button svg {
+  transition: transform 0.3s ease;
+}
+
+.apple-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* Footer */
+.apple-footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link:hover {
+  color: white;
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .apple-header .container {
     flex-direction: row;
     gap: 0;
     height: auto;
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
   
   .main-nav {
@@ -387,244 +525,27 @@ body {
   .apple-card {
     padding: 30px 20px;
   }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+  }
 }
 
-/* Bright visible stars */
-.bright-stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5; /* Higher z-index to ensure visibility */
-    pointer-events: none;
-}
-
-.bright-star {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 
-        0 0 10px 2px rgba(255, 255, 255, 0.8),
-        0 0 20px 5px rgba(255, 255, 255, 0.4);
-    animation: bright-twinkle 3s infinite alternate ease-in-out;
-}
-
-/* Positioned more prominently in the viewport */
-.star1 { top: 20%; left: 20%; animation-delay: -0.5s; }
-.star2 { top: 30%; left: 50%; animation-delay: -1.0s; }
-.star3 { top: 50%; left: 30%; animation-delay: -1.5s; }
-.star4 { top: 70%; left: 70%; animation-delay: -2.0s; }
-.star5 { top: 40%; left: 80%; animation-delay: -2.5s; }
-.star6 { top: 80%; left: 40%; animation-delay: -3.0s; }
-.star7 { top: 60%; left: 60%; animation-delay: -3.5s; }
-
-@keyframes bright-twinkle {
-    0% { 
-        opacity: 0.3;
-        transform: scale(0.8);
-    }
-    100% { 
-        opacity: 1;
-        transform: scale(1.3);
-    }
-}
-
-    
-    .obs-sat {
-        transform: scale(1.5) translateZ(0) !important;
-        -webkit-transform: scale(1.5) translateZ(0) !important;
-    }
-    
-    /* Enhance glow effects for desktop */
-    .iss-body {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 1) !important;
-    }
-    
-    .sat-body {
-        box-shadow: 0 0 25px rgba(255, 255, 255, 1) !important;
-    }
-    
-    .obs-sat {
-        box-shadow: 0 0 30px rgba(255, 255, 255, 1) !important;
-    }
-}
-
-/* Modernize animations for better performance across browsers */
-@keyframes iss-orbit {
-    0% { transform: translate(0, 0) rotate(0deg) translateZ(0); }
-    25% { transform: translate(150px, -70px) rotate(20deg) translateZ(0); }
-    50% { transform: translate(50px, 150px) rotate(-15deg) translateZ(0); }
-    75% { transform: translate(-120px, 50px) rotate(5deg) translateZ(0); }
-    100% { transform: translate(0, 0) rotate(0deg) translateZ(0); }
-}
-
-@-webkit-keyframes iss-orbit {
-    0% { -webkit-transform: translate(0, 0) rotate(0deg) translateZ(0); }
-    25% { -webkit-transform: translate(150px, -70px) rotate(20deg) translateZ(0); }
-    50% { -webkit-transform: translate(50px, 150px) rotate(-15deg) translateZ(0); }
-    75% { -webkit-transform: translate(-120px, 50px) rotate(5deg) translateZ(0); }
-    100% { -webkit-transform: translate(0, 0) rotate(0deg) translateZ(0); }
-}
-
-/* Add webkit versions for other animations similarly */
-
-/* Background stars - subtle twinkling effect */
-.background-stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Behind planets but visible */
-    pointer-events: none;
-}
-
-.bg-star {
-    position: absolute;
-    width: 3px; /* Slightly larger */
-    height: 3px;
-    background-color: rgba(255, 255, 255, 0.8); /* More opaque */
-    border-radius: 50%;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); /* Stronger glow */
-    animation: bg-star-twinkle 4s infinite alternate ease-in-out;
-}
-
-@keyframes bg-star-twinkle {
-    0%, 100% { 
-        opacity: 0.4; /* Brighter at lowest point */
-        transform: scale(0.8);
-    }
-    50% { 
-        opacity: 0.9; /* Nearly full brightness at peak */
-        transform: scale(1.2);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        // Include the background stars in the selection
-        const spaceElements = document.querySelectorAll('.space-stations, .iss-station, .comm-sat, .obs-sat, .bg-star, .background-stars');
-        
-        spaceElements.forEach(function(element) {
-            element.style.display = 'block';
-            element.style.visibility = 'visible';
-            element.style.opacity = '1';
-            element.style.zIndex = '10000';
-            
-            // Force a repaint
-            element.style.transform = 'translateZ(0)';
-            void element.offsetWidth;
-        });
-        
-        console.log('Space elements visibility enforced, including background stars');
-    }, 500);
-});
-
-/* Bright visible stars */
-.bright-stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5; /* Higher z-index to ensure visibility */
-    pointer-events: none;
-}
-
-.bright-star {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 
-        0 0 10px 2px rgba(255, 255, 255, 0.8),
-        0 0 20px 5px rgba(255, 255, 255, 0.4);
-    animation: bright-twinkle 3s infinite alternate ease-in-out;
-}
-
-/* Positioned more prominently in the viewport */
-.star1 { top: 20%; left: 20%; animation-delay: -0.5s; }
-.star2 { top: 30%; left: 50%; animation-delay: -1.0s; }
-.star3 { top: 50%; left: 30%; animation-delay: -1.5s; }
-.star4 { top: 70%; left: 70%; animation-delay: -2.0s; }
-.star5 { top: 40%; left: 80%; animation-delay: -2.5s; }
-.star6 { top: 80%; left: 40%; animation-delay: -3.0s; }
-.star7 { top: 60%; left: 60%; animation-delay: -3.5s; }
-
-@keyframes bright-twinkle {
-    0% { 
-        opacity: 0.3;
-        transform: scale(0.8);
-    }
-    100% { 
-        opacity: 1;
-        transform: scale(1.3);
-    }
-}
-
-/* Add this to your CSS to hide any red circular elements in the top left */
-.milky-way-galaxy > div, 
-.spiral-arm,
-.galactic-center,
-.floating-planet.red-planet,
-.milky-way-glow {
-    /* Check if any of these are red circles in the top left corner */
-    background: none !important; /* Remove background color/gradient */
-    box-shadow: none !important; /* Remove any glow effect */
-    opacity: 0 !important; /* Make fully transparent */
-    display: none !important; /* Completely hide the element */
-}
-
-/* In case it's only showing on mobile, add specific mobile targeting */
-@media (max-width: 768px) {
-    /* Additional targeting for mobile-specific elements */
-    .milky-way-galaxy > div:first-child,
-    .floating-planet:first-child,
-    .space-background > div:first-child {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-    }
-}
-
-/* Target and hide anything that might be the problematic red circle */
-[class*="planet"][style*="background: red"],
-[class*="planet"][style*="background-color: red"],
-[class*="planet"][style*="background:#f"],
-[style*="border-radius: 50%"][style*="background: red"],
-[style*="border-radius:50%"][style*="background-color:#f"],
-div[style*="top: 5%"][style*="left: 5%"],
-div[style*="top:5%"][style*="left:5%"] {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-}
-
-/* Enhanced shooting star effect */
-.shooting-star::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-/* Update the space-background */
-.space-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: #000011; /* Match with body */
-  overflow: hidden;
-}
-
-/* Adjust main content spacing */
-main {
-  padding-top: 60px; /* Match header height */
+@media (max-width: 576px) {
+  .section-header h2 {
+    font-size: 24px;
+  }
+  
+  .apple-card {
+    padding: 25px 15px;
+  }
+  
+  .contact-section {
+    padding: 60px 0;
+  }
 }
