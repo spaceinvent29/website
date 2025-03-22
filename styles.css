@@ -1,304 +1,257 @@
-  box-shadow: 0 0 3px #4a7bff;
-  top: 3.5px;
+/* Core structure and layout fixes */
+:root {
+  --primary-color: #ff385c; /* Airbnb primary red */
+  --background-color: #000000;
+  --text-color: #f7f7f7;
+  --heading-color: #ffffff;
+  --muted-color: #bbbbbb;
+  --card-bg: rgba(25, 25, 28, 0.7);
+  --transition: all 0.3s ease;
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.left-array {
-  left: -8px;
-  transform: rotate(90deg);
+/* Reset and core styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.right-array {
-  left: 18px;
-  transform: rotate(90deg);
-}
-
-@keyframes iss-orbit {
-  0% { transform: translate(-120px, -60px) rotate(0deg) scale(1); }
-  25% { transform: translate(120px, -80px) rotate(90deg) scale(0.9); }
-  50% { transform: translate(100px, 70px) rotate(180deg) scale(0.8); }
-  75% { transform: translate(-150px, 90px) rotate(270deg) scale(0.9); }
-  100% { transform: translate(-120px, -60px) rotate(360deg) scale(1); }
-}
-
-/* Contact Section */
-.contact-section {
-  padding: 100px 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-header h2 {
-  font-size: 28px; /* Smaller than header */
-  margin-bottom: 16px;
-  background: linear-gradient(to right, #ff9e7f, #6b9fff); /* Match header colors */
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Ensure proper display on different browsers */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* IE10+ CSS */
-  .section-header h2 {
-    background: transparent;
-    -webkit-text-fill-color: initial;
-    color: #ff9e7f;
-  }
-}
-
-@supports not (background-clip: text) {
-  .section-header h2 {
-    background: transparent;
-    -webkit-text-fill-color: initial;
-    color: #ff9e7f;
-  }
-}
-
-.apple-card {
-  background-color: var(--card-bg);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid rgba(174, 214, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.apple-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.form-row {
-  margin-bottom: 25px;
-}
-
-.input-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.input-group input,
-.input-group textarea {
-  width: 100%;
+body {
+  background-color: var(--background-color);
   color: var(--text-color);
-  background-color: rgba(40, 40, 45, 0.6);
-  border: 1px solid rgba(160, 160, 170, 0.3);
-  border-radius: 8px;
-  padding: 15px 20px;
-  font-size: 16px;
-  font-weight: 400;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
-.input-group label {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  color: var(--muted-color);
-  font-size: 14px;
-  font-weight: 500;
-  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
-  pointer-events: none;
-  background: transparent;
-  padding: 0 5px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.input-group input:focus,
-.input-group textarea:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 1px var(--primary-color);
-  outline: none;
-}
-
-.input-group input:focus + label,
-.input-group textarea:focus + label,
-.input-group input:not(:placeholder-shown) + label,
-.input-group textarea:not(:placeholder-shown) + label {
-  transform: translateY(-28px);
-  font-size: 12px;
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-.input-group input::placeholder,
-.input-group textarea::placeholder {
-  color: rgba(154, 194, 255, 0.4);
-}
-
-.apple-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.apple-button:hover {
-  background-color: #e41d48; /* Darker shade of Airbnb red */
-  transform: scale(1.02);
-}
-
-.apple-button:active {
-  transform: translateY(0);
-}
-
-.apple-button svg {
-  transition: transform 0.3s ease;
-  stroke: #ffffff;
-}
-
-.apple-button:hover svg {
-  transform: translateX(3px);
-}
-
-/* Footer */
-.apple-footer {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 30px 0;
+/* Header styles */
+.apple-header {
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-content {
+.apple-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 60px;
 }
 
-.copyright {
-  color: var(--muted-color);
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0;
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
-.social-links {
+/* Logo color styling */
+.space { 
+  color: #ff9e7f; /* Orangeish color */
+  text-shadow: 0 0 10px rgba(255, 158, 127, 0.4);
+}
+
+.invent { 
+  color: #6b9fff; /* Blueish color */
+  text-shadow: 0 0 10px rgba(107, 159, 255, 0.4);
+}
+
+/* Navigation styling */
+.main-nav ul {
+  list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.social-link {
-  color: var(--muted-color);
+.main-nav a {
+  color: #d7b8ff; /* Light purple */
+  text-decoration: none;
   transition: var(--transition);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.9;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: #e5d1ff;
+  opacity: 1;
+}
+
+.main-nav a.active {
+  color: #e5d1ff;
+  opacity: 1;
+}
+
+.main-nav a.active::after {
+  display: none; /* Remove underline */
+}
+
+/* Main content area */
+main {
+  padding-top: 60px; /* Match header height */
+  min-height: 100vh;
+}
+
+/* Space section */
+.milky-way-section {
+  min-height: calc(100vh - 60px);
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.social-link:hover {
-  color: var(--primary-color);
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
+.galaxy-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .apple-header .container {
-    flex-direction: row;
-    gap: 0;
-    height: auto;
-    padding: 15px 20px;
-  }
-  
-  .main-nav {
-    display: none;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .floating-planet {
-    transform: scale(0.8);
-  }
-  
-  .apple-card {
-    padding: 30px 20px;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .section-header h2 {
-    font-size: 28px;
-  }
+/* Space background */
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000000;
+  overflow: hidden;
 }
 
-@media (max-width: 576px) {
-  .section-header h2 {
-    font-size: 24px;
-  }
-  
-  .apple-card {
-    padding: 25px 15px;
-  }
-  
-  .contact-section {
-    padding: 60px 0;
-  }
+/* Stars */
+.bright-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
 }
 
-/* Remove the line below "Home" in the header */
-.main-nav a.active,
-.main-nav a,
-.main-nav li a,
-header a {
-  text-decoration: none !important;
-  border-bottom: none !important;
+.bright-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 5px 1px rgba(255, 255, 255, 0.7),
+    0 0 10px 2px rgba(255, 255, 255, 0.3);
+  animation: bright-twinkle 3s infinite alternate ease-in-out;
 }
 
-.main-nav a.active::after,
-.main-nav a::after,
-.main-nav li a::after,
-header a::after {
-  display: none !important;
-  content: none !important;
-  border: none !important;
-  height: 0 !important;
-  background: transparent !important;
+.star1 { top: 20%; left: 20%; animation-delay: -0.5s; }
+.star2 { top: 30%; left: 50%; animation-delay: -1.0s; }
+.star3 { top: 50%; left: 30%; animation-delay: -1.5s; }
+.star4 { top: 70%; left: 70%; animation-delay: -2.0s; }
+.star5 { top: 40%; left: 80%; animation-delay: -2.5s; }
+.star6 { top: 80%; left: 40%; animation-delay: -3.0s; }
+.star7 { top: 60%; left: 60%; animation-delay: -3.5s; }
+
+@keyframes bright-twinkle {
+  0% { opacity: 0.3; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1.1); }
 }
 
-/* Remove any potentially problematic background elements */
-.milky-way-background,
-.milky-way-glow,
-.milky-way-dust {
-  background: none !important;
-  background-color: transparent !important;
-  opacity: 0.6;
+/* Planets */
+.floating-planets {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-/* Override any inline styles with !important */
-[style*="background-color"] {
-  background-color: #000000 !important;
+.floating-planet {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: float-general 20s infinite ease-in-out;
 }
 
-/* Define keyframes for planet movements */
+.blue-planet {
+  background: radial-gradient(circle, #5555ff 0%, #222299 100%);
+  top: 30%;
+  left: 20%;
+  box-shadow: 0 0 30px rgba(85, 85, 255, 0.7);
+  width: 45px;
+  height: 45px;
+  animation: float-blue 25s infinite alternate ease-in-out;
+}
+
+.red-planet {
+  background: radial-gradient(circle, #ff5555 0%, #992222 100%);
+  top: 50%;
+  left: 40%;
+  box-shadow: 0 0 30px rgba(255, 85, 85, 0.7);
+  width: 40px;
+  height: 40px;
+  animation: float-red 30s infinite alternate ease-in-out;
+}
+
+.purple-planet {
+  background: radial-gradient(circle, #aa55ff 0%, #552299 100%);
+  top: 40%;
+  left: 70%;
+  box-shadow: 0 0 30px rgba(170, 85, 255, 0.7);
+  width: 48px;
+  height: 48px;
+  animation: float-purple 28s infinite alternate ease-in-out;
+}
+
+.orange-planet {
+  background: radial-gradient(circle, #ffaa55 0%, #995522 100%);
+  top: 70%;
+  left: 60%;
+  box-shadow: 0 0 30px rgba(255, 170, 85, 0.7);
+  width: 52px;
+  height: 52px;
+  animation: float-orange 32s infinite alternate ease-in-out;
+}
+
+.ringed-planet {
+  background: radial-gradient(circle, #aa8866 0%, #554433 100%);
+  top: 60%;
+  left: 80%;
+  box-shadow: 0 0 30px rgba(170, 136, 102, 0.7);
+  width: 35px;
+  height: 35px;
+  animation: float-ringed 27s infinite alternate ease-in-out;
+}
+
+.planet-ring {
+  position: absolute;
+  width: 55px;
+  height: 16px;
+  border: 1px solid rgba(255, 255, 200, 0.7);
+  border-radius: 50%;
+  top: 9px;
+  left: -10px;
+  transform: rotate(-20deg);
+  animation: ring-rotate 15s infinite linear;
+}
+
+/* Planet animations */
 @keyframes float-general {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(10px, -10px); }
@@ -349,93 +302,251 @@ header a::after {
   100% { transform: rotate(340deg); }
 }
 
-/* Form submission success message */
-.success-message h3 {
-  color: #aed6ff;
+/* ISS Station */
+.space-stations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
-.success-message p {
-  color: #96c8ff;
+.iss-station {
+  position: absolute;
+  top: 25%;
+  left: 65%;
+  width: 20px;
+  height: 10px;
+  animation: iss-orbit 45s linear infinite;
 }
 
-/* Additional style for form validation messages */
-.input-group input:invalid,
-.input-group textarea:invalid {
-  border-color: rgba(255, 177, 122, 0.4);
+.iss-module {
+  position: absolute;
+  background-color: #d8d8d8;
+  border: 1px solid #a0a0a0;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
 }
 
-/* Optional: Add a subtle gradient background to the contact section */
+.center-module {
+  width: 8px;
+  height: 4px;
+  top: 3px;
+  left: 6px;
+  border-radius: 1px;
+}
+
+.left-module, .right-module {
+  width: 4px;
+  height: 3px;
+  top: 3.5px;
+  border-radius: 1px;
+}
+
+.left-module { left: 2px; }
+.right-module { left: 14px; }
+
+.solar-array {
+  position: absolute;
+  width: 10px;
+  height: 3px;
+  background-color: #4a7bff;
+  box-shadow: 0 0 3px #4a7bff;
+  top: 3.5px;
+}
+
+.left-array {
+  left: -8px;
+  transform: rotate(90deg);
+}
+
+.right-array {
+  left: 18px;
+  transform: rotate(90deg);
+}
+
+@keyframes iss-orbit {
+  0% { transform: translate(-120px, -60px) rotate(0deg) scale(1); }
+  25% { transform: translate(120px, -80px) rotate(90deg) scale(0.9); }
+  50% { transform: translate(100px, 70px) rotate(180deg) scale(0.8); }
+  75% { transform: translate(-150px, 90px) rotate(270deg) scale(0.9); }
+  100% { transform: translate(-120px, -60px) rotate(360deg) scale(1); }
+}
+
+/* Contact section */
 .contact-section {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(10, 15, 30, 0.9));
+  padding: 100px 0;
+  background-color: rgba(0, 0, 10, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Base typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--heading-color);
-  letter-spacing: -0.02em;
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-/* Floating labels - Airbnb style */
+.section-header h2 {
+  font-size: 28px;
+  background: linear-gradient(to right, #ff9e7f, #6b9fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.apple-card {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Form styling */
+.form-row {
+  margin-bottom: 25px;
+}
+
 .input-group {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .input-group input,
 .input-group textarea {
+  width: 100%;
+  background-color: rgba(25, 20, 35, 0.6);
+  border: 1px solid rgba(230, 201, 255, 0.2);
+  border-radius: 8px;
   padding: 15px 20px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 1px var(--primary-color);
-  outline: none;
+  color: #e6c9ff;
+  font-size: 16px;
+  transition: var(--transition);
 }
 
 .input-group label {
   position: absolute;
   top: 15px;
   left: 20px;
-  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+  color: #f9c74f;
+  transition: var(--transition);
   pointer-events: none;
+  font-size: 16px;
   background: transparent;
+  padding: 0 5px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #ff6b6b;
+  outline: none;
 }
 
 .input-group input:focus + label,
 .input-group textarea:focus + label,
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
-  transform: translateY(-28px);
-  font-size: 12px;
-  color: var(--primary-color);
+  transform: translateY(-35px) scale(0.85);
+  color: #06d6a0;
 }
 
-/* Background stars if present */
-.bg-star {
-  position: absolute;
-  width: 1.5px;
-  height: 1.5px;
-  background-color: rgba(255, 255, 255, 0.7);
+.apple-button {
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.apple-button:hover {
+  background-color: #e41d48;
+  transform: scale(1.02);
+}
+
+/* Footer */
+.apple-footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: var(--muted-color);
+  font-size: 14px;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  color: var(--muted-color);
+  transition: var(--transition);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Twinkling stars if present */
-.twinkling-star {
-  width: 2px;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+.social-link:hover {
+  color: white;
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
 }
 
-/* For any manually added star test elements */
-[id^="test-star"],
-.test-star,
-div[style*="border-radius: 50%"][style*="background-color: white"] {
-  width: 3px !important;
-  height: 3px !important;
-  box-shadow: 0 0 8px 2px white !important;
+/* Responsive styles */
+@media (max-width: 768px) {
+  .apple-header .container {
+    padding: 15px 20px;
+  }
+  
+  .main-nav {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .floating-planet {
+    transform: scale(0.8);
+  }
+  
+  .apple-card {
+    padding: 30px 20px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+  }
 }
