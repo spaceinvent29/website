@@ -16,6 +16,8 @@
   --text-muted: #8D9DB6; /* Soft blue-gray for regular text */
   --text-highlight: #A3C1D5; /* Light blue for highlighted/important text */
   --text-subtle: #5D6D7E; /* Darker blue-gray for subtle/secondary text */
+  --nav-text-color: #8D9DB6; /* The color currently used for header nav text */
+  --nav-text-hover: #A3C1D5; /* The hover color for header nav text */
 }
 
 /* Reset and core styling */
@@ -103,7 +105,7 @@ body {
 }
 
 .main-nav a {
-  color: var(--text-muted);
+  color: var(--nav-text-color);
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.9;
@@ -112,13 +114,13 @@ body {
 }
 
 .main-nav a:hover {
-  color: var(--text-highlight);
+  color: var(--nav-text-hover);
   opacity: 1;
   text-shadow: 0 0 8px rgba(163, 193, 213, 0.3);
 }
 
 .main-nav a.active {
-  color: var(--text-highlight);
+  color: var(--nav-text-hover);
   opacity: 1;
   text-shadow: 0 0 8px rgba(163, 193, 213, 0.2);
 }
