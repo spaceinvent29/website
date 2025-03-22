@@ -27,6 +27,8 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -126,6 +128,7 @@ main {
   background-color: transparent; /* Ensure main content is transparent */
   position: relative;
   z-index: 1;
+  flex: 1;
 }
 
 /* Space section */
@@ -830,6 +833,8 @@ main {
   background-color: rgba(0, 0, 10, 0.4); /* More transparent background */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  padding-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .section-header {
@@ -943,16 +948,24 @@ main {
 
 /* Footer */
 .apple-footer {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent footer */
-  padding: 30px 0;
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  padding: 30px 0;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0;
+  width: 100%;
+  display: block;
+  visibility: visible !important;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .copyright {
@@ -1209,5 +1222,15 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+/* Force the footer to remain at the bottom and visible */
+@media screen and (min-height: 800px) {
+  .apple-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
