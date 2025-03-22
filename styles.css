@@ -854,15 +854,26 @@ main {
 }
 
 .section-header h2 .contact-space {
-  color: #FFFFFF; /* Cosmic White to match "Space" in header */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  color: #FFFFFF; /* Cosmic White - EXACTLY same as header */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Same shadow as header */
 }
 
 .section-header h2 .contact-invent {
-  color: #9B59B6; /* Nebula Purple to match "Invent" in header */
-  text-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
-  color: #C9A227; /* Rich gold/amber to match "Invent" in header */
-  text-shadow: 0 0 10px rgba(201, 162, 39, 0.3);
+  color: #9B59B6; /* Nebula Purple - EXACTLY same as header */
+  text-shadow: 0 0 10px rgba(155, 89, 182, 0.5); /* Same shadow as header */
+}
+
+/* Make the font weight and size match the header too */
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.section-header h2 .contact-space,
+.section-header h2 .contact-invent {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .apple-card {
@@ -913,10 +924,10 @@ main {
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: #00B2CA; /* Cyan blue for form focus */
+  border-color: #9B59B6; /* Exact Nebula Purple from header */
   background-color: rgba(0, 0, 0, 0.8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 178, 202, 0.2);
+  box-shadow: 0 0 0 2px rgba(155, 89, 182, 0.2);
 }
 
 .input-group input:focus + label,
@@ -924,7 +935,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: #C9A227; /* Rich gold/amber */
+  color: #9B59B6; /* Exact Nebula Purple from header */
   background-color: transparent;
 }
 
@@ -934,6 +945,7 @@ main {
 }
 
 .apple-button {
+  background-color: #9B59B6; /* Exact Nebula Purple from header */
   background-color: #4A6FA5; /* Deep space blue */
   color: white;
   border: none;
@@ -1257,4 +1269,5 @@ main {
     right: 0;
   }
 }
+
 
