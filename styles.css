@@ -10,6 +10,8 @@
   --card-bg: rgba(18, 26, 38, 0.7); /* Deep blue-black with transparency */
   --transition: all 0.3s ease;
   --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --galactic-blue: #1E3799;
+  --nebula-purple: #9B59B6;
 }
 
 /* Reset and core styling */
@@ -71,12 +73,12 @@ body {
 
 /* Update logo colors */
 .space { 
-  color: #FFFFFF; /* Cosmic White for "Space" */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  color: var(--galactic-blue); /* Galactic Blue for "Space" in header */
+  text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
 }
 
 .invent { 
-  color: #9B59B6; /* Nebula Purple for "Invent" */
+  color: var(--nebula-purple); /* Keep Nebula Purple for "Invent" */
   text-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
 }
 
@@ -854,13 +856,13 @@ main {
 }
 
 .section-header h2 .contact-space {
-  color: #FFFFFF; /* Cosmic White - EXACTLY same as header */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Same shadow as header */
+  color: var(--galactic-blue); /* Galactic Blue for "Space" in contact section */
+  text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
 }
 
 .section-header h2 .contact-invent {
-  color: #9B59B6; /* Nebula Purple - EXACTLY same as header */
-  text-shadow: 0 0 10px rgba(155, 89, 182, 0.5); /* Same shadow as header */
+  color: var(--nebula-purple); /* Keep Nebula Purple for "Invent" */
+  text-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
 }
 
 /* Make the font weight and size match the header too */
@@ -1012,21 +1014,21 @@ main {
 
 .social-link:hover {
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--galactic-blue);
   transform: translateY(-3px);
 }
 
 /* Update social icon hover colors */
 .social-link:nth-child(1):hover {
-  background-color: #4A6FA5; /* Match primary color for X */
+  background-color: var(--galactic-blue); /* Galactic Blue for X */
 }
 
 .social-link:nth-child(2):hover {
-  background-color: #00B2CA; /* Match accent color for Instagram */
+  background-color: var(--nebula-purple); /* Nebula Purple for Instagram */
 }
 
 .social-link:nth-child(3):hover {
-  background-color: #C9A227; /* Rich gold/amber for Email */
+  background-color: var(--galactic-blue); /* Galactic Blue for Email */
 }
 
 /* Update form response message color */
