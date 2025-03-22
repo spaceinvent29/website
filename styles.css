@@ -47,7 +47,7 @@ body {
 
 /* Header styles */
 .apple-header {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(10, 15, 20, 0.7); /* Darker, slightly blue-tinted black */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   position: fixed;
@@ -813,7 +813,7 @@ main {
   padding: 100px 0;
   margin-bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 10, 0.4);
+  background-color: rgba(10, 15, 20, 0.7); /* Darker, slightly blue-tinted black */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding-bottom: 30px;
