@@ -63,31 +63,24 @@ body {
 }
 
 .space { 
-  color: var(--heading-color);
-  text-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
-  transition: all 0.3s ease;
+  color: #ff9e7f; /* Orangeish color */
+  text-shadow: 0 0 10px rgba(255, 158, 127, 0.4);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .invent { 
-  color: var(--primary-color);
-  background: linear-gradient(to right, #ff00ff, #9900ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
-  transition: all 0.3s ease;
+  color: #6b9fff; /* Blueish color */
+  text-shadow: 0 0 10px rgba(107, 159, 255, 0.4);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* Add hover effect to the logo */
 .logo:hover .space {
-  text-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+  text-shadow: 0 0 15px rgba(255, 158, 127, 0.6);
 }
 
 .logo:hover .invent {
-  background: linear-gradient(to right, #ff00ff, #9900ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+  text-shadow: 0 0 15px rgba(107, 159, 255, 0.6);
 }
 
 .main-nav ul {
@@ -99,28 +92,29 @@ body {
 }
 
 .main-nav a {
-  color: var(--text-color);
+  color: #d7b8ff; /* Light purple similar to code editor */
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.3s ease, opacity 0.3s ease;
   opacity: 0.9;
   font-size: 14px;
   font-weight: 500;
 }
 
 .main-nav a:hover {
-  color: var(--primary-color);
+  color: #e5d1ff; /* Lighter purple on hover */
   opacity: 1;
 }
 
 .main-nav a.active {
-  color: var(--primary-color);
+  color: #e5d1ff;
   opacity: 1;
   border-bottom: 1px solid var(--primary-color);
   padding-bottom: 2px;
 }
 
 .main-nav a.active::after {
-  background-color: var(--primary-color);
+  background-color: #d7b8ff;
+  height: 1px;
 }
 
 .menu-toggle {
@@ -380,12 +374,31 @@ main {
 }
 
 .section-header h2 {
-  font-size: 32px;
-  color: var(--heading-color);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 28px; /* Smaller than header */
   margin-bottom: 16px;
-  text-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+  background: linear-gradient(to right, #ff9e7f, #6b9fff); /* Match header colors */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Ensure proper display on different browsers */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS */
+  .section-header h2 {
+    background: transparent;
+    -webkit-text-fill-color: initial;
+    color: #ff9e7f;
+  }
+}
+
+@supports not (background-clip: text) {
+  .section-header h2 {
+    background: transparent;
+    -webkit-text-fill-color: initial;
+    color: #ff9e7f;
+  }
 }
 
 .apple-card {
