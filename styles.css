@@ -37,9 +37,9 @@ body {
 
 /* Header styles */
 .apple-header {
-  background-color: rgba(0, 0, 0, 0.5); /* More transparent header */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.4); /* More transparent header */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: fixed;
   top: 0;
   left: 0;
@@ -95,7 +95,7 @@ body {
 }
 
 .main-nav a {
-  color: #ff9bb3; /* Lighter pinkish red */
+  color: #ffffff; /* Changed from #ff9bb3 to white */
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.9;
@@ -104,13 +104,15 @@ body {
 }
 
 .main-nav a:hover {
-  color: #ffbdcc; /* Even lighter/brighter on hover */
+  color: #ffffff; /* Keep hover color white */
   opacity: 1;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Add subtle glow on hover */
 }
 
 .main-nav a.active {
-  color: #ffbdcc;
+  color: #ffffff; /* Keep active color white */
   opacity: 1;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Subtle glow for active link */
 }
 
 .main-nav a.active::after {
@@ -121,6 +123,9 @@ body {
 main {
   padding-top: 60px; /* Match header height */
   min-height: 100vh;
+  background-color: transparent; /* Ensure main content is transparent */
+  position: relative;
+  z-index: 1;
 }
 
 /* Space section */
@@ -822,9 +827,9 @@ main {
 /* Contact section */
 .contact-section {
   padding: 100px 0;
-  background-color: rgba(0, 0, 10, 0.5); /* More transparent background */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 10, 0.4); /* More transparent background */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .section-header {
@@ -938,10 +943,10 @@ main {
 
 /* Footer */
 .apple-footer {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent footer */
   padding: 30px 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .footer-content {
@@ -1035,11 +1040,11 @@ body::before {
   background-image: url('https://cdn.eso.org/images/screen/eso0932a.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.7; /* Increased opacity for better visibility */
+  opacity: 0.7; /* Keep good visibility */
   z-index: -1;
   pointer-events: none;
-  mix-blend-mode: screen; /* Changed to screen for better visibility */
-  filter: brightness(0.85) contrast(1.4) saturate(1.0); /* Adjusted for better visibility */
+  mix-blend-mode: screen;
+  filter: brightness(0.85) contrast(1.4) saturate(1.0);
   animation: milky-way-drift 60s infinite ease-in-out;
 }
 
@@ -1196,5 +1201,13 @@ body::after {
   100% {
     margin-top: -0.5px;
   }
+}
+
+/* Ensure consistent background display across all sections */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
