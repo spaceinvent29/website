@@ -52,6 +52,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 60px;
+  padding-right: 30px;
 }
 
 .logo {
@@ -60,6 +61,7 @@ body {
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.5px;
+  margin-right: auto;
 }
 
 /* Logo color styling */
@@ -74,16 +76,25 @@ body {
 }
 
 /* Navigation styling */
+.main-nav {
+  margin-left: auto;
+}
+
 .main-nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
+  justify-content: flex-end;
+}
+
+.main-nav li {
+  list-style-type: none;
 }
 
 .main-nav a {
-  color: #d7b8ff; /* Light purple */
+  color: #ff9bb3;
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.9;
@@ -92,12 +103,12 @@ body {
 }
 
 .main-nav a:hover {
-  color: #e5d1ff;
+  color: #ffbdcc;
   opacity: 1;
 }
 
 .main-nav a.active {
-  color: #e5d1ff;
+  color: #ffbdcc;
   opacity: 1;
 }
 
@@ -573,4 +584,17 @@ main {
   .section-header h2 {
     font-size: 24px;
   }
+}
+
+/* Remove any dots that might be appearing in the header */
+.main-nav li::before,
+.main-nav li::after,
+.main-nav a::before,
+.main-nav a::after,
+.apple-header::before,
+.apple-header::after,
+.container::before,
+.container::after {
+  display: none !important;
+  content: none !important;
 }
