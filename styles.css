@@ -2191,3 +2191,51 @@ body {
 }
 
 /* Add webkit versions for other animations similarly */
+
+/* Background stars - subtle twinkling effect */
+.background-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind planets but visible */
+}
+
+.bg-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+    animation: bg-star-twinkle 4s infinite alternate ease-in-out;
+}
+
+/* Position the stars randomly throughout the background */
+.bs-1 { top: 10%; left: 15%; animation-delay: -0.2s; }
+.bs-2 { top: 25%; left: 30%; animation-delay: -0.7s; }
+.bs-3 { top: 40%; left: 10%; animation-delay: -1.2s; }
+.bs-4 { top: 65%; left: 25%; animation-delay: -1.7s; }
+.bs-5 { top: 80%; left: 40%; animation-delay: -2.2s; }
+.bs-6 { top: 15%; left: 60%; animation-delay: -2.7s; }
+.bs-7 { top: 35%; left: 75%; animation-delay: -3.2s; }
+.bs-8 { top: 55%; left: 85%; animation-delay: -3.7s; }
+.bs-9 { top: 75%; left: 65%; animation-delay: -4.2s; }
+.bs-10 { top: 90%; left: 80%; animation-delay: -4.7s; }
+.bs-11 { top: 20%; left: 45%; animation-delay: -5.2s; }
+.bs-12 { top: 50%; left: 55%; animation-delay: -5.7s; }
+.bs-13 { top: 70%; left: 90%; animation-delay: -6.2s; }
+.bs-14 { top: 85%; left: 15%; animation-delay: -6.7s; }
+.bs-15 { top: 30%; left: 95%; animation-delay: -7.2s; }
+
+@keyframes bg-star-twinkle {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% { 
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
