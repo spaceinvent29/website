@@ -184,13 +184,13 @@ main {
 
 @keyframes milky-way-drift {
   0% {
-      transform: rotate(45deg) scale(2) translate(0, 0);
+    transform: scale(1.05) translate(0, 0);
   }
   50% {
-      transform: rotate(45deg) scale(2) translate(5px, -5px);
+    transform: scale(1.05) translate(5px, -5px);
   }
   100% {
-      transform: rotate(45deg) scale(2) translate(0, 0);
+    transform: scale(1.05) translate(0, 0);
   }
 }
 
@@ -1199,15 +1199,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://assets.grok.com/users/daaba5bf-8955-43c1-a4fb-6ed13f4e1525/dfheihnhEb0r4646-generated_image.jpg');
+  background-image: url('milky-way-image.jpg'); /* Using the local image file */
   background-size: cover;
   background-position: center;
-  opacity: 0.8; /* Slightly increased opacity for better visibility */
+  opacity: 0.9; /* High opacity for this clean B&W image */
   z-index: -1;
   pointer-events: none;
-  mix-blend-mode: normal; /* Changed to normal for this image */
-  filter: brightness(0.9) contrast(1.2) saturate(1.1); /* Adjusted for this specific image */
-  animation: milky-way-drift 60s infinite ease-in-out;
+  mix-blend-mode: screen; /* Works well with B&W images */
+  filter: brightness(1.1) contrast(1.1); /* Slightly enhance the stars */
+  animation: milky-way-drift 80s infinite ease-in-out; /* Slower drift for this image */
 }
 
 /* Dark overlay for better readability */
@@ -1218,7 +1218,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Reduced darkness for the new image */
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay for this darker image */
   z-index: -2;
   pointer-events: none;
 }
