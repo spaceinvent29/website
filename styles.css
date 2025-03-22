@@ -586,15 +586,70 @@ main {
   }
 }
 
-/* Remove any dots that might be appearing in the header */
-.main-nav li::before,
-.main-nav li::after,
-.main-nav a::before,
-.main-nav a::after,
-.apple-header::before,
-.apple-header::after,
-.container::before,
-.container::after {
+/* Target and remove any possible dots in the header */
+
+/* General cleanup for any potential dots */
+.apple-header *,
+.apple-header *::before,
+.apple-header *::after {
+  list-style: none !important;
+  text-decoration: none !important;
+  border-radius: 0 !important;
+  background-image: none !important;
+}
+
+/* Target specific potential elements that might be causing the dot */
+.menu-toggle,
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
   display: none !important;
-  content: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Make sure all navigation items are clean */
+.main-nav ul,
+.main-nav li,
+.main-nav a {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+}
+
+/* Target any possible button or icon in the header */
+.apple-header button,
+.apple-header .icon,
+.apple-header [class*="toggle"],
+.apple-header [class*="menu"],
+.apple-header [class*="btn"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Fallback to specifically hide any small circular elements */
+.apple-header [style*="border-radius: 50%"],
+.apple-header [style*="border-radius:50%"],
+.apple-header div[style*="width: 5px"],
+.apple-header div[style*="width: 6px"],
+.apple-header div[style*="width: 7px"],
+.apple-header div[style*="width: 8px"],
+.apple-header div[style*="width: 9px"],
+.apple-header div[style*="width: 10px"],
+.apple-header div[style*="width:5px"],
+.apple-header div[style*="width:6px"],
+.apple-header div[style*="width:7px"],
+.apple-header div[style*="width:8px"],
+.apple-header div[style*="width:9px"],
+.apple-header div[style*="width:10px"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
