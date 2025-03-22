@@ -4,8 +4,11 @@
 :root {
   --primary-color: #4488ff;
   --background-color: #000000;
-  --text-color: #ffffff;
-  --card-bg: rgba(20, 20, 30, 0.7);
+  --text-color: #e0f0ff;
+  --heading-color: #aed6ff;
+  --accent-color: #ffb17a;
+  --link-color: #7ab8ff;
+  --card-bg: rgba(30, 30, 50, 0.7);
   --transition: all 0.3s ease;
 }
 
@@ -46,7 +49,7 @@ body {
 }
 
 .logo {
-  color: white;
+  color: var(--heading-color);
   text-decoration: none;
   font-size: 24px;
   font-weight: 600;
@@ -54,30 +57,30 @@ body {
 }
 
 .space { 
-  color: #e0f0ff; 
-  text-shadow: 0 0 10px rgba(224, 240, 255, 0.5);
+  color: #aed6ff;
+  text-shadow: 0 0 10px rgba(174, 214, 255, 0.5);
   transition: all 0.3s ease;
 }
 
 .invent { 
-  background: linear-gradient(to right, #8a2be2, #4169e1);
+  background: linear-gradient(to right, #ffb17a, #ff8a5e);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+  text-shadow: 0 0 15px rgba(255, 177, 122, 0.4);
   transition: all 0.3s ease;
 }
 
 /* Add hover effect to the logo */
 .logo:hover .space {
-  text-shadow: 0 0 15px rgba(224, 240, 255, 0.8);
+  text-shadow: 0 0 15px rgba(174, 214, 255, 0.8);
 }
 
 .logo:hover .invent {
-  background: linear-gradient(to right, #9d44ff, #5e7cff);
+  background: linear-gradient(to right, #ffb17a, #ff8a5e);
   -webkit-background-clip: text;
   background-clip: text;
-  text-shadow: 0 0 20px rgba(157, 68, 255, 0.6);
+  text-shadow: 0 0 20px rgba(255, 177, 122, 0.6);
 }
 
 .main-nav ul {
@@ -89,7 +92,7 @@ body {
 }
 
 .main-nav a {
-  color: white;
+  color: #96c8ff;
   text-decoration: none;
   transition: var(--transition);
   opacity: 0.8;
@@ -98,7 +101,7 @@ body {
 }
 
 .main-nav a:hover {
-  color: var(--primary-color);
+  color: #ffb17a;
   opacity: 1;
 }
 
