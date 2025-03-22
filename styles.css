@@ -196,7 +196,7 @@ main {
 .floating-planet {
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
   transition: all 1s ease;
 }
 
@@ -1092,4 +1092,126 @@ main {
     border-radius: 50%;
     background-color: rgba(255, 245, 220, 0.8);
     box-shadow: 0 0 8px 4px rgba(255, 220, 180, 0.6);
+}
+
+/* Subtle Milky Way background */
+.milky-way-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind everything else */
+    pointer-events: none;
+    transform: rotate(45deg) scale(1.4); /* Diagonal orientation */
+    opacity: 0.5; /* Overall transparency */
+}
+
+.milky-way-glow {
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    width: 120%;
+    height: 20%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(75, 50, 100, 0.15) 0%,
+        rgba(50, 30, 80, 0.1) 40%,
+        rgba(30, 20, 60, 0.05) 60%,
+        rgba(20, 10, 40, 0) 80%
+    );
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.milky-way-dust {
+    position: absolute;
+    top: 42.5%;
+    left: -10%;
+    width: 120%;
+    height: 15%;
+    background-image: 
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0.5px, transparent 1px),
+        radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.1) 0.5px, transparent 1px),
+        radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.15) 0.5px, transparent 1px),
+        radial-gradient(circle at 60% 50%, rgba(255, 255, 255, 0.15) 0.5px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 0.5px, transparent 1px);
+    background-size: 
+        150px 100px,
+        200px 100px,
+        100px 100px,
+        180px 100px,
+        120px 100px;
+    filter: blur(2px);
+    opacity: 0.7;
+}
+
+.milky-way-stars {
+    position: absolute;
+    top: 35%;
+    left: -10%;
+    width: 120%;
+    height: 30%;
+    background-image: 
+        radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.5) 0.1px, transparent 0.5px),
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.4) 0.2px, transparent 0.5px),
+        radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.6) 0.1px, transparent 0.5px),
+        radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.4) 0.2px, transparent 0.5px),
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.5) 0.1px, transparent 0.5px),
+        radial-gradient(circle at 30% 80%, rgba(255, 255, 255, 0.4) 0.2px, transparent 0.5px),
+        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.5) 0.1px, transparent 0.5px),
+        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.4) 0.2px, transparent 0.5px),
+        radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.5) 0.1px, transparent 0.5px);
+    background-size: 
+        150px 150px,
+        200px 200px,
+        100px 100px,
+        180px 180px,
+        120px 120px,
+        160px 160px,
+        140px 140px,
+        190px 190px,
+        110px 110px;
+    opacity: 0.6;
+}
+
+/* Add a subtle animation to make it feel alive */
+@keyframes milky-way-shimmer {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.milky-way-dust {
+    animation: milky-way-shimmer 10s infinite ease-in-out;
+}
+
+.milky-way-stars {
+    animation: milky-way-shimmer 15s infinite ease-in-out reverse;
+}
+
+/* Ensure other elements remain visible by adjusting z-indices */
+.bright-stars {
+    z-index: 5;
+}
+
+.shooting-stars, 
+.meteor-shower {
+    z-index: 4;
+}
+
+.space-stations {
+    z-index: 3;
+}
+
+.floating-planets {
+    z-index: 2;
+}
+
+/* Increase contrast of planets slightly to ensure visibility */
+.floating-planet {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 }
