@@ -245,25 +245,23 @@ main {
 .floating-planet {
   position: absolute;
   border-radius: 50%;
-  box-shadow: none;
-  animation: float-general 20s infinite ease-in-out;
-  transform: scale(0.85);
-  /* Add subtle glow for brightness */
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  opacity: 0.95; /* Increase opacity for brightness */
-  filter: brightness(1.2) contrast(1.1); /* Increase brightness */
+  opacity: 0.95;
+  filter: brightness(1.2) contrast(1.1);
+  /* Remove general scaling to allow individual sizing */
+  transform: scale(1); 
 }
 
-/* Blue planet - clockwise, medium speed */
+/* Blue planet - smaller */
 .blue-planet {
   background: radial-gradient(circle at 30% 30%, #5a8cff 0%, #2a4dbb 60%, #1a3388 100%);
-  /* More vibrant blues */
   top: 30%;
   left: 20%;
-  width: 40px;
-  height: 40px;
-  box-shadow: 0 0 15px rgba(90, 140, 255, 0.3); /* Blue glow */
+  width: 28px; /* Reduced from 40px */
+  height: 28px; /* Reduced from 40px */
+  box-shadow: 0 0 15px rgba(90, 140, 255, 0.3);
   animation: blue-planet-journey 85s infinite ease-in-out;
+  transform: scale(0.8); /* Additional scaling for variety */
   /* Add subtle cloud bands */
   background-image: 
     linear-gradient(90deg, transparent 50%, rgba(100, 100, 200, 0.1) 52%, transparent 54%),
@@ -272,16 +270,16 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Red planet - counter-clockwise, faster */
+/* Red planet - tiny */
 .red-planet {
   background: radial-gradient(circle at 40% 40%, #ff6a5a 0%, #bb2a4d 60%, #881a33 100%);
-  /* More vibrant reds */
   top: 50%;
   left: 40%;
-  width: 35px;
-  height: 35px;
-  box-shadow: 0 0 15px rgba(255, 106, 90, 0.3); /* Red glow */
+  width: 18px; /* Reduced from 35px */
+  height: 18px; /* Reduced from 35px */
+  box-shadow: 0 0 12px rgba(255, 106, 90, 0.3);
   animation: red-planet-journey 65s infinite ease-in-out;
+  transform: scale(0.75); /* Additional scaling for variety */
   /* Add Mars-like surface features */
   background-image: 
     radial-gradient(circle at 30% 50%, #662211 0%, transparent 15%),
@@ -290,16 +288,16 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Purple planet - zigzag pattern, variable speed */
+/* Purple planet - medium */
 .purple-planet {
   background: radial-gradient(circle at 35% 35%, #b05aff 0%, #7d2abb 60%, #5a1a88 100%);
-  /* More vibrant purples */
   top: 40%;
   left: 70%;
-  width: 42px;
-  height: 42px;
-  box-shadow: 0 0 15px rgba(176, 90, 255, 0.3); /* Purple glow */
+  width: 32px; /* Reduced from 42px */
+  height: 32px; /* Reduced from 42px */
+  box-shadow: 0 0 15px rgba(176, 90, 255, 0.3);
   animation: purple-planet-journey 100s infinite ease-in-out;
+  transform: scale(0.9); /* Additional scaling for variety */
   /* Add gas giant bands */
   background-image: 
     linear-gradient(90deg, transparent 30%, rgba(170, 120, 220, 0.1) 32%, transparent 34%),
@@ -309,16 +307,16 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Orange planet - figure-8 pattern, slow */
+/* Orange planet - larger */
 .orange-planet {
   background: radial-gradient(circle at 45% 45%, #ffaa5a 0%, #ff7b29 60%, #cc5a00 100%);
-  /* More vibrant oranges */
   top: 70%;
   left: 60%;
-  width: 45px;
-  height: 45px;
-  box-shadow: 0 0 15px rgba(255, 170, 90, 0.3); /* Orange glow */
+  width: 38px; /* Reduced from 45px */
+  height: 38px; /* Reduced from 45px */
+  box-shadow: 0 0 15px rgba(255, 170, 90, 0.3);
   animation: orange-planet-journey 115s infinite ease-in-out;
+  transform: scale(0.95); /* Additional scaling for variety */
   /* Add Jupiter-like bands and Great Red Spot */
   background-image: 
     radial-gradient(ellipse at 75% 40%, #aa4422 0%, transparent 15%),
@@ -330,16 +328,16 @@ main {
   background-blend-mode: overlay;
 }
 
-/* Ringed planet - elliptical orbit, very slow */
+/* Ringed planet - very small */
 .ringed-planet {
   background: radial-gradient(circle at 40% 40%, #d6c292 0%, #a89259 60%, #755c33 100%);
-  /* More vibrant gold/tan */
   top: 60%;
   left: 80%;
-  width: 30px;
-  height: 30px;
-  box-shadow: 0 0 15px rgba(214, 194, 146, 0.3); /* Gold glow */
+  width: 22px; /* Reduced from 30px */
+  height: 22px; /* Reduced from 30px */
+  box-shadow: 0 0 12px rgba(214, 194, 146, 0.3);
   animation: ringed-planet-journey 130s infinite ease-in-out;
+  transform: scale(0.7); /* Additional scaling for variety */
   /* Add Saturn-like features */
   background-image:
     linear-gradient(90deg, transparent 30%, rgba(180, 160, 110, 0.1) 32%, transparent 34%),
@@ -350,9 +348,8 @@ main {
 
 .planet-ring {
   position: absolute;
-  width: 48px;
-  height: 14px;
-  border: 0;
+  width: 36px; /* Reduced from 48px */
+  height: 10px; /* Reduced from 14px */
   background: linear-gradient(transparent 0%, 
                          rgba(240, 220, 180, 0.3) 20%, 
                          rgba(250, 230, 190, 0.6) 40%,
@@ -360,12 +357,12 @@ main {
                          rgba(230, 210, 170, 0.2) 80%,
                          transparent 100%);
   border-radius: 50%;
-  top: 8px;
-  left: -9px;
+  top: 6px; /* Adjusted positioning */
+  left: -7px; /* Adjusted positioning */
   transform: rotate(-20deg);
   animation: ring-rotate 15s infinite linear;
-  opacity: 0.9; /* Increased opacity */
-  filter: brightness(1.2); /* Increase brightness */
+  opacity: 0.9;
+  filter: brightness(1.2);
 }
 
 /* Blue planet - clockwise, medium speed */
