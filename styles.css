@@ -18,6 +18,8 @@
   --text-subtle: #5D6D7E; /* Darker blue-gray for subtle/secondary text */
   --nav-text-color: #8D9DB6; /* The color currently used for header nav text */
   --nav-text-hover: #A3C1D5; /* The hover color for header nav text */
+  --cosmic-cyan: #00CED1; /* Deep cyan/turquoise color */
+  --nebula-pink: #FF6B8B; /* Rich nebula pink */
 }
 
 /* Reset and core styling */
@@ -77,13 +79,13 @@ body {
 
 /* Update logo colors */
 .space { 
-  color: var(--galactic-blue); /* Galactic Blue for "Space" */
-  text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
+  color: var(--cosmic-cyan); /* Cosmic cyan for "Space" */
+  text-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
 }
 
 .invent { 
-  color: var(--nebula-purple); /* Updated Nebula Purple for "Invent" */
-  text-shadow: 0 0 10px rgba(142, 68, 173, 0.5); /* Updated shadow color */
+  color: var(--nebula-pink); /* Nebula pink for "Invent" */
+  text-shadow: 0 0 10px rgba(255, 107, 139, 0.5);
 }
 
 /* Navigation styling */
@@ -827,13 +829,13 @@ main {
 }
 
 .section-header h2 .contact-space {
-  color: var(--galactic-blue);
-  text-shadow: 0 0 10px rgba(30, 55, 153, 0.5);
+  color: var(--cosmic-cyan); /* Cosmic cyan for "Space" */
+  text-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
 }
 
 .section-header h2 .contact-invent {
-  color: var(--nebula-purple);
-  text-shadow: 0 0 10px rgba(142, 68, 173, 0.5);
+  color: var(--nebula-pink); /* Nebula pink for "Invent" */
+  text-shadow: 0 0 10px rgba(255, 107, 139, 0.5);
 }
 
 .section-header h2 {
@@ -896,10 +898,10 @@ main {
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: var(--nebula-purple);
+  border-color: var(--nebula-pink); /* Use nebula pink for focus */
   background-color: rgba(0, 0, 0, 0.8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2);
+  box-shadow: 0 0 0 2px rgba(255, 107, 139, 0.2);
 }
 
 .input-group input:focus + label,
@@ -907,7 +909,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: var(--nebula-purple);
+  color: var(--cosmic-cyan); /* Use cosmic cyan for active labels */
   background-color: transparent;
 }
 
@@ -917,7 +919,7 @@ main {
 }
 
 .apple-button {
-  background-color: #2C3E50; /* Dark blue-gray color */
+  background-color: var(--nebula-pink); /* Use nebula pink for button */
     color: var(--text-light);
   border: none;
   border-radius: 8px;
@@ -935,8 +937,8 @@ main {
 }
 
 .apple-button:hover {
-  background-color: #34495E; /* Slightly lighter on hover */
-    transform: translateY(-2px);
+  background-color: #E5596D; /* Slightly darker nebula pink on hover */
+    transform: scale(1.02);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
   border: 1px solid rgba(236, 240, 241, 0.3); /* Brighter border on hover */
 }
@@ -995,26 +997,26 @@ main {
 
 .social-link:hover {
   color: white;
-  background-color: var(--galactic-blue);
+  background-color: var(--cosmic-cyan); /* Cosmic cyan for X */
   transform: translateY(-3px);
 }
 
 /* Update social icon hover colors */
 .social-link:nth-child(1):hover {
-  background-color: var(--galactic-blue);
+  background-color: var(--cosmic-cyan); /* Cosmic cyan for X */
 }
 
 .social-link:nth-child(2):hover {
-  background-color: var(--nebula-purple);
+  background-color: var(--nebula-pink); /* Nebula pink for Instagram */
 }
 
 .social-link:nth-child(3):hover {
-  background-color: var(--galactic-blue);
+  background-color: var(--cosmic-cyan); /* Cosmic cyan for Email */
 }
 
 /* Update form response message color */
 #responseMessage {
-  color: var(--nebula-purple) !important;
+  color: var(--nebula-pink) !important;
   font-weight: 500;
 }
 
