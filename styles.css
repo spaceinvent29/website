@@ -919,7 +919,7 @@ main {
 }
 
 .apple-button {
-  background-color: var(--nebula-pink); /* Use nebula pink for button */
+  background-color: #2C3E50; /* Dark blue-gray color */
     color: var(--text-light);
   border: none;
   border-radius: 8px;
@@ -937,8 +937,8 @@ main {
 }
 
 .apple-button:hover {
-  background-color: #E5596D; /* Slightly darker nebula pink on hover */
-    transform: scale(1.02);
+  background-color: #34495E; /* Slightly lighter gray on hover */
+    transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
   border: 1px solid rgba(236, 240, 241, 0.3); /* Brighter border on hover */
 }
