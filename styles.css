@@ -47,7 +47,7 @@ body {
 
 /* Header styles */
 .apple-header {
-  background-color: rgba(10, 15, 20, 0.7); /* Darker, slightly blue-tinted black */
+  background-color: rgba(8, 12, 18, 0.8); /* More opaque header */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   position: fixed;
@@ -810,7 +810,7 @@ main {
   padding: 100px 0;
   margin-bottom: 0;
   width: 100%;
-  background-color: rgba(10, 15, 20, 0.7); /* Darker, slightly blue-tinted black */
+  background-color: rgba(8, 12, 18, 0.8); /* More opaque contact section */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding-bottom: 30px;
@@ -849,7 +849,7 @@ main {
 }
 
 .apple-card {
-  background-color: rgba(18, 26, 38, 0.5);
+  background-color: rgba(10, 15, 22, 0.85); /* More opaque card */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 20px;
@@ -950,7 +950,7 @@ main {
 .apple-footer {
   flex-shrink: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(8, 12, 18, 0.8); /* More opaque footer */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 30px 0;
@@ -1209,12 +1209,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('milky-way-image.jpg'); /* Using the local image file */
+  background-image: url('milky-way-image.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0.9; /* High opacity for this clean B&W image */
+  opacity: 0.35; /* Reduced from 0.6 for much less visibility */
   z-index: -1;
   pointer-events: none;
+  mix-blend-mode: soft-light; /* Keeps the soft-light for subtle blending */
+  filter: brightness(0.7) contrast(1.1) saturate(0.8); /* Even darker, less saturated */
+  animation: milky-way-drift 80s infinite ease-in-out;
   mix-blend-mode: screen; /* Works well with B&W images */
   filter: brightness(1.1) contrast(1.1); /* Slightly enhance the stars */
   animation: milky-way-drift 80s infinite ease-in-out; /* Slower drift for this image */
