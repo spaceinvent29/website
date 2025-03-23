@@ -20,6 +20,7 @@
   --nav-text-hover: #A3C1D5; /* The hover color for header nav text */
   --cosmic-cyan: #00CED1; /* Deep cyan/turquoise color */
   --nebula-pink: #FF6B8B; /* Rich nebula pink */
+  --cosmic-violet: #9966CC; /* New cosmic violet for "Invent" - purple with blue undertones */
 }
 
 /* Reset and core styling */
@@ -84,8 +85,8 @@ body {
 }
 
 .invent { 
-  color: var(--nebula-pink); /* Nebula pink for "Invent" */
-  text-shadow: 0 0 10px rgba(255, 107, 139, 0.5);
+  color: var(--cosmic-violet); /* New cosmic violet for "Invent" */
+  text-shadow: 0 0 10px rgba(153, 102, 204, 0.5);
 }
 
 /* Navigation styling */
@@ -834,8 +835,8 @@ main {
 }
 
 .section-header h2 .contact-invent {
-  color: var(--nebula-pink); /* Nebula pink for "Invent" */
-  text-shadow: 0 0 10px rgba(255, 107, 139, 0.5);
+  color: var(--cosmic-violet); /* New cosmic violet for "Invent" */
+  text-shadow: 0 0 10px rgba(153, 102, 204, 0.5);
 }
 
 .section-header h2 {
@@ -898,10 +899,10 @@ main {
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: var(--nebula-pink); /* Use nebula pink for focus */
+  border-color: var(--cosmic-violet); /* Use cosmic violet for focus */
   background-color: rgba(0, 0, 0, 0.8);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(255, 107, 139, 0.2);
+  box-shadow: 0 0 0 2px rgba(153, 102, 204, 0.2);
 }
 
 .input-group input:focus + label,
@@ -909,7 +910,7 @@ main {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:not(:placeholder-shown) + label {
   transform: translateY(-35px) scale(0.85);
-  color: var(--cosmic-cyan); /* Use cosmic cyan for active labels */
+  color: var(--cosmic-violet); /* Use cosmic violet for active labels */
   background-color: transparent;
 }
 
@@ -1007,7 +1008,7 @@ main {
 }
 
 .social-link:nth-child(2):hover {
-  background-color: var(--nebula-pink); /* Nebula pink for Instagram */
+  background-color: var(--cosmic-violet); /* Cosmic violet for Instagram */
 }
 
 .social-link:nth-child(3):hover {
