@@ -47,7 +47,7 @@ body {
 
 /* Header styles */
 .apple-header {
-  background-color: rgba(8, 12, 18, 0.8); /* More opaque header */
+  background-color: rgba(8, 12, 18, 0.7); /* More transparent header */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   position: fixed;
@@ -810,7 +810,7 @@ main {
   padding: 100px 0;
   margin-bottom: 0;
   width: 100%;
-  background-color: rgba(8, 12, 18, 0.8); /* More opaque contact section */
+  background-color: rgba(8, 12, 18, 0.7); /* More transparent contact section */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding-bottom: 30px;
@@ -849,6 +849,7 @@ main {
 }
 
 .apple-card {
+  background-color: rgba(10, 15, 22, 0.75); /* More transparent card */
   background-color: rgba(10, 15, 22, 0.85); /* More opaque card */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
