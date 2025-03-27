@@ -1468,67 +1468,20 @@ body {
   }
 }
 
-/* Updated Video Widget Styles */
+/* Simplified Video Widget Styles */
 .video-widget {
-  position: fixed;
-  top: 80px; /* Positioned below header */
-  right: 20px;
-  width: 400px; /* Larger base size */
-  background: rgba(13, 12, 15, 0.85);
+  position: relative; /* Changed from fixed to relative */
+  margin: 20px auto; /* Add margin for spacing */
+  width: 400px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  z-index: 999; /* Below header but above other content */
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.video-widget:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-}
-
-.video-widget-header {
-  padding: 8px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.video-widget-title {
-  color: var(--cursor-white);
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.video-widget-controls {
-  display: flex;
-  gap: 8px;
-}
-
-.video-control-btn {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-  padding: 4px 8px;
-  font-size: 14px;
-  transition: color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-control-btn:hover {
-  color: var(--cursor-white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .video-container {
-  position: relative;
+    position: relative;
   width: 100%;
-  height: 225px; /* 16:9 aspect ratio for 400px width */
+  height: 225px; /* 16:9 aspect ratio */
     overflow: hidden;
 }
 
@@ -1538,17 +1491,6 @@ body {
   object-fit: cover;
 }
 
-/* Minimize state */
-.video-widget.minimized {
-  width: 50px;
-  height: 40px;
-  overflow: hidden;
-}
-
-.video-widget.minimized .video-container {
-  display: none;
-}
-
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
   .video-widget {
@@ -1556,33 +1498,31 @@ body {
   }
   
   .video-container {
-    height: 197px; /* 16:9 aspect ratio for 350px width */
+    height: 197px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .video-widget {
-    width: 300px;
-    top: auto; /* Reset top position */
-    bottom: 20px; /* Position at bottom for mobile */
-    right: 50%;
-    transform: translateX(50%);
+    width: 100%;
+    max-width: 300px;
+    margin: 15px auto;
   }
   
   .video-container {
-    height: 169px; /* 16:9 aspect ratio for 300px width */
+    height: 169px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .video-widget {
-    width: 90%; /* Take up most of the screen width */
-    max-width: 400px;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto;
   }
   
   .video-container {
-    height: calc((90vw * 9) / 16); /* Maintain 16:9 aspect ratio */
-    max-height: 225px;
+    height: calc((100vw * 9) / 16);
   }
 }
 
