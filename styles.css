@@ -1468,14 +1468,14 @@ body {
   }
 }
 
-/* Simplified Video Widget Styles */
+/* Updated Video Widget Styles */
 .video-widget {
-  position: relative; /* Changed from fixed to relative */
-  margin: 20px auto; /* Add margin for spacing */
   width: 400px;
+  margin: 20px 20px 20px auto; /* This will align it to the right */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  float: right; /* This will make content flow around it */
 }
 
 .video-container {
@@ -1504,9 +1504,10 @@ body {
 
 @media screen and (max-width: 768px) {
   .video-widget {
+    float: none; /* Remove float on smaller screens */
     width: 100%;
     max-width: 300px;
-    margin: 15px auto;
+    margin: 20px auto; /* Center on smaller screens */
   }
   
   .video-container {
@@ -1516,7 +1517,6 @@ body {
 
 @media screen and (max-width: 480px) {
   .video-widget {
-    width: 100%;
     max-width: 100%;
     margin: 10px auto;
   }
