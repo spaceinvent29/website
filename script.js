@@ -56,48 +56,64 @@ document.addEventListener('DOMContentLoaded', function() {
     video.pause();
   });
 
-  // Make widget draggable
-  let isDragging = false;
-  let currentX;
-  let currentY;
-  let initialX;
-  let initialY;
-  let xOffset = 0;
-  let yOffset = 0;
+  // Make widget draggable only on desktop
+  if (window.innerWidth > 768) {
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
 
-  videoWidget.querySelector('.video-widget-header').addEventListener('mousedown', dragStart);
-  document.addEventListener('mousemove', drag);
-  document.addEventListener('mouseup', dragEnd);
+    videoWidget.querySelector('.video-widget-header').addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
 
-  function dragStart(e) {
-    initialX = e.clientX - xOffset;
-    initialY = e.clientY - yOffset;
+    function dragStart(e) {
+      initialX = e.clientX - xOffset;
+      initialY = e.clientY - yOffset;
 
-    if (e.target === videoWidget.querySelector('.video-widget-header')) {
-      isDragging = true;
+      if (e.target.closest('.video-widget-header')) {
+        isDragging = true;
+      }
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        e.preventDefault();
+        currentX = e.clientX - initialX;
+        currentY = e.clientY - initialY;
+
+        // Add boundaries to prevent dragging off screen
+        const bounds = videoWidget.getBoundingClientRect();
+        if (currentX < -bounds.width/2) currentX = -bounds.width/2;
+        if (currentX > window.innerWidth - bounds.width/2) currentX = window.innerWidth - bounds.width/2;
+        if (currentY < 0) currentY = 0;
+        if (currentY > window.innerHeight - bounds.height) currentY = window.innerHeight - bounds.height;
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, videoWidget);
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+      isDragging = false;
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
     }
   }
 
-  function drag(e) {
-    if (isDragging) {
-      e.preventDefault();
-      currentX = e.clientX - initialX;
-      currentY = e.clientY - initialY;
-
-      xOffset = currentX;
-      yOffset = currentY;
-
-      setTranslate(currentX, currentY, videoWidget);
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+      videoWidget.style.transform = ''; // Reset position on mobile
     }
-  }
-
-  function dragEnd(e) {
-    initialX = currentX;
-    initialY = currentY;
-    isDragging = false;
-  }
-
-  function setTranslate(xPos, yPos, el) {
-    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
-  }
+  });
 }); 
