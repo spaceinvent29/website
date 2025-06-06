@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Minimal analytics event tracking
 document.addEventListener('DOMContentLoaded', function() {
-  // Track form submissions
+  // Track submissions from #contact-form
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function() {

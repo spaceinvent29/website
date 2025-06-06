@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // For custom form: Track form submissions
+    // For custom form (#contact-form): Track form submissions
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
