@@ -20,3 +20,4 @@ This is the official website for SpaceInvent. A modern, responsive website built
 - CSS3
 - Font Awesome Icons
 - Google Fonts (Poppins) # Updated Sat Mar 22 04:52:48 PDT 2025
+- JavaScript - Scripts provide interactivity and analytics
