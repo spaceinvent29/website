@@ -107,7 +107,7 @@
                     <h2><span class="contact-prefix">Contact </span><span class="contact-space">Space</span><span class="contact-invent">Invent</span></h2>
             </div>
                 <div class="apple-card">
-                    <form id="contactForm" onsubmit="submitForm(event)">
+                    <form id="contact-form" onsubmit="submitForm(event)">
                         <div class="form-row">
                             <div class="input-group">
                                 <input type="text" id="name" name="entry.1740724123" placeholder=" " required>
@@ -274,7 +274,7 @@
         function submitForm(event) {
             event.preventDefault();
             
-            const form = document.getElementById('contactForm');
+            const form = document.getElementById('contact-form');
             const formData = new FormData(form);
             const submitButton = document.getElementById('submitButton');
             const responseMessage = document.getElementById('responseMessage');
