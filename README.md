@@ -14,6 +14,14 @@ This is the official website for SpaceInvent. A modern, responsive website built
 1. Clone the repository
 2. Open `index.html` in your web browser
 
+## Running Tests
+
+Install dependencies with `npm install` and then run:
+
+```bash
+npm test
+```
+
 ## Technologies Used
 
 - HTML5
