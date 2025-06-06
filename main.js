@@ -148,9 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Fix for the label animation
-    const formInputs = document.querySelectorAll('.input-group input, .input-group textarea');
-    
-    formInputs.forEach(input => {
+    const labelInputs = document.querySelectorAll('.input-group input, .input-group textarea');
+
+    labelInputs.forEach(input => {
         // Check if field already has value
         if (input.value.trim() !== '') {
             input.nextElementSibling.classList.add('filled');
