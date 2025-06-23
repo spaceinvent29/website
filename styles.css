@@ -1527,24 +1527,3 @@ body {
 }
 
 
-
-/* Investment tracker sections */
-.stocks-section {
-  padding: 100px 0;
-  background-color: rgba(10, 10, 10, 0.5);
-}
-
-.stocks-section .stock {
-  margin-bottom: 60px;
-}
-
-.price-chart,
-.options-chart {
-  display: block;
-  max-width: 100%;
-  margin: 20px 0;
-}
-
-.news-section {
-  padding: 80px 0;
-}

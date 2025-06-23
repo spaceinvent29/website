@@ -1,176 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investment Tracker</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceInvent</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="apple-header">
-    <div class="container">
-      <a href="#" class="logo"><span class="space">Invest</span><span class="invent">Tracker</span></a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#stocks" class="active">Home</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="apple-header">
+        <div class="container">
+            <a href="#" class="logo"><span class="space">Space</span><span class="invent">Invent</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <section id="stocks" class="stocks-section">
-      <div class="container">
-        <h1>Stocks of Interest</h1>
-        <div class="stock" id="stock-HOOD">
-          <h2>HOOD</h2>
-          <canvas class="price-chart"></canvas>
-          <canvas class="options-chart"></canvas>
-          <div class="fundamentals">
-            <ul>
-              <li>Market Cap: <span class="fund-marketcap">--</span></li>
-              <li>P/E Ratio: <span class="fund-pe">--</span></li>
-              <li>EPS: <span class="fund-eps">--</span></li>
-            </ul>
-          </div>
+    <!-- Main Content -->
+    <main>
+        <!-- Space Section -->
+        <section class="milky-way-section">
+            <div class="video-widget">
+                <div class="video-container">
+                    <video id="spaceVideo" autoplay muted loop playsinline>
+                        <source src="space video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div class="galaxy-container">
+        <div class="space-background">
+                    <!-- Milky Way image is added via CSS -->
+                    <div class="small-asteroids">
+                        <div class="small-asteroid"></div>
+                        <div class="small-asteroid"></div>
+                        <div class="small-asteroid"></div>
+                        <div class="small-asteroid"></div>
+                        <div class="small-asteroid"></div>
+            </div>
+                    
+                    <div class="perseid-shower">
+                        <div class="perseid-meteor"></div>
+                        <div class="perseid-meteor"></div>
+                    </div>
+                </div>
+                
+                <!-- Star field -->
+                <div class="bright-stars">
+                    <div class="bright-star star1"></div>
+                    <div class="bright-star star2"></div>
+                    <div class="bright-star star3"></div>
+                    <div class="bright-star star4"></div>
+                    <div class="bright-star star5"></div>
+                    <div class="bright-star star6"></div>
+                    <div class="bright-star star7"></div>
+                </div>
+                
+                <!-- Floating Planets -->
+                <div class="floating-planets">
+                    <div class="floating-planet blue-planet"></div>
+                    <div class="floating-planet red-planet"></div>
+                    <div class="floating-planet purple-planet"></div>
+                    <div class="floating-planet orange-planet"></div>
+                    <div class="floating-planet ringed-planet">
+                        <div class="planet-ring"></div>
+                    </div>
+                </div>
+                
+                <!-- Space Station -->
+                <div class="space-stations">
+                    <div class="iss-station">
+                        <div class="iss-module center-module"></div>
+                        <div class="iss-module left-module"></div>
+                        <div class="iss-module right-module"></div>
+                        <div class="solar-array left-array"></div>
+                        <div class="solar-array right-array"></div>
+                    </div>
+                </div>
+                
+                <!-- Shooting Stars -->
+                <div class="shooting-stars">
+                    <div class="shooting-star star-1"></div>
+                    <div class="shooting-star star-2"></div>
+                    <div class="shooting-star star-3"></div>
+                    <div class="shooting-star star-4"></div>
+                </div>
+                
+                <!-- Realistic Meteors -->
+                <div class="realistic-meteors">
+                    <div class="realistic-meteor realistic-meteor-1"></div>
+                    <div class="realistic-meteor realistic-meteor-2"></div>
+                    <div class="realistic-meteor realistic-meteor-3"></div>
+                    <div class="realistic-meteor realistic-meteor-4"></div>
+            </div>
         </div>
-        <div class="stock" id="stock-PLTR">
-          <h2>PLTR</h2>
-          <canvas class="price-chart"></canvas>
-          <canvas class="options-chart"></canvas>
-          <div class="fundamentals">
-            <ul>
-              <li>Market Cap: <span class="fund-marketcap">--</span></li>
-              <li>P/E Ratio: <span class="fund-pe">--</span></li>
-              <li>EPS: <span class="fund-eps">--</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="stock" id="stock-HIMS">
-          <h2>HIMS</h2>
-          <canvas class="price-chart"></canvas>
-          <canvas class="options-chart"></canvas>
-          <div class="fundamentals">
-            <ul>
-              <li>Market Cap: <span class="fund-marketcap">--</span></li>
-              <li>P/E Ratio: <span class="fund-pe">--</span></li>
-              <li>EPS: <span class="fund-eps">--</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="stock" id="stock-ABCL">
-          <h2>ABCL</h2>
-          <canvas class="price-chart"></canvas>
-          <canvas class="options-chart"></canvas>
-          <div class="fundamentals">
-            <ul>
-              <li>Market Cap: <span class="fund-marketcap">--</span></li>
-              <li>P/E Ratio: <span class="fund-pe">--</span></li>
-              <li>EPS: <span class="fund-eps">--</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="stock" id="stock-IBIT">
-          <h2>IBIT</h2>
-          <canvas class="price-chart"></canvas>
-          <canvas class="options-chart"></canvas>
-          <div class="fundamentals">
-            <ul>
-              <li>Market Cap: <span class="fund-marketcap">--</span></li>
-              <li>P/E Ratio: <span class="fund-pe">--</span></li>
-              <li>EPS: <span class="fund-eps">--</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="stock" id="stock-AMD">
-          <h2>AMD</h2>
-          <canvas class="price-chart"></canvas>
-          <canvas class="options-chart"></canvas>
-          <div class="fundamentals">
-            <ul>
-              <li>Market Cap: <span class="fund-marketcap">--</span></li>
-              <li>P/E Ratio: <span class="fund-pe">--</span></li>
-              <li>EPS: <span class="fund-eps">--</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section class="news-section">
-      <div class="container">
-        <h2>News &amp; Analysis</h2>
-        <p>Coming soon with insights and technical analysis.</p>
-      </div>
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+        <div class="container">
+                <div class="section-header">
+                    <h2><span class="contact-prefix">Contact </span><span class="contact-space">Space</span><span class="contact-invent">Invent</span></h2>
+            </div>
+                <div class="apple-card">
+                    <form id="contact-form" onsubmit="submitForm(event)">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="text" id="name" name="entry.1740724123" placeholder=" " required>
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <input type="email" id="email" name="entry.1732875791" placeholder=" " required>
+                                <label for="email">Email Address</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <textarea id="message" name="entry.1099130722" rows="4" placeholder=" " required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="apple-button" id="submitButton">Send Message</button>
+                        <div id="responseMessage" style="display: none; margin-top: 20px; text-align: center; color: #6b9fff; font-weight: 500;">
+                            Response received. Thank you for your message!
+                        </div>
+                    </form>
+            </div>
+        </div>
     </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2><span class="contact-prefix">Contact </span><span class="contact-space">Invest</span><span class="contact-invent">Tracker</span></h2>
+    <!-- Footer -->
+    <footer class="apple-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2025 SpaceInvent. All rights reserved.</p>
+                <div class="social-links">
+                    <!-- X (Twitter) Logo -->
+                    <a href="https://x.com/spaceinvent" class="social-link" target="_blank" aria-label="X (Twitter)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5549 21H20.7996L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Instagram Logo -->
+                    <a href="https://www.instagram.com/spaceinvent/" class="social-link" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Gmail Logo -->
+                    <a href="mailto:space.reinvent@gmail.com" class="social-link" target="_blank" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="apple-card">
-          <form id="contact-form" onsubmit="submitForm(event)">
-            <div class="form-row">
-              <div class="input-group">
-                <input type="text" id="name" name="entry.1740724123" placeholder=" " required>
-                <label for="name">Your Name</label>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <input type="email" id="email" name="entry.1732875791" placeholder=" " required>
-                <label for="email">Email Address</label>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <textarea id="message" name="entry.1099130722" rows="4" placeholder=" " required></textarea>
-                <label for="message">Your Message</label>
-              </div>
-            </div>
-            <button type="submit" class="apple-button" id="submitButton">Send Message</button>
-            <div id="responseMessage" style="display: none; margin-top: 20px; text-align: center; color: #6b9fff; font-weight: 500;">
-              Response received. Thank you for your message!
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="apple-footer">
-    <div class="container">
-      <div class="footer-content">
-        <p class="copyright">&copy; 2025 StockTracker. All rights reserved.</p>
-        <div class="social-links">
-          <!-- X (Twitter) Logo -->
-          <a href="https://x.com/spaceinvent" class="social-link" target="_blank" aria-label="X (Twitter)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13.6823 10.6218L20.2391 3H18.6854L12.99219 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5549 21H20.7996L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"/>
-            </svg>
-          </a>
-          <!-- Instagram Logo -->
-          <a href="https://www.instagram.com/spaceinvent/" class="social-link" target="_blank" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-          <!-- Gmail Logo -->
-          <a href="mailto:space.reinvent@gmail.com" class="social-link" target="_blank" aria-label="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- Scripts -->
+    <script>
+        // Randomize shooting stars
+        function randomizeShootingStars() {
+            const stars = document.querySelectorAll('.shooting-star');
+            
+            stars.forEach(star => {
+                const topPos = 5 + Math.random() * 30;
+                const rotation = 5 + Math.random() * 20;
+                const width = 70 + Math.random() * 50;
+                const delay = Math.random() * 15;
+                
+                star.style.top = topPos + '%';
+                star.style.setProperty('--rotation', `rotate(${rotation}deg)`);
+                star.style.width = width + 'px';
+                star.style.animationDelay = delay + 's';
+            });
+        }
+        
+        // Initialize and periodically reset stars
+        randomizeShootingStars();
+        setInterval(randomizeShootingStars, 10000);
+        
+        // Update the meteor randomization function to reverse directions
+        function randomizeMeteors() {
+            const meteors = document.querySelectorAll('.realistic-meteor');
+            
+            meteors.forEach((meteor, index) => {
+                // Reset animation to apply new properties
+                meteor.style.animation = 'none';
+                meteor.offsetHeight; // Force reflow
+                
+                // Completely random starting position (anywhere on screen)
+                const topPos = Math.random() * 100; // Any vertical position
+                const leftPos = Math.random() * 100; // Any horizontal position
+                
+                // Random direction angle (full 360 degrees) - adjusted for reversed direction
+                const angle = 150 + Math.random() * 60; // Now between 150-210 degrees (generally from bottom-left to top-right)
+                
+                // Random speed and distance based on direction
+                const distance = 200 + Math.random() * 600; // Positive distance for reversed direction
+                
+                // Calculate x and y components based on angle
+                const distX = distance * Math.cos(angle * Math.PI / 180);
+                const distY = distance * Math.sin(angle * Math.PI / 180);
+                
+                // Apply the random properties
+                meteor.style.top = `${topPos}%`;
+                meteor.style.left = `${leftPos}%`;
+                meteor.style.setProperty('--angle', `${angle}deg`);
+                meteor.style.setProperty('--dist-x', `${distX}px`);
+                meteor.style.setProperty('--dist-y', `${distY}px`);
+                
+                // Randomize animation duration
+                const duration = 3 + Math.random() * 4;
+                
+                // Randomize delay for staggered appearances
+                const delay = Math.random() * 20;
+                
+                // Set different wobble speeds for each meteor
+                const wobbleSpeed = 0.2 + Math.random() * 0.4;
+                
+                // Restore animation with new timing
+                meteor.style.animation = `
+                    realistic-meteor-fall ${duration}s ease-in infinite ${delay}s,
+                    meteor-wobble ${wobbleSpeed}s ease-in-out infinite
+                `;
+            });
+        }
 
-  <script src="libs/chart.js"></script>
-  <script src="stocks.js"></script>
-  <script src="main.js"></script>
+        // Update the individual meteor randomization with reversed direction
+        document.querySelectorAll('.realistic-meteor').forEach((meteor, index) => {
+            const interval = 8000 + (index * 2000) + (Math.random() * 4000);
+            setInterval(() => {
+                meteor.style.animation = 'none';
+                meteor.offsetHeight;
+                
+                const topPos = Math.random() * 100;
+                const leftPos = Math.random() * 100;
+                const angle = 150 + Math.random() * 60; // Using reversed angle range
+                const distance = 200 + Math.random() * 600;
+                const distX = distance * Math.cos(angle * Math.PI / 180);
+                const distY = distance * Math.sin(angle * Math.PI / 180);
+                
+                meteor.style.top = `${topPos}%`;
+                meteor.style.left = `${leftPos}%`;
+                meteor.style.setProperty('--angle', `${angle}deg`);
+                meteor.style.setProperty('--dist-x', `${distX}px`);
+                meteor.style.setProperty('--dist-y', `${distY}px`);
+                
+                const duration = 3 + Math.random() * 4;
+                const delay = Math.random() * 5;
+                const wobbleSpeed = 0.2 + Math.random() * 0.4;
+                
+                meteor.style.animation = `
+                    realistic-meteor-fall ${duration}s ease-in infinite ${delay}s,
+                    meteor-wobble ${wobbleSpeed}s ease-in-out infinite
+                `;
+            }, interval);
+        });
+        
+        // Initialize
+        randomizeMeteors();
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contact-form');
+            const formData = new FormData(form);
+            const submitButton = document.getElementById('submitButton');
+            const responseMessage = document.getElementById('responseMessage');
+            
+            // Disable the button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Sending...';
+            
+            // Send the form data to Google Form
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLScf7qeY_gu30brAVxhTHsU3tbQCvv2eZfDLq3wJrbopSDPZcw/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // This is important for Google Forms
+            })
+            .then(() => {
+                // Show success message
+                responseMessage.style.display = 'block';
+                
+                // Reset the form
+                form.reset();
+                
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Send Message';
+                
+                // Hide the success message after 5 seconds
+                setTimeout(() => {
+                    responseMessage.style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                // Even if there's an error, we still show success message
+                // because with no-cors mode, we can't actually detect errors properly
+                responseMessage.style.display = 'block';
+                
+                // Reset the form
+                form.reset();
+                
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Send Message';
+                
+                // Hide the success message after 5 seconds
+                setTimeout(() => {
+                    responseMessage.style.display = 'none';
+                }, 5000);
+            });
+        }
+    </script>
 </body>
-</html>
+</html> 
